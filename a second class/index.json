@@ -1,0 +1,12 @@
+{
+  "title":"this is the second test", 
+  "details":{
+    "steps": [{
+      "title": "step 1", 
+      "text": "step1.md"
+      }], 
+  }, 
+  "environment": {
+    "uilayout": "terminal"
+  }
+}
