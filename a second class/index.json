@@ -8,5 +8,8 @@
   }, 
   "environment": {
     "uilayout": "terminal"
+  }, 
+  "backend": {
+    "imageid":"ubuntu"
   }
 }
