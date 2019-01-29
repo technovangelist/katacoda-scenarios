@@ -4,7 +4,7 @@
     "steps": [{
       "title": "step 1", 
       "text": "step1.md"
-      }], 
+      }]
   }, 
   "environment": {
     "uilayout": "terminal"
