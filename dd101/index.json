@@ -1,6 +1,6 @@
 {
   "title": "Testing Datadog 101",
-  "description": "Testing Dtaadog 101",
+  "description": "Testing Datadog 101",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
@@ -9,10 +9,10 @@
       "text": "step1.md"
     }], 
     "assets": {
-      "host01": [
+      "client": [
         {
           "file": "docker-compose.yml", 
-          "target": "~/"
+          "target": "~"
         }
       ]
     }
