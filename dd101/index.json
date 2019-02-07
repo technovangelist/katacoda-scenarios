@@ -1,8 +1,6 @@
 {
   "title": "Testing Datadog 101",
-  "description": "Testing Datadog 101",
-  "difficulty": "beginner",
-  "time": "2 minutes",
+  "description": "Testing Datadog 101...",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
@@ -12,7 +10,7 @@
       "client": [
         {
           "file": "docker-compose.yml", 
-          "target": "~"
+          "target": "~/"
         }
       ]
     }
