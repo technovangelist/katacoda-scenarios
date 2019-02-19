@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh -x
 printf "This script will download the Training Environment.\033[0m  \n\n"
 echo "starting" > status.txt
 
