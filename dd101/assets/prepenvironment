@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "Now preparing training environment."
 show_progress()
 {
   local -r pid="${1}"

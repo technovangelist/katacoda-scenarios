@@ -13,7 +13,7 @@
     "assets": {
       "host01": [
         {
-          "file": "spin.sh",
+          "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         }
