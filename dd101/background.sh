@@ -17,5 +17,5 @@ printf "\033[31mConfiguring... \033[0m\n"
 printf "#!/bin/bash\nDD_API_KEY='$apikey'\n"> /root/.ddtraining.sh
 chmod +x /root/webprovision.sh
 echo "running web provision" > status.txt
-/root/webprovision.sh
+# /root/webprovision.sh
 echo "done" > status.txt
