@@ -1,1 +1,3 @@
-sleep 1; wait.sh
+echo "Building out the Learning Environment."
+  
+sleep 1; spin.sh

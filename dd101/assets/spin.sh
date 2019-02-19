@@ -2,7 +2,6 @@
 
 show_progress()
 {
-  echo -n "Building out the Learning Environment."
   local -r pid="${1}"
   local -r delay='0.75'
   local spinstr='\|/-'
