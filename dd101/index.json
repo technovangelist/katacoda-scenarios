@@ -9,7 +9,16 @@
     "steps": [{
       "title": "Step 1 - Run Command",
       "text": "step1.md"
-    }]
+    }], 
+    "assets": {
+      "host01": [
+        {
+          "file": "spin.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
   },
   "environment": {
     "uilayout": "terminal",
