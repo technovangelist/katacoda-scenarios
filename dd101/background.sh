@@ -1,9 +1,6 @@
 #!/bin/sh -x
 
-if [ ! $TRAININGENVIRONMENT ]; then
-    printf "\033[32mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
-    exit 1;
-fi
+
 echo "starting" > status.txt
 
 
@@ -16,6 +13,11 @@ printf "\033[31mUnzipping the Training Environment \033[0m\n"
 unzip -q $outputfilename
 mv /root/TrainingEnvironment-master/Datadog101/* /root
 rm -rf /root/TrainingEnvironment-master
+
+if [ ! $TRAININGENVIRONMENT ]; then
+    printf "\033[32mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
+    exit 1;
+fi
 
 printf "\033[31mConfiguring... \033[0m\n"
 printf "#!/bin/bash\nDD_API_KEY='$apikey'\n"> /root/.ddtraining.sh
