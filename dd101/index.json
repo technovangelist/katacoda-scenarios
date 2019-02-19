@@ -3,7 +3,7 @@
   "details": {
     "intro": {
       "courseData": "background.sh",
-      "code": "foreground.sh", 
+      "code": "sleep 1;foreground.sh", 
       "text": "intro.md"
     },
     "steps": [{
