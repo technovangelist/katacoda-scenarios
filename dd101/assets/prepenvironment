@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ ! $trainingenvironment ]; then
-    printf "\033[34mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
+    printf "\033[32mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
     exit 1;
 fi
 echo "Now preparing training environment for $trainingenvironment."
