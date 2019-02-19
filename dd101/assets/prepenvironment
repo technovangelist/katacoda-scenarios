@@ -1,5 +1,10 @@
 #!/bin/bash
-echo "Now preparing training environment."
+if [ ! $trainingenvironment ]; then
+  # if it's an upgrade, then we will use the transition script
+    printf "\033[31mIt looks like you are running this in Katacoda rather than from the Datadog Training Environment. Please login to https://learn.datadoghq.com for a working environment.\033[0m\n"
+    exit 1;
+fi
+echo "Now preparing training environment for $trainingenvironment."
 show_progress()
 {
   local -r pid="${1}"
