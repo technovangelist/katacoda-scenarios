@@ -3,13 +3,11 @@
   "details": {
     "intro": {
       "courseData": "background.sh",
-      "code": "foreground.sh",
       "text": "intro.md"
     },
     "steps": [{
       "title": "Step 1 - Run Command",
-      "text": "step1.md", 
-      "courseData": "background.sh"
+      "text": "step1.md"
     }]
   },
   "environment": {
