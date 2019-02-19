@@ -16,6 +16,8 @@ rm -rf /root/TrainingEnvironment-master
 
 if [ ! $TRAININGENVIRONMENT ]; then
     printf "\033[32mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
+    echo "done" > status.txt
+    echo "Training Environment env var missing"
     exit 1;
 fi
 
