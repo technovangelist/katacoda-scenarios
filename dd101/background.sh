@@ -1,5 +1,5 @@
 #!/bin/bash
-touch /root/test.txt
+echo "this is a test"
 printf "This script will download the Training Environment.\033[0m  \n\n"
 
 
@@ -13,3 +13,5 @@ rm -rf /root/TrainingEnvironment-master
 
 printf "\033[31mConfiguring... \033[0m\n"
 printf "#!/bin/bash\nDD_API_KEY='$apikey'\n"> /root/.ddtraining.sh
+chmod +x /root/webprovision.sh
+/root/webprovision.sh
