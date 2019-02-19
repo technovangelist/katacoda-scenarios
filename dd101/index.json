@@ -1,23 +1,15 @@
 {
-  "title": "Testing Datadog 101-title",
-  "description": "Testing Datadog 101...",
+  "title": "Testing Datadog 101",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
       "text": "step1.md"
-    }], 
-    "assets": {
-      "client": [
-        {
-          "file": "docker-compose.yml", 
-          "target": "~/"
-        }
-      ]
-    }
+      "courseData": "background.sh"
+    }]
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "uimessage1": ""
   },
   "backend": {
     "imageid": "ubuntu-cluster2"
