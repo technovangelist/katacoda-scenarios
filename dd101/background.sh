@@ -1,4 +1,4 @@
-touch /roottest.txt
+touch /root/test.txt
 printf "This script will download the Training Environment.\033[0m  \n\n"
 
 
