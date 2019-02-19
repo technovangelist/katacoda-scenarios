@@ -1,3 +1,4 @@
-echo "Building out the Learning Environment."
+#!/bin/bash
+{ echo "Building out the Learning Environment."; } 2> /dev/null
   
-{ sleep 1; spin.sh; } 2> /dev/null
+spin.sh
