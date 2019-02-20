@@ -29,8 +29,8 @@
       file:
         path: /var/lib/dpkg/lock
         state: absent
-    - name: ahasht
-      shell: dpkg --configure -a
+    # - name: ahasht
+    #   shell: dpkg --configure -a
 
     - name: kill apt
       shell: killall apt apt-get 2>/dev/null
