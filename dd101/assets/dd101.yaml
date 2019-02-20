@@ -6,10 +6,7 @@
       systemd:
         name: snapd.service
         state: stopped
-    - name: stop snap update
-      systemd:
-        name: snapd.service
-        state: stopped
+        enabled: no
         
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
