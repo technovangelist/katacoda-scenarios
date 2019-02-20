@@ -16,6 +16,10 @@
           "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
+        },
+        {
+          "file": "ansiblehosts",
+          "target": "/etc/ansible/hosts"
         }
       ]
     }
