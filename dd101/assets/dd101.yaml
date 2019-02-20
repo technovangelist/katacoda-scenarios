@@ -1,8 +1,7 @@
 ---
 - hosts: webservers
-  retries: 10
   roles:
-    - { role: Datadog.datadog, become: yes }
+    - { role: Datadog.datadog, become: yes, retries: 10 }
   vars:
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
      
