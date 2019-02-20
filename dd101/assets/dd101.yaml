@@ -1,9 +1,9 @@
 ---
 - hosts: all
   tasks: 
-    - name: wait for apt to be done
+    - name: Wait for automatic system updates
       become: yes
-      wait_for: path=/var/lib/apt/lists/lock state=absent
+      shell: "while fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 1; done;"
 
 - hosts: webservers
   roles:
