@@ -1,6 +1,6 @@
 #!/bin/bash 
-sleep 1
 clear
+sleep 1
 prepenvironment
 # apt update --yes
 # sleep 1

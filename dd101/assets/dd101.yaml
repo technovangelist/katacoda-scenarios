@@ -2,6 +2,6 @@
 - hosts: webservers
   remote_user: root
   tasks:
-    - name: test connection
-      ping:
-      
+    - name: install apache
+      apt:
+        name: apache2
