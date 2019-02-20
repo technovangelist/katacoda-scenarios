@@ -10,3 +10,10 @@
     - name: install apache
       apt:
         name: apache2
+    - name: setup datadog integration
+      datadog_checks:
+        apache:
+          init_config:
+          instances:
+            - apache_status_url: http://localhost/server-status?auto
+            
