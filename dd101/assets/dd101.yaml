@@ -29,9 +29,9 @@
     # - name: ahasht
     #   shell: dpkg --configure -a
 
-    - name: kill apt
-      shell: killall apt apt-get 2>/dev/null
-      ignore_errors: yes
+    # - name: kill apt
+    #   shell: killall apt apt-get 2>/dev/null
+    #   ignore_errors: yes
     - name: update apt
       action: apt update_cache=true
 
