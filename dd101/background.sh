@@ -3,7 +3,7 @@
 sudo service docker stop
 sudo service containerd stop
 sudo service snapd stop
-
+sudo service unattended-upgrades stop
 
 echo "Setup Installation Framework" > status.txt
 apt-add-repository --yes --update ppa:ansible/ansible

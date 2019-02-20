@@ -1,6 +1,7 @@
 #!/bin/bash 
 clear
 sudo service --status-all
+
 sleep 1
 prepenvironment
 
