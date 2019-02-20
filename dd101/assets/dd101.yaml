@@ -1,6 +1,10 @@
 ---
 - hosts: all
   tasks: 
+    - name: stop auto updates
+      shell: systemctl disable --now apt-daily{,-upgrade}.{timer,service}
+    - name: kill apt
+      shell: pkill apt
     - name: Wait for automatic system updates
       shell: while pgrep unattended; do sleep 2; done;
 
