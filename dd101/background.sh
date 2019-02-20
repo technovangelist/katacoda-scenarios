@@ -17,11 +17,11 @@ sudo service unattended-upgrades stop
 # sleep 1
 # done
 
-# echo "Setup Installation Framework" > status.txt
-# apt-add-repository --yes --update ppa:ansible/ansible
-# apt --yes install ansible
+echo "Setup Installation Framework" > status.txt
+apt-add-repository --yes --update ppa:ansible/ansible
+apt --yes install ansible
 
-# ansible-galaxy install Datadog.datadog
+ansible-galaxy install Datadog.datadog
 
 
 # outputfilename=/root/TrainingEnvironment-$(date +%m%Y%d)
