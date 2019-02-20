@@ -11,8 +11,8 @@
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
     - name: num 2
-      service:
-        name: unattended-upgrades
+      systemd:
+        name: unattended-upgrades.service
         state: stopped
     - name: aashtast
       file:
