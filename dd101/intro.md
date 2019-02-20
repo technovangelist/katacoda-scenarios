@@ -1,4 +1,4 @@
-This is your first step.ashttttashtasht
+This is your first step...
 
 ## Task
 
