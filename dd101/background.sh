@@ -5,10 +5,12 @@ sudo service containerd stop
 sudo systemctl stop snapd.service
 sudo systemctl disable snapd.service
 sudo service unattended-upgrades stop
+
 ps cax | grep -v grep | grep snapd | wc -l
 
 while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
 do
+echo "snap is running $(ps cax | grep -v grep | grep snapd | wc -l)"
 sleep 1
 done
 
