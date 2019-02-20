@@ -2,9 +2,6 @@
 - hosts: webservers
   remote_user: root
   tasks: 
-    - name: update apt
-      apt:
-        update-cache: yes
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
     - name: num 2
@@ -12,6 +9,9 @@
     - name: kill apt
       shell: killall apt apt-get 2>/dev/null
       ignore_errors: yes
+    - name: update apt
+      apt:
+        update-cache: yes
 
     # - name: Wait for automatic system updates
     #   shell: while pgrep unattended; do sleep 2; done;
