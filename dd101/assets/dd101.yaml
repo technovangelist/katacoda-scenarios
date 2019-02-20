@@ -3,7 +3,7 @@
   become: yes
   tasks: 
     - name: aashtast
-      shell: sudo rm -rf /var/lib/apt/lists/*;sudo apt-get clean;sudo apt-get update
+      shell: rm -rf /var/lib/apt/lists/*;apt-get clean;apt-get update
 
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
