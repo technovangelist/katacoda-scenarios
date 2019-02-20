@@ -10,7 +10,7 @@ ps cax | grep -v grep | grep snapd | wc -l
 
 while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
 do
-echo "snap is running $(ps cax | grep -v grep | grep snapd | wc -l)"
+echo "snap is running $(ps cax | grep -v grep | grep snapd | wc -l)" >status.txt
 sleep 1
 done
 
