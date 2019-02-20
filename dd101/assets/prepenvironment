@@ -31,4 +31,4 @@ show_progress()
 
 show_progress
 
-printf "OK, the training environment is installed and ready to go."
+printf "\n\nOK, the training environment is installed and ready to go.\n\n"
