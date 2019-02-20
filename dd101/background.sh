@@ -28,6 +28,6 @@ ansible-galaxy install Datadog.datadog
 # DD_API_KEY=${DD_API_KEY} bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
 
 
-
+sleep 5
 wait
 echo "done" > status.txt

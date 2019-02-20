@@ -2,8 +2,6 @@
 - hosts: webservers
   become: true
   tasks: 
-    - name: lsof
-      shell: lsof /var/lib/dpkg/lock
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
     - name: num 2
