@@ -7,7 +7,7 @@
     - name: num 2
       shell: service unattended-upgrades stop
     - name: kill apt
-      shell: killall apt apt-get
+      shell: killall apt apt-get 2>/dev/null
     # - name: Wait for automatic system updates
     #   shell: while pgrep unattended; do sleep 2; done;
 
