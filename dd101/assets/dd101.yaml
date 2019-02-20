@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: webservers
   remote_user: root
   tasks: 
     - name: stop auto updates
