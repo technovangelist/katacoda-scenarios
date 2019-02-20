@@ -2,7 +2,8 @@
 echo "waiting for snap to stop"> status.txt
 sudo service docker stop
 sudo service containerd stop
-service snapd stop
+sudo systemctl stop snapd.service
+sudo systemctl disable snapd.service
 sudo service unattended-upgrades stop
 ps cax | grep -v grep | grep snapd | wc -l
 
