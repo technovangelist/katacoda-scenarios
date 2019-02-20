@@ -1,19 +1,23 @@
 ---
-- hosts: all
-  vars:
-    DD_API_KEY: "{{ lookup('env', 'DD_API_KEY')}}"
+- hosts: webservers
   roles:
-    - { role: Datadog.datadog, become: yes, datadog_api_key: '{{ DD_API_KEY }}' }
+    - { role: Datadog.datadog, become: yes }
+  vars:
+    datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
+    datadog_config: 
+      tags: "learn, role:web"
+      apm_config: true
+    datadog_checks:
+      apache:
+        init_config:
+        instances:
+          - apache_status_url: http://localhost/server-status?auto
+          
+
 - hosts: webservers
   remote_user: root
   tasks:
     - name: install apache
       apt:
         name: apache2
-    - name: setup datadog integration
-      datadog_checks:
-        apache:
-          init_config:
-          instances:
-            - apache_status_url: http://localhost/server-status?auto
-            
+    
