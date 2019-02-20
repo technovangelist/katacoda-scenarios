@@ -12,3 +12,4 @@ prepenvironment
 # echo "install ansible" > status.txt
 # apt --yes install ansible
 # echo "ansible ready" > status.txt
+ansible all -m ping

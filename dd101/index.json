@@ -18,8 +18,12 @@
           "chmod": "+x"
         },
         {
-          "file": "ansiblehosts",
-          "target": "/etc/ansible/hosts"
+          "file": "hosts",
+          "target": "/etc/ansible"
+        },
+        {
+          "file": "ansible.cfg",
+          "target": "/etc/ansible"
         }
       ]
     }
