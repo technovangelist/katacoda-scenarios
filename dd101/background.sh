@@ -4,7 +4,7 @@ sudo service docker stop
 sudo service containerd stop
 sudo service snapd stop
 sudo service unattended-upgrades stop
-
+sleep 1
 echo "Setup Installation Framework" > status.txt
 apt-add-repository --yes --update ppa:ansible/ansible
 apt --yes install ansible
@@ -29,5 +29,4 @@ ansible-galaxy install Datadog.datadog
 
 
 sleep 5
-wait
 echo "done" > status.txt
