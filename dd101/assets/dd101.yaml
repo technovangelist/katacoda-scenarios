@@ -1,10 +1,9 @@
 ---
 - hosts: all
+  remote_user: root
   tasks: 
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
-    - name: kill apt
-      shell: pkill apt
     - name: Wait for automatic system updates
       shell: while pgrep unattended; do sleep 2; done;
 
