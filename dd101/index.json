@@ -23,6 +23,6 @@
     "uimessage1": ""
   },
   "backend": {
-    "imageid": "ubuntu-cluster2"
+    "imageid": "ubuntu"
   }
 }
