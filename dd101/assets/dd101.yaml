@@ -1,7 +1,13 @@
 ---
+- hosts: all
+  tasks: 
+    - name: wait for apt to be done
+      become: yes
+      wait_for: path=/var/lib/apt/lists/lock state=absent
+
 - hosts: webservers
   roles:
-    - { role: Datadog.datadog, become: yes, retries: 10 }
+    - { role: Datadog.datadog, become: yes }
   vars:
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
      
