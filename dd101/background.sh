@@ -2,17 +2,20 @@
 echo "waiting for snap to stop"> status.txt
 sudo service docker stop
 sudo service containerd stop
-sudo systemctl stop snapd.service
+until sudo systemctl stop snapd.service
+do
+  sleep 0.1
+done
 sudo systemctl disable snapd.service
 sudo service unattended-upgrades stop
 
-ps cax | grep -v grep | grep snapd | wc -l
-echo $(ps cax | grep -v grep | grep snapd | wc -l) > status.txt
-while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
-do
-echo "snap is running $(ps cax | grep -v grep | grep snapd | wc -l)" >status.txt
-sleep 1
-done
+# ps cax | grep -v grep | grep snapd | wc -l
+# echo $(ps cax | grep -v grep | grep snapd | wc -l) > status.txt
+# while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
+# do
+# echo "snap is running $(ps cax | grep -v grep | grep snapd | wc -l)" >status.txt
+# sleep 1
+# done
 
 # echo "Setup Installation Framework" > status.txt
 # apt-add-repository --yes --update ppa:ansible/ansible
