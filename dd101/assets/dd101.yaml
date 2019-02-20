@@ -4,10 +4,18 @@
   tasks: 
     - name: aashtast
       file:
-        path: /var/lib/apt/lists/*
+        path: /var/lib/apt/lists/lock
+        state: absent
+    - name: aashtast
+      file:
+        path: /var/cache/apt/archives/lock
+        state: absent
+    - name: aashtast
+      file:
+        path: /var/lib/dpkg/lock
         state: absent
     - name: ahasht
-      shell: apt-get clean
+      shell: dpkg --configure -a
 
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
