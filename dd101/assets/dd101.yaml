@@ -5,7 +5,9 @@
     - name: stop auto updates
       shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
     - name: num 2
-      shell: service unattended-upgrades stop
+      service:
+        name: unattended-upgrades
+        state: stopped
     - name: kill apt
       shell: killall apt apt-get 2>/dev/null
       ignore_errors: yes
