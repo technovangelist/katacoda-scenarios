@@ -8,6 +8,8 @@ echo "Setup Installation Framework" > status.txt
 apt-add-repository --yes --update ppa:ansible/ansible
 apt --yes install ansible
 
+ansible-galaxy install Datadog.datadog
+
 
 # outputfilename=/root/TrainingEnvironment-$(date +%m%Y%d)
 # echo "downloading" > status.txt
