@@ -24,6 +24,10 @@
         {
           "file": "ansible.cfg",
           "target": "/etc/ansible"
+        },
+        {
+          "file": "dd101.yaml",
+          "target": "/root/ansible"
         }
       ]
     }

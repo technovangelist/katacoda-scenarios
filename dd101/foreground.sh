@@ -1,5 +1,6 @@
 #!/bin/bash 
 sleep 1
+clear
 prepenvironment
 # apt update --yes
 # sleep 1
@@ -13,3 +14,4 @@ prepenvironment
 # apt --yes install ansible
 # echo "ansible ready" > status.txt
 ansible all -m ping
+ansible-playbook /root/ansible/dd101.yaml
