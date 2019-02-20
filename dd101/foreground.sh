@@ -1,6 +1,6 @@
 #!/bin/bash 
 clear
-# sleep 1
+sleep 1
 prepenvironment
 ps -ax|grep apt
 # ansible-galaxy install Datadog.datadog
