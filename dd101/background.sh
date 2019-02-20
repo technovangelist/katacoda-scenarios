@@ -1,9 +1,11 @@
-#!/bin/sh -x
+#!/bin/sh
 echo "waiting for snap to stop"> status.txt
 sudo service docker stop
 sudo service containerd stop
-sudo service snapd stop
+service snapd stop
 sudo service unattended-upgrades stop
+ps cax | grep -v grep | grep snapd
+
 # while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
 # do
 # sleep 1
