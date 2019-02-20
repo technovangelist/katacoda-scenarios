@@ -4,8 +4,7 @@ sudo service docker stop
 sudo service containerd stop
 sudo service snapd stop
 sudo service unattended-upgrades stop
-ps ef | grep -v grep | grep snapd
-while [$(ps -ef | grep -v grep | grep snapd | wc -l) > 0 )]
+while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
 do
 sleep 1
 done
