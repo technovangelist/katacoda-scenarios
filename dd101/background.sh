@@ -2,13 +2,13 @@
 
 
 echo "update" > status.txt
-apt-get update
+# apt-get update
 echo "install spc" > status.txt
-apt-get install software-properties-common
+# apt-get install software-properties-common
 echo "add repo" > status.txt
-apt-add-repository --yes --update ppa:ansible/ansible
+# apt-add-repository --yes --update ppa:ansible/ansible
 echo "install ansible" > status.txt
-apt-get --yes install ansible
+# apt-get --yes install ansible
 echo "ansible ready" > status.txt
 
 
