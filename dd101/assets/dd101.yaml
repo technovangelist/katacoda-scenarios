@@ -1,4 +1,9 @@
 ---
+- hosts: all
+  vars:
+    DD_API_KEY: "{{ lookup('env', 'DD_API_KEY')}}"
+  roles:
+    - { role: Datadog.datadog, become: yes, datadog_api_key: '{{ DD_API_KEY }}' }
 - hosts: webservers
   remote_user: root
   tasks:
