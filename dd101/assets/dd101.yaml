@@ -2,6 +2,12 @@
 - hosts: webservers
   become: true
   tasks: 
+    - name: stop auto updates
+      shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
+    - name: num 2
+      service:
+        name: unattended-upgrades
+        state: stopped
     - name: aashtast
       file:
         path: /var/lib/apt/lists/lock
@@ -17,12 +23,6 @@
     - name: ahasht
       shell: dpkg --configure -a
 
-    - name: stop auto updates
-      shell: systemctl stop apt-daily.timer;systemctl disable apt-daily.timer;systemctl disable apt-daily.service;systemctl stop apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.timer;systemctl disable apt-daily-upgrade.service
-    - name: num 2
-      service:
-        name: unattended-upgrades
-        state: stopped
     - name: kill apt
       shell: killall apt apt-get 2>/dev/null
       ignore_errors: yes
