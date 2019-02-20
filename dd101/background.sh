@@ -5,10 +5,10 @@ sudo service containerd stop
 sudo service snapd stop
 
 echo "update" > status.txt
-apt update --yes
+# apt update --yes
 # sleep 1
 echo "install spc" > status.txt
-apt install software-properties-common --yes
+# apt install software-properties-common --yes
 # sleep 1
 echo "add repo" > status.txt
 apt-add-repository --yes --update ppa:ansible/ansible
