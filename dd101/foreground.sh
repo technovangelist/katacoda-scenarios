@@ -1,6 +1,6 @@
 #!/bin/bash 
 clear
-ps cax
+ps ef | grep -v grep | grep snapd
 sleep 1
 prepenvironment
 
