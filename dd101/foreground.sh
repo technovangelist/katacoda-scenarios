@@ -1,6 +1,6 @@
 #!/bin/bash 
 sleep 1
-# prepenvironment
+prepenvironment
 # apt update --yes
 # sleep 1
 # echo "install spc" > status.txt
