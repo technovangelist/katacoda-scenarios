@@ -6,10 +6,6 @@
       "code": "foreground.sh", 
       "text": "intro.md"
     },
-    "steps": [{
-      "title": "Step 1 - Run Command",
-      "text": "step1.md"
-    }], 
     "assets": {
       "host01": [
         {
