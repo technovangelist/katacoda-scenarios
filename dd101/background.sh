@@ -4,18 +4,18 @@ sudo service docker stop
 sudo service containerd stop
 service snapd stop
 sudo service unattended-upgrades stop
-ps cax | grep -v grep | grep snapd
+ps cax | grep -v grep | grep snapd | wc -l
 
-# while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
-# do
-# sleep 1
-# done
+while [$(ps cax | grep -v grep | grep snapd | wc -l) > 0 )]
+do
+sleep 1
+done
 
-echo "Setup Installation Framework" > status.txt
-apt-add-repository --yes --update ppa:ansible/ansible
-apt --yes install ansible
+# echo "Setup Installation Framework" > status.txt
+# apt-add-repository --yes --update ppa:ansible/ansible
+# apt --yes install ansible
 
-ansible-galaxy install Datadog.datadog
+# ansible-galaxy install Datadog.datadog
 
 
 # outputfilename=/root/TrainingEnvironment-$(date +%m%Y%d)
@@ -34,5 +34,5 @@ ansible-galaxy install Datadog.datadog
 # DD_API_KEY=${DD_API_KEY} bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
 
 
-sleep 5
+# sleep 5
 echo "done" > status.txt
