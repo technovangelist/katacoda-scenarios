@@ -1,5 +1,6 @@
 ---
 - hosts: webservers
+  retries: 10
   roles:
     - { role: Datadog.datadog, become: yes }
   vars:
