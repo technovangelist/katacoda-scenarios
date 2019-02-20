@@ -2,8 +2,6 @@
   "title": "Testing Datadog 101",
   "details": {
     "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh", 
       "text": "intro.md"
     },
     "steps": [{
