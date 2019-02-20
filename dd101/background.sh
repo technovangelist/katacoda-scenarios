@@ -28,5 +28,5 @@ ansible-galaxy install Datadog.datadog
 
 
 
-
+wait
 echo "done" > status.txt
