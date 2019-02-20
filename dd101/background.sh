@@ -1,10 +1,14 @@
 #!/bin/sh -x
-
+echo "waiting for snap to stop"
 sudo service docker stop
 sudo service containerd stop
 sudo service snapd stop
 sudo service unattended-upgrades stop
+while [$(ps -ef | grep -v grep | grep containerd | wc -l) > 0 )]
+do
 sleep 1
+done
+
 echo "Setup Installation Framework" > status.txt
 apt-add-repository --yes --update ppa:ansible/ansible
 apt --yes install ansible
