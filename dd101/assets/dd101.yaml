@@ -4,6 +4,20 @@
 #     - name: local test
 #       local_action: copy content="here" dest=/root/setup.txt
 - hosts: webservers
+  remote_user: root
+  pre_tasks:
+    - name: report back
+      local_action: copy content="Apache installing on three hosts" dest=/root/status.txt
+
+  post_tasks:
+    - name: report back
+      local_action: copy content="Apache installed on {{ansible_hostname}}" dest=/root/status.txt
+  roles: 
+    - geerlingguy.apache
+    - geerlingguy.php
+    - geerlingguy.apache-php-fpm
+    
+- hosts: webservers
   roles:
     - { role: Datadog.datadog, become: yes }
   vars:
@@ -15,15 +29,3 @@
     - name: report back
       local_action: copy content="Datadog Agent installing on all hosts" dest=/root/status.txt
      
-
-- hosts: webservers
-  remote_user: root
-  tasks:
-    - name: report back
-      local_action: copy content="Apache installing on three hosts" dest=/root/status.txt
-    - name: install apache
-      apt:
-        name: apache2
-    - name: report back
-      local_action: copy content="Apache installed on {{ansible_hostname}}" dest=/root/status.txt
-    
