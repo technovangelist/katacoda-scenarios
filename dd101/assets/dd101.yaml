@@ -38,6 +38,11 @@
     - { role: Datadog.datadog, become: yes }
   vars:
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
+    datadog_checks:
+      apache:
+        init_config:
+        instances:
+          - apache_status_url: http://localhost/server-status?auto 
   tasks:
     - name: report back
       local_action: copy content="Datadog Agent installed on {{ansible_hostname}}" dest=/root/status.txt
