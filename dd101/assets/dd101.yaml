@@ -38,6 +38,12 @@
     - { role: Datadog.datadog, become: yes }
   vars:
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
+    datadog_config:
+      tags: "role:web, training:intro-to-datadog"
+      logs_enabled: true
+      process_config:
+        enabled: "true" # has to be set as a string
+  
     datadog_checks:
       apache:
         init_config:
