@@ -1,6 +1,8 @@
 ---
-- name: local test
-  local_action: echo "here" > /root/setup.txt
+- hosts: 127.0.0.1
+  tasks:
+    - name: local test
+      command: echo "here" > /root/setup.txt
 - hosts: webservers
   roles:
     - { role: Datadog.datadog, become: yes }
