@@ -16,16 +16,16 @@ show_progress()
     if [[ "$?" -ne 0 ]]; then     
       status=`cat status.txt`
       if [[ "$status" != "$prevstatus" ]]; then
-        status=${prevstatus}
+        prevstatus=${status}
+      
+        printf "${status}"
+        temp="${spinstr#?}"
+        printf " [%c]  " "${spinstr}"
+        spinstr=${temp}${spinstr%"${temp}"}
+        sleep "${delay}"
+        # printf "\r                                           \r"
+        printf "\n"
       fi
-      printf "${status}"
-      temp="${spinstr#?}"
-      printf " [%c]  " "${spinstr}"
-      spinstr=${temp}${spinstr%"${temp}"}
-      sleep "${delay}"
-      # printf "\r                                           \r"
-      printf "\n"
-      prevstatus=${status}
 
     else
       break
