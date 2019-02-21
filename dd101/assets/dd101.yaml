@@ -37,7 +37,7 @@
   roles:
     - { role: Datadog.datadog, become: yes }
   vars:
-    datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
+    datadog_api_key: "{{ lookup('env', 'DD_API_KEY') }}"
     datadog_config:
       tags: "role:web, training:intro-to-datadog"
       logs_enabled: true
