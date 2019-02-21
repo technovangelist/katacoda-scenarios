@@ -14,7 +14,7 @@
         }, 
         {
           "file": "webprovision.sh",
-          "target": "",
+          "target": "/root",
           "chmod": "+x"
         }
       ]
