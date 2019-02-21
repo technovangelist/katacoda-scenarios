@@ -51,6 +51,10 @@
       shell: lsof /var/lib/dpkg/lock
       when: apt_result.failed == true
       ignore_errors: yes
+    - name: show lsof var-lib-dpkg-frontend
+      shell: lsof /var/lib/dpkg/lock-frontend
+      when: apt_result.failed == true
+      ignore_errors: yes
 
     # - name: Wait for automatic system updates
     #   shell: while pgrep unattended; do sleep 2; done;
