@@ -34,6 +34,7 @@
     #   ignore_errors: yes
     - name: update apt
       action: apt update_cache=true
+      ignore_errors: yes
       register: apt_result
     - name: show apt apt_result
       debug: 
