@@ -30,6 +30,7 @@
   "environment": {
     "uilayout": "terminal",
     "uimessage1": "", 
+    "showdashboard": true, 
     "dashboards": [
       {
         "name": "Port 80",
