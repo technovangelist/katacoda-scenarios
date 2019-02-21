@@ -36,9 +36,9 @@ show_progress()
     else
       break
     fi
-    printf "\r                                           \r${prevstatus}\nInstallation Complete\n"
+    
   done
-
+  printf "\r                                           \r${prevstatus}\nInstallation Complete\n"
 }
 
 show_progress
