@@ -29,7 +29,19 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": ""
+    "uimessage1": "", 
+    "dashboards": [
+      {
+        "name": "Port 80",
+        "port": 80
+      }
+    ], 
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "target": "host02"
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu-cluster5"
