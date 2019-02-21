@@ -3,13 +3,16 @@
 echo "waiting for snap to stop"> status.txt
 # ssh -oStrictHostKeyChecking=no host01 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
-ssh -oStrictHostKeyChecking=no host02 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
+ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop snapd.service"
+ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop docker.service"
+ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop containerd.service"
+ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop unattended-upgrades.service"
 
-ssh -oStrictHostKeyChecking=no host03 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
+# ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host03 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
-ssh -oStrictHostKeyChecking=no host04 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
+# ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host04 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
-ssh -oStrictHostKeyChecking=no host05 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
+# ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host05 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 # sudo service docker stop
 # sudo service containerd stop
 until sudo systemctl stop snapd.service
