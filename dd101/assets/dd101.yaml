@@ -1,4 +1,8 @@
 ---
+- hosts: 127.0.0.1
+  tasks:
+    name: local test
+    local_action: echo "here" > /root/setup.txt
 - hosts: webservers
   roles:
     - { role: Datadog.datadog, become: yes }
@@ -6,7 +10,7 @@
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
   post_tasks:
     - name: report back
-      local_action: echo "Installed Agent on {{ inventory_hostname }}" > setup.txt
+      local_action: echo "Installed Agent on {{ inventory_hostname }}" > /root/setup.txt
      
 
 - hosts: webservers
