@@ -3,10 +3,10 @@
 echo "waiting for snap to stop" > status.txt
 # ssh -oStrictHostKeyChecking=no host01 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
-ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop snapd.service"
-ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop docker.service"
-ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop containerd.service"
-ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop unattended-upgrades.service"
+# ssh -oStrictHostKeyChecking=no host02 "sudo systemctl stop snapd.service"
+# ssh -oStrictHostKeyChecking=no host02 "sudo systemctl stop docker.service"
+# ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop containerd.service"
+# ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop unattended-upgrades.service"
 
 # ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host03 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
@@ -27,11 +27,11 @@ ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo syste
 # sleep 1
 # done
 
-echo "Setup Installation Framework" > status.txt
-apt-add-repository --yes --update ppa:ansible/ansible
-apt --yes install ansible
+# echo "Setup Installation Framework" > status.txt
+# apt-add-repository --yes --update ppa:ansible/ansible
+# apt --yes install ansible
 
-ansible-galaxy install Datadog.datadog
+# ansible-galaxy install Datadog.datadog
 
 
 # outputfilename=/root/TrainingEnvironment-$(date +%m%Y%d)
