@@ -4,6 +4,9 @@
     - { role: Datadog.datadog, become: yes }
   vars:
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
+  post_tasks:
+    - name: report back
+      local_action: echo "Installed Agent on {{ inventory_hostname }}" > setup.txt
      
 
 - hosts: webservers
