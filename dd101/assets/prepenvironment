@@ -15,7 +15,7 @@ show_progress()
     grep -i "done" status.txt &> /dev/null
     if [[ "$?" -ne 0 ]]; then     
       status=`cat status.txt`
-      if [[ "$status" -ne "$prevstatus"]]; then
+      if [[ "$status" -ne "$prevstatus" ]]; then
         status=${prevstatus}
       fi
       printf "${status}"
