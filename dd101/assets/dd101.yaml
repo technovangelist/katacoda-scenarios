@@ -10,10 +10,10 @@
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
   tasks:
     - name: report back
-      local_action: copy content="agent installed" dest=/root/status.txt
+      local_action: copy content="agent installed on {{discovery_hostname}}" dest=/root/status.txt
   pre_tasks:
     - name: report back
-      local_action: copy content="agent installing" dest=/root/status.txt
+      local_action: copy content="agent installing on all hosts" dest=/root/status.txt
      
 
 - hosts: webservers
