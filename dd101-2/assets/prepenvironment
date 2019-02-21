@@ -1,0 +1,34 @@
+#!/bin/bash
+# if [ ! $TRAININGENVIRONMENT ]; then
+#     printf "\033[32mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
+#     exit 1;
+# fi
+# echo "Now preparing training environment for $TRAININGENVIRONMENT."
+show_progress()
+{
+  local -r pid="${1}"
+  local -r delay='0.75'
+  local spinstr='\|/-'
+  local temp
+
+  while true; do 
+    grep -i "done" status.txt &> /dev/null
+    if [[ "$?" -ne 0 ]]; then     
+      status=`cat status.txt`
+      printf "${status}"
+      temp="${spinstr#?}"
+      printf " [%c]  " "${spinstr}"
+      spinstr=${temp}${spinstr%"${temp}"}
+      sleep "${delay}"
+      printf "\r                                           \r"
+
+    else
+      break
+    fi
+  done
+
+}
+
+show_progress
+
+printf "\n\nOK, the training environment is installed and ready to go.\n\n"

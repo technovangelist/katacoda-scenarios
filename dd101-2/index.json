@@ -1,0 +1,38 @@
+{
+  "title": "Another try at testing datadog 101", 
+  "details": {
+    "intro": {
+      "courseData": "background.sh", 
+      "code": "foreground.sh"
+    }, 
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment", 
+          "target": "/usr/local/bin", 
+          "chmod": "+x"
+        }
+      ], 
+      "host03": [
+        {
+          "file": "webprovision.sh",
+          "target": "/root/provision",
+          "chmod": "+x"
+        }
+      ],
+      "host04": [
+        {
+          "file": "webprovision.sh",
+          "target": "/root/provision",
+          "chmod": "+x"
+        }
+      ]
+    }
+  }, 
+  "environment": {
+    "uilayout": "terminal"
+  }, 
+  "backend": {
+    "imageid": "ubuntu-cluster5"
+  }
+}
