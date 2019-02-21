@@ -8,15 +8,23 @@
   pre_tasks:
     - name: report back
       local_action: copy content="Apache installing on three hosts" dest=/root/status.txt
+  tasks:
+    - name: Update Apt Cache
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Install Apache
+      apt: 
+        name: apache2
+        state: present
+    - name: Enable Mod Status
+      copy:
+        content: "ExtendedStatus ON\n<Location '/server-status'>\nSetHandler server-status\nRequire host localhost\n</Location>"
+        dest: /etc/apache2/conf-enabled/status.conf
+      
   post_tasks:
     - name: report back
       local_action: copy content="Apache installed on {{ansible_hostname}}" dest=/root/status.txt
-  roles: 
-    - geerlingguy.apache
-  vars:
-    apache_listen_port: 8080
-    apache_vhosts:
-      - {servername: "{{ ansible_hostname }}", documentroot: "/var/www/vhosts/test123"}
+  
     
 # - hosts: webservers
 #   remote_user: root
