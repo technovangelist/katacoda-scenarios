@@ -17,9 +17,14 @@
         name: apache2
         state: present
     - name: Enable Mod Status
-      copy:
-        content: "ExtendedStatus ON\n<Location '/server-status'>\nSetHandler server-status\nRequire host localhost\n</Location>"
-        dest: /etc/apache2/conf-enabled/status.conf
+      blockinfile:
+        block: |
+          ExtendedStatus ON
+          <Location /server-status>
+            SetHandler server-status
+            Require all granted
+          </Location>
+        dest: /etc/apache2/apache2.conf
       
   post_tasks:
     - name: report back
