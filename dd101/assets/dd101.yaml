@@ -24,6 +24,7 @@
             SetHandler server-status
             Require all granted
           </Location>
+          ServerName {{ansible_hostname}}
         dest: /etc/apache2/apache2.conf
       
   post_tasks:
