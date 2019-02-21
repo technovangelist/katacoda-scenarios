@@ -39,7 +39,8 @@
     "terminals": [
       {
         "name": "Terminal 2",
-        "target": "host02"
+        "target": "host02",
+        "command": "ssh root@host02"
       }
     ]
   },
