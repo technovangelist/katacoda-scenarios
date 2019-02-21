@@ -28,13 +28,17 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-iframe",
     "uimessage1": "", 
     "showdashboard": true, 
     "dashboards": [
       {
-        "name": "Port 80",
-        "port": 80
+        "name": "Datadog",
+        "href": "https://app.datadoghq.com"
+      },
+      {
+        "name": "Load Balancer",
+        "href": ""
       }
     ], 
     "terminals": [
