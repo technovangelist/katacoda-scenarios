@@ -3,10 +3,10 @@
 echo "waiting for snap to stop"> status.txt
 # ssh -oStrictHostKeyChecking=no host01 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
-ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop snapd.service"
-ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop docker.service"
-ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop containerd.service"
-ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host02 "sudo systemctl stop unattended-upgrades.service"
+ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop snapd.service"
+ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop docker.service"
+ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop containerd.service"
+ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null host02 "sudo systemctl stop unattended-upgrades.service"
 
 # ssh -oStrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null host03 "sudo systemctl stop snapd.service;sudo systemctl stop docker.service;sudo systemctl stop containerd.service;sudo systemctl stop unattended-upgrades.service"
 
