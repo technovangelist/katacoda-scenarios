@@ -41,13 +41,13 @@
         var: apt_result
     - name: show lsof var-cache-apt
       shell: lsof /var/cache/apt/archives/lock
-      when: apt_result.msg == "Failed to lock apt for exclusive operation"
+      when: apt_result.failed == true
     - name: show lsof var-lib-apt
       shell: lsof /var/lib/apt/lists/lock
-      when: apt_result.msg == "Failed to lock apt for exclusive operation"
+      when: apt_result.failed == true
     - name: show lsof var-lib-dpkg
       shell: lsof /var/lib/dpkg/lock
-      when: apt_result.msg == "Failed to lock apt for exclusive operation"
+      when: apt_result.failed == true
 
     # - name: Wait for automatic system updates
     #   shell: while pgrep unattended; do sleep 2; done;
