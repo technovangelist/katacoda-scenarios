@@ -9,5 +9,5 @@ ansible-galaxy install geerlingguy.apache
 # geerlingguy.php geerlingguy.apache-php-fpm
 
 echo "Installing Services"> status.txt
-ansible-playbook /root/ansible/dd101.yaml
+# ansible-playbook /root/ansible/dd101.yaml
 echo "done" > status.txt

@@ -16,8 +16,7 @@
   vars:
     apache_listen_port: 8080
     apache_vhosts:
-      - servername: "{{ ansible_hostname }}"
-      - documentroot: "/var/www/vhosts/test123"
+      - {servername: "{{ ansible_hostname }}", documentroot: "/var/www/vhosts/test123"}
     
 # - hosts: webservers
 #   remote_user: root
