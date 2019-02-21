@@ -40,15 +40,15 @@
       {
         "name": "Host 2",
         "target": "host02",
-        "command": "ssh -o StrictHostKeyChecking=no root@host02  'clear'"
+        "command": "ssh -o StrictHostKeyChecking=no root@host02"
       }, {
         "name": "Host 3",
         "target": "host03",
-        "command": "ssh -o StrictHostKeyChecking=no root@host03 'clear'"
+        "command": "ssh -o StrictHostKeyChecking=no root@host03"
       }, {
         "name": "Host 4",
         "target": "host04",
-        "command": "ssh -o StrictHostKeyChecking=no root@host04 'clear'"
+        "command": "ssh -o StrictHostKeyChecking=no root@host04"
       }
     ]
   },

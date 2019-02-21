@@ -26,6 +26,8 @@
           </Location>
           ServerName {{ansible_hostname}}
         dest: /etc/apache2/apache2.conf
+    - name: restart apache
+      shell: apachectl restart
       
   post_tasks:
     - name: report back
