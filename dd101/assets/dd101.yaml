@@ -8,36 +8,40 @@
   pre_tasks:
     - name: report back
       local_action: copy content="Apache installing on three hosts" dest=/root/status.txt
-
   post_tasks:
     - name: report back
       local_action: copy content="Apache installed on {{ansible_hostname}}" dest=/root/status.txt
   roles: 
     - geerlingguy.apache
+  vars:
+    apache_listen_port: 8080
+    apache_vhosts:
+      - servername: "{{ ansible_hostname }}"
+      - documentroot: "/var/www/vhosts/test123"
     
-- hosts: webservers
-  remote_user: root
-  pre_tasks:
-    - name: report back
-      local_action: copy content="PHP installing on three hosts" dest=/root/status.txt
+# - hosts: webservers
+#   remote_user: root
+#   pre_tasks:
+#     - name: report back
+#       local_action: copy content="PHP installing on three hosts" dest=/root/status.txt
 
-  post_tasks:
-    - name: report back
-      local_action: copy content="PHP installed on {{ansible_hostname}}" dest=/root/status.txt
-  roles: 
-    - geerlingguy.php
+#   post_tasks:
+#     - name: report back
+#       local_action: copy content="PHP installed on {{ansible_hostname}}" dest=/root/status.txt
+#   roles: 
+#     - geerlingguy.php
     
-- hosts: webservers
-  remote_user: root
-  pre_tasks:
-    - name: report back
-      local_action: copy content="Apache PHP FPM installing on three hosts" dest=/root/status.txt
+# - hosts: webservers
+#   remote_user: root
+#   pre_tasks:
+#     - name: report back
+#       local_action: copy content="Apache PHP FPM installing on three hosts" dest=/root/status.txt
 
-  post_tasks:
-    - name: report back
-      local_action: copy content="Apache PHP FPM installed on {{ansible_hostname}}" dest=/root/status.txt
-  roles: 
-    - geerlingguy.apache-php-fpm
+#   post_tasks:
+#     - name: report back
+#       local_action: copy content="Apache PHP FPM installed on {{ansible_hostname}}" dest=/root/status.txt
+#   roles: 
+#     - geerlingguy.apache-php-fpm
     
 - hosts: webservers
   roles:

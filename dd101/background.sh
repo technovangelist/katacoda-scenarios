@@ -5,7 +5,8 @@ apt-add-repository --yes --update ppa:ansible/ansible
 apt --yes install ansible
 
 ansible-galaxy install Datadog.datadog
-ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.apache-php-fpm
+ansible-galaxy install geerlingguy.apache 
+# geerlingguy.php geerlingguy.apache-php-fpm
 
 echo "Installing Services"> status.txt
 ansible-playbook /root/ansible/dd101.yaml
