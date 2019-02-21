@@ -38,9 +38,17 @@
     ], 
     "terminals": [
       {
-        "name": "Terminal 2",
+        "name": "Host 2",
         "target": "host02",
-        "command": "ssh root@host02"
+        "command": "ssh root@host02 clear"
+      }, {
+        "name": "Host 3",
+        "target": "host03",
+        "command": "ssh root@host03 clear"
+      }, {
+        "name": "Host 4",
+        "target": "host04",
+        "command": "ssh root@host04 clear"
       }
     ]
   },
