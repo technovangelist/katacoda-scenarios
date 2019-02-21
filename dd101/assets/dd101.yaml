@@ -1,16 +1,19 @@
 ---
-- hosts: 127.0.0.1
-  tasks:
-    - name: local test
-      shell: echo "here" > /root/setup.txt
+# - hosts: 127.0.0.1
+#   tasks:
+#     - name: local test
+#       local_action: copy content="here" dest=/root/setup.txt
 - hosts: webservers
   roles:
     - { role: Datadog.datadog, become: yes }
   vars:
     datadog_api_key: "{{ lookup('env', 'DD_API_KEY')}}"
-  post_tasks:
+  tasks:
     - name: report back
-      local_action: echo "Installed Agent on {{ inventory_hostname }}" > /root/setup.txt
+      local_action: copy content="agent installed" dest=/root/setup.txt
+  pre_tasks:
+    - name: report back
+      local_action: copy content="agent installing" dest=/root/setup.txt
      
 
 - hosts: webservers
