@@ -11,16 +11,7 @@
           "file": "prepenvironment", 
           "target": "/usr/local/bin", 
           "chmod": "+x"
-        }
-      ], 
-      "host03": [
-        {
-          "file": "webprovision.sh",
-          "target": "/root/provision",
-          "chmod": "+x"
-        }
-      ],
-      "host04": [
+        }, 
         {
           "file": "webprovision.sh",
           "target": "/root/provision",
