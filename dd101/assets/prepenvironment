@@ -18,8 +18,7 @@ show_progress()
     if [[ "$?" -ne 0 ]]; then     
       status=`cat status.txt`
       if [[ "$status" != "$prevstatus" ]]; then
-        printf "\b\b\b\b\b\b\b\b"
-        printf "\n"
+        printf "\r                                                         \r${prevstatus}\n"
         prevstatus=${status}
       
         printf "${status}"
