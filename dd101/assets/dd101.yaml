@@ -34,7 +34,9 @@
     #   ignore_errors: yes
     - name: update apt
       action: apt update_cache=true
-
+      register: apt_result
+    - name: show apt apt_result
+      debug: apt_result
 
     # - name: Wait for automatic system updates
     #   shell: while pgrep unattended; do sleep 2; done;
