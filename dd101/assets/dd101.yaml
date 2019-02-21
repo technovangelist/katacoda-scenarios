@@ -19,6 +19,8 @@
 - hosts: webservers
   remote_user: root
   tasks:
+    - name: report back
+      local_action: copy content="Apache installing on three hosts" dest=/root/status.txt
     - name: install apache
       apt:
         name: apache2
