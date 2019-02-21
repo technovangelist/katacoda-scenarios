@@ -20,7 +20,8 @@ show_progress()
       printf " [%c]  " "${spinstr}"
       spinstr=${temp}${spinstr%"${temp}"}
       sleep "${delay}"
-      printf "\r                                           \r"
+      # printf "\r                                           \r"
+      printf "\n"
 
     else
       break
