@@ -7,7 +7,7 @@
 show_progress()
 {
   local -r pid="${1}"
-  local -r delay='0.15'
+  local -r delay='0.05'
   local spinstr='\|/-'
   local temp
   local prevstatus="x"
@@ -16,17 +16,18 @@ show_progress()
     if [[ "$?" -ne 0 ]]; then     
       status=`cat status.txt`
       if [[ "$status" != "$prevstatus" ]]; then
+        printf "\n"
         prevstatus=${status}
       
         printf "${status}"
         temp="${spinstr#?}"
-        printf " [%c]  " "${spinstr}"
-        spinstr=${temp}${spinstr%"${temp}"}
-        sleep "${delay}"
-        # printf "\r                                           \r"
-        printf "\n"
       fi
 
+      printf " [%c]  " "${spinstr}"
+      spinstr=${temp}${spinstr%"${temp}"}
+      sleep "${delay}"
+      printf "\b\b\b\b\b"
+      
     else
       break
     fi
