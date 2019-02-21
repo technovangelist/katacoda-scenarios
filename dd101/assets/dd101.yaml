@@ -1,6 +1,6 @@
 ---
 - hosts: webservers
-  become: true
+  sudo: true
   tasks: 
     - name: stop snap
       systemd:
