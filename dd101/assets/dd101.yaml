@@ -42,12 +42,15 @@
     - name: show lsof var-cache-apt
       shell: lsof /var/cache/apt/archives/lock
       when: apt_result.failed == true
+      ignore_errors: yes
     - name: show lsof var-lib-apt
       shell: lsof /var/lib/apt/lists/lock
       when: apt_result.failed == true
+      ignore_errors: yes
     - name: show lsof var-lib-dpkg
       shell: lsof /var/lib/dpkg/lock
       when: apt_result.failed == true
+      ignore_errors: yes
 
     # - name: Wait for automatic system updates
     #   shell: while pgrep unattended; do sleep 2; done;
