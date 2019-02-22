@@ -1,10 +1,13 @@
 {
   "title": "Another try at testing datadog 101", 
   "details": {
-    "intro": {
-      "courseData": "background.sh", 
-      "code": "foreground.sh"
-    }, 
+    "steps": [
+      {
+        "name": "firststep",
+        "text": "step1.md"
+      }
+    ],
+    
     "assets": {
       "host01": [
         {
@@ -24,6 +27,7 @@
     "uilayout": "terminal"
   }, 
   "backend": {
-    "imageid": "ubuntu-cluster5"
+    "imageid": "ubuntu-cluster5",
+    "reuseConnection": true
   }
 }
