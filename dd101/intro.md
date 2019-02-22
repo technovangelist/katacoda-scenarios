@@ -1,4 +1,4 @@
-This is your first step...
+Welcome to the hands-on section for Introduction to the Datadog Platform
 
 ## Task
 

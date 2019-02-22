@@ -42,6 +42,7 @@
     "uilayout": "terminal",
     "uimessage1": "", 
     "showdashboard": true, 
+    "reuseConnection": true, 
     "dashboards": [
       {
         "name": "Datadog",
