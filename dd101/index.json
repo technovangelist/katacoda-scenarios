@@ -43,17 +43,13 @@
     ], 
     "terminals": [
       {
-        "name": "Host 2",
+        "name": "Load Balancer Term",
         "target": "host02",
         "command": "ssh -o StrictHostKeyChecking=no root@host02"
       }, {
-        "name": "Host 3",
+        "name": "Web 1 Term",
         "target": "host03",
         "command": "ssh -o StrictHostKeyChecking=no root@host03"
-      }, {
-        "name": "Host 4",
-        "target": "host04",
-        "command": "ssh -o StrictHostKeyChecking=no root@host04"
       }
     ]
   },
