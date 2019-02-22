@@ -37,8 +37,8 @@
         "href": "https://app.datadoghq.com"
       },
       {
-        "name": "web1",
-        "href": "https://[[HOST3_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
+        "name": "web",
+        "href": "https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
       }
     ], 
     "terminals": [
