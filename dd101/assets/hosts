@@ -4,6 +4,9 @@ host03
 host04
 host05
 
+[util]
+host01
+
 [loadbalancer]
 host02
 

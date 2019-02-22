@@ -58,3 +58,52 @@
     - name: report back
       local_action: copy content="Datadog Agent installing on all hosts" dest=/root/status.txt
      
+- hosts: loadbalancer
+  tasks: 
+    - name: install haproxy
+      apt:
+        name: haproxy
+        state: present
+    - name: Configure step 1
+      blockinfile:
+        block: |
+          ENABLED=1
+        dest: /etc/default/haproxy
+    - name: haproxy.cfg
+      blockinfile:
+        block: |
+          global
+              daemon
+              maxconn 256
+          defaults
+              mode http
+              timeout connect 5000ms
+              timeout client 50000ms
+              timeout server 50000ms
+          frontend http-in
+              bind *:80
+              default_backend webservers
+          backend webservers
+              balance roundrobin
+              default-server fall 3 inter 5s
+              # Poor-mans sticky
+              # balance source
+              # JSP SessionID Sticky
+              # appsession JSESSIONID len 52 timeout 3h
+              option httpchk
+              option forwardfor
+              option http-server-close
+              server host03 {{ hostvars['host03']['ansible_eth0']['ipv4']['address'] }}:80 check
+              server host04 {{ hostvars['host04']['ansible_eth0']['ipv4']['address'] }}:80 check
+              server host05 {{ hostvars['host05']['ansible_eth0']['ipv4']['address'] }}:80 check
+          listen stats
+              bind *:8080
+              mode http
+              stats uri /haproxy_stats
+              stats enable
+        dest: /etc/haproxy/haproxy.cfg
+    - name:
+      service:
+        name: haproxy
+        state: restarted
+
