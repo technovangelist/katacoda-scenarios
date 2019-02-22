@@ -42,7 +42,6 @@
     "uilayout": "terminal",
     "uimessage1": "", 
     "showdashboard": true, 
-    "reuseConnection": true, 
     "dashboards": [
       {
         "name": "Datadog",
@@ -66,6 +65,7 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu-cluster5"
+    "imageid": "ubuntu-cluster5", 
+    "reuseConnection": true
   }
 }
