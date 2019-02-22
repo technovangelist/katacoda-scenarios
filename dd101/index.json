@@ -38,7 +38,7 @@
       },
       {
         "name": "web1",
-        "href": "https://[[HOST03_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
+        "href": "https://[[HOST3_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
       }
     ], 
     "terminals": [
