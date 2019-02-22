@@ -32,32 +32,7 @@
   post_tasks:
     - name: report back
       local_action: copy content="Apache installed on {{ansible_hostname}}" dest=/root/status.txt
-  
-- hosts: webservers
-  roles:
-    - { role: Datadog.datadog, become: yes }
-  vars_files:
-    - /root/ddapikey.yml
-  vars:
-    # datadog_api_key: "{{ lookup('env', 'DD_API_KEY') }}"
-    datadog_config:
-      tags: "role:web, training:intro-to-datadog"
-      logs_enabled: true
-      process_config:
-        enabled: "true" # has to be set as a string
-  
-    datadog_checks:
-      apache:
-        init_config:
-        instances:
-          - apache_status_url: http://localhost/server-status?auto 
-  tasks:
-    - name: report back
-      local_action: copy content="Datadog Agent installed on {{ansible_hostname}}" dest=/root/status.txt
-  pre_tasks:
-    - name: report back
-      local_action: copy content="Datadog Agent installing on all hosts" dest=/root/status.txt
-     
+
 - hosts: loadbalancer
   tasks: 
     - name: install haproxy
@@ -93,9 +68,9 @@
               option httpchk
               option forwardfor
               option http-server-close
-              server host03 {{ hostvars['host03']['ansible_eth0']['ipv4']['address'] }}:80 check
-              server host04 {{ hostvars['host04']['ansible_eth0']['ipv4']['address'] }}:80 check
-              server host05 {{ hostvars['host05']['ansible_eth0']['ipv4']['address'] }}:80 check
+              server host03 {{ hostvars['host03']['ansible_ens3']['ipv4']['address'] }}:80 check
+              server host04 {{ hostvars['host04']['ansible_ens3']['ipv4']['address'] }}:80 check
+              server host05 {{ hostvars['host05']['ansible_ens3']['ipv4']['address'] }}:80 check
           listen stats
               bind *:8080
               mode http
@@ -107,3 +82,55 @@
         name: haproxy
         state: restarted
 
+
+- hosts: webservers
+  roles:
+    - { role: Datadog.datadog, become: yes }
+  vars_files:
+    - /root/ddapikey.yml
+  vars:
+    # datadog_api_key: "{{ lookup('env', 'DD_API_KEY') }}"
+    datadog_config:
+      tags: "role:web, training:intro-to-datadog"
+      logs_enabled: true
+      process_config:
+        enabled: "true" # has to be set as a string
+  
+    datadog_checks:
+      apache:
+        init_config:
+        instances:
+          - apache_status_url: http://localhost/server-status?auto 
+  tasks:
+    - name: report back
+      local_action: copy content="Datadog Agent installed on {{ansible_hostname}}" dest=/root/status.txt
+  pre_tasks:
+    - name: report back
+      local_action: copy content="Datadog Agent installing on all webservers" dest=/root/status.txt
+     
+
+- hosts: loadbalancer
+  roles:
+    - { role: Datadog.datadog, become: yes }
+  vars_files:
+    - /root/ddapikey.yml
+  vars:
+    # datadog_api_key: "{{ lookup('env', 'DD_API_KEY') }}"
+    datadog_config:
+      tags: "role:loadbalancer, training:intro-to-datadog"
+      logs_enabled: true
+      process_config:
+        enabled: "true" # has to be set as a string
+  
+    datadog_checks:
+      init_config:
+      instances:
+        - url: https://localhost:9000/haproxy_stats
+ 
+  tasks:
+    - name: report back
+      local_action: copy content="Datadog Agent installed on host02" dest=/root/status.txt
+  pre_tasks:
+    - name: report back
+      local_action: copy content="Datadog Agent installing on all load balancers" dest=/root/status.txt
+     
