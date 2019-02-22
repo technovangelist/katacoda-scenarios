@@ -5,7 +5,12 @@
       {
         "title": "Getting Started", 
         "courseData": "background.sh",
-        "code": "foreground.sh"
+        "code": "foreground.sh",
+        "text": "step1.md"
+      },
+      {
+        "title": "next section",
+        "text": "step1.md"
       }
     ], 
     "assets": {
