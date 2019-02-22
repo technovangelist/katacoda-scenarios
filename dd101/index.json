@@ -34,6 +34,10 @@
         {
           "file": "dd101.yaml",
           "target": "/root/ansible"
+        },
+        {
+          "file": "status.txt",
+          "target": 
         }
       ]
     }
