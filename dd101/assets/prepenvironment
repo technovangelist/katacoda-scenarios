@@ -46,5 +46,5 @@ show_progress
 touch /root/provisioned
 printf "\n\nOK, the training environment is installed and ready to go.\n\n"
 else
-printf "\n\nOK, the training environment was prepared on an earlier run.\n\n"
+printf "\n\nWelcome back to the training lab.\n\n"
 fi
