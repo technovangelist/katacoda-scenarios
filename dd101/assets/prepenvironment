@@ -41,7 +41,10 @@ show_progress()
   done
   printf "\r                                           \r${prevstatus}\nInstallation Complete\n"
 }
-
+if [ ! -f "/root/provisioned" ]; then
 show_progress
 touch /root/provisioned
 printf "\n\nOK, the training environment is installed and ready to go.\n\n"
+else
+printf "\n\nOK, the training environment was prepared on an earlier run.\n\n"
+fi
