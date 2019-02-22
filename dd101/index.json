@@ -1,10 +1,13 @@
 {
   "title": "Testing Datadog 101",
   "details": {
-    "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh"
-    },
+    "steps": [
+      {
+        "title": "Getting Started", 
+        "courseData": "background.sh",
+        "code": "foreground.sh"
+      }
+    ], 
     "assets": {
       "host01": [
         {
