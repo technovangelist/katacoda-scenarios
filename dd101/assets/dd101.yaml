@@ -7,7 +7,7 @@
   remote_user: root
   pre_tasks:
     - name: report back
-      local_action: copy content="Apache installing on three hosts" dest=/root/status.txt
+      local_action: copy content="Apache installing on three webservers" dest=/root/status.txt
   tasks:
     - name: Update Apt Cache
       apt: update_cache=yes cache_valid_time=3600
@@ -35,7 +35,7 @@
       
   post_tasks:
     - name: report back
-      local_action: copy content="Apache installed on {{ansible_hostname}}" dest=/root/status.txt
+      local_action: copy content="Apache installed on the webserver ({{ansible_hostname}})" dest=/root/status.txt
 
 - hosts: loadbalancer
   tasks: 
@@ -130,12 +130,12 @@
       haproxy:
         init_config:
         instances:
-          - url: https://localhost:8080/haproxy_stats
+          - url: http://localhost:8080/haproxy_stats
  
   tasks:
     - name: report back
-      local_action: copy content="Datadog Agent installed on host02" dest=/root/status.txt
+      local_action: copy content="Datadog Agent installed on the load balancer" dest=/root/status.txt
   pre_tasks:
     - name: report back
-      local_action: copy content="Datadog Agent installing on all load balancers" dest=/root/status.txt
+      local_action: copy content="Datadog Agent installing on the load balancer" dest=/root/status.txt
      
