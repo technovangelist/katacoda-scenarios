@@ -121,7 +121,7 @@
   vars:
     # datadog_api_key: "{{ lookup('env', 'DD_API_KEY') }}"
     datadog_config:
-      tags: "role:loadbalancer, training:intro-to-datadog"
+      tags: "role:lb, training:intro-to-datadog"
       logs_enabled: true
       process_config:
         enabled: "true" # has to be set as a string
@@ -129,7 +129,7 @@
     datadog_checks:
       init_config:
       instances:
-        - url: https://localhost:9000/haproxy_stats
+        - url: https://localhost:8080/haproxy_stats
  
   tasks:
     - name: report back
