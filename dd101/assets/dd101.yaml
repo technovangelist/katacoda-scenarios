@@ -143,4 +143,4 @@
 - hosts: all
   tasks:
     - name: send event that we are live
-      shell: echo -n "training.hosts.started:1|c|#shell" >/dev/udp/localhost/8125
+      shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
