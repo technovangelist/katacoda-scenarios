@@ -128,7 +128,7 @@
   
     datadog_checks:
       haproxy:
-      init_config:
+        init_config:
         instances:
           - url: https://localhost:8080/haproxy_stats
  
