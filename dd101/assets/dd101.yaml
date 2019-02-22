@@ -28,6 +28,10 @@
         dest: /etc/apache2/apache2.conf
     - name: restart apache
       shell: apachectl restart
+    - name: create index.html
+      copy:
+        content: "<h1>You have landed on {{ansible_hostname}}</h1>"
+        dest: /var/www/html/index.html
       
   post_tasks:
     - name: report back
