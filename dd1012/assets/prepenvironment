@@ -31,4 +31,6 @@ show_progress()
 if [ ! -f "/root/provisioned" ]; then
 show_progress
 printf "\n\nOK, the training environment is installed and ready to go.\n\n"
+else
+printf "The training environment has already been prepared.\n\n"
 fi
