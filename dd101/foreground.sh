@@ -1,5 +1,5 @@
 #!/bin/bash 
-if [ ! -f /root/provisioned ]; then
+if [ ! -f "/root/provisioned" ]; then
   cat > ddapikey.yml <<EOL
   ---
   datadog_api_key: ${DD_API_KEY}
