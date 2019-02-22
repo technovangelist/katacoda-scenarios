@@ -127,9 +127,10 @@
         enabled: "true" # has to be set as a string
   
     datadog_checks:
+      haproxy:
       init_config:
-      instances:
-        - url: https://localhost:8080/haproxy_stats
+        instances:
+          - url: https://localhost:8080/haproxy_stats
  
   tasks:
     - name: report back
