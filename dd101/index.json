@@ -37,8 +37,8 @@
         "href": "https://app.datadoghq.com"
       },
       {
-        "name": "Load Balancer",
-        "href": ""
+        "name": "web1",
+        "href": "https://[[HOST03_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
       }
     ], 
     "terminals": [
