@@ -4,7 +4,6 @@ if [ ! $TRAININGENVIRONMENT ]; then
     exit
     exit 1;
 fi
-echo "Now preparing training environment for $TRAININGENVIRONMENT."
 show_progress()
 {
   local -r pid="${1}"
@@ -42,6 +41,7 @@ show_progress()
   printf "\r                                           \r${prevstatus}\nInstallation Complete\n"
 }
 if [ ! -f "/root/provisioned" ]; then
+echo "Now preparing training environment for $TRAININGENVIRONMENT."
 show_progress
 touch /root/provisioned
 printf "\n\nOK, the training environment is installed and ready to go.\n\n"
