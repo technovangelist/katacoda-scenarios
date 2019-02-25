@@ -106,6 +106,8 @@
         instances:
           - apache_status_url: http://localhost/server-status?auto 
   tasks:
+    - name: send event that we are live
+      shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
     - name: report back
       local_action: copy content="Datadog Agent installed on {{ansible_hostname}}" dest=/root/status.txt
   pre_tasks:
@@ -133,14 +135,79 @@
           - url: http://localhost:8080/haproxy_stats
  
   tasks:
+    - name: send event that we are live
+      shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
     - name: report back
       local_action: copy content="Datadog Agent installed on the load balancer" dest=/root/status.txt
   pre_tasks:
     - name: report back
       local_action: copy content="Datadog Agent installing on the load balancer" dest=/root/status.txt
-     
 
-- hosts: all
+- hosts: //localhost
+  roles:
+    - { role: Datadog.datadog, become: yes }
+  vars_files:
+    - /root/ddapikey.yml
+  vars:
+    # datadog_api_key: "{{ lookup('env', 'DD_API_KEY') }}"
+    datadog_config:
+      tags: "role:util, training:intro-to-datadog"
+      logs_enabled: true
+      process_config:
+        enabled: "true" # has to be set as a string
+  
+    datadog_checks:
+      haproxy:
+        init_config:
+        instances:
+          - url: http://localhost:8080/haproxy_stats
+ 
   tasks:
+    - name: add apt key for nodesource
+      apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+
+    - name: add repo for nodesource
+      apt_repository:
+            repo: 'deb https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release }} main' 
+            update_cache: yes
+
+    - name: install nodejs
+      apt: name=nodejs
+
+    - name: install autocannon
+      npm:
+        name: autocannon
+        global: yes
+    - blockinfile:
+        block: |
+          #! /usr/bin/env bash
+          echo '_e{18,58}:Light Util Testing|The Light script has start banging on the demo environment|#shell,bash,lightscript'  >/dev/udp/localhost/8125
+          pkill -f autocannon || echo 'process is not running'
+          autocannon -f -d 10 -c 2 -r 1 {{ hostvars['host02']['ansible_ens3']['ipv4']['address'] }}
+        destination: /usr/local/bin/light
+    - file:
+        path: /usr/local/bin/light
+        mode: "+x"
+    - blockinfile:
+        block: |
+          #! /usr/bin/env bash
+          echo '_e{18,58}:Light Util Testing|The Light script has start banging on the demo environment|#shell,bash,lightscript'  >/dev/udp/localhost/8125
+          pkill -f autocannon || echo 'process is not running'
+          autocannon -f -d 10 -c 100 -r 100 {{ hostvars['host02']['ansible_ens3']['ipv4']['address'] }}
+        destination: /usr/local/bin/heavy
+    - file:
+        path: /usr/local/bin/heavy
+        mode: "+x"
+
+
     - name: send event that we are live
       shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
+    - name: report back
+      local_action: copy content="Datadog Agent installed on host1" dest=/root/status.txt
+  pre_tasks:
+    - name: report back
+      local_action: copy content="Datadog Agent installing on host1" dest=/root/status.txt  
+
+
+
+
