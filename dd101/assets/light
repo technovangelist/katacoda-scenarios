@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+echo '_e{18,58}:Light Util Testing|The Light script has start banging on the demo environment|#shell,bash,lightscript'  >/dev/udp/localhost/8125
+pkill -f autocannon || echo 'process is not running'
+autocannon -f -d 10 -c 2 -r 1 host02

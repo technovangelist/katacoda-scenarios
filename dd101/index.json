@@ -23,6 +23,16 @@
           "chmod": "+x"
         },
         {
+          "file": "light",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "heavy",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
           "file": "hosts",
           "target": "/etc/ansible"
         },
