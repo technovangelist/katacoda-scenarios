@@ -209,5 +209,5 @@
       local_action: copy content="Datadog Agent installing on host1" dest=/root/status.txt  
 
 
-
+- shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
 
