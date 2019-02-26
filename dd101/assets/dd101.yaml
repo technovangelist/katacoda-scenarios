@@ -106,8 +106,8 @@
         instances:
           - apache_status_url: http://localhost/server-status?auto 
   tasks:
-    - name: send event that we are live
-      shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
+    # - name: send event that we are live
+    #   shell: echo -n "training.hosts.started:1|c|#shell"| nc -4u -w0 127.0.0.1 8125
     - name: report back
       local_action: copy content="Datadog Agent installed on {{ansible_hostname}}" dest=/root/status.txt
   pre_tasks:
