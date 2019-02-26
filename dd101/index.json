@@ -58,11 +58,9 @@
     "terminals": [
       {
         "name": "Load Balancer Term",
-        "target": "host02",
         "command": "ssh -o StrictHostKeyChecking=no root@host02"
       }, {
         "name": "Web 1 Term",
-        "target": "host03",
         "command": "ssh -o StrictHostKeyChecking=no root@host03"
       }
     ]
