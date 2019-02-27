@@ -1,5 +1,5 @@
 #!/bin/bash
-export CHECKFORM=$(echo $CHECKFORM | sed -e 's/::/\&/g')
+# export CHECKFORM=$(echo $CHECKFORM | sed -e 's/::/\&/g')
 
 if [ ! -f "/root/provisioned" ]; then
 echo "Setup Installation Framework" > status.txt

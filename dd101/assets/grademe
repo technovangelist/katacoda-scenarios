@@ -1,10 +1,15 @@
 #!/usr/bin/env python
+import base64
+import json
 import requests
 import pprint
 import os
 pp = pprint.PrettyPrinter()
-checkform = os.environ['CHECKFORM']
+
+checkform = json.loads(base64.b64decode(os.environ['CHECKFORM']))
 resp = requests.post(os.environ['LTIURL'], data=checkform)
 
 
 pp.pprint(resp.json())
+
+
