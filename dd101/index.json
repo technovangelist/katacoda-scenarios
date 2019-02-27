@@ -60,16 +60,6 @@
     "uilayout": "terminal",
     "uimessage1": "", 
     "showdashboard": true, 
-    // "dashboards": [
-    //   {
-    //     "name": "Datadog",
-    //     "href": "https://app.datadoghq.com"
-    //   },
-    //   {
-    //     "name": "web",
-    //     "href": "https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
-    //   }
-    // ], 
     "terminals": [
       {
         "name": "LB",
