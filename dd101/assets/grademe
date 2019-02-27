@@ -10,6 +10,6 @@ checkform = json.loads(base64.b64decode(os.environ['CHECKFORM']))
 resp = requests.post(os.environ['LTIURL'], data=checkform)
 
 
-pp.pprint(resp.json())
+pp.pprint(resp.message)
 
 
