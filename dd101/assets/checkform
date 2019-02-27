@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-export CHECKFORM=$(echo $1 | sed -e 's/::/\&/g')

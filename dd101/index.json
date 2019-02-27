@@ -23,11 +23,6 @@
           "chmod": "+x"
         },
         {
-          "file": "checkform",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
           "file": "light",
           "target": "/usr/local/bin/",
           "chmod": "+x"
