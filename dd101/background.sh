@@ -2,6 +2,7 @@
 # export CHECKFORM=$(echo $CHECKFORM | sed -e 's/::/\&/g')
 
 if [ ! -f "/root/provisioned" ]; then
+pip install requests
 echo "Setup Installation Framework" > status.txt
 apt-add-repository --yes --update ppa:ansible/ansible
 apt --yes install ansible

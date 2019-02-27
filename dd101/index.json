@@ -60,22 +60,22 @@
     "uilayout": "terminal",
     "uimessage1": "", 
     "showdashboard": true, 
-    "dashboards": [
-      {
-        "name": "Datadog",
-        "href": "https://app.datadoghq.com"
-      },
-      {
-        "name": "web",
-        "href": "https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
-      }
-    ], 
+    // "dashboards": [
+    //   {
+    //     "name": "Datadog",
+    //     "href": "https://app.datadoghq.com"
+    //   },
+    //   {
+    //     "name": "web",
+    //     "href": "https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"
+    //   }
+    // ], 
     "terminals": [
       {
-        "name": "Load Balancer Term",
+        "name": "LB",
         "command": "ssh -o StrictHostKeyChecking=no root@host02"
       }, {
-        "name": "Web 1 Term",
+        "name": "Web",
         "command": "ssh -o StrictHostKeyChecking=no root@host03"
       }
     ]
