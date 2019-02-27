@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+import requests
+import pprint
+import os
+pp = pprint.PrettyPrinter()
+checkform = os.environ['CHECKFORM']
+resp = requests.post(os.environ['LTIURL'], data=checkform)
+
+
+pp.pprint(resp.json())
