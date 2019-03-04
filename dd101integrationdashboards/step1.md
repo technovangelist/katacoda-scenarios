@@ -8,15 +8,14 @@
 * Repeat the last three steps for Apache.
 
 ## Working with a dashboard
+
 * Return to the Dashboards List.
   
   *You should see two new dashboards: Apache - Overview and HAProxy - Overview.*
-
 * Click on the link for the Apache dashboard. 
 
   *Notice that there are three servers but the rate of requests is probably minimal.*
-
-* From the terminal, SSH into the util virtual machine by running vagrant ssh util. Then run the command light. 
+* From the first terminal tab, run the command `light`{{execute T1}}. 
 
   *This will start hitting the HAProxy server and thus each of the Apache web servers.*
 
