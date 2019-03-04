@@ -9,7 +9,7 @@
 
 ## Working with a dashboard
 * Return to the Dashboards List.
-  *You should see two new dashboards: Apache - Overview and HAProxy - Overview.*
+    *You should see two new dashboards: Apache - Overview and HAProxy - Overview.*
 * Click on the link for the Apache dashboard. 
   *Notice that there are three servers but the rate of requests is probably minimal.*
 * From the terminal, SSH into the util virtual machine by running vagrant ssh util. Then run the command light. 
