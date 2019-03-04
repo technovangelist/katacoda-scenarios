@@ -9,7 +9,7 @@
       },
     "steps": [
       {
-        "title": "Getting Started", 
+        "title": "HAProxy and Apache Dashboards", 
         "text": "step1.md"
       }
     ], 

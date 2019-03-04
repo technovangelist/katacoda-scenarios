@@ -1,6 +1,7 @@
-* Login to your Datadog account.  
-* Navigate to the Dashboards List.
-* Navigate to the Integrations Page.
+* Login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a>.  
+* Navigate to the Dashboards List then Integrations.
+
+# HAProxy Dashboard
 * Hover over the HAProxy tile and click the Install button.
 * Click Install Integration on the Configuration tab.
 * Close the HAProxy modal window.
