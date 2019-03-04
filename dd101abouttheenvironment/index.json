@@ -11,10 +11,6 @@
       {
         "title": "Getting Started", 
         "text": "step1.md"
-      },
-      {
-        "title": "Defining a metric description",
-        "text": "step2.md"
       }
     ], 
     "finish": {
