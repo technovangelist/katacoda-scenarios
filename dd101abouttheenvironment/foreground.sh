@@ -8,5 +8,3 @@ clear
 sleep 1
 
 prepenvironment
-
-# ansible-playbook -v /root/ansible/dd101.yaml
