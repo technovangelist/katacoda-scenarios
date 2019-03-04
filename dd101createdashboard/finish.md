@@ -1,3 +1,3 @@
-Over the last few sections you have learned about most of the options for creating great dashboards. Continue to the next page to move on the the assessment for this hands-on page. If you don't get a perfect score, return here to fix what's missing. Then in the next section you will learn about how to get proactively alerted to any issues with your environment.
+Over the last few sections you have learned about most of the options for creating great dashboards. In the next section you will learn about how to get proactively alerted to any issues with your environment.
 
 **Katacoda staging. don't click next scenario**
