@@ -16,7 +16,7 @@
 
   *We are not using couchbase in this environment. Each supported agent-side integration has a directory, a conf.yaml.example file, and sometimes an auto_conf.yaml file. If there were a properly configured conf.yaml file in this directory, we would be monitoring couchbase.*
 
-* Navigate to the /etc/datadog-agent/conf.d/apache.d directory. List the contents of the directory.
+* Navigate to the <code>/etc/datadog-agent/conf.d/apache.d</code> directory. List the contents of the directory.
   *We are using apache httpd on this virtual machine. We could have customized the configuration further if we wanted, but the defaults are usually good for most users.*
 
 * Look at the contents of **conf.yaml** and **conf.yaml.example**.
