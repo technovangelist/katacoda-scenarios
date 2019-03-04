@@ -10,4 +10,3 @@ sleep 1
 prepenvironment
 
 # ansible-playbook -v /root/ansible/dd101.yaml
-ssh -o StrictHostKeyChecking=no root@host03
