@@ -14,7 +14,8 @@
       },
       {
         "title": "Defining a metric description",
-        "text": "step2.md"
+        "text": "step2.md", 
+        "verify": "verify.sh"
       }
     ], 
     "finish": {
