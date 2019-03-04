@@ -1,11 +1,11 @@
 * Click on the third tab on the right to open the terminal on the first web server.
 * Navigate to the <code>/etc/datadog-agent</code> directory.
-  `cd /etc/datadog-agent`{{execute HOST03}}
+  `cd /etc/datadog-agent`{{execute T3}}
 
   *This is where you can find the configuration files for the Datadog agent.*
 
 * Take a look at the datadog.yaml file using the following command:
-  `sudo less datadog.yaml`{{execute HOST03}}
+  `sudo less datadog.yaml`{{execute T3}}
 
   *At the top of the file you can see that the API Key is configured.*
 
