@@ -11,7 +11,7 @@
   *This says if the average over 5 minutes is 500 more than the average over 5 minutes a minute ago, then fire the monitor.*
 * In the **"Say what's happening"** section of the screen, populate these fields as shown:<br>
 
-  Example Monitor Name:  Lots of Apache Hits Happening
+  Example Monitor Name:  Lots of Apache Hits Happening<br>
   Example Monitor Message:  Host {{host.name}} with IP {{host.ip}} is under heavy load.
 
   *Note:  For more examples of what you can put in the ExampleMonitor Message dialog, click the **Use message template variables** link to learn about conditional statements, variables, and more.*

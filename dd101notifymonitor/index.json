@@ -1,0 +1,86 @@
+{
+  "time": "20 minutes", 
+  "title": "Creating an Notification Monitor",
+  "details": {
+      "intro": {
+        "courseData": "background.sh",
+        "code": "foreground.sh", 
+        "text": "intro.md"
+      },
+    "steps": [
+      {
+        "title": "Create a metric monitor", 
+        "text": "step1.md"
+      }
+    ], 
+    "finish": {
+      "text": "finish.md"
+    }, 
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "light",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "heavy",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "hosts",
+          "target": "/etc/ansible"
+        },
+        {
+          "file": "ansible.cfg",
+          "target": "/etc/ansible"
+        },
+        {
+          "file": "dd101.yaml",
+          "target": "/root/ansible"
+        },
+        {
+          "file": "status.txt",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "", 
+    "showdashboard": true, 
+    "terminals": [
+      {
+        "name": "host02 (LB)",
+        "command": "ssh -o StrictHostKeyChecking=no root@host02"
+      }, {
+        "name": "host03 (web)",
+        "command": "ssh -o StrictHostKeyChecking=no root@host03"
+      },
+      {
+        "name": "host04 (web)",
+        "command": "ssh -o StrictHostKeyChecking=no root@host04"
+      },
+      {
+        "name": "host05 (web)",
+        "command": "ssh -o StrictHostKeyChecking=no root@host05"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu-cluster5", 
+    "reuseConnection": true
+  }
+}
