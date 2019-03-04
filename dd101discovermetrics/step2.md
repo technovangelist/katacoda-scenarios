@@ -11,4 +11,4 @@
   *This metric is added to Datadog when you start the Vagrant boxes. Adding a description to any custom metrics is a good idea to ensure that everyone knows what the metric describes. Notice that you can edit the description, the units, the type, and the interval. These details will be available to anyone else in your organization.*
 
 
-**When you are finished, run `grademe`{{execute}} in the terminal.**
+**When you are finished, run `grademe`{{execute}} in the terminal. If you have earned the full score, click the **Continue** button to end the scenario.**

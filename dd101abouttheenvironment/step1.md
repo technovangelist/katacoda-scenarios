@@ -1,0 +1,23 @@
+* Click on the third tab on the right to open the terminal on the first web server.
+* Navigate to the <code>/etc/datadog-agent</code> directory.
+  `cd /etc/datadog-agent`{{execute HOST3}}
+
+  *This is where you can find the configuration files for the Datadog agent.*
+
+* Take a look at the datadog.yaml file using the following command:
+  `sudo less datadog.yaml`{{execute HOST3}}
+
+  *At the top of the file you can see that the API Key is configured.*
+
+  *A little further down, tags are configured. You should definitely take advantage of tags to make it easier to find the services you are monitoring.*
+
+* Press Control-C to quit <code>less</code> and navigate to the <code>/etc/datadog-agent/conf.d/couchbase.d</code> directory. List the contents of the directory.
+  `cd /etc/datadog-agent/conf.d/couchbase.d;ls`{{execute HOST3}}
+
+  *We are not using couchbase in this environment. Each supported agent-side integration has a directory,  a conf.yaml.example file, and sometimes an auto_conf.yaml file. If there were a properly configured conf.yaml file in this directory, we would be monitoring couchbase.*
+
+* Navigate to the /etc/datadog-agent/conf.d/apache.d directory. List the contents of the directory.
+
+  *We are using apache httpd on this virtual machine. The provision script moved the example file to conf.yaml. We could have customized the configuration if we wanted, but the defaults are usually good for most users.*
+
+* See if you can identify how the other machines are configured. Each has a tab opened so you can easily take a look.
