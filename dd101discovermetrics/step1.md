@@ -15,3 +15,19 @@
 * Continue typing <code>br2</code> and then press enter.
 
   *We want the **haproxy.backend.response.2xx** metric. We don't have to scroll or type the whole name when in the Metrics Explorer. Fuzzy searching works here and the right metric is selected. (This trick doesn't work in the Metrics Summary).*
+
+* Click in the textbox for **Over**.
+
+  *Almost all of these are all the tags that have been assigned to these metrics. You could look in the setup files for your training environment and see that only the role:lb tag has been manually assigned. Datadog recognizes various configuration choices and automatically turns them into tags.*
+
+* Choose **host** in the **One graph per:** dropdown.
+
+  *We only have a single HAProxy host so this isn't very exciting.*
+
+* Remove the HAProxy metric and try typing <code>anh</code> in the **Graph:** textbox.
+
+  *It's another fuzzy search, this time selecting **apache.net.hits**.*
+
+* Now choose **host** in the **One graph per:** textbox.
+
+  *You should see 3 graphs shown.*
