@@ -1,6 +1,6 @@
 * Return to the Metrics Summary and find the training.hosts.started metric.
 
-  *If it's been more than an hour since you started the training environment, this metric will not show. You can  force the metric to appear by running the same command that we ran automatically. In the terminal to the right, run: `echo -n "training.hosts.started:1|c|#shell" >/dev/udp/localhost/8125`{{execute}}
+  *If it's been more than an hour since you started the training environment, this metric will not show. You can  force the metric to appear by running the same command that we ran automatically. In the terminal to the right, run: `echo -n "training.hosts.started:1|c|#shell" >/dev/udp/localhost/8125`{{execute}} You can click the command box above to automatically copy and run it in the terminal window.*
 
 * Click on the metric to see the details pane pop out.
 
