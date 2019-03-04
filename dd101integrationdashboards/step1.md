@@ -9,19 +9,13 @@
 
 ## Working with a dashboard
 
-* Return to the Dashboards List.
-  
+* Return to the Dashboards List.<br>
   *You should see two new dashboards: Apache - Overview and HAProxy - Overview.*
 * Click on the link for the Apache dashboard. <br>
   *Notice that there are three servers but the rate of requests is probably minimal.*
-* From the first terminal tab, run the command `light`{{execute T1}}. 
-
+* From the first terminal tab, run the command `light`{{execute T1}}.<br>
   *This will start hitting the HAProxy server and thus each of the Apache web servers.*
-
-* Return to the Apache dashboard.
-
+* Return to the Apache dashboard.<br>
   *You should see an increase in the rate of requests.*
-
-* Return to the Dashboards page and click on the other dashboard links.
-
+* Return to the Dashboards page and click on the other dashboard links.<br>
   *See what has been created with each integration installed.*
