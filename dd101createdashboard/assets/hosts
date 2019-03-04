@@ -1,0 +1,16 @@
+host01
+host02
+host03
+host04
+host05
+
+[util]
+host01
+
+[loadbalancer]
+host02
+
+[webservers]
+host03
+host04
+host05
