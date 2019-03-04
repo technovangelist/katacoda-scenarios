@@ -155,12 +155,6 @@
       logs_enabled: true
       process_config:
         enabled: "true" # has to be set as a string
-  
-    datadog_checks:
-      haproxy:
-        init_config:
-        instances:
-          - url: http://localhost:8080/haproxy_stats
  
   tasks:
     - name: add apt key for nodesource
