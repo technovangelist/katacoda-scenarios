@@ -11,13 +11,13 @@
 
   *A little further down, tags are configured. You should definitely take advantage of tags to make it easier to find the services you are monitoring.*
 
-* Press Control-C to quit <code>less</code> and navigate to the <code>/etc/datadog-agent/conf.d/couchbase.d</code> directory. List the contents of the directory.
-  `cd /etc/datadog-agent/conf.d/couchbase.d;ls`{{execute HOST03}}
+* Press the letter Q to quit <code>less</code> and navigate to the <code>/etc/datadog-agent/conf.d/couchbase.d</code> directory. List the contents of the directory.
+  `cd /etc/datadog-agent/conf.d/couchbase.d;ls`{{execute T3}}
 
-  *We are not using couchbase in this environment. Each supported agent-side integration has a directory,  a conf.yaml.example file, and sometimes an auto_conf.yaml file. If there were a properly configured conf.yaml file in this directory, we would be monitoring couchbase.*
+  *We are not using couchbase in this environment. Each supported agent-side integration has a directory, a conf.yaml.example file, and sometimes an auto_conf.yaml file. If there were a properly configured conf.yaml file in this directory, we would be monitoring couchbase.*
 
 * Navigate to the /etc/datadog-agent/conf.d/apache.d directory. List the contents of the directory.
 
-  *We are using apache httpd on this virtual machine. The provision script moved the example file to conf.yaml. We could have customized the configuration if we wanted, but the defaults are usually good for most users.*
+  *We are using apache httpd on this virtual machine. We could have customized the configuration further if we wanted, but the defaults are usually good for most users.*
 
 * See if you can identify how the other machines are configured. Each has a tab opened so you can easily take a look.
