@@ -1,10 +1,9 @@
-#tutorial {
-  width: 75%;
-}
-#split-host {
-  width: 25%;
-}
-
 a#next-tutorial {
   display: none;
+}
+section#tutorial {
+  width: 75%;
+}
+section#split-host {
+  width: 25%;
 }
