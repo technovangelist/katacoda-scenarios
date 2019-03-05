@@ -60,7 +60,7 @@
   "environment": {
     "uilayout": "terminal",
     "uimessage1": "", 
-    "showdashboard": true, 
+    "showdashboard": true
   },
   "backend": {
     "imageid": "ubuntu-cluster5", 
