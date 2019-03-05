@@ -14,3 +14,5 @@
 * Adust the time period to ensure you have the problem in view. 
 * Configure the graph to ensure you are showing the problem.
 * Try creating another Notebook for the problem with the server that went down.
+
+**There is nothing to grade for this one, so when you have tried it out, you can move on to the next section**

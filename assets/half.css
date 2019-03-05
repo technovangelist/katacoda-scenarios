@@ -1,0 +1,10 @@
+#tutorial {
+  width: 75%;
+}
+#split-host {
+  width: 25%;
+}
+
+a#next-tutorial {
+  display: none;
+}
