@@ -5,7 +5,7 @@
 * Come up with a description for how you noticed that traffic was increasing on your web environment.<br>
   *Pretend that you didn't cause it with a script.*
 * Start adding other graphs that might be related to your notebook.<br>
-  *Notice that the default graph shows <strong>avg:system.load.1{\*}</strong> right at the same time that **heavy** was running.  Look for patterns that support your hypothesis. When you discover a good story, remove the graphs you aren't using.*
+  *Notice that the default graph shows <strong>avg:system.load.1{&ast;}</strong> right at the same time that **heavy** was running.  Look for patterns that support your hypothesis. When you discover a good story, remove the graphs you aren't using.*
 * Click the clock icon on the top of each graph. <br>
   *You can assign a time period for this graph that is different from the global time. Sometimes its useful to show what performance was like yesterday or last week and then this week.*
 * Now click on the grid icon just below the clock. <br>
