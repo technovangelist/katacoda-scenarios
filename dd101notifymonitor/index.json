@@ -80,7 +80,6 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu-cluster5", 
-    "reuseConnection": true
+    "imageid": "ubuntu-cluster5"
   }
 }
