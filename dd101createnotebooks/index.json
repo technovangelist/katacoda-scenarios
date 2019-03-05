@@ -19,7 +19,7 @@
     "assets": {
       "host01": [
         {
-          "file": "prepenvironment",
+          "file": "../../assets/prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
