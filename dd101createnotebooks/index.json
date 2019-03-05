@@ -19,22 +19,22 @@
     "assets": {
       "host01": [
         {
-          "file": "../../assets/prepenvironment",
+          "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
         {
-          "file": "../../assets/grademe",
+          "file": "grademe",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
         {
-          "file": "../../assets/light",
+          "file": "light",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
         {
-          "file": "../../assets/heavy",
+          "file": "heavy",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
