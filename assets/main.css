@@ -3,6 +3,6 @@ a#next-tutorial {
 }
 
 .step ol li {
-    list-style-type: inherit;
+    list-style-type: inherit !important;
     margin-left: 0px;
 }
