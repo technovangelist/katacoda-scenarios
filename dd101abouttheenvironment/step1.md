@@ -1,5 +1,5 @@
-1)  **Click on the third tab on the right to open the terminal on the first web server**.<br>
-2)  Navigate to the <code>/etc/datadog-agent</code> directory.
+1.  **Click on the third tab on the right to open the terminal on the first web server**.
+2.  Navigate to the <code>/etc/datadog-agent</code> directory.
   `cd /etc/datadog-agent`{{execute T3}}<br>
   *This is where you can find the configuration files for the Datadog agent.*
 * Take a look at the datadog.yaml file using the following command:
