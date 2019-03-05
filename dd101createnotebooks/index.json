@@ -24,17 +24,17 @@
           "chmod": "+x"
         },
         {
-          "file": "grademe",
+          "file": "../../assets/grademe",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
         {
-          "file": "light",
+          "file": "../../assets/light",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
         {
-          "file": "heavy",
+          "file": "../../assets/heavy",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
