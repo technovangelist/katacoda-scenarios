@@ -1,8 +1,8 @@
-* Login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a>.  
-* Navigate to the Dashboards List then Integrations.
+1.  Login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a>.  
+2.  Navigate to the Dashboards List then Integrations.
 
 ## Install the HAProxy dashboard
-* Hover over the HAProxy tile and click the Install button.
+3.  Hover over the HAProxy tile and click the Install button.
 * Click Install Integration on the Configuration tab.
 * Close the HAProxy modal window.
 * Repeat the last three steps for Apache.
