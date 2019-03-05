@@ -16,3 +16,5 @@
   *You should see your Outlier monitor in the stream.*
 * Navigate to the Settings page (you can find it at the icon on the bottom of the sidebar) then click on preferences.<br>
   *If you would prefer to only receive notifications like this in the product and not in your email, you can configure which notifications you want to receive.*
+
+  **When you are finished, run `grademe`{{execute}} in the terminal. If you have earned the full score, click the **Continue** button to end the scenario.**

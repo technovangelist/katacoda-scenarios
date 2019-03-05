@@ -22,3 +22,5 @@
 * Navigate to the Triggered Monitors page to see a triggered monitor for each of the three webservers.
 * Click on the name of one of the triggered monitors. <br>
   *This page shows you the current status of the monitor and it's history.*
+
+**When you are finished, run `grademe`{{execute}} in the terminal. If you have earned the full score, click the **Continue** button to end the scenario.**

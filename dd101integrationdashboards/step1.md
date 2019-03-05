@@ -19,3 +19,5 @@
   *You should see an increase in the rate of requests.*
 * Return to the Dashboards page and click on the other dashboard links.<br>
   *See what has been created with each integration installed.*
+
+**When you are finished, run `grademe`{{execute}} in the terminal. If you have earned the full score, click the **Continue** button to end the scenario.**
