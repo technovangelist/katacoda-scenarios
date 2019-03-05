@@ -6,3 +6,6 @@ a#next-tutorial {
     list-style-type: inherit !important;
     margin-left: 0px;
 }
+.step .content ol {
+    padding-left: 20px !important;
+}
