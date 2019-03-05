@@ -6,7 +6,7 @@
   `sudo less datadog.yaml`{{execute T3}}<br>
   *At the top of the file you can see that the API Key is configured.*<br>
   *A little further down, tags are configured. You should definitely take advantage of tags to make it easier to find the services you are monitoring.*
-* Press the letter Q to quit <code>less</code> and navigate to the <code>/etc/datadog-agent/conf.d/couchbase.d</code> directory. List the contents of the directory.
+* Press the letter `Q`{{execute T3}} to quit <code>less</code> and navigate to the <code>/etc/datadog-agent/conf.d/couchbase.d</code> directory. List the contents of the directory.
   `cd /etc/datadog-agent/conf.d/couchbase.d;ls`{{execute T3}}<br>
   *We are not using couchbase in this environment. Each supported agent-side integration has a directory, a conf.yaml.example file, and sometimes an auto_conf.yaml file. If there were a properly configured conf.yaml file in this directory, we would be monitoring couchbase.*
 * Navigate to the <code>/etc/datadog-agent/conf.d/apache.d</code> directory. List the contents of the directory.<br>
