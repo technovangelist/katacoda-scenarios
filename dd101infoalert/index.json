@@ -60,24 +60,7 @@
   "environment": {
     "uilayout": "terminal",
     "uimessage1": "", 
-    "showdashboard": true, 
-    "terminals": [
-      {
-        "name": "host02 (LB)",
-        "command": "ssh -o StrictHostKeyChecking=no root@host02"
-      }, {
-        "name": "host03 (web)",
-        "command": "ssh -o StrictHostKeyChecking=no root@host03"
-      },
-      {
-        "name": "host04 (web)",
-        "command": "ssh -o StrictHostKeyChecking=no root@host04"
-      },
-      {
-        "name": "host05 (web)",
-        "command": "ssh -o StrictHostKeyChecking=no root@host05"
-      }
-    ]
+    "showdashboard": true
   },
   "backend": {
     "imageid": "ubuntu-cluster5", 
