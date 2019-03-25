@@ -1,0 +1,29 @@
+{
+  "title": "Curriculum Developer Interview #1 - Kubernetes",
+  "details": {
+      "intro": {
+        "courseData": "background.sh",
+        "code": "foreground.sh", 
+        "text": "intro.md"
+      },
+    "steps": [
+      {
+        "title": "Step 1", 
+        "text": "step1.md"
+      }, 
+      {
+        "title": "Step 2",
+        "text": "step2.md"
+      }
+    ], 
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster"
+  }
+}
