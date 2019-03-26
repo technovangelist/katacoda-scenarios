@@ -1,0 +1,1 @@
+This is the first step of the hands on section
