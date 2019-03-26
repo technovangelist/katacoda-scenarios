@@ -1,5 +1,5 @@
 {
-  "title": "Curriculum Developer Interview #1 - Kubernetes",
+  "title": "Curriculum Developer Interview #3 - Ansible",
   "details": {
       "intro": {
         "courseData": "background.sh",
@@ -21,6 +21,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
+    "imageid": "ubuntu-cluster2"
   }
 }
