@@ -1,1 +1,1 @@
-apt-get --yes install ansible
+#!/bin/bash
