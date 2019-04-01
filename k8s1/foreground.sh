@@ -1,7 +1,8 @@
 #!/bin/bash
 while [ ! -f "/usr/local/bin/prepenvironment" ]; do
-  echo "."
+  sleep 0.3
 done
+sleep 0.3
 cat > ddapikey.yml <<EOL
 ---
 datadog_api_key: ${DD_API_KEY}
