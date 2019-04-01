@@ -29,8 +29,7 @@
   "environment": {
     "uilayout": "editor-terminal", 
     "uieditorpath":"/", 
-    "showdashboard": true,
-    "dashboards": [{"name": "Project Dashboard"}]
+    "showdashboard": true
   },
   "backend": {
     "imageid": "kubernetes-cluster-running"
