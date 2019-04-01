@@ -28,7 +28,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal", 
-    "uieditorpath": "/k8s-yaml-files"
+    "uieditorpath": "/images"
   },
   "backend": {
     "imageid": "kubernetes-cluster-running"
