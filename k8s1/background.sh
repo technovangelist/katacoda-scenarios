@@ -20,5 +20,5 @@ wall -n "Starting services"
 # kubectl apply -f pumps-service.yaml
 # kubectl apply -f sensors-api.yaml
 # kubectl apply -f frontend-service.yaml
-echo "complete">>status.txt
+echo "complete">>/root/status.txt
 
