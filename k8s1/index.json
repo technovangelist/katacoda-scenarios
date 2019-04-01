@@ -18,7 +18,10 @@
     ]
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "editor-terminal", 
+    "uieditorpath":"/tracing-workshop", 
+    "showdashboard": true,
+    "dashboards": [{"name": "Project Dashboard"}]
   },
   "backend": {
     "imageid": "kubernetes-cluster-running"
