@@ -15,7 +15,16 @@
         "title": "Step 2",
         "text": "step2.md"
       }
-    ]
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
   },
   "environment": {
     "uilayout": "editor-terminal", 
