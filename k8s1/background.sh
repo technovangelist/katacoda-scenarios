@@ -1,5 +1,6 @@
 #!/bin/bash
 touch status.txt
+sleep 1
 wall -n "Cloning the Github Repo"
 git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
 cd trace

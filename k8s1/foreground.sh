@@ -5,6 +5,6 @@ datadog_api_key: ${DD_API_KEY}
 EOL
 
 clear
-sleep 1
+
 
 prepenvironment
