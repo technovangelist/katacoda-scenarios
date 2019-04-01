@@ -27,9 +27,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
-    "uieditorpath":"/", 
-    "showdashboard": true
+    "uilayout": "editor-terminal"
   },
   "backend": {
     "imageid": "kubernetes-cluster-running"
