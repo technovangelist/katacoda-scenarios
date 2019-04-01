@@ -1,5 +1,5 @@
 #!/bin/bash
-touch status
+touch status.txt
 wall -n "Cloning the Github Repo"
 git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
 cd trace
@@ -8,5 +8,5 @@ git checkout k8s-autodiscovery
 cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
-echo "complete">>status
+echo "complete">>status.txt
 
