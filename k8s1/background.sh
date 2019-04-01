@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir /k8s-yaml-files
+# mkdir k8s-yaml-files
 touch status.txt
 wall -n "Cloning the Github Repo"
 git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
