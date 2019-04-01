@@ -28,7 +28,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal", 
-    "uieditorpath":"~", 
+    "uieditorpath":"/", 
     "showdashboard": true,
     "dashboards": [{"name": "Project Dashboard"}]
   },
