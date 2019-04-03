@@ -11,7 +11,6 @@ wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
 # rm datadog-agent.yaml
-
 wall -n "Creating Kubernetes Secrets"
 kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
 kubectl create secret generic postgres-user --from-literal=token=postgres
