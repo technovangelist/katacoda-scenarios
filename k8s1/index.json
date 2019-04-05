@@ -8,12 +8,16 @@
     },
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Installing the Agent",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Adding an Integration",
         "text": "step2.md"
+      }
+      {
+        "title": "Troubleshooting",
+        "text": "step3.md"
       }
     ],
     "assets": {
