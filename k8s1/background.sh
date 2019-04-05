@@ -12,7 +12,6 @@ mv trace/* .
 cd k8s-yaml-files
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
-kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
 kubectl create secret generic postgres-user --from-literal=token=postgres
 kubectl create secret generic postgres-password --from-literal=token=password
 wall -n "Starting services"
@@ -22,5 +21,6 @@ kubectl apply -f node-api.yaml
 kubectl apply -f pumps-service.yaml
 kubectl apply -f sensors-api.yaml
 kubectl apply -f frontend-service.yaml
+kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
 echo "complete">>/root/status.txt
 
