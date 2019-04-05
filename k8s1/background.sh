@@ -21,6 +21,6 @@ kubectl apply -f node-api.yaml
 kubectl apply -f pumps-service.yaml
 kubectl apply -f sensors-api.yaml
 kubectl apply -f frontend-service.yaml
-kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
+
 echo "complete">>/root/status.txt
 
