@@ -4,5 +4,7 @@
 1. Even if you wait a long time, no metrics will appear here. This is because the Agent is not reporting any Postgres metrics.
 1. In the lab environment, open the postgres-deploy.yaml file. Scroll down to line 14.
 1. There is a section for annotations; uncomment each of these lines.
-Annotations are how you configure the Datadog Agent to work with one of the integrations. Here we are telling the Agent to use the **Postgres** check, with the corresponding host, port, username, and password. 
-Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.
+
+  *Annotations are how you configure the Datadog Agent to work with one of the integrations. Here we are telling the Agent to use the **Postgres** check, with the corresponding host, port, username, and password.*
+  
+  *Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.*
