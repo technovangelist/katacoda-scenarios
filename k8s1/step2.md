@@ -13,7 +13,7 @@
   
   *Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.*
 
-1. Now apply the Postgres deployment again. `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
+1. Now apply the Postgres deployment again. `kubectl delete -f k8s-yaml-files/postgres-deploy.yaml;kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
 1. If you take a look at 
 
 `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
