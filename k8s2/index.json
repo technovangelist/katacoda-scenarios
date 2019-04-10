@@ -30,6 +30,10 @@
         {
           "file": "lotsofpods.yaml",
           "target": "/root/"
+        },
+        {
+          "file": "datadog.yaml",
+          "target": "/root/"
         }
       ]
     }
