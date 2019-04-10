@@ -29,11 +29,11 @@
         }, 
         {
           "file": "lotsofpods.yaml",
-          "target": "/root/"
+          "target": "/root/k8s-yaml-files/"
         },
         {
           "file": "datadog.yaml",
-          "target": "/root/"
+          "target": "/root/k8s-yaml-files/"
         }
       ]
     }
