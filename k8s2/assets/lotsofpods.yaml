@@ -194,26 +194,8 @@ spec:
   containers:
     - name: my-container
       image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"] 
+      command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod70
-  labels: 
-    environment: production
-    team: dev
-    office: lax
-    role: frontend
-    color: green
-  annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "dev", "role": "frontend", "color": "yellow"}'
-spec:
-  containers:
-    - name: my-container
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"] 
----
 apiVersion: v1
 kind: Pod
 metadata:
