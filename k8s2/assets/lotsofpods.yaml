@@ -1,0 +1,224 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: a
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: backend
+      letter: b
+      widget: something
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: c
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: middle
+      letter: a
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: s
+      widget: something
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: a
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: backend
+      letter: t
+      widget: nudge
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: middle
+      letter: a
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: a
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: c
+      widget: ridget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: middle
+      letter: a
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: b
+      widget: fidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: backend
+      letter: a
+      widget: gidget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+spec:
+  template:
+    labels:
+      role: frontend
+      letter: a
+      widget: widget
+  containers:
+    - name: lotsofpodscontainer
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"]
+  restartPolicy: Never
+---
