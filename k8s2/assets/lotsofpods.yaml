@@ -12,10 +12,11 @@ spec:
         role: frontend
         letter: a
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -31,10 +32,11 @@ spec:
         role: backend
         letter: b
         widget: something
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -50,10 +52,11 @@ spec:
         role: frontend
         letter: c
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -69,10 +72,11 @@ spec:
         role: middle
         letter: a
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -88,10 +92,11 @@ spec:
         role: frontend
         letter: s
         widget: something
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -107,10 +112,11 @@ spec:
         role: frontend
         letter: a
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -126,10 +132,11 @@ spec:
         role: backend
         letter: t
         widget: nudge
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -145,10 +152,11 @@ spec:
         role: middle
         letter: a
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -164,10 +172,11 @@ spec:
         role: frontend
         letter: a
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -183,10 +192,11 @@ spec:
         role: frontend
         letter: c
         widget: ridget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -202,10 +212,11 @@ spec:
         role: middle
         letter: a
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -221,10 +232,11 @@ spec:
         role: frontend
         letter: b
         widget: fidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -240,10 +252,11 @@ spec:
         role: backend
         letter: a
         widget: gidget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -259,10 +272,11 @@ spec:
         role: frontend
         letter: a
         widget: widget
-  containers:
-    - name: lotsofpodscontainer
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
+    spec:
+      containers:
+        - name: lotsofpodscontainer
+          image: ubuntu
+          command: ["/bin/bash", "-ec", "sleep infinity"]
 ---
 apiVersion: v1
 kind: Service
