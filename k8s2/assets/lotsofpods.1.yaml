@@ -1,0 +1,273 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: a
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: backend
+    letter: b
+    widget: something
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: c
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: middle
+    letter: a
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: s
+    widget: something
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: a
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: backend
+    letter: t
+    widget: nudge
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: middle
+    letter: a
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: a
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: c
+    widget: ridget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: middle
+    letter: a
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: b
+    widget: fidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: backend
+    letter: a
+    widget: gidget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+      - name: lotsofpodscontainer
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lotsofpods-pod
+  labels:
+    role: frontend
+    letter: a
+    widget: widget
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods
+  template:
+    spec:
+      containers:
+        - name: lotsofpodscontainer
+          image: ubuntu
+          command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: lotsofpodsservice
+spec: 
+  selector: 
+    app: lotsofpods
