@@ -13,9 +13,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
 ---        
 apiVersion: v1
 kind: Pod
@@ -31,10 +28,7 @@ spec:
  containers:
    - name: my-container
      image: ubuntu
-     command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1 
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
 ---        
 apiVersion: v1
 kind: Pod
@@ -51,9 +45,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
  
 ---        
 apiVersion: v1
@@ -71,9 +62,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
  
 ---        
 apiVersion: v1
@@ -91,9 +79,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
  
 ---        
 apiVersion: v1
@@ -111,9 +96,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
  
 ---        
 apiVersion: v1
@@ -131,9 +113,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
  
 ---        
 apiVersion: v1
@@ -151,9 +130,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
  
 ---        
 apiVersion: v1
@@ -171,7 +147,4 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
-     resources:
-       limits:
-        cpu: 1
 
