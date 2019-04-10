@@ -30,7 +30,6 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"] 
- 
 ---        
 apiVersion: v1
 kind: Pod
@@ -46,7 +45,8 @@ spec:
  containers:
    - name: my-container
      image: ubuntu
-     command: ["/bin/bash", "-ec", "sleep infinity"] ---        
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+---    
 apiVersion: v1
 kind: Pod
 metadata:
