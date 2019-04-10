@@ -15,3 +15,273 @@ spec:
    - name: my-container
      image: ubuntu
      command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod60
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "db", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod61
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "community", "role": "backend", "color": "red"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod62
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "dev", "role": "web", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod63
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "marketing", "role": "web", "color": "green"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod64
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "marketing", "role": "lb", "color": "green"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod65
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "sales", "role": "db", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod66
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "web", "color": "red"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod67
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "marketing", "role": "db", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod68
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "lb", "color": "red"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod69
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "lb", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod70
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "dev", "role": "frontend", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod71
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "lb", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod72
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "lb", "color": "red"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod73
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "sales", "role": "lb", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod74
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "backend", "color": "green"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
