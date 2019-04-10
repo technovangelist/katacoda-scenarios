@@ -5,6 +5,9 @@ metadata:
  labels: 
    environment: staging
    team: kube-team
+   office: mia
+   role: web
+   color: yellow
 spec:
  containers:
    - name: my-container
@@ -21,6 +24,9 @@ metadata:
  labels: 
    environment: staging
    team: kube-team
+   office: mia
+   role: web
+   color: yellow
 spec:
  containers:
    - name: my-container
