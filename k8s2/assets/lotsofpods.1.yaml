@@ -1,273 +1,877 @@
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: a
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: backend
-    letter: b
-    widget: something
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: c
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: middle
-    letter: a
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: s
-    widget: something
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: a
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: backend
-    letter: t
-    widget: nudge
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: middle
-    letter: a
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: a
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: c
-    widget: ridget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: middle
-    letter: a
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: b
-    widget: fidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: backend
-    letter: a
-    widget: gidget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-      - name: lotsofpodscontainer
-        image: ubuntu
-        command: ["/bin/bash", "-ec", "sleep infinity"]
----
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: lotsofpods-pod
-  labels:
-    role: frontend
-    letter: a
-    widget: widget
-spec:
-  selector:
-    matchLabels:
-      app: lotsofpods
-  template:
-    spec:
-      containers:
-        - name: lotsofpodscontainer
-          image: ubuntu
-          command: ["/bin/bash", "-ec", "sleep infinity"]
----
 apiVersion: v1
-kind: Service
-metadata: 
-  name: lotsofpodsservice
-spec: 
-  selector: 
-    app: lotsofpods
+kind: Pod
+metadata:
+ name: my-pod
+ labels: 
+   environment: staging
+   team: kube-team
+   office: mia
+   role: web
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+ annotations:
+   ad.datadoghq.com/tags: '{"office": "lax", "team": "dev"}'
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+---    
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod2
+ labels: 
+   environment: staging
+   team: kube-team
+   office: mia
+   role: web
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod3
+ labels: 
+   environment: staging
+   team: marketing
+   office: mia
+   role: web
+   color: yellow
+spec:
+  containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod4
+ labels: 
+   environment: qa
+   team: community
+   office: sfo
+   role: backend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod5
+ labels: 
+   environment: staging
+   team: sales
+   office: mia
+   role: web
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod6
+ labels: 
+   environment: qa
+   team: sales
+   office: sfo
+   role: frontend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod7
+ labels: 
+   environment: qa
+   team: marketing
+   office: mia
+   role: db
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod8
+ labels: 
+   environment: qa
+   team: community
+   office: lax
+   role: web
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"]  
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod9
+ labels: 
+   environment: staging
+   team: community
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod11
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod12
+ labels: 
+   environment: production
+   team: dev
+   office: lax
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod13
+ labels: 
+   environment: qa
+   team: community
+   office: lax
+   role: backend
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod14
+ labels: 
+   environment: staging
+   team: dev
+   office: boston
+   role: db
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod15
+ labels: 
+   environment: qa
+   team: marketing
+   office: sfo
+   role: lb
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod16
+ labels: 
+   environment: staging
+   team: community
+   office: lax
+   role: frontend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod17
+ labels: 
+   environment: qa
+   team: marketing
+   office: lax
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod18
+ labels: 
+   environment: production
+   team: dev
+   office: sfo
+   role: db
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod19
+ labels: 
+   environment: staging
+   team: community
+   office: lax
+   role: lb
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod20
+ labels: 
+   environment: qa
+   team: dev
+   office: boston
+   role: backend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod21
+ labels: 
+   environment: qa
+   team: marketing
+   office: nyc
+   role: web
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod22
+ labels: 
+   environment: production
+   team: community
+   office: sfo
+   role: backend
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod23
+ labels: 
+   environment: qa
+   team: dev
+   office: mia
+   role: db
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod24
+ labels: 
+   environment: qa
+   team: sales
+   office: mia
+   role: web
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod25
+ labels: 
+   environment: qa
+   team: sales
+   office: boston
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod26
+ labels: 
+   environment: qa
+   team: community
+   office: mia
+   role: db
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod27
+ labels: 
+   environment: production
+   team: dev
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod28
+ labels: 
+   environment: production
+   team: marketing
+   office: nyc
+   role: frontend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod29
+ labels: 
+   environment: qa
+   team: community
+   office: nyc
+   role: frontend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod30
+ labels: 
+   environment: production
+   team: marketing
+   office: boston
+   role: db
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod31
+ labels: 
+   environment: staging
+   team: sales
+   office: nyc
+   role: frontend
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod32
+ labels: 
+   environment: staging
+   team: marketing
+   office: sfo
+   role: frontend
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod33
+ labels: 
+   environment: production
+   team: sales
+   office: sfo
+   role: db
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod34
+ labels: 
+   environment: qa
+   team: marketing
+   office: sfo
+   role: frontend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod35
+ labels: 
+   environment: staging
+   team: community
+   office: boston
+   role: web
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod36
+ labels: 
+   environment: staging
+   team: sales
+   office: boston
+   role: frontend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod37
+ labels: 
+   environment: qa
+   team: dev
+   office: mia
+   role: web
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
