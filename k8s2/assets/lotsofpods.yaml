@@ -7,15 +7,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: a
-      widget: fidget
+    metadata:
+      labels:
+        role: frontend
+        letter: a
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -26,15 +26,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: backend
-      letter: b
-      widget: something
+    metadata:
+      labels:
+        role: backend
+        letter: b
+        widget: something
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -45,15 +45,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: c
-      widget: fidget
+    metadata:
+      labels:
+        role: frontend
+        letter: c
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -64,15 +64,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: middle
-      letter: a
-      widget: fidget
+    metadata:
+      labels:
+        role: middle
+        letter: a
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -83,15 +83,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: s
-      widget: something
+    metadata:
+      labels:
+        role: frontend
+        letter: s
+        widget: something
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -102,15 +102,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: a
-      widget: fidget
+    metadata:
+      labels:
+        role: frontend
+        letter: a
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -121,15 +121,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: backend
-      letter: t
-      widget: nudge
+    metadata:
+      labels:
+        role: backend
+        letter: t
+        widget: nudge
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -140,15 +140,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: middle
-      letter: a
-      widget: fidget
+    metadata:
+      labels:
+        role: middle
+        letter: a
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -159,15 +159,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: a
-      widget: fidget
+    metadata:
+      labels:
+        role: frontend
+        letter: a
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -178,15 +178,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: c
-      widget: ridget
+    metadata:
+      labels:
+        role: frontend
+        letter: c
+        widget: ridget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -197,15 +197,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: middle
-      letter: a
-      widget: fidget
+    metadata:
+      labels:
+        role: middle
+        letter: a
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -216,15 +216,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: b
-      widget: fidget
+    metadata:
+      labels:
+        role: frontend
+        letter: b
+        widget: fidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -235,15 +235,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: backend
-      letter: a
-      widget: gidget
+    metadata:
+      labels:
+        role: backend
+        letter: a
+        widget: gidget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -254,15 +254,15 @@ spec:
     matchLabels:
       app: lotsofpods
   template:
-    labels:
-      role: frontend
-      letter: a
-      widget: widget
+    metadata:
+      labels:
+        role: frontend
+        letter: a
+        widget: widget
   containers:
     - name: lotsofpodscontainer
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"]
-  restartPolicy: Never
 ---
 apiVersion: v1
 kind: Service
