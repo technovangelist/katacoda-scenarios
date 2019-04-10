@@ -41,6 +41,8 @@ metadata:
    office: lax
    role: frontend
    color: green
+ annotations:
+   ad.datadoghq.com/tags: '{"office": "lax", "team": "dev"}'
 spec:
  containers:
    - name: my-container
