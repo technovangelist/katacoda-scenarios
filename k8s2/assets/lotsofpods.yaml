@@ -1,17 +1,73 @@
+
+---
 apiVersion: v1
 kind: Pod
 metadata:
- name: my-pod12
- labels: 
-   environment: production
-   team: dev
-   office: lax
-   role: frontend
-   color: green
- annotations:
-   ad.datadoghq.com/tags: '[{"office": "lax", "team": "dev"}]'
-spec:
- containers:
-   - name: my-container
-     image: ubuntu
-     command: ["/bin/bash", "-ec", "sleep infinity"] 
+  name: my-pod38
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '[{"environment": "staging", "office": "sfo", "team": "sales", "role": "lb", "color": "yellow"}]'
+  spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod39
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '[{"environment": "staging", "office": "mia", "team": "dev", "role": "frontend", "color": "blue"}]'
+  spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod40
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '[{"environment": "staging", "office": "boston", "team": "marketing", "role": "db", "color": "blue"}]'
+  spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod41
+  labels: 
+    environment: production
+    team: dev
+    office: lax
+    role: frontend
+    color: green
+  annotations:
+    ad.datadoghq.com/tags: '[{"environment": "qa", "office": "lax", "team": "sales", "role": "web", "color": "green"}]'
+  spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
