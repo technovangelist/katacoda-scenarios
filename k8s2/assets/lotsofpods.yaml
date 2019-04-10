@@ -117,6 +117,9 @@ metadata:
  labels: 
    environment: staging
    team: kube-team
+   office:
+   role: 
+   color:
 spec:
  containers:
    - name: my-container
@@ -125,4 +128,144 @@ spec:
      resources:
        limits:
         cpu: 1
-        
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod3
+ labels: 
+   environment: staging
+   team: marketing
+   office: mia
+   role: web
+   color: yellow
+spec:
+  containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod4
+ labels: 
+   environment: qa
+   team: community
+   office: sfo
+   role: backend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod5
+ labels: 
+   environment: staging
+   team: sales
+   office: mia
+   role: web
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod6
+ labels: 
+   environment: qa
+   team: sales
+   office: sfo
+   role: frontend
+   color: red
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod7
+ labels: 
+   environment: qa
+   team: marketing
+   office: mia
+   role: db
+   color: yellow
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod8
+ labels: 
+   environment: qa
+   team: community
+   office: lax
+   role: web
+   color: green
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+ 
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod9
+ labels: 
+   environment: staging
+   team: community
+   office: boston
+   role: backend
+   color: blue
+spec:
+ containers:
+   - name: my-container
+     image: ubuntu
+     command: ["/bin/bash", "-ec", "sleep infinity"] 
+     resources:
+       limits:
+        cpu: 1
+
