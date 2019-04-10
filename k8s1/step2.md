@@ -14,6 +14,9 @@
   *Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.*
 
 1. Now apply the Postgres deployment again. `kubectl delete -f k8s-yaml-files/postgres-deploy.yaml;kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
-1. If you take a look at 
 
-`kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
+1. If you take a look at the Datadog dashboard now, even if you wait a few minutes, you still won't be seeing anything. We have configured the Postgres Integration, but it's not working.
+
+1. Just to make sure all the pods are running, lets look at the results of `kubectl get pods`{{execute}}. Looks like everything is running.
+1.  Move on to the next section to find a few methods for seeing what's wrong.
+
