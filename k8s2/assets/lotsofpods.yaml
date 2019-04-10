@@ -285,3 +285,15 @@ spec:
     - name: my-container
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod79
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "community", "role": "lb", "color": "green"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
