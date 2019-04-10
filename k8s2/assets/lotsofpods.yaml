@@ -25,12 +25,98 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: lotsofpods
+      app: lotsofpods2
   template:
     metadata:
       labels:
-        app: lotsofpods
+        app: lotsofpods2
         test: first
+        role: frontend
+        office: boston
+    spec:
+      containers:
+      - name: lotsofpods
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: lotsofpods-deployment
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods3
+  template:
+    metadata:
+      labels:
+        app: lotsofpods3
+        test: first
+        role: database
+        office: sfo
+    spec:
+      containers:
+      - name: lotsofpods
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: lotsofpods-deployment
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods4
+  template:
+    metadata:
+      labels:
+        app: lotsofpods4
+        test: first
+        role: auth
+        office: lax
+    spec:
+      containers:
+      - name: lotsofpods
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: lotsofpods-deployment
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods5
+  template:
+    metadata:
+      labels:
+        app: lotsofpods5
+        test: first
+        role: backend
+        office: boston
+    spec:
+      containers:
+      - name: lotsofpods
+        image: ubuntu
+        command: ["/bin/bash", "-ec", "sleep infinity"]
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: lotsofpods-deployment
+spec:
+  selector:
+    matchLabels:
+      app: lotsofpods6
+  template:
+    metadata:
+      labels:
+        app: lotsofpods6
+        test: first
+        role: database
+        office: nyc
     spec:
       containers:
       - name: lotsofpods
