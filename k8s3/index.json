@@ -1,0 +1,47 @@
+{
+  "title": "Introduction to Kubernetes Monitoring",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Installing the Agent",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adding an Integration",
+        "text": "step2.md"
+      }, 
+      {
+        "title": "Troubleshooting",
+        "text": "step3.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "k8s-yaml-files",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "IoT Project",
+        "port": 30001
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running"
+  }
+}

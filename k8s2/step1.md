@@ -6,3 +6,6 @@ In the previous section we had a real application we were working with. We will 
   Notice that the containers are grouped by lb, web, db, backend, and no role. 
 1. Now add environment to **Group By**. You can continue to slice and dice by the other tags available to look for any patterns that might exist. 
 1. Return to this page and choose the **lotsofpods.yaml** file in the editor. Notice that we have a collection of pods that are all mostly identical. The differences are in the tags.
+1. The easiest way to define tags for Datadog on Kubernetes is to use annotations:
+  `annotations:
+   ad.datadoghq.com/tags: '{"key": "value"}'`
