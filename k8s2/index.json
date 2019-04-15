@@ -8,6 +8,9 @@
     },
     "steps": [
       {
+        "text": "step1.md"
+      }, 
+      {
         "title": "Working with Tags",
         "text": "step1.md"
       }
