@@ -11,9 +11,11 @@
         "text": "step1.md"
       }, 
       {
-        "title": "Working with Tags",
-        "text": "step1.md"
-      }
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      } 
     ],
     "assets": {
       "host01": [
