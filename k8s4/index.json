@@ -1,5 +1,5 @@
 {
-  "title": "Tagging Kubernetes Monitoring",
+  "title": "Introduction to Kubernetes Monitoring",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -8,10 +8,16 @@
     },
     "steps": [
       {
+        "title": "Installing the Agent",
         "text": "step1.md"
+      },
+      {
+        "title": "Adding an Integration",
+        "text": "step2.md"
       }, 
       {
-        "text": "step2.md"
+        "title": "Troubleshooting",
+        "text": "step3.md"
       }
     ],
     "assets": {
@@ -20,14 +26,6 @@
           "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
-        }, 
-        {
-          "file": "lotsofpods.yaml",
-          "target": "/root/k8s-yaml-files/"
-        },
-        {
-          "file": "datadog.yaml",
-          "target": "/root/k8s-yaml-files/"
         }
       ]
     }
