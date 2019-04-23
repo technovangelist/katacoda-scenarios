@@ -3,9 +3,9 @@
 3. On the next page you will see the instructions for getting your logs into Datadog. We already have a Datadog yaml file, but we need to add the information listed in the second and third textboxes.
 4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
 
-      - name: DD_LOGS_ENABLED
+      ```- name: DD_LOGS_ENABLED
         value: "true"
       - name: DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL
-        value: "true"
+        value: "true"```
 
   You need to make sure the indent level is correct. All of the **- name:** under **env:** should be at the same level
