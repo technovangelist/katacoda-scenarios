@@ -7,6 +7,8 @@
 4. Run the **agent status** command to see that logs are not being collected yet. 
   `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
 
+  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
+  
 4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
   <pre><code>- name: DD_LOGS_ENABLED
      value: "true"
@@ -24,6 +26,6 @@
 6. You can then verify that the logs are being collected by running the **agent status** command again:
   `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
 
-  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
+  
 7. 
 
