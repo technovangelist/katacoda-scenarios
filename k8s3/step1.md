@@ -10,7 +10,14 @@
      value: "true"
   </code></pre>
 
-  You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level. You can verify that everything works by running a variation on a command we used earlier:
+  You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level. 
+  
+5. Apply your new datadog-agent yaml file: 
+  `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
+
+  Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**
+
+6. You can verify that everything works by running a variation on a command we used earlier:
 
   `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
 
