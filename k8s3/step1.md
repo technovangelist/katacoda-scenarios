@@ -1,1 +1,4 @@
-1. Once your environment is up and running, log into the Datadog application. 
+1. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
+2. Navigate to Logs in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button and then the **Start Trial** button.
+3. On the next page you will see the instructions for getting your logs into Datadog. We already have a Datadog yaml file, but we need to add the information listed in the second and third textboxes.
+4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section.
