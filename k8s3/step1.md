@@ -6,7 +6,9 @@
    - name: DD_LOGS_ENABLED
      value: "true"
    - name: DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL
-     value: "true"```
+     value: "true"
   </code></pre>
 
-  You need to make sure the indent level is correct. All of the **- name:** under **env:** should be at the same level
+  You need to make sure the indent level is correct. All of the **- name:** under **env:** should be at the same level. You can verify that everything works by running a variation on a command we used earlier:
+
+  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
