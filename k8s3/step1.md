@@ -15,17 +15,15 @@
   </code></pre>
 
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
-  
-5. You can verify that your indentation is correct by running a variation on the agent status command we used earlier:
-
-  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent configcheck`{{execute}}
-
-  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
 
 5. Apply your new datadog-agent yaml file: 
   `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 
-  *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate***
+  *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
 
-6. asht
+6. You can then verify that the logs are being collected by running the **agent status** command again:
+  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
+
+  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
+7. 
 
