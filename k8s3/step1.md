@@ -11,6 +11,8 @@
 
   You need to make sure the indent level is correct. All of the **- name:** under **env:** should be at the same level. You can verify that everything works by running a variation on a command we used earlier:
 
-  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
+  `kubectl exec \&
+  $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog)\&
+   -- agent status`{{execute}}
 
   If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.
