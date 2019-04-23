@@ -10,6 +10,12 @@ cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
+sudo sed -i '73,74d' k8s-yaml-files/datadog-agent.yaml
+sudo sed -i '37,51d' k8s-yaml-files/datadog-agent.yaml
+sudo sed -i '39,40d' k8s-yaml-files/frontend-service.yaml
+sudo sed -i '33,34d' k8s-yaml-files/node-api.yaml
+sudo sed -i '31,32d' k8s-yaml-files/pumps-service.yaml
+sudo sed -i '33,34d' k8s-yaml-files/sensors-api.yaml
 
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
