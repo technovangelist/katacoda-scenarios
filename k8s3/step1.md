@@ -21,14 +21,13 @@
 5. Scroll down to **volumeMounts:** and add the following:
    
   <pre><code>- name: pointerdir
-    mountPath: /opt/datadog-agent/run</code></pre>
+      mountPath: /opt/datadog-agent/run</code></pre>
 
 6. Finally go down to **volumes:** and add the following:
    
 <pre><code>- hostPath:
     path: /opt/datadog-agent/run
   name: pointerdir</code></pre>
-
 
 7. Apply your new datadog-agent yaml file: 
   `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
