@@ -39,3 +39,4 @@
 
 7. Return to Logs in the Datadog application and you should see logs starting to appear.
 
+We will look at enabling logs for specific integrations in a later section.

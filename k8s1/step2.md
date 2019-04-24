@@ -1,5 +1,5 @@
 1. Login to your Datadog account and take a look around.
-1. Navigate to Dashboards List under the Dashboards menu. 
+1. Navigate to Dashboards List under the Dashboards menu.
 
   *Depending on how long your environment has been running, you may see a Redis dashboard already listed. If not, go to Integrations and add the Redis integration. Return to the Redis dashboard and within a minute or so you should start to see Redis metrics.*
 
@@ -13,7 +13,7 @@
   
   *Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.*
 
-1. Now apply the Postgres deployment again. `kubectl delete -f k8s-yaml-files/postgres-deploy.yaml;kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
+2. Now apply the Postgres deployment again. `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
 
 1. If you take a look at the Datadog dashboard now, even if you wait a few minutes, you still won't be seeing anything. We have configured the Postgres Integration, but it's not working.
 
