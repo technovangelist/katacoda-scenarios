@@ -4,18 +4,11 @@
 
 3. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
 
-xxxx
-
-4. Run the **agent status** command to see that logs are not being collected yet. 
-  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
-
-  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
-
 4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
-  <pre><code>- name: DD_LOGS_ENABLED
-     value: "true"
-   - name: DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL
-     value: "true"
+  <pre><code>- name: DD_APM_ENABLED
+    value: "true"
+  - name: DD_APM_NON_LOCAL_TRAFFIC
+    value: "true"
   </code></pre>
 
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
