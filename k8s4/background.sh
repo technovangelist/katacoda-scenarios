@@ -10,6 +10,19 @@ cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
+sudo sed -i '73,74d' datadog-agent.yaml
+sudo sed -i '76,78d' datadog-agent.yaml
+sudo sed -i '44,51d' datadog-agent.yaml
+sudo sed -i '39,40d' frontend-service.yaml
+sudo sed -i '33,34d' node-api.yaml
+sudo sed -i '31,32d' pumps-service.yaml
+sudo sed -i '33,34d' sensors-api.yaml
+sudo sed -i '6i\ \ updateStrategy:\n    rollingUpdate:\n      maxUnavailable: 1\n    type: RollingUpdate' datadog-agent.yaml
+sudo sed -i '7i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' postgres-deploy.yaml
+sudo sed -i '7i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' redis-deploy.yaml
+sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' node-api.yaml
+sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' sensors-api.yaml
+sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' pumps-service.yaml
 
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
@@ -22,6 +35,7 @@ kubectl apply -f node-api.yaml
 kubectl apply -f pumps-service.yaml
 kubectl apply -f sensors-api.yaml
 kubectl apply -f frontend-service.yaml
+kubectl apply -f datadog-agent.yaml
 
 echo "complete">>/root/status.txt
 

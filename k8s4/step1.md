@@ -1,27 +1,42 @@
-1. To get started we need to set a few permissions. The first one is to create a role scoped to the cluster. This role will get and update the ConfigMaps, list and watch the Events, get, update, and create Endpoints, and list the componentstatuses resource. Run the following command on the master:
-`kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"`{{execute}}
-You can discover what this role is giving access by opening the url above in your browser. But defining the role alone doesn’t really do anything yet
-1. Next create the service account:
-`kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"`{{execute}}
-1. The previous two steps are then linked together in the clusterrolebinding which binds the service account to the clusterrole:
-`kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"`{{execute}}
-1. The next step is to create the manifest for the Datadog agent and apply it to the cluster. You can find the manifest in the documentation (link to docs), but one is already in the k8s-yaml-files directory. Click on the file to see what’s in there
-If you compare it with the documentation you may notice that the first block that defines the api-key as a secret is not included. This step has already been completed as part of the provisioning of the training environment. 
-1. Apply this manifest using the following command:
-`kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
-1. Everything should be running now. To verify, run: 
-`kubectl get daemonset`{{execute}}
-You should see a list of how many agents are installed and running.
-1. But wait, we have a cluster that is running on two servers, why aren’t there two agents running. Normally, only the nodes in the cluster will run the agent, but it’s also possible to run the agent on master if you add the tolerance to the pod. After line 11 in datadog-agent.yaml, add the following:
-<pre><code>span:
-    tolerations:
-    - key: node-role.kubernetes.io/master
-      effect: NoSchedule
-    containers:
+1. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
+
+2. Navigate to Logs in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button and then the **Start Trial** button.
+
+3. On the next page you will see the instructions for getting your logs into Datadog. We already have a Datadog yaml file, but we need to add the information listed in the second and third textboxes.
+
+4. Run the **agent status** command to see that logs are not being collected yet. 
+  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
+
+  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
+
+4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
+  <pre><code>- name: DD_LOGS_ENABLED
+     value: "true"
+   - name: DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL
+     value: "true"
   </code></pre>
-1. Now apply the file again:
-`kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
-1. Get the daemonset again and you should see two agents are running.
-1. Open the datadog-agent.yaml file. Notice that many of the configuration options for the agent are defined with environment variables. 
 
+  *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
 
+5. Scroll down to **volumeMounts:** and add the following:
+   
+  <pre><code>- name: pointerdir
+     mountPath: /opt/datadog-agent/run</code></pre>
+
+6. Finally go down to **volumes:** and add the following:
+   
+  <pre><code>- hostPath:
+       path: /opt/datadog-agent/run
+     name: pointerdir</code></pre>
+
+7. Apply your new datadog-agent yaml file: 
+  `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
+
+  *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
+
+6. You can then verify that the logs are being collected by running the **agent status** command again:
+  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
+
+7. Return to Logs in the Datadog application and you should see logs starting to appear.
+
+We will look at enabling logs for specific integrations in a later section.
