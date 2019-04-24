@@ -13,25 +13,17 @@
 
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
 
-5. Scroll down to **volumeMounts:** and add the following:
-   
-  <pre><code>- name: pointerdir
-     mountPath: /opt/datadog-agent/run</code></pre>
-
-6. Finally go down to **volumes:** and add the following:
-   
-  <pre><code>- hostPath:
-       path: /opt/datadog-agent/run
-     name: pointerdir</code></pre>
-
-7. Apply your new datadog-agent yaml file: 
+5. Apply your new datadog-agent yaml file: 
   `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 
   *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
 
-6. You can then verify that the logs are being collected by running the **agent status** command again:
-  `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
+https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com/
 
+
+
+6. Now configure the front-end service to start collecting traces
+   
 7. Return to Logs in the Datadog application and you should see logs starting to appear.
 
 We will look at enabling logs for specific integrations in a later section.
