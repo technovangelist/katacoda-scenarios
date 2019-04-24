@@ -18,6 +18,7 @@ sudo sed -i '33,34d' node-api.yaml
 sudo sed -i '31,32d' pumps-service.yaml
 sudo sed -i '33,34d' sensors-api.yaml
 sudo sed -i '6i\ \ updateStrategy:\n    rollingUpdate:\n      maxUnavailable: 1\n    type: RollingUpdate' datadog-agent.yaml
+sudo sed -i '7i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' postgres-deploy.yaml
 
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
