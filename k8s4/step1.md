@@ -6,9 +6,9 @@
 
 4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
   <pre><code>- name: DD_APM_ENABLED
-     value: "true"
+    value: "true"
   - name: DD_APM_NON_LOCAL_TRAFFIC
-     value: "true"
+    value: "true"
   </code></pre>
 
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
