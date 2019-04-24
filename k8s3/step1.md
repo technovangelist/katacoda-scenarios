@@ -26,7 +26,7 @@
 6. Finally go down to **volumes:** and add the following:
    
   <pre><code>- hostPath:
-      path: /opt/datadog-agent/run
+       path: /opt/datadog-agent/run
      name: pointerdir</code></pre>
 
 7. Apply your new datadog-agent yaml file: 
