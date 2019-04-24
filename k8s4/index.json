@@ -27,12 +27,14 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "IoT Project",
+        "name": "App Dash",
         "port": 30001
       }
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
+    "imageid": "kubernetes-cluster-running",
+    "reuseConnection": true,
+    "reuseForAllScenarios": true
   }
 }

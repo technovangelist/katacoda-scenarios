@@ -21,6 +21,7 @@ sudo sed -i '7i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n     
 sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' node-api.yaml
 sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' sensors-api.yaml
 sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' pumps-service.yaml
+sudo sed -i '9i\ \ strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable: 1\n      maxSurge: 1\n' frontend-service.yaml
 
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
