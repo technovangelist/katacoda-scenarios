@@ -11,6 +11,7 @@ wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
 sudo sed -i '73,74d' datadog-agent.yaml
+sudo sed -i '76,78d' datadog-agent.yaml
 sudo sed -i '37,51d' datadog-agent.yaml
 sudo sed -i '39,40d' frontend-service.yaml
 sudo sed -i '33,34d' node-api.yaml
