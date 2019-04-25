@@ -15,5 +15,5 @@ section#split-host {
     padding-left: 20px !important;
 }
 a#terminal-inline-poweredby>img {
-  display: none;
+  display: none !important;
 }
