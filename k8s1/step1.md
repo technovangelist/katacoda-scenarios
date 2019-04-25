@@ -16,11 +16,11 @@ You should see a list of how many agents are installed and running.
 <pre><code>
   tolerations:
   - key: node-role.kubernetes.io/master
-    effect: NoSchedule
+     effect: NoSchedule
   </code></pre>
 
   *tolerations: should be at the same indent level as containers: below it*
-  
+
 1. Now apply the file again:
 `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 1. Get the daemonset again and you should see two agents are running.
