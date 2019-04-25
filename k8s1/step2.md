@@ -1,5 +1,5 @@
-1. Login to your Datadog account and take a look around.
-1. Navigate to Dashboards List under the Dashboards menu.
+1. Login to <a href="https://app.datadoghq.com" target="_datadog">your Datadog account</a> and take a look around.
+1. Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">Dashboards List</a> under the Dashboards menu.
 
   *Depending on how long your environment has been running, you may see a Redis dashboard already listed. If not, go to Integrations and add the Redis integration. Return to the Redis dashboard and within a minute or so you should start to see Redis metrics.*
 
