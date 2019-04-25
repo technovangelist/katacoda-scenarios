@@ -14,7 +14,7 @@ section#split-host {
 .step .content ol {
     padding-left: 20px !important;
 }
-a#terminal-inline-poweredby > img {
+img[src*="/images/powered-by-katacoda.png"] {
   display: none !important;
   visibility: hidden;
   
