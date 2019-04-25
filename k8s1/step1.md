@@ -12,7 +12,7 @@ If you compare it with the documentation you may notice that the first block tha
 1. Everything should be running now. To verify, run: 
 `kubectl get daemonset`{{execute}}
 You should see a list of how many agents are installed and running.
-1. But wait, we have a cluster that is running on two servers, why aren’t there two agents running. Normally, only the nodes in the cluster will run the agent, but it’s also possible to run the agent on master if you add the tolerance to the pod. After line 11 in datadog-agent.yaml, add the following:
+1. But wait, we have a cluster that is running on two servers, why aren’t there two agents running. Normally, only the nodes in the cluster will run the agent, but it’s also possible to run the agent on master if you add the tolerance to the pod. After line 16 in datadog-agent.yaml, add the following:
 <pre><code>span:
     tolerations:
     - key: node-role.kubernetes.io/master
