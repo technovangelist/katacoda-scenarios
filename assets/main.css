@@ -2,10 +2,10 @@ a#next-tutorial {
   display: none;
 }
 section#tutorial {
-  width: 60%;
+  width: 35%;
 }
 section#split-host {
-  width: 40%;
+  width: 65%;
 }
 .step ol li {
     list-style-type: inherit !important;
