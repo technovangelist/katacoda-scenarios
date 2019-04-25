@@ -16,7 +16,5 @@
 7. Now apply the Postgres deployment again. `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
 
 8. If you take a look at the Datadog dashboard now, even if you wait a few minutes, you still won't be seeing anything. We have configured the Postgres Integration, but it's not working.
-
 9. Just to make sure all the pods are running, lets look at the results of `kubectl get pods`{{execute}}. Looks like everything is running.
 10.  Move on to the next section to find a few methods for seeing what's wrong.
-
