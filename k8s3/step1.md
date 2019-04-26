@@ -3,7 +3,7 @@
 
 2. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
 
-3. Navigate to Logs in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button and then the **Start Trial** button.
+3. Navigate to <a href="https://app.datadoghq.com/logs" target="_datadog">Logs in the Datadog application</a>. If the feature hasn't been enabled, click the **Get Started** button and then the **Start Trial** button.
 
 4. On the next page you will see the instructions for getting your logs into Datadog. We already have a Datadog yaml file, but we need to add the information listed in the second and third textboxes.
 
@@ -51,4 +51,4 @@
 
 7. Return to Logs in the Datadog application and you should see logs starting to appear.
 
-We will look at enabling logs for specific integrations in a later section.
+There is so much you can do with logs in Datadog and if you haven't worked with the feature, please check out our training here on the Learning Platform. Let's move on to setting up Application Performance Monitoring.
