@@ -29,4 +29,19 @@ We are already collecting traces, but let's customize the environment a bit furt
   - name: DATADOG_SERVICE_NAME
      value: 'pumps-service'</code></pre>
 
-  `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
+  `kubectl apply -f k8s-yaml-files/pumps-service.yaml`{{execute}}
+
+  **sensors-api.yaml**
+  <pre><code>- name: DD_LOGS_INJECTION
+     value: 'true'
+  - name: DATADOG_SERVICE_NAME
+     value: 'sensors-api'</code></pre>
+
+  `kubectl apply -f k8s-yaml-files/sensors-api.yaml`{{execute}}
+
+5. Return to the **datadog-agent.yaml** file and add the following to the **env:** section. This will make trace search a bit better.
+   
+  <pre><code>- name: DD_APM_ANALYZED_SPANS
+     value: "users-api|express.request=1,sensors-api|flask.request=1,pumps-service|flask.request=1,iot-frontend|flask.request=1"</code></pre>
+
+    `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
