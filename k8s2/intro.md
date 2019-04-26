@@ -1,1 +1,1 @@
-In this hands-on we want to see some of the benefits of tags. 
+In this hands-on we want to see some of the benefits of tags. Our Kubernetes cluster now has a few dozen containers. You will see how tags makes them a bit easier to navigate. From there you will create some dashboards that take advantage of those tags. 

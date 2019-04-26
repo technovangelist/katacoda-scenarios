@@ -1,6 +1,6 @@
 In the previous section we had a real application we were working with. We will come back to that soon, but for now let's just looking at a simple collection of pods. They are all the same apart from their tags. Let's take a look at how useful those tags are.
 
-1. Log in to Datadog and go to Infrastructure > Host Map
+1. Log in to <a href="https://app.datadoghq.com" target="_datadog">Datadog</a> and go to Infrastructure > <a href="https://app.datadoghq.com/infrastructure/map" target="_datadog">Host Map</a>
 
 1. Now change the dropdown at the top left from **Hosts** to **Containers**.
 
@@ -19,4 +19,7 @@ In the previous section we had a real application we were working with. We will 
 
 1. Scroll through the pods to see the various tags that have been assigned. Hopefully they look familiar after looking at the dropdown above. There were also other tags available in that dropdown. Where do you think they came from?
 
-Continue on to the next section to start working with the tags in interesting ways.
+1. Try adding some other tags. Then apply the changes and watch the tags appear in the dashboard:
+   `kubectl delete -f k8s-yaml-files/lotsofpods.yaml;kubectl apply -f k8s-yaml-files/lotsofpods.yaml`{{execute}}
+   
+Continue on to the next page to start working with the tags in interesting ways.
