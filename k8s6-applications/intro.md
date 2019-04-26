@@ -1,0 +1,1 @@
+In the first section, you installed the Datadog agent, and then enabled the Postgres integration. But we didn't really talk about what happened. In this section we are going to look at whats going on in a bit more detail.

@@ -1,0 +1,1 @@
+In this hands-on section, we are going to take a closer look at autodiscovery and annotations. 
