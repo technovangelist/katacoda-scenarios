@@ -26,8 +26,22 @@
           "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
+        }, 
+        {
+          "file": "idledown.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
         }
-      ]
+      ], 
+      "host02": [
+        {
+          "file": "idledown.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ],
+      
+
     }
   },
   "environment": {

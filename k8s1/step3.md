@@ -13,6 +13,6 @@ In this exercise, just like in the real world, problems can come up. Unless you 
 1. Once we have that, run `kubectl exec <pod name> -- agent status`. Or just put it all together and run `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
 1. Now scroll up to the section that mentions **postgres**.
 1. You can see there is an error: password authentication failed. Take a look at the yaml file for postgres-deploy. 
-1. The problem is that the password was set to datadog and should in this case be postgres. Make the change to the password and redeploy postgres: `kubectl delete -f k8s-yaml-files/postgres-deploy.yaml;kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}.
-1. Now re-run the Agent status command above. It may take a few minutes for the postgres check to show up again.
-1. When everything looks normal, take a look at the dashboards in the Datadog application. 
+2. The problem is that the password was set to datadog and should in this case be postgres. Make the change to the password and redeploy postgres: `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}.
+3. Now re-run the Agent status command above. It may take a few minutes for the postgres check to show up again.
+4. When everything looks normal, take a look at the dashboards in the Datadog application. 
