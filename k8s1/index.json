@@ -39,7 +39,7 @@
           "target": "/usr/local/bin/",
           "chmod": "+x"
         }
-      ],
+      ]
       
 
     }
