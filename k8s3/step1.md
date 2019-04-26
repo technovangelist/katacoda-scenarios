@@ -37,6 +37,15 @@
 
   *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
 
+  *You should see something like:
+  
+<pre><code>==========
+Logs Agent
+==========
+
+  Logs Agent is not running</code></pre>
+
+
 6. You can then verify that the logs are being collected by running the **agent status** command again:
   `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
 
