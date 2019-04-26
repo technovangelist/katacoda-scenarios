@@ -3,11 +3,15 @@
 
 2. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
 
-3. Navigate to APM in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button .
+3. Open the application dashboard by clicking the second tab in the terminal window to the right. Sometimes this takes a minute to be available, so be patient.
 
-4. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
+4. You can add a few pumps to the application by pressing the **Add Pump** button. To simulate usage, scroll down and click one of the **Generate API Traffic** buttons.
 
-5. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
+5. Navigate to APM in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button .
+
+6. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
+
+7. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
   <pre><code>- name: DD_APM_ENABLED
      value: "true"
   - name: DD_APM_NON_LOCAL_TRAFFIC
@@ -21,10 +25,6 @@
 
   *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
 
+6. Navigate to the <a href="https://app.datadoghq.com/apm/traces" target="_datadog">APM Trace List</a> and you should see traces start showing up.
 
 
-6. Now configure the front-end service to start collecting traces
-   
-7. Return to Logs in the Datadog application and you should see logs starting to appear.
-
-We will look at enabling logs for specific integrations in a later section.
