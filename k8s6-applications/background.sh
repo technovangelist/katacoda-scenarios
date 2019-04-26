@@ -16,7 +16,7 @@ cd k8s-yaml-files
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
 kubectl create secret generic postgres-user --from-literal=token=datadog
-kubectl create secret generic postgres-password --from-literal=token=postgres
+kubectl create secret generic postgres-password --from-literal=token=datadog
 wall -n "Starting services"
 kubectl apply -f redis-deploy.yaml
 kubectl apply -f postgres-deploy.yaml
