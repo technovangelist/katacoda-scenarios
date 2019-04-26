@@ -1,10 +1,13 @@
-1. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
+1. Make sure all the pods in your environment are running or at least being created:
+   `kubectl get pods`{{execute}}
 
-2. Navigate to APM in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button .
+2. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
 
-3. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
+3. Navigate to APM in the Datadog application. If the feature hasn't been enabled, click the **Get Started** button .
 
-4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
+4. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
+
+5. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
   <pre><code>- name: DD_APM_ENABLED
      value: "true"
   - name: DD_APM_NON_LOCAL_TRAFFIC
