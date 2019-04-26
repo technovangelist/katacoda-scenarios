@@ -17,8 +17,16 @@ We are already collecting traces, but let's customize the environment a bit furt
    
   **node-api.yaml** 
   <pre><code>- name: DD_SERVICE_NAME
-  value: 'users-api'
-- name: DD_LOGS_INJECTION
-  value: 'true'</code></pre>
+     value: 'users-api'
+  - name: DD_LOGS_INJECTION
+     value: 'true'</code></pre>
+
+  `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
+
+  **pumps-service.yaml**
+  <pre><code>- name: DD_LOGS_INJECTION
+     value: 'true'
+  - name: DATADOG_SERVICE_NAME
+     value: 'pumps-service'</code></pre>
 
   `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
