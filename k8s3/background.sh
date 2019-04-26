@@ -10,8 +10,8 @@ cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
-# sudo sed -i '81,83d' datadog-agent.yaml
-# sudo sed -i '78,79d' datadog-agent.yaml
+sudo sed -i '81,83d' datadog-agent.yaml
+sudo sed -i '78,79d' datadog-agent.yaml
 # sudo sed -i '42,57d' datadog-agent.yaml
 # sudo sed -i '44,45d' frontend-service.yaml
 # sudo sed -i '40,41d' frontend-service.yaml
