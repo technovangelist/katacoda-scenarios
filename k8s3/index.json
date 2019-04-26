@@ -34,7 +34,6 @@
   },
   "backend": {
     "imageid": "kubernetes-cluster-running",
-    "reuseConnection": true,
-    "reuseForAllScenarios": true
+    "reuseConnection": true
   }
 }
