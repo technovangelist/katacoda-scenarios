@@ -33,6 +33,6 @@
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"s
+    "imageid": "kubernetes-cluster-running"
   }
 }
