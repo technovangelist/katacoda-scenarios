@@ -5,9 +5,11 @@
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
-      "text": "intro.md", 
-      "finish": "finish.md"
+      "text": "intro.md"
     },
+    "finish": {
+      "text": "finish.md"
+    }
     "steps": [
       {
         "title": "Installing the Agent",
