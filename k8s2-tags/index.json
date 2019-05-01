@@ -44,6 +44,6 @@
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
+    "imageid": "datadog-kubernetes-cluster-running"
   }
 }
