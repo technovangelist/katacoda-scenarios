@@ -5,7 +5,7 @@ You can discover what this role is giving access by opening the url above in you
 `kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"`{{execute}}
 1. The previous two steps are then linked together in the clusterrolebinding which binds the service account to the clusterrole:
 `kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"`{{execute}}
-1. The next step is to create the manifest for the Datadog agent and apply it to the cluster. You can find the manifest in the documentation (link to docs), but one is already in the k8s-yaml-files directory. Click on the file to see what’s in there
+1. The next step is to create the manifest for the Datadog agent and apply it to the cluster. You can find the manifest in <a href="https://docs.datadoghq.com/agent/kubernetes/daemonset_setup/#create-manifest" target="_datadog">the documentation</a>, but one is already in the k8s-yaml-files directory. Click on the file to see what’s in there
 If you compare it with the documentation you may notice that the first block that defines the api-key as a secret is not included. This step has already been completed as part of the provisioning of the training environment. 
 1. Apply this manifest using the following command:
 `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
