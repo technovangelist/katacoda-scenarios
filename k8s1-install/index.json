@@ -1,4 +1,7 @@
 {
+  "description": "this is the description", 
+  "difficulty": "Intermediate", 
+  "time": "25 minutes", 
   "details": {
     "intro": {
       "courseData": "background.sh",
