@@ -1,18 +1,6 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: my-pod12
- annotations:
-   ad.datadoghq.com/tags: '{"office": "lax", "team": "dev"}'
-spec:
- containers:
-   - name: my-container
-     image: ubuntu
-     command: ["/bin/bash", "-ec", "sleep infinity"]
----
-apiVersion: v1
-kind: Pod
-metadata:
   name: my-pod60
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "db", "color": "yellow"}'
@@ -385,21 +373,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
- name: my-pod12
- annotations:
-   ad.datadoghq.com/tags: '{"office": "lax", "team": "dev"}'
-spec:
- containers:
-   - name: my-container
-     image: ubuntu
-     command: ["/bin/bash", "-ec", "sleep infinity"]
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod60
+  name: my-pod80
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "db", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "community", "role": "db", "color": "blue"}'
 spec:
   containers:
     - name: my-container
@@ -409,9 +385,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod61
+  name: my-pod81
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "community", "role": "backend", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "mia", "team": "sales", "role": "frontend", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -421,9 +397,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod62
+  name: my-pod82
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "dev", "role": "web", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "marketing", "role": "lb", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -433,9 +409,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod63
+  name: my-pod83
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "marketing", "role": "web", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "sales", "role": "lb", "color": "blue"}'
 spec:
   containers:
     - name: my-container
@@ -445,9 +421,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod64
+  name: my-pod84
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "marketing", "role": "lb", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "marketing", "role": "db", "color": "yellow"}'
 spec:
   containers:
     - name: my-container
@@ -457,9 +433,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod65
+  name: my-pod85
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "sales", "role": "db", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "sales", "role": "web", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -469,9 +445,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod66
+  name: my-pod86
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "web", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "sales", "role": "backend", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -481,9 +457,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod67
+  name: my-pod87
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "marketing", "role": "db", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "sales", "role": "web", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -493,9 +469,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod68
+  name: my-pod88
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "lb", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "sales", "role": "web", "color": "yellow"}'
 spec:
   containers:
     - name: my-container
@@ -505,21 +481,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod69
+  name: my-pod89
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "lb", "color": "yellow"}'
-spec:
-  containers:
-    - name: my-container
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod71
-  annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "lb", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "web", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -529,9 +493,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod72
+  name: my-pod90
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "lb", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "frontend", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -541,9 +505,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod73
+  name: my-pod91
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "sales", "role": "lb", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "sales", "role": "web", "color": "blue"}'
 spec:
   containers:
     - name: my-container
@@ -553,9 +517,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod74
+  name: my-pod92
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "backend", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "lax", "team": "community", "role": "frontend", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -565,9 +529,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod79
+  name: my-pod93
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "community", "role": "lb", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "sfo", "team": "dev", "role": "frontend", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -577,21 +541,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
- name: my-pod12
- annotations:
-   ad.datadoghq.com/tags: '{"office": "lax", "team": "dev"}'
-spec:
- containers:
-   - name: my-container
-     image: ubuntu
-     command: ["/bin/bash", "-ec", "sleep infinity"]
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod60
+  name: my-pod94
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "db", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "marketing", "role": "db", "color": "yellow"}'
 spec:
   containers:
     - name: my-container
@@ -601,9 +553,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod61
+  name: my-pod95
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "community", "role": "backend", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "web", "color": "blue"}'
 spec:
   containers:
     - name: my-container
@@ -613,9 +565,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod62
+  name: my-pod96
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "dev", "role": "web", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "dev", "role": "web", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -625,9 +577,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod63
+  name: my-pod97
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "marketing", "role": "web", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "db", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -637,9 +589,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod64
+  name: my-pod98
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "marketing", "role": "lb", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "community", "role": "backend", "color": "blue"}'
 spec:
   containers:
     - name: my-container
@@ -649,9 +601,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod65
+  name: my-pod99
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "sales", "role": "db", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "marketing", "role": "lb", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -661,9 +613,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod66
+  name: my-pod100
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "web", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "sales", "role": "frontend", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -673,9 +625,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod67
+  name: my-pod101
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "marketing", "role": "db", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "frontend", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -685,9 +637,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod68
+  name: my-pod102
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "lb", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "mia", "team": "dev", "role": "db", "color": "red"}'
 spec:
   containers:
     - name: my-container
@@ -697,21 +649,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod69
+  name: my-pod103
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "lb", "color": "yellow"}'
-spec:
-  containers:
-    - name: my-container
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"]
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod71
-  annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "lb", "color": "yellow"}'
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "community", "role": "backend", "color": "yellow"}'
 spec:
   containers:
     - name: my-container
@@ -721,9 +661,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod72
+  name: my-pod104
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "lb", "color": "red"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "mia", "team": "sales", "role": "lb", "color": "green"}'
 spec:
   containers:
     - name: my-container
@@ -733,33 +673,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod73
+  name: my-pod105
   annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "sales", "role": "lb", "color": "yellow"}'
-spec:
-  containers:
-    - name: my-container
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"] 
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod74
-  annotations:
-    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "backend", "color": "green"}'
-spec:
-  containers:
-    - name: my-container
-      image: ubuntu
-      command: ["/bin/bash", "-ec", "sleep infinity"] 
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod79
-  annotations:
-    ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "community", "role": "lb", "color": "green"}'
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "community", "role": "web", "color": "green"}'
 spec:
   containers:
     - name: my-container
