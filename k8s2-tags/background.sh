@@ -1,5 +1,6 @@
 #!/bin/bash
 # mkdir k8s-yaml-files
+apt install datamash
 launch.sh
 touch status.txt
 
