@@ -1,18 +1,11 @@
-1. Login to <a href="https://app.datadoghq.com" target="_datadog">your Datadog account</a> and take a look around.
-2. Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">Dashboards List</a> under the Dashboards menu.
+etcd is the main database that tracks everything in the cluster and its made up of multiple nodes. Although there is a leader, writes are only committed when a quorum of nodes agrees to the write proposal. So you need to ensure that there is always a single leader. Lack of a leader or too many leaders at any one time will be an issue. And you want to make sure you have enough nodes at any time to reach a quorum, but not so many that the network becomes saturated. You also have to make sure your data is sized properly for your nodes. If network IO increases it could be a sign that a new leader is being elected. And while there can be multiple proposals pending at any time, there should not be any failed proposals.
 
-  *Depending on how long your environment has been running, you may see a Redis dashboard already listed. If not, go to Integrations and add the Redis integration. Return to the Redis dashboard and within a minute or so you should start to see Redis metrics.*
 
-3. Add the <a href="https://app.datadoghq.com/account/settings#integrations/postgres" target="_datadog">integration for Postgres</a>, then navigate to the Postgres - Overview dashboard.
-4. Even if you wait a long time, no metrics will appear here. This is because the Agent is not reporting any Postgres metrics.
-5. In the lab environment, open the postgres-deploy.yaml file. Scroll down to line 19.
-6. There is a section for annotations; uncomment each of these lines.
+The etcd database defaults to a maximum size of 2GB, though you can configure that to be up to 8GB. Whatever size you choose, you should monitor the size to ensure it stays under that limit. This is a great metric to employ a forecast on, letting you know that it is likely that you will hit the max soon. Another great feature to take a look at is the ability to create a graph based on log events that match a certain criteria. You could watch for the phrase “took too long" which indicates a slow request. Count how many of those happen in any time period and you have an interesting graph that can report when you are having too many slow requests.
 
-  *When the hashes are removed, **annotations:** should be at the same indent level as **labels:** and each of the three annotation lines will be indented once from **annotations**.*
-  *Annotations are how you configure the Datadog Agent to work with one of the integrations. Here we are telling the Agent to use the **Postgres** check, with the corresponding host, port, username, and password.*
-  
-  *Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.*
-7. Now apply the Postgres deployment again. `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}
-8. If you take a look at the Datadog dashboard now, even if you wait a few minutes, you still won't be seeing anything. We have configured the Postgres Integration, but it's not working.
-9. Just to make sure all the pods are running, lets look at the results of `kubectl get pods`{{execute}}. Looks like everything is running.
-10.  Move on to the next section to find a few methods for seeing what's wrong.
+The API Server is cpu and memory intensive so keeping an eye on the relevant system metrics is important. The API Server is your interface to etcd and the other components. Its a big server but it's hard to load balance as you normally would like to. 
+
+Review the following materials, and build some dashboards that allow you to monitor the Kubernetes platform in interesting ways:
+
+* <a href="https://www.datadoghq.com/blog/eks-cluster-metrics/" target="_datadog">EKS Cluster Metrics from the Datadog Blog</a>
+* <a href="https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics/" target="_datadog">Monitoring Kubernetes Metrics from the Datadog Blog</a>

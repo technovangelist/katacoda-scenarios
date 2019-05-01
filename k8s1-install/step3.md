@@ -10,9 +10,10 @@ In this exercise, just like in the real world, problems can come up. Unless you 
 1. Of course, we know that the API key isn't the problem because we are getting some data into Datadog, just not the Postgres metrics.
 1. The next thing to look at is the status of the Datadog Agent.
 1. We need to run the command `agent status` on the Datadog Agent pod. To get the name of the pod, you can run `kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog`. 
-1. Once we have that, run `kubectl exec <pod name> -- agent status`. Or just put it all together and run `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
-1. Now scroll up to the section that mentions **postgres**.
-1. You can see there is an error: password authentication failed. Take a look at the yaml file for postgres-deploy. 
-2. The problem is that the password was set to datadog and should in this case be postgres. Make the change to the password and redeploy postgres: `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}.
-3. Now re-run the Agent status command above. It may take a few minutes for the postgres check to show up again.
-4. When everything looks normal, take a look at the dashboards in the Datadog application. 
+1. Once we have that, run `kubectl exec <pod name> -- agent status`. Or just put it all together and run `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog | head -n 1) -- agent status`{{execute}}
+   *Note that we are trying this just on the first pod that matches **datadog**. If you didn't update the **tolerations** earlier, you only have one. Otherwise you may have 2 that match.*
+2. Now scroll up to the section that mentions **postgres**.
+3. You can see there is an error: password authentication failed. Take a look at the yaml file for postgres-deploy. 
+4. The problem is that the password was set to datadog and should in this case be postgres. Make the change to the password and redeploy postgres: `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}.
+5. Now re-run the Agent status command above. It may take a few minutes for the postgres check to show up again.
+6. When everything looks normal, take a look at the dashboards in the Datadog application.

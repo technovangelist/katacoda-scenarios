@@ -14,12 +14,13 @@ In the previous section we had a real application we were working with. We will 
 1. In the editor to the right, choose the **lotsofpods.yaml** file. Notice that we have a collection of pods that are all mostly identical. The differences are in the tags.
 
 1. The easiest way to define tags for Datadog on Kubernetes is to use annotations:
-  `annotations:
-    ad.datadoghq.com/tags: '{"key": "value"}'`
+
+  <pre><code>annotations:
+     ad.datadoghq.com/tags: '{"key": "value"}'</code></pre>
 
 1. Scroll through the pods to see the various tags that have been assigned. Hopefully they look familiar after looking at the dropdown above. There were also other tags available in that dropdown. Where do you think they came from?
 
 1. Try adding some other tags. Then apply the changes and watch the tags appear in the dashboard:
-   `kubectl delete -f k8s-yaml-files/lotsofpods.yaml;kubectl apply -f k8s-yaml-files/lotsofpods.yaml`{{execute}}
+   `kubectl apply -f k8s-yaml-files/lotsofpods.yaml`{{execute}}
    
 Continue on to the next page to start working with the tags in interesting ways.
