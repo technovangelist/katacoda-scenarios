@@ -681,3 +681,87 @@ spec:
     - name: my-container
       image: ubuntu
       command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod106
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "dev", "role": "backend", "color": "red"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod107
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "community", "role": "frontend", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod108
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "community", "role": "web", "color": "blue"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod109
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "dev", "role": "backend", "color": "green"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod110
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "qa", "office": "lax", "team": "community", "role": "web", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod111
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "mia", "team": "marketing", "role": "web", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod112
+  annotations:
+    ad.datadoghq.com/tags: '{"environment": "staging", "office": "sfo", "team": "sales", "role": "lb", "color": "yellow"}'
+spec:
+  containers:
+    - name: my-container
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "sleep infinity"] 
