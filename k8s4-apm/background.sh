@@ -1,6 +1,7 @@
 #!/bin/bash
 # mkdir k8s-yaml-files
 touch status.txt
+apt install datamash
 wall -n "Cloning the Github Repo"
 git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
 cd trace

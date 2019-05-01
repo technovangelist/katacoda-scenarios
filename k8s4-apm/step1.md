@@ -1,5 +1,6 @@
 1. Make sure all the pods in your environment are running or at least being created:
-   `kubectl get pods`{{execute}}
+   `kubectl get pods --no-headers | awk {'print $3'}| datamash -s -g 1 count 1`{{execute}}
+   Use just `kubectl get pods`{{execute}} to see the list of pods.
 
 2. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
 
