@@ -1,1 +1,1 @@
-![Answer](/k8s1-install/assets/install-pt1.gif)
+![Answer](/technovangelist/scenarios/k8s1-install/assets/install-pt1.gif)
