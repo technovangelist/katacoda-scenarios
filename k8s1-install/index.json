@@ -9,7 +9,7 @@
     },
     "finish": {
       "text": "finish.md"
-    }
+    }, 
     "steps": [
       {
         "title": "Installing the Agent",
