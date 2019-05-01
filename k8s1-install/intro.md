@@ -3,6 +3,6 @@ In this section, you are going to install the Datadog Agent in your environment.
 
 Next, create and apply a manifest for the Agent. In the hands-on exercise, you will see some of the interesting aspects of the manifest.
 
-Once the Agent is deployed, running `kubectl get daemonset` will return information about how many agents are running.
+Once the Agent is deployed, running `kubectl get daemonset` will return information about how many agents are running. Ultimately, you will have the agent running and collecting information about an application including its Postgres database.
 
 Let’s move on to see this in action.
