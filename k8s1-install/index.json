@@ -20,7 +20,8 @@
       }, 
       {
         "title": "Troubleshooting",
-        "text": "step3.md"
+        "text": "step3.md",
+        "answer": "answer3.md"
       }
     ],
     "assets": {
