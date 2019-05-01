@@ -1,7 +1,8 @@
 In the previous section we had a real application we were working with. We will come back to that soon, but for now let's just look at a simple collection of pods. They are all the same apart from their tags. Let's take a look at how useful those tags are.
 
-1. Verify that all the pods are up and running using this command:
-   `kubectl get pods`{{execute}}
+1. Make sure all the pods in your environment are running or at least being created:
+   `kubectl get pods --no-headers | awk {'print $3'}| datamash -s -g 1 count 1`{{execute}}
+   Use just `kubectl get pods`{{execute}} to see the list of pods.
 
 2. Log in to <a href="https://app.datadoghq.com" target="_datadog">Datadog</a> and go to Infrastructure > <a href="https://app.datadoghq.com/infrastructure/map" target="_datadog">Host Map</a>
 
