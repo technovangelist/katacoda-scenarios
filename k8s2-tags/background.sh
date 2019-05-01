@@ -1,5 +1,6 @@
 #!/bin/bash
 # mkdir k8s-yaml-files
+launch.sh
 touch status.txt
 
 wall -n "Starting services"
