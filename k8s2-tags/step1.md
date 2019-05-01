@@ -1,10 +1,13 @@
 In the previous section we had a real application we were working with. We will come back to that soon, but for now let's just looking at a simple collection of pods. They are all the same apart from their tags. Let's take a look at how useful those tags are.
 
-1. Log in to <a href="https://app.datadoghq.com" target="_datadog">Datadog</a> and go to Infrastructure > <a href="https://app.datadoghq.com/infrastructure/map" target="_datadog">Host Map</a>
+1. Verify that all the pods are up and running using this command:
+   `kubectl get pods`{{execute}}
 
-1. Now change the dropdown at the top left from **Hosts** to **Containers**.
+2. Log in to <a href="https://app.datadoghq.com" target="_datadog">Datadog</a> and go to Infrastructure > <a href="https://app.datadoghq.com/infrastructure/map" target="_datadog">Host Map</a>
 
-1. In the **Group By** dropdown, get rid of **availability-zone** and choose **role**.
+3. Now change the dropdown at the top left from **Hosts** to **Containers**.
+
+4. In the **Group By** dropdown, get rid of **availability-zone** and choose **role**.
   
   Notice that the containers are grouped by lb, web, db, backend, and no role. 
 1. Now add **environment** to **Group By**. 
