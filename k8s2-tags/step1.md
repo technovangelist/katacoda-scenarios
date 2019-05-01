@@ -1,4 +1,4 @@
-In the previous section we had a real application we were working with. We will come back to that soon, but for now let's just looking at a simple collection of pods. They are all the same apart from their tags. Let's take a look at how useful those tags are.
+In the previous section we had a real application we were working with. We will come back to that soon, but for now let's just look at a simple collection of pods. They are all the same apart from their tags. Let's take a look at how useful those tags are.
 
 1. Verify that all the pods are up and running using this command:
    `kubectl get pods`{{execute}}
