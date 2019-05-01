@@ -1,6 +1,5 @@
 #!/bin/bash
 # mkdir k8s-yaml-files
-launch.sh
 touch status.txt
 wall -n "Cloning the Github Repo"
 git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
@@ -21,6 +20,7 @@ sudo sed -i '36,37d' pumps-service.yaml
 sudo sed -i '38,39d' sensors-api.yaml
 sudo sed -i '34,35d' sensors-api.yaml
 
+launch.sh
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
 kubectl create secret generic postgres-user --from-literal=token=datadog
