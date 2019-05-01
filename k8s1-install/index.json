@@ -15,7 +15,8 @@
       },
       {
         "title": "Adding an Integration",
-        "text": "step2.md"
+        "text": "step2.md",
+        "answer": "answer2.md"
       }, 
       {
         "title": "Troubleshooting",
