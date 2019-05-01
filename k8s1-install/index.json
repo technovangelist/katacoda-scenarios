@@ -10,7 +10,8 @@
     "steps": [
       {
         "title": "Installing the Agent",
-        "text": "step1.md"
+        "text": "step1.md", 
+        "answer": "answer1.md"
       },
       {
         "title": "Adding an Integration",
