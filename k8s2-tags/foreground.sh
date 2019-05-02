@@ -12,4 +12,4 @@ kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
 clear
 
 
-prepenvironment
+# prepenvironment
