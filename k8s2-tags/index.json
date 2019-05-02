@@ -40,14 +40,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal", 
-    "uieditorpath": "k8s-yaml-files",
-    "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "app dashboard",
-        "port": 30001
-      }
-    ]
+    "uieditorpath": "k8s-yaml-files"
   },
   "backend": {
     "imageid": "datadog-kubernetes-cluster-running", 
