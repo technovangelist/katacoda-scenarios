@@ -32,6 +32,10 @@
           "target": "/root/k8s-yaml-files/"
         },
         {
+          "file": "couplemore.yaml",
+          "target": "/root/k8s-yaml-files/"
+        },
+        {
           "file": "datadog.yaml",
           "target": "/root/k8s-yaml-files/"
         }

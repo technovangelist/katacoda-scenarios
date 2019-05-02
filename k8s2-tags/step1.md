@@ -25,7 +25,9 @@ In the previous section we had a real application we were working with. We will 
 
 1. Scroll through the pods to see the various tags that have been assigned. Hopefully they look familiar after looking at the dropdown above. There were also other tags available in that dropdown. Where do you think they came from?
 
-1. Try adding some other tags. Then apply the changes and watch the tags appear in the dashboard:
-   `kubectl apply -f k8s-yaml-files/lotsofpods.yaml`{{execute}}
+2. We want to try adding some other tags, but if we add them to lotsofpods its going to take a while to restart them. Instead open the couplemore.yaml file. This is just a couple more pods. Try adding some other tags. Then apply the changes and watch the tags appear in the dashboard:
+   `kubectl apply -f k8s-yaml-files/couplemore.yaml`{{execute}}
+
+   *It may take a few minutes to see them show up in the dashboard*
    
 Continue on to the next page to start working with the tags in interesting ways.
