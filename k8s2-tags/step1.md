@@ -10,10 +10,11 @@ In the previous section we had a real application we were working with. We will 
 
 4. In the **Group By** dropdown, get rid of **availability-zone** and choose **role**.
   
-  Notice that the containers are grouped by lb, web, db, backend, and no role. 
+  *Notice that the containers are grouped by lb, web, db, backend, and no role.* 
+
 1. Now add **environment** to **Group By**. 
 
-  Look at the other choices in that drop-down to see the other tags that have been assigned to the pods. You can continue to slice and dice by any of them to look for any patterns that might exist. 
+  *Look at the other choices in that drop-down to see the other tags that have been assigned to the pods. You can continue to slice and dice by any of them to look for any patterns that might exist.* 
 
 1. In the editor to the right, choose the **lotsofpods.yaml** file. Notice that we have a collection of pods that are all mostly identical. The differences are in the tags.
 

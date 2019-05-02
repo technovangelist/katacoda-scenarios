@@ -1,11 +1,15 @@
 {
-  "title": "Working with Logs in Kubernetes",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
   "details": {
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
       "text": "intro.md"
     },
+    "finish": {
+      "text": "finish.md"
+    }, 
     "steps": [
       {
         "text": "step1.md"
@@ -33,6 +37,7 @@
     ]
   },
   "backend": {
-    "imageid": "datadog-kubernetes-cluster-running"
+    "imageid": "datadog-kubernetes-cluster-running",
+    "reuseConnection": true
   }
 }
