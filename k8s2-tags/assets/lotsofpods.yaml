@@ -5,11 +5,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -22,11 +17,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "community", "role": "backend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -39,11 +29,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "dev", "role": "web", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -56,11 +41,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "marketing", "role": "web", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -73,11 +53,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "marketing", "role": "lb", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -90,11 +65,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "sales", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -107,11 +77,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "web", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -124,11 +89,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "marketing", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -141,11 +101,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "lb", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -158,11 +113,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -175,11 +125,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -192,11 +137,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "lb", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -209,11 +149,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "sales", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -226,11 +161,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "backend", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -243,11 +173,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "community", "role": "lb", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -260,11 +185,6 @@ metadata:
  annotations:
    ad.datadoghq.com/tags: '{"office": "lax", "team": "dev"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
  containers:
    - name: my-container
      image: ubuntu
@@ -277,11 +197,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -294,11 +209,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "community", "role": "backend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -311,11 +221,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "dev", "role": "web", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -328,11 +233,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "marketing", "role": "web", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -345,11 +245,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "marketing", "role": "lb", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -362,11 +257,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "sales", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -379,11 +269,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "web", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -396,11 +281,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "marketing", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -413,11 +293,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "lb", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -430,11 +305,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "boston", "team": "community", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -447,11 +317,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -464,11 +329,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "lb", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -481,11 +341,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "lax", "team": "sales", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -498,11 +353,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "backend", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -515,11 +365,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "community", "role": "lb", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -532,11 +377,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "community", "role": "db", "color": "blue"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -549,11 +389,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "mia", "team": "sales", "role": "frontend", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -566,11 +401,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "marketing", "role": "lb", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -583,11 +413,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "sales", "role": "lb", "color": "blue"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -600,11 +425,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "sfo", "team": "marketing", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -617,11 +437,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "sales", "role": "web", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -634,11 +449,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "sales", "role": "backend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -651,11 +461,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "sales", "role": "web", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -668,11 +473,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "sales", "role": "web", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -685,11 +485,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "sales", "role": "web", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -702,11 +497,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "frontend", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -719,11 +509,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "sales", "role": "web", "color": "blue"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -736,11 +521,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "lax", "team": "community", "role": "frontend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -753,11 +533,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "sfo", "team": "dev", "role": "frontend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -770,11 +545,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "marketing", "role": "db", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -787,11 +557,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "lax", "team": "marketing", "role": "web", "color": "blue"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -804,11 +569,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "dev", "role": "web", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -821,11 +581,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "community", "role": "db", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -838,11 +593,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "community", "role": "backend", "color": "blue"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -855,11 +605,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "boston", "team": "marketing", "role": "lb", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -872,11 +617,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "nyc", "team": "sales", "role": "frontend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -889,11 +629,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "nyc", "team": "dev", "role": "frontend", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -906,11 +641,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "mia", "team": "dev", "role": "db", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -923,11 +653,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "nyc", "team": "community", "role": "backend", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -940,11 +665,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "mia", "team": "sales", "role": "lb", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -957,11 +677,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "community", "role": "web", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -974,11 +689,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "sfo", "team": "dev", "role": "backend", "color": "red"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -991,11 +701,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "community", "role": "frontend", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -1008,11 +713,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "mia", "team": "community", "role": "web", "color": "blue"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -1025,16 +725,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "production", "office": "boston", "team": "dev", "role": "backend", "color": "green"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -1047,11 +737,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "qa", "office": "lax", "team": "community", "role": "web", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -1064,11 +749,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "mia", "team": "marketing", "role": "web", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
@@ -1081,11 +761,6 @@ metadata:
   annotations:
     ad.datadoghq.com/tags: '{"environment": "staging", "office": "sfo", "team": "sales", "role": "lb", "color": "yellow"}'
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
   containers:
     - name: my-container
       image: ubuntu
