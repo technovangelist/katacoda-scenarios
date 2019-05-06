@@ -48,7 +48,7 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "app dashboard",
+        "name": "App Dashboard",
         "port": 30001
       }
     ]

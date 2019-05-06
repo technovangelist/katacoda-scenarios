@@ -17,10 +17,10 @@ section#split-host {
 a#terminal-inline-poweredby {
   display: none !important;
 }
-section#intro, section#finish {
+section#intro, section#finished {
   width: 100% !important;
 }
-#intro .banner {
+#intro .banner, #finished .banner {
     display: none !important;
     visibility: hidden;
 }
