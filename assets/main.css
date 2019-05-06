@@ -17,3 +17,10 @@ section#split-host {
 a#terminal-inline-poweredby {
   display: none !important;
 }
+section#intro, section#finish {
+  width: 100% !important;
+}
+
+#intro .banner, #finished .banner, #course-title {
+    display: none !important;
+}
