@@ -1,0 +1,1 @@
+![Answer](/technovangelist/scenarios/k8s2-tags/assets/tags-pt1.gif)
