@@ -1,0 +1,19 @@
+a#next-tutorial {
+  display: none;
+}
+section#tutorial {
+  width: 35%;
+}
+section#split-host {
+  width: 65%;
+}
+.step ol li {
+    list-style-type: inherit !important;
+    margin-left: 0px;
+}
+.step .content ol {
+    padding-left: 20px !important;
+}
+a#terminal-inline-poweredby {
+  display: none !important;
+}
