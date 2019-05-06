@@ -11,16 +11,16 @@ cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
-# sudo sed -i '81,83d' datadog-agent.yaml
-# sudo sed -i '78,79d' datadog-agent.yaml
-# sudo sed -i '42,56d' datadog-agent.yaml
-# sudo sed -i '44,45d' frontend-service.yaml
-# sudo sed -i '40,41d' frontend-service.yaml
-# sudo sed -i '36,39d' node-api.yaml
-# sudo sed -i '42,43d' pumps-service.yaml
-# sudo sed -i '36,37d' pumps-service.yaml
-# sudo sed -i '38,39d' sensors-api.yaml
-# sudo sed -i '34,35d' sensors-api.yaml
+sudo sed -i '76,78d' datadog-agent.yaml #pointerdir in volumes
+sudo sed -i '73,74d' datadog-agent.yaml #pointerdir in vol mounts
+sudo sed -i '42,53d' datadog-agent.yaml #the logs and apm env vars
+sudo sed -i '41,42d' frontend-service.yaml #dd_logs_injection
+sudo sed -i '37,38d' frontend-service.yaml # datadog service name
+sudo sed -i '36,39d' node-api.yaml # service name and logs injection
+sudo sed -i '42,43d' pumps-service.yaml # datadogservice name
+sudo sed -i '36,37d' pumps-service.yaml #logs injections
+sudo sed -i '38,39d' sensors-api.yaml #logs injection
+sudo sed -i '34,35d' sensors-api.yaml #service name
 
 # rm datadog-agent.yaml
 wall -n "Creating Kubernetes Secrets"
