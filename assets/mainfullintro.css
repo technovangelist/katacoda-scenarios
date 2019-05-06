@@ -24,3 +24,7 @@ section#intro, section#finish {
     display: none !important;
     visibility: hidden;
 }
+
+#page-mode-lti-view iframe#contentframe {
+  border: none !important;
+}
