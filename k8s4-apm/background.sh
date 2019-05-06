@@ -6,20 +6,21 @@ wall -n "Cloning the Github Repo"
 git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
 cd trace
 wall -n "Checking out the right branch"
-git checkout k8s-autodiscovery
+git checkout -b k8s-autodiscovery 4b0c105fb3158d0418226642b5a3160c020164e8
 cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
 cd k8s-yaml-files
 
-sudo sed -i '49,56d' datadog-agent.yaml
-sudo sed -i '44,45d' frontend-service.yaml
-sudo sed -i '40,41d' frontend-service.yaml
-sudo sed -i '36,39d' node-api.yaml
-sudo sed -i '42,43d' pumps-service.yaml
-sudo sed -i '36,37d' pumps-service.yaml
-sudo sed -i '38,39d' sensors-api.yaml
-sudo sed -i '34,35d' sensors-api.yaml
+sudo sed -i '49,53d' datadog-agent.yaml #apm stuff
+sudo sed -i '16d' datadog-agent.yaml #hostnetwork
+sudo sed -i '41,42d' frontend-service.yaml
+sudo sed -i '37,38d' frontend-service.yaml
+sudo sed -i '36,39d' node-api.yaml # service name and logs injection
+sudo sed -i '42,43d' pumps-service.yaml # datadogservice name
+sudo sed -i '36,37d' pumps-service.yaml #logs injections
+sudo sed -i '38,39d' sensors-api.yaml #logs injection
+sudo sed -i '34,35d' sensors-api.yaml #service name
 
 launch.sh
 # rm datadog-agent.yaml
