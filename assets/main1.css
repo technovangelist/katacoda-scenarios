@@ -20,6 +20,7 @@ a#terminal-inline-poweredby {
 section#intro, section#finish {
   width: 100% !important;
 }
-#intro>.div.header.banner, #finished>.div.header.banner, #course-title {
+#intro .banner {
     display: none !important;
+    visibility: hidden;
 }
