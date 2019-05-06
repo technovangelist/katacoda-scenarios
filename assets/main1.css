@@ -21,6 +21,6 @@ section#intro, section#finish {
   width: 100% !important;
 }
 
-#intro .banner, #finished .banner, #course-title {
+#intro>.div.header.banner, #finished>.div.header.banner, #course-title {
     display: none !important;
 }
