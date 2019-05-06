@@ -35,7 +35,7 @@ kubectl apply -f node-api.yaml
 kubectl apply -f pumps-service.yaml
 kubectl apply -f sensors-api.yaml
 kubectl apply -f frontend-service.yaml
-kubectl apply -f datadog-agent.yaml
+# kubectl apply -f datadog-agent.yaml
 
 echo "complete">>/root/status.txt
 
