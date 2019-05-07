@@ -24,4 +24,6 @@
 
    *Do you see how the information from the example yaml is encoded in the annotations?*
 
-1. Try adding **nginx** to this cluster and use annotations to start monitoring the server. You can find a deployment yaml for **nginx** on the <a href="https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/#scaling-the-application-by-increasing-the-replica-count" target="_datadog">kubernetes.io website</a>. The **nginx** integration configuration file can be found <a href="https://github.com/DataDog/integrations-core/tree/master/nginx/datadog_checks/nginx/data" target="_datadog">here in our Github repo</a>. Unless you add the options for a rolling update, you will have to do a `kubectl delete` followed by a `kubectl apply` to apply any changes you make to the deployment.
+1. Try adding **nginx** to this cluster and use annotations to start monitoring the server. You can find a deployment yaml for **nginx** in the editor above. The **nginx** integration configuration file can be found <a href="https://github.com/DataDog/integrations-core/tree/master/nginx/datadog_checks/nginx/data" target="_datadog">here in our Github repo</a>. 
+
+

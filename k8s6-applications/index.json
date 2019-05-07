@@ -28,6 +28,10 @@
           "chmod": "+x"
         }, 
         {
+          "file": "nginx.yaml",
+          "target": "/root/k8s-yaml-files/"
+        },
+        {
           "file": "idledown.sh",
           "target": "/usr/local/bin/",
           "chmod": "+x"
