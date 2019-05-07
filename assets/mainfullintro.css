@@ -33,9 +33,14 @@ section#intro, section#finished {
   max-width: 75vw;
   display:block;
   margin:auto;
+  border: black 2px solid;
+  padding-bottom: 20px;
 }
 #intro p:nth-of-type(2), #finished p:nth-of-type(2) {
-  max-width: 70vw;
+  max-width: 80vw;
   display:block;
   margin:auto;
+}
+#course-details {
+  max-width: 80vw;
 }
