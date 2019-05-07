@@ -29,11 +29,13 @@ section#intro, section#finished {
   border: none !important;
 }
 
-#intro img.heroimg, #finished img.heroimg {
+#intro img, #finished img {
   max-width: 75vw;
   display:block;
   margin:auto;
 }
 #intro p, #finished p {
   max-width: 70vw;
+  display:block;
+  margin:auto;
 }
