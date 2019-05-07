@@ -34,7 +34,7 @@ section#intro, section#finished {
   display:block;
   margin:auto;
 }
-#intro p, #finished p {
+#intro p:nth-of-type(2), #finished p:nth-of-type(2) {
   max-width: 70vw;
   display:block;
   margin:auto;
