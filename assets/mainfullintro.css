@@ -28,6 +28,6 @@ section#intro, section#finished {
 #page-mode-lti-view iframe#contentframe {
   border: none !important;
 }
-#heroimg {
+.heroimg {
   width: 50%;
 }
