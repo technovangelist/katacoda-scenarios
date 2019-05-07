@@ -29,6 +29,7 @@ section#intro, section#finished {
   border: none !important;
 }
 
-.heroimg {
-  width: 50%;
+#intro img.heroimg, #finished img.heroimg {
+  display:block;
+  margin:auto;
 }
