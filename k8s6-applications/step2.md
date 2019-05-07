@@ -16,7 +16,7 @@
     
     <pre><code>init_config:
 
-    instances:
+  instances:
      - host: localhost
        port: 5432
        username: datadog
