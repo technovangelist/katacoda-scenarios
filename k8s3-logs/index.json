@@ -12,7 +12,8 @@
     }, 
     "steps": [
       {
-        "text": "step1.md"
+        "text": "step1.md", 
+        "answer": "answer1.md"
       }
     ],
     "assets": {

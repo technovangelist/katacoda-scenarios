@@ -51,4 +51,5 @@
 
 7. Return to Logs in the Datadog application and you should see logs starting to appear.
 
-There is so much you can do with logs in Datadog and if you haven't worked with the feature, please check out our training here on the Learning Platform. Let's move on to setting up Application Performance Monitoring.
+
+

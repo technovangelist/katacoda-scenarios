@@ -1,0 +1,1 @@
+![Answer](/technovangelist/scenarios/k8s6-applications/assets/app-pt1.gif)
