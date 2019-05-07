@@ -13,3 +13,5 @@ clear
 
 
 prepenvironment
+
+echo "Provisioning Complete"
