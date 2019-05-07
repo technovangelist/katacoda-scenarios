@@ -2,4 +2,4 @@ This was a look at some of the most important metrics that our team at Datadog k
 
 Now let's move on to monitoring your applications on Kubernetes.
 
-### Scroll down to click the **Next Module** link below
+**Scroll down to click the *Next Module* link below**

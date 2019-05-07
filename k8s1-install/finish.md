@@ -2,4 +2,4 @@ In this section, you brought up the Datadog agent and enabled it to monitor the 
 
 Now let's move on to looking at the role of tags in monitoring Kubernetes.
 
-### Scroll down to click the **Next Module** link below
+**Scroll down to click the *Next Module* link below**

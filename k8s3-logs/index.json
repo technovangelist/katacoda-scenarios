@@ -38,6 +38,8 @@
     ]
   },
   "backend": {
-    "imageid": "datadog-kubernetes-cluster-running"
+    "imageid": "datadog-kubernetes-cluster-running",
+    "reuseConnection": "true",
+    "livetime": "1h"
   }
 }

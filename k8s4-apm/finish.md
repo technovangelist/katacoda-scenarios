@@ -2,4 +2,4 @@ That was an introduction to APM on Kubernetes in Datadog. Again, this is not a c
 
 Now let's move on to learn about monitoring the Kubernetes platform.
 
-### Scroll down to click the **Next Module** link below
+**Scroll down to click the *Next Module* link below**

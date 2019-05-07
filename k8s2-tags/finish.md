@@ -2,4 +2,4 @@ In this section we learned about the value of tags. As your environment grows an
 
 Now let's move on to learn about using Logs on Kubernetes in Datadog.
 
-### Scroll down to click the **Next Module** link below
+**Scroll down to click the *Next Module* link below**
