@@ -34,3 +34,6 @@ section#intro, section#finished {
   display:block;
   margin:auto;
 }
+#intro p, #finished p {
+  max-width: 70vw;
+}
