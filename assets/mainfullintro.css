@@ -30,14 +30,14 @@ section#intro, section#finished {
 }
 
 #intro img, #finished img {
-  max-width: 75vw;
+  max-width: 50vw;
   display:block;
   margin:auto;
   border: black 2px solid;
   padding-bottom: 20px;
 }
 #intro p:nth-of-type(2), #finished p:nth-of-type(2) {
-  max-width: 80vw;
+  max-width: 85vw;
   display:block;
   margin:auto;
 }
