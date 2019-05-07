@@ -15,7 +15,6 @@
     **Corresponding lines in Postgres Example Yaml**
     
     <pre><code>init_config:
-
   instances:
      - host: localhost
        port: 5432
