@@ -30,7 +30,7 @@ section#intro, section#finished {
 }
 
 #intro img.heroimg, #finished img.heroimg {
-  max-width: 50vw;
+  max-width: 75vw;
   display:block;
   margin:auto;
 }
