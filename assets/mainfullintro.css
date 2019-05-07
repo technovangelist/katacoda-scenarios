@@ -1,3 +1,38 @@
+/*BASE TYPOGRAPHY*/
+@font-face {
+    font-family: 'NationalWeb';
+    src: url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Light.woff2') format('woff2'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Light.woff') format('woff'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Light.eot') format('embedded-opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    -webkit-font-smoothing: antialiased;
+}
+@font-face {
+    font-family: 'NationalWeb';
+    src: url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Semibold.woff2') format('woff2'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Semibold.woff') format('woff'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Semibold.eot') format('embedded-opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, h1, h2, h3, h4, h5, h6,
+p, li{
+    font-family: "NationalWeb" !important;
+    -webkit-font-smoothing: antialiased;
+    font-kerning: normal;
+    -moz-font-feature-settings: "lnum" 1,"frac" 0,"liga" 1,"clig" 1,"ss03" 1,"ss06" 1;
+    -moz-font-feature-settings: "lnum=1, frac=0, liga=1, clig=1, ss03=1, ss06=1";
+    -ms-font-feature-settings: "lnum" 1, "frac" 0, "liga" 1, "clig" 1, "ss03" 1, "ss06" 1;
+    -o-font-feature-settings: "lnum" 1, "frac" 0, "liga" 1, "clig" 1, "ss03" 1, "ss06" 1;
+    -webkit-font-feature-settings: "lnum" 1, "frac" 0, "liga" 1, "clig" 1, "ss03" 1, "ss06" 1;
+    font-feature-settings: "lnum" 1,"frac" 0,"liga" 1,"clig" 1,"ss03" 1,"ss06" 1;
+}
+
 a#next-tutorial {
   display: none;
 }
