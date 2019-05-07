@@ -12,6 +12,8 @@ wall -n "Getting everything into the right place"
 mv trace/* .
 mv nginx.yaml k8s-yaml-files/nginx.yaml
 cd k8s-yaml-files
+sudo sed -i '16d' datadog-agent.yaml #hostnetwork
+
 # sudo sed -i '16d' datadog-agent.yaml #hostnetwork
 
 #sudo sed -i '6i\ \ updateStrategy:\n    rollingUpdate:\n      maxUnavailable: 1\n    type: RollingUpdate' datadog-agent.yaml
