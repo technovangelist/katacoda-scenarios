@@ -8,7 +8,7 @@
 6. In the lab environment, open the postgres-deploy.yaml file. Scroll down to line 19.
 7. There is a section for annotations; uncomment each of these lines.
 
-  *When the hashes are removed, **annotations:** should be at the same indent level as **labels:** and each of the three annotation lines will be indented once from **annotations**.*
+  *When the hashes are removed, **annotations:** should be at the same indent level as **labels:** and each of the three annotation lines will be indented two spaces from **annotations**.*
   *Annotations are how you configure the Datadog Agent to work with one of the integrations. Here we are telling the Agent to use the **Postgres** check, with the corresponding host, port, username, and password.*
   
   *Since we can't possibly know what the host and port are going to be when we write the yaml file, the %%HOST%% is a placeholder that is replaced automatically at run time.*
