@@ -25,5 +25,3 @@
    *Do you see how the information from the example yaml is encoded in the annotations?*
 
 1. Try adding **nginx** to this cluster and use annotations to start monitoring the server. You can find a deployment yaml for **nginx** in the editor above. The **nginx** integration configuration file can be found <a href="https://github.com/DataDog/integrations-core/tree/master/nginx/datadog_checks/nginx/data" target="_datadog">here in our Github repo</a>. 
-
-
