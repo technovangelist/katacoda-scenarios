@@ -2,5 +2,4 @@ That's an introduction to how to use logs with regards to Kubenetes. Of course t
 
 Now let's move on to a similar section on using Application Performance Monitoring (APM) on Kubernetes in Datadog.
 
-
 ### Scroll down to click the **Next Module** link below
