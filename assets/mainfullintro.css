@@ -34,7 +34,7 @@ section#intro, section#finished {
   display:block;
   margin:auto;
   border: black 2px solid;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 #intro p:nth-of-type(2), #finished p:nth-of-type(2) {
   max-width: 85vw;
