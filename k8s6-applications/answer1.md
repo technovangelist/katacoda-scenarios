@@ -3,4 +3,4 @@
 ### Useful Commands 
 
 * **Apply or re-apply the agent yaml**: `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`
-* 
+  
