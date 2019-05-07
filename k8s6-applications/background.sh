@@ -10,6 +10,7 @@ git checkout -b k8s-autodiscovery 4b0c105fb3158d0418226642b5a3160c020164e8 # loc
 cd ..
 wall -n "Getting everything into the right place"
 mv trace/* .
+mv nginx.yaml k8s-yaml-files/nginx.yaml
 cd k8s-yaml-files
 # sudo sed -i '16d' datadog-agent.yaml #hostnetwork
 

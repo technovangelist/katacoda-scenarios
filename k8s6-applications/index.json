@@ -29,7 +29,7 @@
         }, 
         {
           "file": "nginx.yaml",
-          "target": "/root/k8s-yaml-files/"
+          "target": "/root/"
         },
         {
           "file": "idledown.sh",
