@@ -35,12 +35,13 @@ section#intro, section#finished {
   margin:auto;
   border: black 2px solid;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 #intro p:nth-of-type(2), #finished p:nth-of-type(2) {
-  max-width: 85vw;
+  max-width: 75vw;
   display:block;
   margin:auto;
 }
 #course-details {
-  max-width: 80vw;
+  max-width: 75vw;
 }
