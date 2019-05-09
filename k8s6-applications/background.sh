@@ -32,5 +32,6 @@ kubectl apply -f sensors-api.yaml
 kubectl apply -f frontend-service.yaml
 kubectl apply -f datadog-agent.yaml
 
+wall -n "Provisioning complete. If you don't see a prompt, just press enter now."
 echo "complete">>/root/status.txt
 
