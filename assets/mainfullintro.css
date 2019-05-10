@@ -33,7 +33,7 @@ p, li{
     font-feature-settings: "lnum" 1,"frac" 0,"liga" 1,"clig" 1,"ss03" 1,"ss06" 1;
 }
 
-a#next-tutorial {
+a#next-tutorial[href="#"] {
   display: none;
 }
 section#tutorial {
