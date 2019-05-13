@@ -1,12 +1,14 @@
-1. Login to <a href="https://app.datadoghq.com" target="_datadog">your Datadog account</a> and take a look around.
+1. Login to <a href="https://app.datadoghq.com" target="_datadog">your Datadog account</a> and take a look around. 
+2. Make sure you take a look at the Event Stream. 
+   *Here you will see an event for each of the containers as they appear in the Datadog interface. Note that it could take a few minutes for them to show up in the interface for the first time.*
    
-2. Navigate to the <a href="https://app.datadoghq.com/account/settings" target="_datadog">Integrations List</a> .
+3. Navigate to the <a href="https://app.datadoghq.com/account/settings" target="_datadog">Integrations List</a> .
 
-3. Add the <a href="https://app.datadoghq.com/account/settings#integrations/postgres" target="_datadog">integration for Postgres</a>.
-4. Now go to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">Dashboards list</a> and find the Postgres - Overview dashboard.
-5. Even if you wait a long time, no metrics will appear here. This is because the Agent is not reporting any Postgres metrics.
-6. In the lab environment, open the postgres-deploy.yaml file. Scroll down to line 19.
-7. There is a section for annotations; uncomment each of these lines.
+4. Add the <a href="https://app.datadoghq.com/account/settings#integrations/postgres" target="_datadog">integration for Postgres</a>.
+5. Now go to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">Dashboards list</a> and find the Postgres - Overview dashboard.
+6. Even if you wait a long time, no metrics will appear here. This is because the Agent is not reporting any Postgres metrics.
+7. In the lab environment, open the postgres-deploy.yaml file. Scroll down to line 19.
+8. There is a section for annotations; uncomment each of these lines.
 
   *When the hashes are removed, **annotations:** should be at the same indent level as **labels:** and each of the three annotation lines will be indented two spaces from **annotations**.*
   *Annotations are how you configure the Datadog Agent to work with one of the integrations. Here we are telling the Agent to use the **Postgres** check, with the corresponding host, port, username, and password.*
