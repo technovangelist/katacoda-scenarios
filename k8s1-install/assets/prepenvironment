@@ -19,7 +19,8 @@ show_progress()
     
   done
 }
-echo "Now preparing training environment for $TRAININGENVIRONMENT."
+TRAININGENVIRONMENT=$(echo $TRAININGENVIRONMENT | tr - " ")
+echo 'Now preparing training environment for $TRAININGENVIRONMENT.'
 while [ ! -f "status.txt" ]; do
   sleep 0.3
 done
