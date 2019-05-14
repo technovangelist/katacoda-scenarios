@@ -10,7 +10,7 @@ In the previous section we had a real application we were working with. We will 
 
 4. In the **Group By** dropdown, get rid of **availability-zone** and choose **role**.
   
-  *Notice that the containers are grouped by lb, web, db, backend, and no role.* 
+  *Notice that the containers are grouped by lb, web, db, backend, and no role. It's ok if all the containers aren't available yet. All 50 should eventually be available.* 
 
 1. Now add **environment** to **Group By**. 
 

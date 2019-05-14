@@ -1,4 +1,5 @@
 1. Now that the tags are assigned, create a new timeboard. 
+  *If you aren't sure how to do this, consider taking the **Introduction to Datadog** course to get up to speed with the basics. Essentially, go to Dashboards, and choose to create a Timeboard.*
 2. Add template variables for each of the four tag keys you saw in the lotsofpods.yaml file.
   1. To add a template variable, click the **Add Template Variables** link. 
   2. Click the **Add Variable +** button
