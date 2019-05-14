@@ -14,4 +14,4 @@ clear
 
 prepenvironment
 
-echo "Provisioning Complete"
+{ echo "Provisioning Complete"; } 2> /dev/null
