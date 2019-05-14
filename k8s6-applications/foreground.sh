@@ -10,3 +10,4 @@ clear
 
 
 prepenvironment
+badcommandthatresultsinerror
