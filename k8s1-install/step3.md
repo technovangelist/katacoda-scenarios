@@ -18,3 +18,4 @@ In this exercise, just like in the real world, problems can come up. Unless you 
 5. Now re-run the Agent status command above. It may take a few minutes for the postgres check to show up again.
    *Note that the deployment needs to stop and restart, and then the agent needs to update the check so even if everything seems to work but you are still getting an error, give it a little longer and try again.*
 6. When everything looks normal, take a look at the dashboards in the Datadog application.
+7. In preparation for the rest of the course, enable the APM and Logs features in Datadog. When you navigate to those sections for the first time, you will be prompted to Start a Trial or Start Using the feature.
