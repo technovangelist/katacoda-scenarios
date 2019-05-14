@@ -1,5 +1,6 @@
 1. Make sure all the pods in your environment are running or at least being created:
    `kubectl get pods`{{execute}}
+   *If you see errors when you run `kubectl get pods`, there was a problem starting your lab environment. Hit the power button at the top right of the window and then refresh the browser. This will give you a new machine.*
 
 2. Once your environment is up and running, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Verify that metrics from the environment are coming in to the platform.
 
@@ -10,17 +11,15 @@
 5. Run the **agent status** command to see that logs are not being collected yet. 
   `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
 
-  *If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely.*
+  *Running agent status results in a lot of information. Scroll up to see all the different types of info displayed. If you get `error: unable to upgrade connection: container not found ("datadog-agent")`, the datadog agent hasn't had time to launch completely. You should see something like this as you scroll up.*
 
-  *You should see something like this when you scroll up a bit*
-  
   <pre><code>========
   Logs Agent
   ==========
 
   Logs Agent is not running</code></pre>
 
-4. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
+6. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
   <pre><code>- name: DD_LOGS_ENABLED
      value: "true"
    - name: DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL
@@ -44,7 +43,6 @@
   `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 
   *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
-
 
 6. You can then verify that the logs are being collected by running the **agent status** command again:
   `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}
