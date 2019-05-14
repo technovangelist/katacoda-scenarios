@@ -19,15 +19,15 @@ show_progress()
     
   done
 }
-if [ ! -f "/root/provisioned" ]; then
 echo "Now preparing training environment for $TRAININGENVIRONMENT."
 while [ ! -f "status.txt" ]; do
   sleep 0.3
 done
 show_progress
-touch /root/provisioned
-printf "\n\nOK, the training environment is installed and ready to go.\n\n"
+if [ ! -f "/root/provisioned" ]; then
+  touch /root/provisioned
+  printf "\n\nOK, the training environment is installed and ready to go.\n\n"
 else
-printf "\n\nWelcome back to the training lab.\n\n"
+  printf "\n\nWelcome back to the training lab.\n\n"
 fi
 printf "Provisioning Complete\n\n"

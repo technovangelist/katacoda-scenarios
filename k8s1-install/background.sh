@@ -2,6 +2,7 @@
 # mkdir k8s-yaml-files
 launch.sh
 touch status.txt
+echo "">> /root/status.txt
 if [ ! -f "/root/provisioned" ]; then
   wall -n "Cloning the Github Repo"
   git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
