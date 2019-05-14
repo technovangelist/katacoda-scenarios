@@ -6,6 +6,7 @@ if [ ! $TRAININGENVIRONMENT ]; then
 fi
 show_progress()
 {
+  sleep 0.5
   local -r pid="${1}"
   local -r delay='1'
 
