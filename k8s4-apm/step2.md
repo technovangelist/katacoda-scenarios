@@ -5,7 +5,9 @@ We are already collecting traces, but let's customize the environment a bit furt
   <pre><code>- name: DD_LOGS_INJECTION
      value: 'true'
   - name: DATADOG_SERVICE_NAME
-     value: 'frontend-service'</code></pre>
+     value: 'frontend-service'
+  - name: DD_TRACE_ANALYTICS_ENABLED
+     value: 'true'</code></pre>
 
 2. Apply the frontend-service yaml file:
    `kubectl apply -f k8s-yaml-files/frontend-service.yaml`{{execute}}
@@ -19,6 +21,8 @@ We are already collecting traces, but let's customize the environment a bit furt
   <pre><code>- name: DD_SERVICE_NAME
      value: 'users-api'
   - name: DD_LOGS_INJECTION
+     value: 'true'
+  - name: DD_TRACE_ANALYTICS_ENABLED
      value: 'true'</code></pre>
 
   `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
@@ -27,7 +31,9 @@ We are already collecting traces, but let's customize the environment a bit furt
   <pre><code>- name: DD_LOGS_INJECTION
      value: 'true'
   - name: DATADOG_SERVICE_NAME
-     value: 'pumps-service'</code></pre>
+     value: 'pumps-service'
+  - name: DD_TRACE_ANALYTICS_ENABLED
+     value: 'true'</code></pre>
 
   `kubectl apply -f k8s-yaml-files/pumps-service.yaml`{{execute}}
 
@@ -35,7 +41,9 @@ We are already collecting traces, but let's customize the environment a bit furt
   <pre><code>- name: DD_LOGS_INJECTION
      value: 'true'
   - name: DATADOG_SERVICE_NAME
-     value: 'sensors-api'</code></pre>
+     value: 'sensors-api'
+  - name: DD_TRACE_ANALYTICS_ENABLED
+     value: 'true'</code></pre>
 
   `kubectl apply -f k8s-yaml-files/sensors-api.yaml`{{execute}}
 
