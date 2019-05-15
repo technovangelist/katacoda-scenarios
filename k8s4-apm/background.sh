@@ -15,7 +15,7 @@ if [ ! -f "/root/provisioned" ]; then
   cd k8s-yaml-files
 
   sudo sed -i '49,53d' datadog-agent.yaml #apm stuff
-  sudo sed -i '16d' datadog-agent.yaml #hostnetwork
+  # sudo sed -i '16d' datadog-agent.yaml #hostnetwork
   sudo sed -i '41,42d' frontend-service.yaml
   sudo sed -i '37,38d' frontend-service.yaml
   sudo sed -i '36,39d' node-api.yaml # service name and logs injection
