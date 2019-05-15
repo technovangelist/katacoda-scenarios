@@ -4,7 +4,8 @@
    
 3. Navigate to the <a href="https://app.datadoghq.com/account/settings" target="_datadog">Integrations List</a> .
 
-4. Add the <a href="https://app.datadoghq.com/account/settings#integrations/postgres" target="_datadog">integration for Postgres</a>.
+4. Enable the tile for the <a href="https://app.datadoghq.com/account/settings#integrations/postgres" target="_datadog">integration for Postgres</a>.
+   *Normally you would follow the instructions displayed in the **Configuration** tab in the tile. Most of those steps have already been completed and all that is necessary here is to enable the tile.*
 5. Now go to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">Dashboards list</a> and find the Postgres - Overview dashboard.
 6. Even if you wait a long time, no metrics will appear here. This is because the Agent is not reporting any Postgres metrics.
 7. In the lab environment editor to the right, open the postgres-deploy.yaml file. Scroll down to line 19.
