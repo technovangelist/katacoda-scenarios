@@ -7,7 +7,7 @@
 4. Add the <a href="https://app.datadoghq.com/account/settings#integrations/postgres" target="_datadog">integration for Postgres</a>.
 5. Now go to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">Dashboards list</a> and find the Postgres - Overview dashboard.
 6. Even if you wait a long time, no metrics will appear here. This is because the Agent is not reporting any Postgres metrics.
-7. In the lab environment, open the postgres-deploy.yaml file. Scroll down to line 19.
+7. In the lab environment editor to the right, open the postgres-deploy.yaml file. Scroll down to line 19.
 8. There is a section for annotations; uncomment each of these lines.
 
   *When the hashes are removed, **annotations:** should be at the same indent level as **labels:** and each of the three annotation lines will be indented two spaces from **annotations**.*
