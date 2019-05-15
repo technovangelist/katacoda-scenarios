@@ -1,5 +1,5 @@
 1. Login to <a href="https://app.datadoghq.com" target="_datadog">your Datadog account</a> and take a look around. 
-2. Make sure you take a look at the Event Stream. 
+2. Make sure you take a look at the Event Stream.
    *Here you will see an event for each of the containers as they appear in the Datadog interface. Note that it could take a few minutes for them to show up in the interface for the first time.*
    
 3. Navigate to the <a href="https://app.datadoghq.com/account/settings" target="_datadog">Integrations List</a> .

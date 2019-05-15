@@ -15,6 +15,7 @@ In this exercise, just like in the real world, problems can come up. Unless you 
 2. Now scroll up to the section that mentions **postgres**.
 3. You can see there is an error: password authentication failed. Take a look at the yaml file for postgres-deploy. 
 4. The problem is that the password was set to datadog and should in this case be postgres. Make the change to the password and redeploy postgres: `kubectl apply -f k8s-yaml-files/postgres-deploy.yaml`{{execute}}.
+   *In this exercise we chose to set the password in the yaml file to make it easier to update. But in the real world you should consider storing passwords in Kubernetes' secrets. For instance, the API key that you accessed above was stored using this command: `kubectl create secret generic datadog-api --from-literal=token=<APIKEYHERE>`*
 5. Now re-run the Agent status command above. It may take a few minutes for the postgres check to show up again.
    *Note that the deployment needs to stop and restart, and then the agent needs to update the check so even if everything seems to work but you are still getting an error, give it a little longer and try again.*
 6. When everything looks normal, take a look at the dashboards in the Datadog application.
