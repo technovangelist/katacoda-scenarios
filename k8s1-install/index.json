@@ -38,6 +38,11 @@
           "file": "idledown.sh",
           "target": "/usr/local/bin/",
           "chmod": "+x"
+        },
+        {
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
         }
       ]
     }
