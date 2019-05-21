@@ -2,6 +2,9 @@
 # mkdir k8s-yaml-files
 launch.sh
 touch status.txt
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install requests
 echo ""> /root/status.txt
 if [ ! -f "/root/provisioned" ]; then
   wall -n "Cloning the Github Repo"
