@@ -2,6 +2,11 @@
   "title": "intro1",
   "description": "asht",
   "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
     "steps": [
       {
         "title": "Step 1",
@@ -16,9 +21,6 @@
         "text": "step3.md"
       }
     ],
-    "intro": {
-      "text": "intro.md"
-    },
     "finish": {
       "text": "finish.md"
     }
