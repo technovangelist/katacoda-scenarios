@@ -28,7 +28,7 @@
           "target": "/root/"
         }
       ]
-    }
+    }, 
     "finish": {
       "text": "finish.md"
     }
