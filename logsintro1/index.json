@@ -21,14 +21,6 @@
         "text": "step3.md"
       }
     ],
-    "assets": {
-      "host01": [
-        {
-          "file": "docker-compose.yml",
-          "target": "/root/"
-        }
-      ]
-    }, 
     "finish": {
       "text": "finish.md"
     }
