@@ -1,0 +1,50 @@
+{
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }, 
+    "steps": [
+      {
+        "text": "step1.md", 
+        "answer": "answer1.md"
+      }, 
+      {
+        "text": "step2.md",
+        "answer": "answer2.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }, 
+        {
+          "file": "lotsofpods.yaml",
+          "target": "/root/k8s-yaml-files/"
+        },
+        {
+          "file": "datadog.yaml",
+          "target": "/root/k8s-yaml-files/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "k8s-yaml-files"
+  },
+  "backend": {
+    "imageid": "datadog-kubernetes-cluster-running",
+    "reuseConnection": "true",
+    "livetime": "1h"
+  }
+}
