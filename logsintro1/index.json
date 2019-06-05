@@ -26,7 +26,12 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "editor-terminal", 
+    "terminals": [
+      {
+        "name": "terminal 2"
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu"
