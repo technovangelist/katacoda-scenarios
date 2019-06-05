@@ -8,15 +8,14 @@ Notice that the logs aren't showing up in the application. This is because the a
 Since we are working in a containerized environment, the Datadog Agent should run as a container alongside the other containers. All configuration should then happen only through environment variables, volumes, and docker labels. Learn more about docker Datadog Agent setup in the documentation.
 
 To start gathering the application logs, add the following lines to the docker-compose.yaml file located in the folder you installed the application to in the previous section. These options will enable the Agent to start gathering some logs:
-
-`datadog:
-  environment:
-    (...)
-    - DD_LOGS_ENABLED=true
-    - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
-  volumes:
-    (...)
-    - /opt/datadog-agent/run:/opt/datadog-agent/run:rw`{{copy}}
+  `datadog:
+    environment:
+      (...)
+      - DD_LOGS_ENABLED=true
+      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
+    volumes:
+      (...)
+      - /opt/datadog-agent/run:/opt/datadog-agent/run:rw`{{copy}}
 
 
 <table><th><td>Configuration</td><td>Explanations</td></th>
