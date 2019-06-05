@@ -5,9 +5,9 @@ Let's start this exercise by testing the application. The whole application is m
 
 Try out the application with some of the following commands. You can run these commands from Terminal 2 to the right:
 
-curl -X GET 'http://localhost:8080/think/?subject=technology'
-curl -X GET 'http://localhost:8080/think/?subject=religion'
-curl -X GET 'http://localhost:8080/think/?subject=war'
-curl -X GET 'http://localhost:8080/think/?subject=work'
-curl -X GET 'http://localhost:8080/think/?subject=music'
+`curl -X GET 'http://localhost:8080/think/?subject=technology'`{{execute T2}}
+`curl -X GET 'http://localhost:8080/think/?subject=religion'`{{execute T2}}
+`curl -X GET 'http://localhost:8080/think/?subject=war'`{{execute T2}}
+`curl -X GET 'http://localhost:8080/think/?subject=work'`{{execute T2}}
+`curl -X GET 'http://localhost:8080/think/?subject=music'`{{execute T2}}
 
