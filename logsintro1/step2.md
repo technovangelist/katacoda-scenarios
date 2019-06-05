@@ -17,7 +17,7 @@ To start gathering the application logs, add the following lines to the docker-c
       - /opt/datadog-agent/run:/opt/datadog-agent/run:rw
   </code></pre>
 
-<table><th><td>Configuration</td><td>Explanations</td></th>
+<table><tr><th>Configuration</th><th>Explanations</th></tr>
 <tr><td>DD_LOGS_ENABLED=true</td><td>Enable log collection</td></tr>
 <tr><td>DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true</td><td>Enable log collection for all containers</td></tr>
 <tr><td>/opt/datadog-agent/run:/opt/datadog-agent/run:rw</td><td>Used to store pointers on container current log</td></tr>
