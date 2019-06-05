@@ -9,15 +9,13 @@ Since we are working in a containerized environment, the Datadog Agent should ru
 
 To start gathering the application logs, add the following lines to the docker-compose.yaml file in the editor on the right. These options will enable the Agent to start gathering some logs:
   
-  datadog:
+  <pre><code>datadog:
     environment:
-      (...)
       - DD_LOGS_ENABLED=true
       - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
     volumes:
-      (...)
       - /opt/datadog-agent/run:/opt/datadog-agent/run:rw
-
+  </code></pre>
 
 <table><th><td>Configuration</td><td>Explanations</td></th>
 <tr><td>DD_LOGS_ENABLED=true</td><td>Enable log collection</td></tr>
