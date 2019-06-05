@@ -23,7 +23,7 @@ To start gathering the application logs, add the following lines to the docker-c
 <tr><td>/opt/datadog-agent/run:/opt/datadog-agent/run:rw</td><td>Used to store pointers on container current log</td></tr>
 </table>
 
-Restart your docker-compose environment by pressing CTRL-C in the first terminal then enter the following commands:
+Restart your docker-compose environment by pressing **CTRL-C** in the first terminal then enter the following commands:
 
 `docker-compose stop && docker-compose rm -f && docker-compose up --build -d`{{execute}}
 
