@@ -6,10 +6,10 @@ Now that we have all our logs parsed and enhanced we can start adding our attrib
 
 1. From the Log Explorer, find the url attribute on one of the logs we parsed.
 1. Click on the attribute and choose Create facet for @http.url:
-   ![Answer](/technovangelist/scenarios/logsintro3/assets/creating_facet.png)
+   ![Creating facet](/technovangelist/scenarios/logsintro3/assets/creating_facet.png)
 
-Configure your facet:
-
+1. Configure your facet:
+   ![Configuring facet](/technovangelist/scenarios/logsintro3/assets/configuring_facet.png)
 configuring facet
 configuring facet
 
