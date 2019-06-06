@@ -24,7 +24,8 @@ Datadog will see that JSON blog and automatically parse it. But sometimes we wan
 
    * url on http.url
    * status_code on http.status_code
-   * The final pipeline should look something like this:
+   The final pipeline should look something like this:
+   ![Final pipeline](/technovangelist/scenarios/logsintro3/assets/jsonlogfinalpipeline.png)
 
    and transform this log:
 
