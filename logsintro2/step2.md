@@ -14,18 +14,18 @@ Datadog has a range of <a href="https://docs.datadoghq.com/integrations/#cat-log
 1. Add the following label to the redis block in your docker-compose.yml file:
 
   <pre><code>redis:
-  (...)
-  labels:
-    com.datadoghq.ad.logs: '[{"source": "redis", "service": "redis"}]'
+    (...)
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "redis", "service": "redis"}]'
    </code></pre>
 
 1. Add the following label to the nginx block in the same file:
 
   <pre><code>nginx:
-  (...)
-  labels:
     (...)
-    com.datadoghq.ad.logs: '[{"source": "nginx", "service": "nginx"}]'
+    labels:
+      (...)
+      com.datadoghq.ad.logs: '[{"source": "nginx", "service": "nginx"}]'
    </code></pre>
 
 1. Restart your Docker containers using the following commands:
@@ -51,13 +51,13 @@ Our application is already instrumented for APM. Let's add log tags to the conta
 1. Add the following labels to the docker-compose.yml file:
 
   <pre><code>api:
-  (...)
-  labels:
-    com.datadoghq.ad.logs: '[{"source": "webapp", "service": "thinker-api"}]'
+    (...)
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "webapp", "service": "thinker-api"}]'
   thinker:
-  (...)
-  labels:
-    com.datadoghq.ad.logs: '[{"source": "webapp", "service": "thinker-microservice"}]'
+    (...)
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "webapp", "service": "thinker-microservice"}]'
   </code></pre>
 
 1. Restart the Docker containers as you did before. Then send a few more of the curl commands and look at the new logs showing up in the Logs view.

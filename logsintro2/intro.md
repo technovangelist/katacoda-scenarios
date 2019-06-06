@@ -1,1 +1,1 @@
-Let's start by looking at the metrics, traces, and logs that are included as soon as you enable the Redis and NGINX integrations. We are using Docker as well so we will also enable that.
+<p></p><p>Let's start by looking at the metrics, traces, and logs that are included as soon as you enable the Redis and NGINX integrations. We are using Docker as well so we will also enable that.</p>
