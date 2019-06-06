@@ -18,10 +18,13 @@ Now that we have all our logs parsed and enhanced we can start adding our attrib
 
 Here are different searches to try out:
 
-  * Search for all logs with status_code above 400
-    @http.status_code:>400
-  * Find all logs from the user John
-    @user_name:"john"
+* Search for all logs with status_code above 400
+  
+    `@http.status_code:>400`
+  
+* Find all logs from the user John
+  
+    `@user_name:"john"`
 
 ## Log Analytics
 
