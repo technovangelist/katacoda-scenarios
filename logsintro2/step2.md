@@ -11,7 +11,7 @@ In order to solve this issue, we are going to use two reserved attributes:
 
 Datadog has a range of <a href="https://docs.datadoghq.com/integrations/#cat-log-collection" target="_datadog">Log supported integrations</a>. In order to enable the Log integrations pipeline in Datadog, pass the source name as a value for the source attribute with a docker label.
 
-1. Add the following label to the redis block in your docker-compose.yml file:
+1. Press CTRL-C in the terminal to stop docker-compose. Then add the following label to the redis block in your docker-compose.yml file:
 
   <pre><code>redis:
     (...)
@@ -24,14 +24,13 @@ Datadog has a range of <a href="https://docs.datadoghq.com/integrations/#cat-log
   <pre><code>nginx:
     (...)
     labels:
-      (...)
       com.datadoghq.ad.logs: '[{"source": "nginx", "service": "nginx"}]'
    </code></pre>
 
-1. Restart your Docker containers using the following commands:
+2. Restart your Docker containers using the following commands:
    `docker-compose stop && docker-compose rm -f && docker-compose up --build -d`{{execute}}
 
-1. Send the curl commands you used before to the application. Now open the Logs view in Datadog. You should see Redis and NGINX logs. You might need to wait a few seconds before they register in the system.
+3. Send the curl commands you used before to the application. Now open the Logs view in Datadog. You should see Redis and NGINX logs. You might need to wait a few seconds before they register in the system.
    
    `curl -X GET 'http://localhost:8080/think/?subject=technology'`{{execute}}
    `curl -X GET 'http://localhost:8080/think/?subject=religion'`{{execute}}
@@ -39,7 +38,7 @@ Datadog has a range of <a href="https://docs.datadoghq.com/integrations/#cat-log
    `curl -X GET 'http://localhost:8080/think/?subject=work'`{{execute}}
    `curl -X GET 'http://localhost:8080/think/?subject=music'`{{execute}}
 
-1. Click on one of the NGINX log lines. Notice the line is shown as-is near the top, but then parsed into attributes below. We will learn how to do that later in the course.
+4. Click on one of the NGINX log lines. Notice the line is shown as-is near the top, but then parsed into attributes below. We will learn how to do that later in the course.
 
 
 ## Binding Application logs to the corresponding metrics and traces
