@@ -8,14 +8,14 @@ We have 2 types of logs: **full text** and **JSON**. We need to configure our ag
 
     <pre><code>logs:
       - type: file
-        path: /root/text_log.log
+        path: /var/log/text_log.log
         service: text_log
         source: dummy_app
         sourcecategory: custom
         tags: workshop:exercise_2, type:text_log
 
       - type: file
-        path: /root/json_log.log
+        path: /var/log/json_log.log
         service: json_log
         source: dummy_app
         sourcecategory: custom

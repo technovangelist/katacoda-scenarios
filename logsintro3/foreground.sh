@@ -11,6 +11,7 @@ cp -r TrainingEnvironment/logsintro/* .
 rm -rf TrainingEnvironment
 sed -i 's|vagrant|var/log|g' /root/main.py
 sed -i "s|write_text_log('.|write_text_log('/var/log|g" /root/main.py
+sed -i "s|write_json_log('.|write_json_log('/var/log|g" /root/main.py
 
 rm install.sh
 rm provision.sh
