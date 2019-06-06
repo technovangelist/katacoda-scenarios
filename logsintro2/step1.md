@@ -27,5 +27,5 @@ Thanks to the Datadog auto-discovery feature, metrics are collected automaticall
     * Logs are not parsed.
     * Logs are not bound to the other data types that are metrics and traces.
 
-
+![Logs not parsed](/technovangelist/scenarios/logsintro3/assets/logs_not_parsed.png)
 
