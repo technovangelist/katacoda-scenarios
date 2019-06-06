@@ -29,4 +29,4 @@ Restart your docker-compose environment by pressing **CTRL-C** in the first term
 
 Navigate to Logs in Datadog and wait for the logs to start showing up. It can take a few minutes for the first logs to appear, but then they should update faster.
 
-![Log flow](/technovangelist/scenarios/logsintro3/assets/log_flow.png)
+![Log flow](/technovangelist/scenarios/logsintro1/assets/log_flow.png)

@@ -74,7 +74,7 @@ And for the Thinker service:
 
 Thanks to the `source` attribute, Integration pipelines have been created within your Datadog application and are parsing your application logs from Redis and NGINX. To learn more about log parsing and pipelines, continue to the next exercise.
 
-![Integration pipelines](/technovangelist/scenarios/logsintro3/assets/integration_pipelines.png)
+![Integration pipelines](/technovangelist/scenarios/logsintro2/assets/integration_pipelines.png)
 
 Thanks to the **service** attribute we are now able to switch from metrics to traces to logs.
 
