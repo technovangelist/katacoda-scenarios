@@ -10,13 +10,12 @@ Now that we have all our logs parsed and enhanced we can start adding our attrib
 
 1. Configure your facet:
    ![Configuring facet](/technovangelist/scenarios/logsintro3/assets/configuring_facet.png)
-configuring facet
-configuring facet
+   *Facets can be used to filter, either on a string value or on a double/int range.*
 
-Facets can be used to filter, either on a string value or on a double/int range.
+1. Repeat for the **response_time** attribute
 
-Repeat for the response_time attribute
-Search
+## Search
+
 Here are different searches to try out:
 
 Search for all logs with status_code above 400
