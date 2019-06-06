@@ -23,9 +23,9 @@ Thanks to the Datadog auto-discovery feature, metrics are collected automaticall
 
 1. Navigate to Logs on the menu bar.
 
-   *Logs are being collected from all your containers but there are some issues:
+   *Logs are being collected from all your containers but there are some issues:*
     * Logs are not parsed.
-    * Logs are not bound to the other data types that are metrics and traces.*
+    * Logs are not bound to the other data types that are metrics and traces.
 
 
 
