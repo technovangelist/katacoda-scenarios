@@ -3,8 +3,8 @@
 We have 2 types of logs: **full text** and **JSON**. We need to configure our agent accordingly: (<a href="https://docs.datadoghq.com/logs/log_collection/" target="_datadog">Log collection documentation</a>)
 
 1. Enable log collection in `/etc/datadog-agent/datadog.yaml` by setting `logs_enabled: true`. 
-2. Create a  **workshop.d** folder in the `/etc/datadog-agent/conf.d/` folder
-3. Create a file **conf.yaml** in that directory and add the following content:
+2. Create a  **workshop.d** folder in the `/etc/datadog-agent/conf.d/` folder: `mkdir /etc/datadog-agent/conf.d/workshop.d`{{execute}}
+3. Create a file **conf.yaml** in that directory `touch /etc/datadog-agen/conf.d/workshop.d/conf.yaml`{{execute}} and add the following content:
 
     <pre><code>logs:
       - type: file
