@@ -15,7 +15,8 @@
     }
   },
   "environment": {
-    "uilayout": "terminal", 
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "/etc/datadog-agent",
     "terminals": [
       {
         "name": "Terminal 2"

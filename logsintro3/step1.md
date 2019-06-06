@@ -15,13 +15,13 @@ And to run it again run:
   sudo systemctl start datadog-agent
 </code></pre>
 
-
 This means that the Datadog agent is up and running and is ready to be configured.
 
-Gathering Data
-We have 2 types of logs: full text and JSON. We need to configure our agent accordingly: (Log collection documentation)
+# Gathering Data
 
-Enable log collection in /etc/datadog-agent/datadog.yaml by setting logs_enabled: true. This file is not synchronized from the host and you will need to use elevated priviledges (sudo) to edit.
+We have 2 types of logs: **full text** and **JSON**. We need to configure our agent accordingly: (<a href="https://docs.datadoghq.com/logs/log_collection/" target="_datadog">Log collection documentation</a>)
+
+4. Enable log collection in `/etc/datadog-agent/datadog.yaml` by setting `logs_enabled: true`. This file is not synchronized from the host and you will need to use elevated priviledges (sudo) to edit.
 Create a  workshop.d folder in the /etc/datadog-agent/conf.d/ folder
 sudo mkdir /etc/datadog-agent/conf.d/workshop.d
 Create a file/etc/datadog-agent/conf.d/workshop.d/conf.yaml in that directory and add the following content:
