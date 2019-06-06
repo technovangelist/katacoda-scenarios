@@ -11,15 +11,16 @@ Now we have an interesting environment to work with and we can start to make som
 1. Then copy the following sample log into the sample text box:
     
     <pre><code>2018-09-28 13:43:34.777178 EMERGENCY Alice connected to http://my.website_1.com/path/number/3/?query=param_2&var=foo_1 it took 647000 s and ended up with the 200 status code user agent used was Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15</code></pre>
+
 1. Expand the rule matched area and notice how the facets were extracted. Review the sample and the rule to see how the Grok Parser works.
-1. Name the processor: Initial log parser and click Save.
-1. Add another Processor and choose Status Remapper.
-1. Set the Status Attribute to severity. Name the processor: Remapping severity. Click Save.text_log_remapping_severity
-2. Switch back to the Logs Explorer and click on any of the log messages that start with WARN or DEBUG, etc. 
+1. Name the processor: `Initial log parser` and click **Save**.
+1. Add another Processor and choose **Status Remapper**.
+2. Set the **Status Attribute** to **severity**. Name the processor: `Remapping severity`. Click **Save**.
+3. Switch back to the Logs Explorer and click on any of the log messages that start with **WARN** or **DEBUG**, etc.
    
    *Notice that it is parsing all the attributes. Note that processing is only applied at ingestion. Only new logs are impacted. Older logs will remain unchanged.*
 
-3. Close the detail view and hover over the Status facet on the left side. 
-4. Click the gear icon next to Status and choose Add as column.
+4. Close the detail view and hover over the **Status** facet on the left side.
+5. Click the gear icon next to Status and choose **Add as column**.
 
    *Because Status is a facet, you could search for any of the Status values and filter down to just Errors, for instance.*
