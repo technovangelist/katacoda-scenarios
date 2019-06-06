@@ -1,3 +1,5 @@
+# Processing Full Text Logs
+
 Now we have an interesting environment to work with and we can start to make some of the logs more interesting.
 
 1. Navigate to <a href="https://app.datadoghq.com/logs/pipelines" target="_datadog">Logs -> Configuration</a>.
