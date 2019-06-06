@@ -1,1 +1,0 @@
-In the next section we will demonstrate ways to get more value from your logs.
