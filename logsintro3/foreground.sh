@@ -9,7 +9,9 @@ EOL
 git clone https://github.com/DataDog/TrainingEnvironment.git
 cp -r TrainingEnvironment/logsintro/* .
 rm -rf TrainingEnvironment
-sed -i 's|vagrant|root|g' /root/main.py
+sed -i 's|vagrant|var/log|g' /root/main.py
+sed -i "s|write_text_log('.|write_text_log('/var/log|g" /root/main.py
+
 rm install.sh
 rm provision.sh
 rm Vagrantfile

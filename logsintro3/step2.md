@@ -4,18 +4,18 @@ We have 2 types of logs: **full text** and **JSON**. We need to configure our ag
 
 1. Enable log collection in `/etc/datadog-agent/datadog.yaml` by setting `logs_enabled: true`. 
 2. Create a  **workshop.d** folder in the `/etc/datadog-agent/conf.d/` folder: `mkdir /etc/datadog-agent/conf.d/workshop.d`{{execute}}
-3. Create a file **conf.yaml** in that directory `touch /etc/datadog-agen/conf.d/workshop.d/conf.yaml`{{execute}} and add the following content:
+3. Create a file **conf.yaml** in that directory `touch /etc/datadog-agent/conf.d/workshop.d/conf.yaml`{{execute}} and add the following content:
 
     <pre><code>logs:
       - type: file
-        path: /vagrant/text_log.log
+        path: /root/text_log.log
         service: text_log
         source: dummy_app
         sourcecategory: custom
         tags: workshop:exercise_2, type:text_log
 
       - type: file
-        path: /vagrant/json_log.log
+        path: /root/json_log.log
         service: json_log
         source: dummy_app
         sourcecategory: custom
