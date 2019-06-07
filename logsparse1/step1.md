@@ -1,7 +1,9 @@
 1. In the **Terminal 2** tab, take a look at the **docker-compose.yml** file. 
    
    `more docker-compose.yml`{{execute T2}}
-   *Notices that port 10520 is being exposed on the localhost as port 10520*
+   
+   *Notice that port 10520 is being exposed on the localhost as port 10520*
+   
 2. Press **q** to quit the `more` command.
 3. Now telnet to that port on localhost:
 
