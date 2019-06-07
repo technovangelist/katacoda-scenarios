@@ -20,7 +20,7 @@
 
 If we click on the trace itself, we can see more information, going into the span view. There are two different ways to view our spans. As a flame graph, and as a list.
 
-    ![Span List](/technovangelist/scenarios/apmintro1/assets/span-list.png)
+   ![Span List](/technovangelist/scenarios/apmintro1/assets/span-list.png)
 
 Lists help to quickly narrow down where the majority of time is spent in your traces.
 

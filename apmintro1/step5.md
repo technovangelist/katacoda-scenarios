@@ -29,6 +29,8 @@ We'll use the `requests` library which is already installed to the image to do s
                     site_span.set_tag('http.status_code', res.status_code)
                     site_span.set_tag('company-site', result['company'])
 
+*Depending on the width of your browser, lines may be wrapped in an odd way. You can change the width of the tutorial pane to see the source code correctly.*
+
 Notice the new spans that are getting created.
 
 One span encapsulates the job of getting the initial API request, and a new span is created for each request attempting to grab the homepage of a job's company.
