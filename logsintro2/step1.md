@@ -1,4 +1,4 @@
-1. Navigate to the <a href="htthttps://app.datadoghq.com/account/settings" target="_datadog">Datadog integration</a> page. Search for **Redis** and click its **Install** button. At the bottom of the **Configuration** tab, click the **Install Integration** button. Don't worry about completing the steps in the Configuration tab yet.
+1. Navigate to the <a href="https://app.datadoghq.com/account/settings" target="_datadog">Datadog integration</a> page. Search for **Redis** and click its **Install** button. At the bottom of the **Configuration** tab, click the **Install Integration** button. Don't worry about completing the steps in the Configuration tab yet.
 2. Repeat the previous step for **Docker** and **NGINX**.
 
 # Metrics
