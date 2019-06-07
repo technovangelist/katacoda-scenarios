@@ -10,6 +10,6 @@ git clone https://github.com/DataDog/TrainingEnvironment.git
 cp -r TrainingEnvironment/apm/* .
 rm -rf TrainingEnvironment
 
-sed -i 's|- DD_APM_ENABLED=true|- DD_API_KEY\n\t- DD_APM_ENABLED=true|' docker-compose.yml
+# sed -i 's|- DD_APM_ENABLED=true|- DD_API_KEY\n\t- DD_APM_ENABLED=true|' docker-compose.yml
 
 ./start00
