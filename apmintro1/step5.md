@@ -7,7 +7,7 @@ We'll use the `requests` library which is already installed to the image to do s
 1.  Replace the code in first.py as follows. It will run a request to get a list of the first 50 Python jobs on GitHub, and then try grabbing each job listing's company site
 
 
-    <pre><code>from ddtrace import tracer
+    from ddtrace import tracer
     import requests
 
     tracer.configure(hostname='agent', port='8126')
@@ -28,7 +28,6 @@ We'll use the `requests` library which is already installed to the image to do s
                     print('Unable to get site for %s' % result['company'])
                     site_span.set_tag('http.status_code', res.status_code)
                     site_span.set_tag('company-site', result['company'])
-    </code></pre>
 
 Notice the new spans that are getting created.
 

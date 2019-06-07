@@ -5,7 +5,7 @@ Because the `requests` library is one of the automatic libraries provided by Dat
 1.  Replace the code in `first.py` as follows:
 
 
-    <pre><code>from ddtrace import tracer, patch
+    from ddtrace import tracer, patch
 
     # by default, localhost and 8126, but here as intructional
     tracer.configure(hostname='agent', port='8126')
@@ -33,7 +33,6 @@ Because the `requests` library is one of the automatic libraries provided by Dat
         return homepages
 
     a = get_sites()
-    </code></pre>
 
 
 A much cleaner set of code changes for instrumentation, showcasing the power of monkey patching in traces.
