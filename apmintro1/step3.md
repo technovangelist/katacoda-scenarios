@@ -1,33 +1,21 @@
-# Configuring the Tracer
+# Creating Our First Span
 
-Now we have a way to ship our Traces from Python and can jump in and configure a program to be instrumented.
+1. Update the code in first.py as follows:
 
-1. Initialize and configure the Python bindings to ship to our local Docker container by adding the following to first.py in your favorite code editor:
-
-  `from ddtrace import tracer
-
-  tracer.configure(hostname='agent', port='8126')`
-
-  *Note: Normally you won't need to specify the port and hostname as it defaults to port 8126 on the localhost. Since the Agent is running in a different container, we need to specify it here.*
-
-  *When you click save, then switch back to the console where docker-compose is running, you should see that the web container noticed the change. The Agent will mention that it has no tracked services, so we will set that up next.*
-
-Creating Our First Span
-Update the code in first.py as follows:
-
-from ddtrace import tracer
+  
+  <pre><code>from ddtrace import tracer
 import time
 
 tracer.configure(hostname='agent', port='8126')
 
 with tracer.trace('first-span', service='first-service') as span:
-  time.sleep(1)
-The reason we are using sleep is to ensure the tracer has time to flush the trace. This happens asynchronously. If you have a short running application, you will need to ensure there is enough time to flush the trace before the program exits. In most web/API applications, this shouldn't matter, as your program will be long running.
+  time.sleep(1)</code></pre>
 
-Open your browser to the Datadog APM trace interface. Find the new service in the list of services, along with the trace and span.
+  *The reason we are using sleep is to ensure the tracer has time to flush the trace. This happens asynchronously. If you have a short running application, you will need to ensure there is enough time to flush the trace before the program exits. In most web/API applications, this shouldn't matter, as your program will be long running.*
 
-APM Service List
-APM Service List
+1. Open your browser to the Datadog APM trace interface. Find the new service in the list of services, along with the trace and span.
+  ![APM Services](/technovangelist/scenarios/apmintro1/assets/services.png)
+
 If we click on the trace itself, we can see more information, going into the span view. There are two different ways to view our spans. As a flame graph, and as a list.
 
 Span List
