@@ -4,12 +4,12 @@
    *Notices that port 10520 is being exposed on the localhost as port 10520*
 2. Press **q** to quit the `more` command.
 3. Now telnet to that port on localhost:
-   
+
    `telnet localhost 10520`{{execute T2}}
-   
+
    *Anything you type at the prompt will be sent to the platform when you press Enter. It's not sent immediately but it should appear in the Log Explorer viewer within a minute.*
 4. Type the following message and press Enter:
-   
+
    `Error - connection refused`{{execute T2}}
 5. Open the Log Explorer and look out for the new log line to appear.
    ![Defaults to INFO](/technovangelist/scenarios/logsparse1/assets/defaultsinfo.png)
