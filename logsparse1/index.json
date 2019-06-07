@@ -18,7 +18,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "terminal", 
     "terminals": [
       {
         "name": "Terminal 2"
