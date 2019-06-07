@@ -12,10 +12,7 @@
       {
         "text": "step2.md"
       }
-    ],
-    "finish": {
-      "text": "finish.md"
-    }
+    ]
   },
   "environment": {
     "uilayout": "editor-terminal", 
