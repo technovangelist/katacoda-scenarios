@@ -1,0 +1,83 @@
+/*BASE TYPOGRAPHY*/
+@font-face {
+    font-family: 'NationalWeb';
+    src: url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Light.woff2') format('woff2'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Light.woff') format('woff'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Light.eot') format('embedded-opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    -webkit-font-smoothing: antialiased;
+}
+@font-face {
+    font-family: 'NationalWeb';
+    src: url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Semibold.woff2') format('woff2'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Semibold.woff') format('woff'),
+         url('https://don08600y3gfm.cloudfront.net/fonts/web-fonts/NationalWeb-Semibold.eot') format('embedded-opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, h1, h2, h3, h4, h5, h6,
+p, li{
+    font-family: "NationalWeb" !important;
+    -webkit-font-smoothing: antialiased;
+    font-kerning: normal;
+    -moz-font-feature-settings: "lnum" 1,"frac" 0,"liga" 1,"clig" 1,"ss03" 1,"ss06" 1;
+    -moz-font-feature-settings: "lnum=1, frac=0, liga=1, clig=1, ss03=1, ss06=1";
+    -ms-font-feature-settings: "lnum" 1, "frac" 0, "liga" 1, "clig" 1, "ss03" 1, "ss06" 1;
+    -o-font-feature-settings: "lnum" 1, "frac" 0, "liga" 1, "clig" 1, "ss03" 1, "ss06" 1;
+    -webkit-font-feature-settings: "lnum" 1, "frac" 0, "liga" 1, "clig" 1, "ss03" 1, "ss06" 1;
+    font-feature-settings: "lnum" 1,"frac" 0,"liga" 1,"clig" 1,"ss03" 1,"ss06" 1;
+}
+
+a#next-tutorial[href="//noshow"] {
+  display: none;
+}
+section#tutorial {
+  width: 75%;
+}
+section#split-host {
+  width: 25%;
+}
+.step ol li {
+    list-style-type: inherit !important;
+    margin-left: 0px;
+}
+.step .content ol {
+    padding-left: 20px !important;
+}
+a#terminal-inline-poweredby {
+  display: none !important;
+}
+section#intro, section#finished {
+  width: 100% !important;
+}
+#intro .banner, #finished .banner {
+    display: none !important;
+    visibility: hidden;
+}
+
+#page-mode-lti-view iframe#contentframe {
+  border: none !important;
+}
+
+#intro img, #finished img {
+  max-width: 50vw;
+  display:block;
+  margin:auto;
+  border: black 2px solid;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#intro p:nth-of-type(n+2), #finished p:nth-of-type(n+2) {
+  max-width: 75vw;
+  display:block;
+  margin:auto;
+  margin-bottom: 40px;
+}
+#course-details {
+  max-width: 75vw;
+}
