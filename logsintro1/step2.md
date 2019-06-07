@@ -25,8 +25,8 @@ To start gathering the application logs, add the following lines to the **docker
 
 Restart your docker-compose environment by pressing **CTRL-C** in the first terminal then enter the following commands:
 
-`docker-compose stop && docker-compose rm -f && docker-compose up --build -d`{{execute}}
+`docker-compose stop && docker-compose rm -f && docker-compose up --build`{{execute}}
 
-Navigate to Logs in Datadog and wait for the logs to start showing up. It can take a few minutes for the first logs to appear, but then they should update faster.
+Navigate to Logs in Datadog and wait for the logs to start showing up. It can take a few minutes for the first logs to appear, but then they should update faster. Try running some of the curl commands from the previous page as well.
 
 ![Log flow](/technovangelist/scenarios/logsintro1/assets/log_flow.png)

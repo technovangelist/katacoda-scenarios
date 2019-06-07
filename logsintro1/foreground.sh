@@ -17,8 +17,5 @@ sed -i 's|datadog/agent:latest|datadog/agent:6.11.1|' docker-compose.yml
 sed -i 's|redis:latest|redis:5.0.5|' docker-compose.yml
 sed -i 's|nginx:latest|nginx:1.16.0|' docker-compose.yml
 
-# sed -i 's|redis:latest|redis:5.0.5-alpine|' docker-compose.yml
-# sed -i 's|nginx:latest|nginx:1.16.0-alpine|' docker-compose.yml
-# sed -i 's|python:3.6|python:3.6-alpine|' app/Dockerfile
 
 docker-compose up
