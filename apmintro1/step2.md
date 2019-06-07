@@ -2,7 +2,7 @@
 
 Now we have a way to ship our Traces from Python and can jump in and configure a program to be instrumented.
 
-1. Initialize and configure the Python bindings to ship to our local Docker container by adding the following to first.py in your favorite code editor:
+1. Initialize and configure the Python bindings to ship to our local Docker container by adding the following to `first.py` in the code editor:
 
 
   <pre><code>from ddtrace import tracer
