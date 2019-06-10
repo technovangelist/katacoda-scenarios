@@ -1,4 +1,4 @@
-#Adding a Cache Layer
+# Adding a Cache Layer
 
 Right now, our app uses a **sleep** inside the **think** function.
 
