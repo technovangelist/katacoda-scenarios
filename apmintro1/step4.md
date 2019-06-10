@@ -4,7 +4,7 @@ Creating a child is done by creating a tracer span as `child_of` the parent span
 
 1.  Try that now and see how it changes our spans by modifying the code to first.py:
 
-
+    ```python
     from ddtrace import tracer
     import time
 
@@ -18,6 +18,7 @@ Creating a child is done by creating a tracer span as `child_of` the parent span
           with tracer.trace('third-span') as span3:
               span3.set_tag('third-tag', '300')
               time.sleep(1)
+    ```
 
 After running this code, we can now go into the Datadog interface, and see how the child span looks:
 
