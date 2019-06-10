@@ -72,7 +72,8 @@ section#intro, section#finished {
   margin-bottom: 50px;
   margin-top: 50px;
 }
-#intro p:nth-of-type(n+2), #finished p:nth-of-type(n+2) {
+/* #intro p:nth-of-type(n+2), #finished p:nth-of-type(n+2) { */
+#intro p, #finished p {
   max-width: 75vw;
   display:block;
   margin:auto;
