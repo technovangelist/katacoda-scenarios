@@ -5,6 +5,6 @@ Special rules can be written with the **%{MATCHER:EXTRACT:FILTER}** syntax:<br>
 <li>Matcher: rule (possibly a reference to another token rule) that describes what to expect (number, word, notSpace, etc.)
 <li>Extract (optional): an identifier representing the capture destination for the piece of text matched by the MATCHER.
 <li>Filter (optional): a post-processor of the match to transform it
-</ol><br>
+</ol>
 Let’s start working with some simple examples to see how this works. To do this, you are going to submit some simple log lines to Datadog that you can manipulate.
 </p>
