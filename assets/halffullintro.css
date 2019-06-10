@@ -73,7 +73,7 @@ section#intro, section#finished {
   margin-top: 50px;
 }
 /* #intro p:nth-of-type(n+2), #finished p:nth-of-type(n+2) { */
-#intro p, #finished p { 
+#intro, #finished { 
   max-width: 75vw;
   display:block;
   margin:auto;
