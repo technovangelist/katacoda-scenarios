@@ -1,6 +1,6 @@
 # Creating Our First Span
 
-1. Update the code in first.py as follows:
+1.  Update the code in first.py as follows:
 
     ```python
     from ddtrace import tracer
@@ -14,7 +14,7 @@
 
   *The reason we are using `sleep` is to ensure the tracer has time to flush the trace. This happens asynchronously. If you have a short running application, you will need to ensure there is enough time to flush the trace before the program exits. In most web/API applications, this shouldn't matter, as your program will be long running.*
 
-1. Open your browser to the <a href="https://app.datadoghq.com/apm/services" target="_datadog">Datadog APM trace</a> interface. Find the new service in the list of services, along with the trace and span.
+1.  Open your browser to the <a href="https://app.datadoghq.com/apm/services" target="_datadog">Datadog APM trace</a> interface. Find the new service in the list of services, along with the trace and span.
   
     ![APM Services](/technovangelist/scenarios/apmintro1/assets/services.png)
 
