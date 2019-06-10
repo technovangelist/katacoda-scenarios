@@ -2,7 +2,7 @@
 
 Now that we've seen how to manually add distributed tracing headers to our internal infrastructure, let's set things up the easy way.
 
-Stop the **step01** command by pressing CTRL-C in the first terminal tab. Then run:
+If you are still running **step01**, stop it by pressing **CTRL-C** in the first terminal tab. Then run:
 
 `docker-compose stop;docker-compose rm -f`{{execute T1}}
 
@@ -36,7 +36,7 @@ By using the Datadog patch, we get more default metadata of our request along wi
 
 Now we can see our traces as they propagate across our entire distributed system.
 
-![automatic distributed](/technovangelist/scenarios/apmintro2/assets/automatic-Distributed.png)
+![automatic distributed](/technovangelist/scenarios/apmintro2/assets/automatic-distributed.png)
 
 If you want to jump directly into the code here and explore with Datadog, you can press CTRL-C, and then:
 

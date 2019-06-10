@@ -33,21 +33,21 @@ def think(subject):
 
     sleep(0.5)
     return thoughts[subject]
-    ```
+```
 
 Going back to our original **API** application, we also need to instrument and send our trace information in the part where we make our web request:
 
-    ```python
-    @app.route('/think/')
-    def think_handler():
-        thoughts = requests.get('http://thinker:5001/', headers={
-            'x-datadog-trace-id': str(tracer.current_span().trace_id),
-            'x-datadog-parent-id': str(tracer.current_span().span_id),
-        }, params={
-            'subject': flask_request.args.getlist('subject', str),
-        }).content
-        return Response(thoughts, mimetype='application/json')
-    ```
+```python
+@app.route('/think/')
+def think_handler():
+    thoughts = requests.get('http://thinker:5001/', headers={
+        'x-datadog-trace-id': str(tracer.current_span().trace_id),
+        'x-datadog-parent-id': str(tracer.current_span().span_id),
+    }, params={
+        'subject': flask_request.args.getlist('subject', str),
+    }).content
+    return Response(thoughts, mimetype='application/json')
+```
 
 If we want, we can restart our containers now, and see how things look with requests being passed across services:
 
