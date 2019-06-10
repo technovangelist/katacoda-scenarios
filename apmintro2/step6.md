@@ -12,48 +12,48 @@ For the instrumentation, we'll use the **Flask-Caching** library, and hook it up
 
 Our code, fully instrumented, looks like this:
 
-    ```python
-    import requests
+```python
+import requests
 
-    from flask import Flask, Response, jsonify
-    from flask import request as flask_request
+from flask import Flask, Response, jsonify
+from flask import request as flask_request
 
-    from flask_caching import Cache
+from flask_caching import Cache
 
-    from ddtrace import tracer, patch
-    from ddtrace.contrib.flask import TraceMiddleware
+from ddtrace import tracer, patch
+from ddtrace.contrib.flask import TraceMiddleware
 
-    from bootstrap import create_app
-    from models import Thought
+from bootstrap import create_app
+from models import Thought
 
-    from time import sleep
+from time import sleep
 
-    patch(redis=True)
-    app = create_app()
-    cache = Cache(config={'CACHE_TYPE': 'redis', 'CACHE_REDIS_HOST': 'redis'})
-    cache.init_app(app)
+patch(redis=True)
+app = create_app()
+cache = Cache(config={'CACHE_TYPE': 'redis', 'CACHE_REDIS_HOST': 'redis'})
+cache.init_app(app)
 
-    traced_app = TraceMiddleware(app, tracer, service='thinker-microservice', distributed_tracing=True)
+traced_app = TraceMiddleware(app, tracer, service='thinker-microservice', distributed_tracing=True)
 
-    # Tracer configuration
-    tracer.configure(hostname='agent')
+# Tracer configuration
+tracer.configure(hostname='agent')
 
-    @tracer.wrap(name='think')
-    @cache.memoize(30)
-    def think(subject):
-        tracer.current_span().set_tag('subject', subject)
+@tracer.wrap(name='think')
+@cache.memoize(30)
+def think(subject):
+    tracer.current_span().set_tag('subject', subject)
 
-        sleep(0.5)
-        quote = Thought.query.filter_by(subject=subject).first()
-        return quote
+    sleep(0.5)
+    quote = Thought.query.filter_by(subject=subject).first()
+    return quote
 
-    @app.route('/')
-    def think_microservice():
-        # because we have distributed tracing, don't need to manually grab headers
-        subject = flask_request.args.get('subject')
-        thoughts = think(subject)
-        return jsonify(thoughts.serialize())
-    ```
+@app.route('/')
+def think_microservice():
+    # because we have distributed tracing, don't need to manually grab headers
+    subject = flask_request.args.get('subject')
+    thoughts = think(subject)
+    return jsonify(thoughts.serialize())
+```
 
 As my favorite side effect of instrumenting, by running some tests through our code again, we can now see how the **Flask-Caching** library implements its caches through Redis:
 

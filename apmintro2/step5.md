@@ -126,20 +126,19 @@ One fix could be adding a default thought for any subject. Maybe that's somethin
 
 Something like this should be a fix for our problematic code:
 
-    ```python
-    @tracer.wrap(name='think')
-    def think(subject):
-        tracer.current_span().set_tag('subject', subject)
+```python
+@tracer.wrap(name='think')
+def think(subject):
+    tracer.current_span().set_tag('subject', subject)
 
-        sleep(0.5)
-        quote = Thought.query.filter_by(subject=subject).first()
-        if quote is None:
-            return Thought(quote='Hmmm, that\'s something I\'ll need to think about.',
-                          author='The Machine',
-                          subject=subject)
-        return quote
-    ```
-
+    sleep(0.5)
+    quote = Thought.query.filter_by(subject=subject).first()
+    if quote is None:
+        return Thought(quote='Hmmm, that\'s something I\'ll need to think about.',
+                      author='The Machine',
+                      subject=subject)
+    return quote
+```
 Let's try running that now, and see whether it's a fix for our error:
 
 `curl http://localhost:5000/think/?subject=art`{{execute T2}}
