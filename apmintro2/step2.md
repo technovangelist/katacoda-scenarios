@@ -8,31 +8,31 @@ Once our request headers make it to the private **thinker** service, we then che
 
 Our Python code for the **thinker** service becomes the following:
 
-    ```python
-    @app.route('/')
-    def think_microservice():
-        # continue the span from the called service
-        trace_id = flask_request.headers.get("X-Datadog-Trace-Id")
-        parent_id = flask_request.headers.get("X-Datadog-Parent-Id")
-        if trace_id and parent_id:
-            span = tracer.current_span()
-            span.trace_id = int(trace_id)
-            span.parent_id = int(parent_id)
+```python
+@app.route('/')
+def think_microservice():
+    # continue the span from the called service
+    trace_id = flask_request.headers.get("X-Datadog-Trace-Id")
+    parent_id = flask_request.headers.get("X-Datadog-Parent-Id")
+    if trace_id and parent_id:
+        span = tracer.current_span()
+        span.trace_id = int(trace_id)
+        span.parent_id = int(parent_id)
 
-        subject = flask_request.args.get('subject')
-        thoughts = think(subject)
-        return Response(thoughts, mimetype='application/json')
-    ```
+    subject = flask_request.args.get('subject')
+    thoughts = think(subject)
+    return Response(thoughts, mimetype='application/json')
+```
 
 Notice the **think** function that gets called has a Python decorator. It's wrapping the function call with a span, and inserting the **subject** of the think call into the span's **tag**:
 
-    ```python
-    @tracer.wrap(name='think')
-    def think(subject):
-        tracer.current_span().set_tag('subject', subject)
+```python
+@tracer.wrap(name='think')
+def think(subject):
+    tracer.current_span().set_tag('subject', subject)
 
-        sleep(0.5)
-        return thoughts[subject]
+    sleep(0.5)
+    return thoughts[subject]
     ```
 
 Going back to our original **API** application, we also need to instrument and send our trace information in the part where we make our web request:
