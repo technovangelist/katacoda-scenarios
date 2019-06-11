@@ -12,8 +12,8 @@ rm -rf TrainingEnvironment
 
 # sed -i 's|datadog/agent:6.2.1|datadog/agent:6.11.0|' docker-compose.yml
 sed -i "s|\"datadog/agent:6.2.1\"|\"datadog/agent:6.11.0\"\
-    labels:\
-      com.datadoghq.ad.check_names: '[\"disk\"]'\
+\n    labels:\
+\n      com.datadoghq.ad.check_names: '[\"disk\"]'\
       com.datadoghq.ad.init_configs: '[{}]'\
       com.datadoghq.ad.instances: '[{\"mount_point_blacklist\": \"/host/proc/sys/fs/binfmt_misc\"}]'|" step00/docker-compose.yml
 
