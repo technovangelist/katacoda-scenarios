@@ -7,7 +7,7 @@ DD_API_KEY=${DD_API_KEY}
 EOL
 
 git clone https://github.com/DataDog/TrainingEnvironment.git
-cp -r TrainingEnvironment/apm/* .
+cp -r TrainingEnvironment/apmk/* .
 rm -rf TrainingEnvironment
 
 # sed -i 's|- DD_APM_ENABLED=true|- DD_API_KEY\n\t- DD_APM_ENABLED=true|' docker-compose.yml
