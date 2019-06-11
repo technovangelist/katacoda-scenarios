@@ -7,7 +7,7 @@ DD_API_KEY=${DD_API_KEY}
 EOL
 
 git clone https://github.com/DataDog/TrainingEnvironment.git
-cp -r TrainingEnvironment/apm/* .
+cp -r TrainingEnvironment/apmk/* .
 rm -rf TrainingEnvironment
 
 sed -i 's|datadog/agent:6.2.1|datadog/agent:6.11.0|' step00/docker-compose.yml
