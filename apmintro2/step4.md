@@ -18,7 +18,7 @@ This adds checks for the headers from before and automatically continues as a ch
 
 If we use Datadog's Python library function **patch**, we can also automatically instrument the **requests** library, along with the **redis** server we have running.
 
-To send our headers along with the automatically instrumented **requests** library, we must also `import config from ddtrace`, and add the following lines:
+To send our headers along with the automatically instrumented **requests** library, we must also `import config from ddtrace`, and add the following lines to **api.py**:
 
 ```python
 from ddtrace import tracer, patch, config
