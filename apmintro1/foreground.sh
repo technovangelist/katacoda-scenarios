@@ -10,5 +10,5 @@ git clone https://github.com/DataDog/TrainingEnvironment.git
 cp -r TrainingEnvironment/apmk/* .
 rm -rf TrainingEnvironment
 
-./start00
+# ./start00
 
