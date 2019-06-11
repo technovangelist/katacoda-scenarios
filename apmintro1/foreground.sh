@@ -7,7 +7,7 @@ DD_API_KEY=${DD_API_KEY}
 EOL
 
 git clone https://github.com/DataDog/TrainingEnvironment.git
-cp -r TrainingEnvironment/apmk/* .
+cp -r TrainingEnvironment/apm/* .
 rm -rf TrainingEnvironment
 
 # ./start00
