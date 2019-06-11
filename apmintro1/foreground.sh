@@ -10,7 +10,8 @@ git clone https://github.com/DataDog/TrainingEnvironment.git
 cp -r TrainingEnvironment/apm/* .
 rm -rf TrainingEnvironment
 
-sed -i 's|datadog/agent:6.2.1|datadog/agent:6.11.0|' docker-compose.yml
-sed -i 's|datadog/agent:6.2.1|datadog/agent:6.11.0|' step00/docker-compose.yml
+# sed -i 's|datadog/agent:6.2.1|datadog/agent:6.11.0|' docker-compose.yml
+sed -i 's|datadog/agent:6.2.1|datadog/agent:6.11.0\n    labels\n      com.datadoghq.ad.check_names: \'["disk"]\'\n      com.datadoghq.ad.init_configs: \'[{}]\'\n      com.datadoghq.ad.instances: \'[{"mount_point_blacklist": "/host/proc/sys/fs/binfmt_misc"}]\'\n|' step00/docker-compose.yml
 
 ./start00
+
