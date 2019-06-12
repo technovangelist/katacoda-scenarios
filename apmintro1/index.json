@@ -35,7 +35,7 @@
       "host01": [
         {
           "file": "disk.yaml",
-          "target": "/root/"
+          "target": "/root/agentconf.d"
         }
       ]
     }
