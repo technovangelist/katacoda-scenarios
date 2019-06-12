@@ -36,6 +36,10 @@
         {
           "file": "disk.yaml",
           "target": "/root/agentconf.d"
+        }, 
+        {
+          "file": "ntp.yaml",
+          "target": "/root/agentconf.d"
         }
       ]
     }
