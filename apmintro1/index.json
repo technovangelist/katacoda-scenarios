@@ -23,17 +23,26 @@
       },
       {
         "text": "step6.md"
-      }, 
+      },
       {
         "text": "step7.md"
-      } 
+      }
     ],
     "finish": {
       "text": "finish.md"
     }
   },
+  "assets": {
+    "host01": [
+      {
+        "file": "disk.yaml",
+        "target": "/root",
+        "chmod": "+x"
+      }
+    ]
+  },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "editor-terminal",
     "terminals": [
       {
         "name": "Terminal 2"
