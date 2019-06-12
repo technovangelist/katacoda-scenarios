@@ -3,4 +3,4 @@ init_config:
 instances:
   - use_mount: false
     mount_point_blacklist:
-      - /proc/sys/fs/binfmt_misc
+      - /host/proc/sys/fs/binfmt_misc
