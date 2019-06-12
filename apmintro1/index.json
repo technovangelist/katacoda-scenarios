@@ -30,15 +30,15 @@
     ],
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "disk.yaml",
+          "target": "/root/"
+        }
+      ]
     }
-  },
-  "assets": {
-    "host01": [
-      {
-        "file": "disk.yaml",
-        "target": "/root/"
-      }
-    ]
   },
   "environment": {
     "uilayout": "editor-terminal",
