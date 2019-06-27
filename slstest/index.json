@@ -1,0 +1,30 @@
+{
+  "title": "Testing Datadog 101",
+  "details": {
+    "intro": {},
+    "steps": [
+      {
+        "title": "Getting Started",
+        "text": "step1.md"
+      }
+    ]
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "",
+    "showdashboard": true,
+    "terminals": [
+      {
+        "name": "LB",
+        "command": "ssh -o StrictHostKeyChecking=no root@host02"
+      },
+      {
+        "name": "Web",
+        "command": "ssh -o StrictHostKeyChecking=no root@host03"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-aws"
+  }
+}
