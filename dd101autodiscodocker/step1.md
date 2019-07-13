@@ -1,4 +1,4 @@
-1.  Navigate to the <a href="https://app.datadoghq.com/account/settings#agent/docker" target=_datadog>Agent Installation</a> page in the Datadog application ).
+1.  Navigate to the <a href="https://app.datadoghq.com/account/settings#agent/docker" target=_datadog>Agent Installation</a> page in the Datadog application.
 2.  Select **Docker** and copy the first command. Run it where ever you have Docker installed.
 3.  You now have the Datadog agent running on your Docker machine. 
 4.  Run `docker exec -it dd-agent bash`{{execute}} to login to a bash shell on that container.
