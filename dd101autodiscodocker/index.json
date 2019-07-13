@@ -46,7 +46,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-editor",
+    "uilayout": "editor-terminal",
     "uimessage1": "", 
     "showdashboard": true, 
     "terminals": [
