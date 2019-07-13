@@ -50,6 +50,6 @@
     "uimessage1": ""
   },
   "backend": {
-    "imageid": "datadog-kubernetes-cluster-running"
+    "imageid": "ubuntu"
   }
 }
