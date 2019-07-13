@@ -24,6 +24,10 @@
           "chmod": "+x"
         },
         {
+          "file": "status.txt",
+          "target": "/root"
+        },
+        {
           "file": "grademe",
           "target": "/usr/local/bin/",
           "chmod": "+x"
@@ -37,10 +41,6 @@
           "file": "heavy",
           "target": "/usr/local/bin/",
           "chmod": "+x"
-        },
-        {
-          "file": "status.txt",
-          "target": "/root"
         }
       ]
     }
