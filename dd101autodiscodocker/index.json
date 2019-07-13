@@ -9,7 +9,6 @@
       },
     "steps": [
       {
-        "title": "Create a metric monitor", 
         "text": "step1.md"
       }
     ], 
