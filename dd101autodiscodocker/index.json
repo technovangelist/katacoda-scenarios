@@ -1,0 +1,62 @@
+{
+  "time": "20 minutes", 
+  "title": "Autodiscovery with Docker",
+  "details": {
+      "intro": {
+        "courseData": "background.sh",
+        "code": "foreground.sh", 
+        "text": "intro.md"
+      },
+    "steps": [
+      {
+        "title": "Create a metric monitor", 
+        "text": "step1.md"
+      }
+    ], 
+    "finish": {
+      "text": "finish.md"
+    }, 
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "light",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "heavy",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "status.txt",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-editor",
+    "uimessage1": "", 
+    "showdashboard": true, 
+    "terminals": [
+      {
+        "name": "web2",
+        "command": "ssh -o StrictHostKeyChecking=no web2"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
