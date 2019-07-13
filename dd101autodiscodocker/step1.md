@@ -1,11 +1,11 @@
 1.  Navigate to the <a href="https://app.datadoghq.com/account/settings#agent/docker" target=_datadog>Agent Installation</a> page in the Datadog application ).
 2.  Select **Docker** and copy the first command. Run it where ever you have Docker installed.
 3.  You now have the Datadog agent running on your Docker machine. 
-4.  Run `docker exec -it dd-agent bash` to login to a bash shell on that container.
-5.  You can now run any of the Datadog commands you have on Linux. For instance, run `/etc/init.d/datadog-agent info`.
+4.  Run `docker exec -it dd-agent bash`{{execute}} to login to a bash shell on that container.
+5.  You can now run any of the Datadog commands you have on Linux. For instance, run `agent status`{{execute}}.
 6.  You can try other commands, or type `exit` to return to your host machine.
-7.  Start a Redis container by running the following command: `docker run -d --name ad-redis redis`.
-8.  Run the Datadog Agent Info command. Also run the Agent's configcheck command (`docker exec -it dd-agent /etc/init.d/datadog-agent configcheck`). Is Redis being monitored? (*If it isn't try again in a few seconds.*)
+7.  Start a Redis container by running the following command: `docker run -d --name ad-redis redis`{{execute}}.
+8.  Run the Datadog Agent Info command. Also run the Agent's configcheck command (`docker exec -it dd-agent agent configcheck`{{execute}}). Is Redis being monitored? (*If it isn't try again in a few seconds.*)
 9.  Create a new file called `Dockerfile` in a new directory called `redisdocker`. Edit the file and add a single line:
     <pre><code>FROM redis
     </code></pre>
