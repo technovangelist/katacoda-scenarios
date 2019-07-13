@@ -47,16 +47,9 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uimessage1": "", 
-    "showdashboard": true, 
-    "terminals": [
-      {
-        "name": "web2",
-        "command": "ssh -o StrictHostKeyChecking=no web2"
-      }
-    ]
+    "uimessage1": ""
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "datadog-kubernetes-cluster-running"
   }
 }
