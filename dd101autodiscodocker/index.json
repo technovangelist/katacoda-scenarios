@@ -47,6 +47,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
+    "uieditorpath": "docker", 
     "uimessage1": ""
   },
   "backend": {
