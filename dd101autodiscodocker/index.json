@@ -27,28 +27,16 @@
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
-        
         {
-          "file": "grademe",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "light",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "heavy",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
+          "file": "Dockerfile",
+          "target": "/root/redisdocker/"
         }
       ]
     }
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "docker", 
+    "uieditorpath": "redisdocker", 
     "uimessage1": ""
   },
   "backend": {

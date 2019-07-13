@@ -3,13 +3,13 @@
 3.  You now have the Datadog agent running on your Docker machine. 
 4.  Run `docker exec -it dd-agent bash`{{execute}} to login to a bash shell on that container.
 5.  You can now run any of the Datadog commands you have on Linux. For instance, run `agent status`{{execute}}.
-6.  You can try other commands, or type `exit` to return to your host machine.
+6.  Run `agent`{{execute}} to see the other available commands, or type `exit`{{execute}} to return to your host machine.
 7.  Start a Redis container by running the following command: `docker run -d --name ad-redis redis`{{execute}}.
-8.  Run the Datadog Agent Info command. Also run the Agent's configcheck command (`docker exec -it dd-agent agent configcheck`{{execute}}). Is Redis being monitored? (*If it isn't try again in a few seconds.*)
-9.  Create a new file called `Dockerfile` in a new directory called `redisdocker`. Edit the file and add a single line:
+8.  Run the Datadog Agent Status command (`docker exec -it dd-agent agent status`{{execute}}). Also run the Agent's configcheck command (`docker exec -it dd-agent agent configcheck`{{execute}}). Is Redis being monitored? (*If it isn't try again in a few seconds.*)
+9.  Open the blank file called `Dockerfile` in a the `redisdocker` directory. Edit the file and add a single line:
     <pre><code>FROM redis
     </code></pre>
-10. Build the new image using the following command: `docker build -t redisdocker .`
+10. Build the new image using the following command: `docker build -t redisdocker .`{{execute}}
 11. Run the redisdocker image using the command: `docker run --name dd-redis -d redisdocker`. The Redis docker container based on our modified image is now running.
 12. Run the Datadog Agent Info command again. Is the new database being monitored? Why do you think that is?
 
