@@ -19,14 +19,15 @@
     "assets": {
       "host01": [
         {
+          "file": "status.txt",
+          "target": "/root"
+        },
+        {
           "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
-        {
-          "file": "status.txt",
-          "target": "/root"
-        },
+        
         {
           "file": "grademe",
           "target": "/usr/local/bin/",
