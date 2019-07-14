@@ -1,0 +1,51 @@
+{
+  "time": "20 minutes", 
+  "title": "Autodiscovery with Kubernetes",
+  "details": {
+      "intro": {
+        "courseData": "background.sh",
+        "code": "foreground.sh", 
+        "text": "intro.md"
+      },
+    "steps": [
+      {
+        "text": "step1.md"
+      }, 
+      {
+        "text": "step2.md"
+      }
+    ], 
+    "finish": {
+      "text": "finish.md"
+    }, 
+    "assets": {
+      "host01": [
+        {
+          "file": "status.txt",
+          "target": "/root"
+        },
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "Dockerfile",
+          "target": "/root/docker/"
+        },
+        {
+          "file": "docker-compose.yaml",
+          "target": "/root/docker/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "datadog-", 
+    "uimessage1": ""
+  },
+  "backend": {
+    "imageid": "datadog-kubernetes-cluster-running"
+  }
+}
