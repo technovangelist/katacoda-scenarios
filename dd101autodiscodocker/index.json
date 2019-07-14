@@ -32,6 +32,10 @@
         {
           "file": "Dockerfile",
           "target": "/root/docker/"
+        },
+        {
+          "file": "docker-compose.yaml",
+          "target": "/root/docker/"
         }
       ]
     }
