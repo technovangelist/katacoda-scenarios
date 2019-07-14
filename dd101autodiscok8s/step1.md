@@ -4,7 +4,7 @@ Let's create the same environment in Kubernetes.
 2.  Start the DaemonSet by running `kubectl apply -f docker/datadog-agent.yaml`{{execute}}
 3.  Create a yaml file called `redisapp.yaml` with the following contents:
 
-4.  Add the Deployments by running `kubectl apply -f redisapp.yaml`.
+4.  Add the Deployments by running `kubectl apply -f redisapp.yaml`{{execute}}.
 5.  Find the name of your agent pod: `kubectl get pods -l app=dd-agent`. Then run the Datadog Agent info command on that pod: `kubectl exec [agent pod]  /etc/init.d/datadog-agent info`.
 6.  You should see that only a single redis instance is being monitored.
 7.  Update the redis-slave deployment as follows:
