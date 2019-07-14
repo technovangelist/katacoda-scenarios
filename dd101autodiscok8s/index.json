@@ -33,6 +33,10 @@
         {
           "file": "redisapp.yaml",
           "target": "/root/docker/"
+        },
+        {
+          "file": "redisappupdate.yaml",
+          "target": "/root/docker/"
         }
       ]
     }
