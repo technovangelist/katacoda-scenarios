@@ -1,1 +1,1 @@
-You now have monitors that are informational as well as monitors that are alerts. Try adding others you think might be relevant. Of course, you don't have to rely purely on the Datadog UI and on email to receive notifications. Go to the Integrations page and look around at the various notification integrations. You will find Pagerduty, VictorOps, OpsGenie, Slack, Hipchat and many more.
+You can now add monitoring to all of your pods in Kubernetes. Some will be automatically be monitored, but others will need a little help from you in the form of annotations.
