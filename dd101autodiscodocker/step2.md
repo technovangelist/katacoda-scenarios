@@ -16,4 +16,4 @@ Let's switch over to using docker-compose.
     </code></pre>
 
 5.  Run `docker-compose up -d`{{execute}} again. 
-6.  Run the Datadog Agent Info command again, how many instances are being monitored?
+6.  Run the Datadog Agent Status command again, how many instances are being monitored?

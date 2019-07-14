@@ -1,11 +1,8 @@
-
-### Now with Kubernetes
-
 Let's create the same environment in Kubernetes. Your Kubernetes environment could be local using miniKube, on a Rancher or similar environment or on a cloud service such as Google Cloud. If you don't have a Kubernetes environment, setting up miniKube is super quick and easy. The easiest install docs I have seen are here: https://github.com/kubernetes/minikube/releases. You will also need kubectl which you can find here: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 1.  Add the Datadog Agent to your Kubernetes environment by creating a dd-agent.yaml file. You can find the contents of this file, will your API KEY already filled in here: https://app.datadoghq.com/account/settings#agent/kubernetes
-1.  Start the DaemonSet by running `kubectl apply -f dd-agent.yaml`
-1.  Create a yaml file called `redisapp.yaml` with the following contents:
+2.  Start the DaemonSet by running `kubectl apply -f dd-agent.yaml`
+3.  Create a yaml file called `redisapp.yaml` with the following contents:
 
         apiVersion: v1
         kind: Service
