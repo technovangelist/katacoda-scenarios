@@ -9,7 +9,8 @@
     <pre><code>FROM redis
     </code></pre>
 8.  Build the new image using the following command: `docker build -t inmemdb redisdocker`{{execute}}
-9.  Run the redisdocker image using the command: `docker run --name dd-redis -d inmemdb`{{execute}}. The Redis docker container based on our modified image is now running.
+9.  Run the redisdocker image using the command: `docker run --name dd-redis -d inmemdb`{{execute}}.  
+    *The Redis docker container based on our modified image is now running.*
 10. Run the Datadog Agent Status command `docker exec -it dd-agent agent status`{{execute}}. Also run the Agent's configcheck command `docker exec -it dd-agent agent configcheck`{{execute}}. Is Redis being monitored? Try waiting a few seconds and try again.
 11. Start a Redis container by running the following command: `docker run -d --name ad-redis redis`{{execute}}.
 
