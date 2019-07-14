@@ -10,6 +10,9 @@
     "steps": [
       {
         "text": "step1.md"
+      }, 
+      {
+        "text": "step2.md"
       }
     ], 
     "finish": {
@@ -28,7 +31,7 @@
         },
         {
           "file": "Dockerfile",
-          "target": "/root/redisdocker/"
+          "target": "/root/docker/"
         }
       ]
     }
