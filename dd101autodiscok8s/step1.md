@@ -8,7 +8,7 @@ Let's create the same environment in Kubernetes.
 
 4.  Add the Deployments by running `kubectl apply -f docker/redisapp.yaml`{{execute}}.
 
-5.  Find the name of your agent pod: `kubectl get pods -l app=datadog-agent`{{execute}}. Then run the Datadog Agent info command on that pod: `kubectl exec [agent pod]  /etc/init.d/datadog-agent info`. Or just merge it all together with this command `kubectl exec $(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' -l app=datadog-agent) agent status`{{execute}}
+5.  Find the name of your agent pod: `kubectl get pods -l app=datadog-agent`{{execute}}. Then run the Datadog Agent info command on that pod: `kubectl exec [agent pod]  /etc/init.d/datadog-agent info`. Or just merge it all together with this command `kubectl exec $(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' -l app=datadog-agent) agent status`{{execute}}.
 
     *If you see an error like container not found, the agent is still starting. Run `kubectl get pods`{{execute}} to see the current status of all the pods.*
 
@@ -16,7 +16,7 @@ Let's create the same environment in Kubernetes.
 
 7.  Review the `redisappupdate.yaml` file in the editor. Look for whats different. 
 
-    *Hint: it's in the metadata for the redis-slave deployment. You can use a command like `diff -c` with the two files to make the differences more obvious*. 
+    *Hint: it's in the metadata for the redis-slave deployment. You can use a command like `diff -c` with the two files to make the differences more obvious*.
 
 8.  Apply the redisappupdate.yaml file using the command `kubectl apply -f docker/redisappupdate.yaml`{{execute}}. Try the Datadog Agent Status command to see how many instances are being monitored.
 
