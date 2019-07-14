@@ -10,7 +10,7 @@ Let's create the same environment in Kubernetes.
 
 5.  Find the name of your agent pod: `kubectl get pods -l app=datadog-agent`{{execute}}. Then run the Datadog Agent info command on that pod: `kubectl exec [agent pod]  /etc/init.d/datadog-agent info`. Or just merge it all together with this command `kubectl exec $(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' -l app=datadog-agent) agent status`{{execute}}
 
-    If you see an error like container not found, the agent is still starting. Run `kubectl get pods`{{execute}} to see the current status of all the pods.
+    *If you see an error like container not found, the agent is still starting. Run `kubectl get pods`{{execute}} to see the current status of all the pods.*
 
 6.  You should see that only a single redis instance is being monitored.
 
