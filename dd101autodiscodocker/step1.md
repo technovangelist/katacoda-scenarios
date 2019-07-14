@@ -5,7 +5,7 @@
 5.  You can now run any of the Datadog commands you have on Linux. For instance, run `agent status`{{execute}}.
 6.  Run `agent`{{execute}} to see the other available commands, or type `exit`{{execute}} to return to your host machine.
 7.  Open the file called `Dockerfile` in a the `redisdocker` directory.
-    *Notice that the contents are a single line:*
+      *Notice that the contents are a single line:*
     <pre><code>FROM redis
     </code></pre>
 8.  Build the new image using the following command: `docker build -t inmemdb redisdocker`{{execute}}
