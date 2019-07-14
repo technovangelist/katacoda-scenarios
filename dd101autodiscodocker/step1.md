@@ -14,3 +14,4 @@
 12. Build the new image using the following command: `docker build -t inmemdb docker`{{execute}}
 13. Run the redisdocker image using the command: `docker run --name inmemdb -d inmemdb`{{execute}}. The Redis docker container based on our modified image is now running.
 14. Run the Datadog Agent configcheck command again `docker exec -it dd-agent agent configcheck`{{execute}}. Is the new database being monitored? Why do you think that is?
+9.  Kill and remove the containers again using the command `docker rm -f $(docker ps -q)`{{execute}}

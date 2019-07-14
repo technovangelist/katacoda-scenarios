@@ -38,7 +38,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "redisdocker", 
+    "uieditorpath": "docker", 
     "uimessage1": ""
   },
   "backend": {
