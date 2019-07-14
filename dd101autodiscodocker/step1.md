@@ -4,8 +4,7 @@
 4.  Run `docker exec -it dd-agent bash`{{execute}} to login to a bash shell on that container.
 5.  You can now run any of the Datadog commands you have on Linux. For instance, run `agent status`{{execute}}.
 6.  Run `agent`{{execute}} to see the other available commands, or type `exit`{{execute}} to return to your host machine.
-7.  Open the file called `Dockerfile` in a the `redisdocker` directory. 
-
+7.  Open the file called `Dockerfile` in a the `redisdocker` directory.
     *Notice that the contents are a single line:*
     <pre><code>FROM redis
     </code></pre>
