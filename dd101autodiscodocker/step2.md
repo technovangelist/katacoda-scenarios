@@ -3,7 +3,7 @@ Let's switch over to using docker-compose.
 1.  Open the docker-compose.yaml file above
 2.  Run `docker-compose up -d`{{execute}}.
 3.  Run the datadog info command `docker-compose exec datadog agent status`{{execute}}. How many redis instances are being monitored?
-4.  Modify the backendredis service to show the following:
+4.  Modify the `backendredis` service to show the following:
 
     <pre><code class=yaml>backendredis:
         build: .
