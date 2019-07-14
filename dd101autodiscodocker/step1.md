@@ -10,8 +10,10 @@
 1.  Build the new image using the following command: `docker build -t inmemdb redisdocker`{{execute}}
 2.  Run the redisdocker image using the command: `docker run --name inmemdb -d inmemdb`{{execute}}. The Redis docker container based on our modified image is now running.
 3.  Run the Datadog Agent Status command `docker exec -it dd-agent agent status`{{execute}}. Also run the Agent's configcheck command `docker exec -it dd-agent agent configcheck`{{execute}}. Is Redis being monitored? Try waiting a few seconds and try again.
-4.  Start a Redis container by running the following command: `docker run -d --name ad-redis redis`{{execute}}. This is starting a container based on the image name `redis`.
-5.  Run the Datadog Agent configcheck command again `docker exec -it dd-agent agent configcheck`{{execute}}. Is the new database being monitored? Why do you think that is?
+4.  Kill and remove the containers using the command `docker rm -f $(docker ps -q)`{{execute}}
+5.  Start the Datadog container again: `docker run -d --name dd-agent datadog/agent`{{execute}}
+6.  Start a Redis container by running the following command: `docker run -d --name ad-redis redis`{{execute}}. This is starting a container based on the image name `redis`.
+7.  Run the Datadog Agent configcheck command again `docker exec -it dd-agent agent configcheck`{{execute}}. Is the new database being monitored? Why do you think that is?
 
 ### Using Docker Compose
 Let's switch over to using docker-compose.
