@@ -1,17 +1,20 @@
 {
-  "time": "20 minutes", 
+  "time": "20 minutes",
   "title": "Autodiscovery with Kubernetes",
   "details": {
-      "intro": {
-        "courseData": "background.sh",
-        "code": "foreground.sh", 
-        "text": "intro.md"
-      },
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
     "steps": [
       {
         "text": "step1.md"
       }
-    ], 
+    ],
     "assets": {
       "host01": [
         {
@@ -40,7 +43,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "docker", 
+    "uieditorpath": "docker",
     "uimessage1": ""
   },
   "backend": {
