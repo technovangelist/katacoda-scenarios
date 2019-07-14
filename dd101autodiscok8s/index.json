@@ -29,6 +29,10 @@
         {
           "file": "datadog-agent.yaml",
           "target": "/root/docker/"
+        },
+        {
+          "file": "redisapp.yaml",
+          "target": "/root/docker/"
         }
       ]
     }
