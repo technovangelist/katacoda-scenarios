@@ -35,7 +35,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "datadog-", 
+    "uieditorpath": "docker", 
     "uimessage1": ""
   },
   "backend": {
