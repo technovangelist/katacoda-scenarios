@@ -27,11 +27,7 @@
           "chmod": "+x"
         },
         {
-          "file": "Dockerfile",
-          "target": "/root/docker/"
-        },
-        {
-          "file": "docker-compose.yaml",
+          "file": "datadog-agent.yaml",
           "target": "/root/docker/"
         }
       ]
