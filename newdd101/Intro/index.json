@@ -1,0 +1,36 @@
+{
+    "time": "10 minutes",
+    "title": "Introduction to the Course",
+    "details": {
+        "intro": {
+            "courseData": "background.sh",
+            "code": "foreground.sh",
+            "text": "intro.md"
+        },
+        "steps": [
+            {
+                "text": "step1"
+            }
+        ], 
+        "assets": {
+            "host01": [
+                {
+                    "file": "start",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "done",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "editor-terminal"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
