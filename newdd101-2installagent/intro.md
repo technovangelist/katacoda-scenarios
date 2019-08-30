@@ -1,0 +1,1 @@
+Now it's time to really get started. The first step you need to take with Datadog is to install the agent. This is really easy to do. Just login to your Datadog account, go to the right page, and run the command given. Let's do that now. 
