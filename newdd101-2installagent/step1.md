@@ -4,14 +4,5 @@ Now in the terminal, run the `env`{{execute}} command and look for the API Key e
     *Note: API and APP keys are different.*
 3.  Now visit the <a href="https://app.datadoghq.com/account/settings#agent" target="_datadog">Install</a> page and click on Ubuntu. Copy the full, easy one-step install command to install the agent. Paste the command into the terminal and press enter.
 4.  It should take about a minute to fully install and when complete you will see something like this:
-    
-    <pre><code>
-
-    Your Agent is running and functioning properly. It will continue to run in the
-    background and submit metrics to Datadog.
-    If you ever want to stop the Agent, run:
-        systemctl stop datadog-agent
-    And to run it again run:
-        systemctl start datadog-agent
-    </code></pre>
+    ![agentinstalled][/technovangelist/scenarios/newdd101-2installagent/assets/agentinstalled.png]
 5.  To verify that everything is running the way it should, run the status command: `datadog-agent status`{{execute}}.
