@@ -26,12 +26,17 @@
           "file": "finish",
           "target": "/usr/local/bin/",
           "chmod": "+x"
+        }, 
+        {
+          "file": "samplefile.txt",
+          "target": "/root/editor"
         }
       ]
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "/root/editor"
   },
   "backend": {
     "imageid": "ubuntu"
