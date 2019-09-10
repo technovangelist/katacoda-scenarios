@@ -15,4 +15,4 @@ Welcome to the first section of the Introduction to Datadog course.
 7. In the terminal, run the `env`{{execute}} command and look for the API Key environment variable. Verify that they are the same. You don't have to memorize the entire key. Just making sure that the first and last couple of characters are the same should be good enough to ensure a match.
     _Note: API and APP keys are different._
 8. At the end of every section of this course, including this one, run `finish`{{execute}} when you are finished. Go for it. Run it now.
-ashtashtashta
+ashtashtasxxxx
