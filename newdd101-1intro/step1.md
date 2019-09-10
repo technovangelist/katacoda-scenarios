@@ -11,5 +11,7 @@ Welcome to the first section of the Introduction to Datadog course.
 
 4. Now login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a>. You should have received an email letting you know about the organization we have created for you. Again, we use a separate org to ensure that you don't pollute your production environment.
 5. Take a look around. We will be trying out many of the sections during this training.
-6. At the end of every section of this course, including this one, run `finish`{{execute}} when you are finished. Go for it. Run it now.
-7. test
+6. Now verify that you are in the right account. Visit <a href="https://app.datadoghq.com/account/settings#api" target="_datadog">the API keys section</a>, expand API Keys and identitfy your API key.
+7. In the terminal, run the `env`{{execute}} command and look for the API Key environment variable. Verify that they are the same. You don't have to memorize the entire key. Just making sure that the first and last couple of characters are the same should be good enough to ensure a match.
+    _Note: API and APP keys are different._
+8. At the end of every section of this course, including this one, run `finish`{{execute}} when you are finished. Go for it. Run it now.
