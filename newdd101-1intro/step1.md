@@ -12,3 +12,4 @@ Welcome to the first section of the Introduction to Datadog course.
 4. Now login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a>. You should have received an email letting you know about the organization we have created for you. Again, we use a separate org to ensure that you don't pollute your production environment.
 5. Take a look around. We will be trying out many of the sections during this training.
 6. At the end of every section of this course, including this one, run `finish`{{execute}} when you are finished. Go for it. Run it now.
+7. test
