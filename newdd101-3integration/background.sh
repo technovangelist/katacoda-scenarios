@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 wall -n startq
 mkdir -p /root/lab
 mkdir -p /etc/datadog-agent
