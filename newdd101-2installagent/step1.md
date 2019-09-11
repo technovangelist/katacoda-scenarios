@@ -10,3 +10,4 @@
 8. If running the **status** command results in an error, you should see the line that the parser got up to. Remember that spacing in a YAML file is very important. All the commented lines start with a hash and a space. So to uncomment, remove the hash and the space after the hash.
 9. Using that knowledge, uncomment **logs_config** and **container_collect_all**, changing that last one from false to true.
 10. Restart the agent again, and run the status command again.
+11. Scroll down and find the corresponding settings for APM. See if you can enable it.
