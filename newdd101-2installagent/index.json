@@ -37,6 +37,10 @@
           "file": "dockercompose.yml",
           "target": "/root/dockerfiles/",
           "chmod": "+x"
+        }, 
+        {
+          "file": ".envrc",
+          "target": "/etc/datadog-agent/"
         }
       ]
     }
