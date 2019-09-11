@@ -35,19 +35,15 @@
         },
         {
           "file": "dockercompose.yml",
-          "target": "/root/dockerfiles/",
+          "target": "/root/labfiles/dockerfiles/",
           "chmod": "+x"
-        }, 
-        {
-          "file": ".envrc",
-          "target": "/etc/datadog-agent/"
         }
       ]
     }
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root"
+    "uieditorpath": "/root/labfiLes"
   },
   "backend": {
     "imageid": "ubuntu"
