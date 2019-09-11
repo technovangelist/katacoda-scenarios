@@ -3,7 +3,8 @@
     "title": "Setting up Integrations",
     "details": {
         "intro": {
-            "code": "background.sh",
+            "courseData": "background.sh",
+            "code": "foreground.sh",
             "text": "intro.md"
         },
         "steps": [
