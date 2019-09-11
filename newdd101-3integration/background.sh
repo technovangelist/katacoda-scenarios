@@ -1,8 +1,6 @@
 #!/bin/bash
-set -ex
-wall -n startqq
+wall -n startq
 mkdir -p /root/lab
-wall -n starting datadog
 curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh -o /root/install.sh
 chmod +x /root/install.sh
 mkdir -p /etc/datadog-agent
@@ -27,5 +25,6 @@ docker pull nginx
 docker pull datadog/agent
 touch /root/end
 wall -n end
+wall -n starting datadog
 /root/install.sh
 rm /root/install.sh
