@@ -1,6 +1,6 @@
 1. Open the file `docker-compose.yml`{{open}} in the editor to the right. 
 2. Notice that only a single Redis image is in the file, but we want to add the Datadog agent. Datadog will run as a sidecar container on our host. 
-3. Copy the following text, then paste it into the file. 
+3. Copy the following text, then paste it into the file.
    <pre class="file" data-target="clipboard">
    datadog:
        links:
@@ -13,3 +13,5 @@
        - /proc/mounts:/host/proc/mounts:ro
        - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
    </pre>
+4. Run `docker-compose up`{{execute}} in the terminal to start.
+5. Switch over to the Terminal 2 and run the Datadog status command: `docker-compose exec datadog agent status`{{execute T2}}
