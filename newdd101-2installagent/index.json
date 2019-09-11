@@ -45,8 +45,7 @@
     "/etc/datadog-agent/datadog.yaml","root/dockercompose.yml" 
   ],
   "environment": {
-    "uilayout": "editor-terminal",
-    "uieditorpath": "/root/labfiles"
+    "uilayout": "editor-terminal"
   },
   "backend": {
     "imageid": "ubuntu"
