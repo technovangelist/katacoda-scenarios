@@ -11,6 +11,11 @@
       {
         "text": "step1.md",
         "title": "Install the Agent on a VM"
+      }, 
+      {
+        "text": "step2.md",
+        "title": "Install the Agent on Docker", 
+        "code": "prepforstep2.sh"
       }
     ],
     "finish": {
@@ -33,7 +38,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/etc/datadog-agent"
+    "uieditorpath": "/etc/datadog-agent, root"
   },
   "backend": {
     "imageid": "ubuntu"
