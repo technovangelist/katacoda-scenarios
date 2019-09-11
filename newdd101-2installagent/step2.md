@@ -15,3 +15,16 @@
    </pre>
 4. Run `docker-compose up`{{execute}} in the terminal to start.
 5. Switch over to the Terminal 2 and run the Datadog status command: `docker-compose exec datadog agent status`{{execute T2}}
+6. As you can see, the Datadog agent is running but we have the same issues we saw in the previous step with APM and Logs not enabled. But instead of using a configuration file, we use environment variables to do this.
+7. In the editor, add the following environment variables to the Datadog service:
+   DD_APM_ENABLED
+   DD_LOGS_ENABLED
+
+   The resulting environment section should look like:
+        environment:
+        - DD_API_KEY
+        - DD_APM_ENABLED
+        - DD_LOGS_ENABLED
+
+8. In the first terminal tab, press CTRL-C to stop docker-compose and then run docker-compose up again to restart it.
+9. In the second terminal, run the status command and see if you have successfully enabled them.
