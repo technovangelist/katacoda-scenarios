@@ -1,1 +1,1 @@
-cd /root/installing_on_docker
+cd /root/lab
