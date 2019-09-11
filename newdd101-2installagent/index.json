@@ -43,7 +43,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/labfiLes"
+    "uieditorpath": "/root/labfiles"
   },
   "backend": {
     "imageid": "ubuntu"
