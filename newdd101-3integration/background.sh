@@ -5,8 +5,8 @@ mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
 
 ln -s /etc/datadog-agent /root/lab/datadog
-apt-get update -y
-apt install redis-server -y
+sudo apt-get update -y
+sudo apt install redis-server -y
 echo redis installed
 sudo systemctl enable redis-server.service
 sudo sed -i '2i maxmemory 256mb' /etc/redis/redis.conf
