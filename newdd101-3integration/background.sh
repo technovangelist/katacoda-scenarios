@@ -3,8 +3,6 @@ touch /root/startq
 mkdir -p /root/lab
 mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
-bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
-wait || { echo "background failed: $?" >&2; exit 1;}
 
 ln -s /etc/datadog-agent /root/lab/datadog
 apt-get update -y
@@ -20,4 +18,5 @@ ln -s /etc/nginx /root/lab/nginx
 docker pull redis 
 docker pull nginx
 docker pull datadog/agent
+bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
 touch /root/end
