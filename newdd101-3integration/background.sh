@@ -1,5 +1,5 @@
 #!/bin/bash
-wall -n start
+wall -n startq
 mkdir -p /root/lab
 mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
