@@ -1,1 +1,1 @@
-If you are seeing this message, it means you have successfully created an account, logged in, and clicked the link to the course. Congratulations. Now click the button on this page to start the scenario and follow the directions.
+Now that you have an installed agent on both the host and in Docker, it's time to set up an integration with both Redis and Nginx. Just like before, we are going to do this both in a virtual machine as well as in a Docker container.
