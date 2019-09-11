@@ -7,9 +7,11 @@ touch /etc/datadog-agent/empty
 ln -s /etc/datadog-agent /root/lab/datadog
 apt-get update -y
 apt install redis-server -y
+echo redis installed
 sudo systemctl enable redis-server.service
 sudo sed -i '2i maxmemory 256mb' /etc/redis/redis.conf
 sudo sed -i '3i maxmemory-policy allkeys-lru' /etc/redis/redis.conf
+echo sed done
 sudo systemctl restart redis-server.service
 ln -s /etc/redis /root/lab/redis
 apt install nginx -y
