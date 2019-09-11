@@ -37,11 +37,6 @@
           "file": "docker-compose.yml",
           "target": "/root/lab",
           "chmod": "+x"
-        },
-        {
-          "file": "datadog.yaml",
-          "target": "/etc/datadog-agent/",
-          "chmod": "+x"
         }
       ]
     }
