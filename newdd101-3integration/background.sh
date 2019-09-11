@@ -5,10 +5,8 @@ mkdir -p /root/lab
 wall -n starting datadog
 curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh -o /root/install.sh
 chmod +x /root/install.sh
-/root/install.sh
-rm /root/install.sh
-# mkdir -p /etc/datadog-agent
-touch /etc/datadog-agent/empty
+mkdir -p /etc/datadog-agent
+# touch /etc/datadog-agent/empty
 
 ln -s /etc/datadog-agent /root/lab/datadog
 sudo apt-get update -y
@@ -29,3 +27,5 @@ docker pull nginx
 docker pull datadog/agent
 touch /root/end
 wall -n end
+/root/install.sh
+rm /root/install.sh
