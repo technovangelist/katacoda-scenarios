@@ -15,6 +15,7 @@ echo sed done
 sudo systemctl restart redis-server.service
 ln -s /etc/redis /root/lab/redis
 apt install nginx -y
+sudo sed -i '20i location /nginx_status {\n stub_status on;\n  access_log   off;\n allow all;\n}' /etc/nginx/sites-enabled/default
 /etc/init.d/nginx start
 ln -s /etc/nginx /root/lab/nginx
 ln -s /etc/datadog-agent /root/lab/datadog
@@ -22,6 +23,7 @@ wall -n Redis and Nginx are installed. You can start to follow the instructions 
 docker pull redis 
 docker pull nginx
 docker pull datadog/agent
-
+chmod 666 /var/log/nginx/access.log
+chmod 666 /var/log/nginx/error.log
 
 rm /root/install.sh
