@@ -38,7 +38,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": ["/etc/datadog-agent", "root"]
+    "uieditorpath": ["/etc", "/root"]
   },
   "backend": {
     "imageid": "ubuntu"
