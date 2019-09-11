@@ -1,3 +1,3 @@
 mkdir -p /etc/datadog-agent
 mkdir -p /root/lab
-ln -s /etc/datadog-agent/datadog.yaml /root/lab/datadog.yaml
+ln -s /etc/datadog-agent /root/lab/datadog-agent-in-etc
