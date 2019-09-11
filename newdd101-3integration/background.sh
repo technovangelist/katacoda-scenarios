@@ -1,6 +1,6 @@
 #!/bin/bash
 touch /root/startq
-apt-get update -Y
+apt-get update -y
 apt install redis-server nginx -y
 sudo systemctl enable redis-server.service
 sudo sed -i '2i maxmemory 256mb' /etc/redis/redis.conf
