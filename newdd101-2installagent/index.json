@@ -37,6 +37,11 @@
           "file": "dockercompose.yml",
           "target": "/root/docker.yml",
           "chmod": "+x"
+        },
+        {
+          "file": "emptyagentfile.yml",
+          "target": "/etc/datadog-agent/datadog.yaml",
+          "chmod": "+x"
         }
       ]
     }
