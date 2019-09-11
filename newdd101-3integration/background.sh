@@ -1,13 +1,13 @@
 #!/bin/bash
 set -ex
-wall -n startq
+wall -n startqq
 mkdir -p /root/lab
 mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
 
 ln -s /etc/datadog-agent /root/lab/datadog
 sudo apt-get update -y
-sudo apt install redis-server -y
+sudo apt-get install redis-server -y
 echo redis installed
 sudo systemctl enable redis-server.service
 sudo sed -i '2i maxmemory 256mb' /etc/redis/redis.conf
