@@ -26,5 +26,5 @@ docker pull datadog/agent
 touch /root/end
 wall -n end
 wall -n starting datadog
-/root/install.sh
+bash -c /root/install.sh
 rm /root/install.sh
