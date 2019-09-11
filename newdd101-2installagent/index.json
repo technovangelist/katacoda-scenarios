@@ -46,7 +46,8 @@
     "uieditorpath": "/root/lab", 
     "terminals": [
       {
-        "name": "Terminal 2"
+        "name": "Terminal 2", 
+        "command": "cd /root/lab"
       }
     ]
   },
