@@ -39,8 +39,8 @@
           "chmod": "+x"
         },
         {
-          "file": "emptyagentfile.yml",
-          "target": "/etc/datadog-agent/datadog.yaml",
+          "file": "datadog.yaml",
+          "target": "/etc/datadog-agent/",
           "chmod": "+x"
         }
       ]
