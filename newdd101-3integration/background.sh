@@ -1,6 +1,7 @@
 #!/bin/bash
 touch /root/startq
 mkdir -p /root/lab
+touch /etc/datadog-agent/empty
 bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
 ln -s /etc/datadog-agent /root/lab/datadog
 apt-get update -y
