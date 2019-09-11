@@ -1,5 +1,5 @@
 #!/bin/bash
-wall -n startq
+wall Starting to install Redis and Nginx
 mkdir -p /root/lab
 
 mkdir -p /etc/datadog-agent
@@ -18,12 +18,10 @@ ln -s /etc/redis /root/lab/redis
 apt install nginx -y
 /etc/init.d/nginx start
 ln -s /etc/nginx /root/lab/nginx
-sleep 2
+wall Redis and Nginx are installed. You can start to follow the instructions now.
 docker pull redis 
 docker pull nginx
 docker pull datadog/agent
-touch /root/end
-wall -n end
-wall -n starting datadog
+
 
 rm /root/install.sh
