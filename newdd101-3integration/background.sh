@@ -17,7 +17,7 @@ apt install nginx -y
 ln -s /etc/nginx /root/lab/nginx
 wall -n starting datadog
 sleep 2
-bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
+bash -c $(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)
 docker pull redis 
 docker pull nginx
 docker pull datadog/agent
