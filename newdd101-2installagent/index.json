@@ -43,7 +43,12 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/lab"
+    "uieditorpath": "/root/lab", 
+    "terminals": [
+      {
+        "name": "Terminal 2"
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu"

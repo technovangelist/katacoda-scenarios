@@ -1,1 +1,5 @@
-ashtasht
+version: '3'
+services:
+  redis:
+    image: redis
+  
