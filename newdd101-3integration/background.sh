@@ -1,5 +1,5 @@
 #!/bin/bash
-touch /root/start
+touch /root/startq
 apt-get update -Y
 apt install redis-server nginx -Y
 sudo systemctl enable redis-server.service
