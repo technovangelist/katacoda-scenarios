@@ -32,6 +32,11 @@
           "file": "finish",
           "target": "/usr/local/bin/",
           "chmod": "+x"
+        },
+        {
+          "file": "dockercompose.yml",
+          "target": "/root/dockerfiles/",
+          "chmod": "+x"
         }
       ]
     }
