@@ -4,7 +4,6 @@ mkdir -p /root/lab
 
 mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
-ln -s /etc/datadog-agent /root/lab/datadog
 
 sudo apt-get update -y
 sudo apt-get install redis-server -y
@@ -18,6 +17,7 @@ ln -s /etc/redis /root/lab/redis
 apt install nginx -y
 /etc/init.d/nginx start
 ln -s /etc/nginx /root/lab/nginx
+ln -s /etc/datadog-agent /root/lab/datadog
 wall Redis and Nginx are installed. You can start to follow the instructions now.
 docker pull redis 
 docker pull nginx
