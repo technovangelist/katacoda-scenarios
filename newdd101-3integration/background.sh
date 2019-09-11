@@ -1,10 +1,10 @@
 #!/bin/bash
 wall -n startq
 mkdir -p /root/lab
-curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh -o /root/install.sh
-chmod +x /root/install.sh
-# mkdir -p /etc/datadog-agent
-# touch /etc/datadog-agent/empty
+
+mkdir -p /etc/datadog-agent
+touch /etc/datadog-agent/empty
+ln -s /etc/datadog-agent /root/lab/datadog
 
 sudo apt-get update -y
 sudo apt-get install redis-server -y
@@ -25,6 +25,5 @@ docker pull datadog/agent
 touch /root/end
 wall -n end
 wall -n starting datadog
-bash -c /root/install.sh
-ln -s /etc/datadog-agent /root/lab/datadog
+
 rm /root/install.sh
