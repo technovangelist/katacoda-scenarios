@@ -4,6 +4,8 @@ mkdir -p /root/lab
 mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
 bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
+wait || { echo "background failed: $?" >&2; exit 1;}
+
 ln -s /etc/datadog-agent /root/lab/datadog
 apt-get update -y
 apt install redis-server -y
