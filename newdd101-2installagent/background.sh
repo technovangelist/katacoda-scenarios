@@ -1,1 +1,1 @@
-mkdir /etc/datadog-agent
+mkdir -p /etc/datadog-agent
