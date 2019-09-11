@@ -2,7 +2,12 @@
 set -ex
 wall -n startqq
 mkdir -p /root/lab
-mkdir -p /etc/datadog-agent
+wall -n starting datadog
+curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh -o /root/install.sh
+chmod +x /root/install.sh
+/root/install.sh
+rm /root/install.sh
+# mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
 
 ln -s /etc/datadog-agent /root/lab/datadog
@@ -18,9 +23,7 @@ ln -s /etc/redis /root/lab/redis
 apt install nginx -y
 /etc/init.d/nginx start
 ln -s /etc/nginx /root/lab/nginx
-wall -n starting datadog
 sleep 2
-bash -c $(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)
 docker pull redis 
 docker pull nginx
 docker pull datadog/agent
