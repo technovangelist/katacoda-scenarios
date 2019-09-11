@@ -4,7 +4,7 @@ Welcome to the first section of the Introduction to Datadog course.
 
     `ls -la`{{execute}}
 
-2. In most of the sections of this course you will find the instructions for the course on the left, a simple editor and file explorer on the top right, and a terminal on the bottom right.
+2. In most of the sections of this course you will find the instructions for the course on the left, a simple editor and file explorer on the top right, and a terminal on the bottom right. Files in the editor are automatically saved.
 3. If you ever create a new file in the terminal the file explorer should update within a few seconds. If it doesn't, click the refresh button above the file explorer and the view will update.
 
     `touch editor/newfile.txt`{{execute}}

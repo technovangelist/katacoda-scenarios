@@ -9,7 +9,8 @@
     },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "step1.md",
+        "title": "Install the Agent on a VM"
       }
     ],
     "finish": {
