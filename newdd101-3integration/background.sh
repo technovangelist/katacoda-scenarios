@@ -18,5 +18,7 @@ ln -s /etc/nginx /root/lab/nginx
 docker pull redis 
 docker pull nginx
 docker pull datadog/agent
+wall -n starting datadog
 bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
 touch /root/end
+wall -n end
