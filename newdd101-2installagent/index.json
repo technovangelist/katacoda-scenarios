@@ -35,14 +35,14 @@
         },
         {
           "file": "dockercompose.yml",
-          "target": "/root/labfiles/dockerfiles/",
+          "target": "/root/",
           "chmod": "+x"
         }
       ]
     }
   },
   "files": [
-    "/etc/datadog-agent/datadog.yaml","root/labfiles/dockerfiles/dockercompose.yml" 
+    "/etc/datadog-agent/datadog.yaml","root/dockercompose.yml" 
   ],
   "environment": {
     "uilayout": "editor-terminal",
