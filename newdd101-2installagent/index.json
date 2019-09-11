@@ -41,9 +41,6 @@
       ]
     }
   },
-  "files": [
-    "/root/lab/datadog.yaml","/root/lab/docker-compose.yml" 
-  ],
   "environment": {
     "uilayout": "editor-terminal",
     "uieditorpath": "/root/lab"
