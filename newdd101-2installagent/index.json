@@ -35,7 +35,7 @@
         },
         {
           "file": "docker-compose.yml",
-          "target": "/root/",
+          "target": "/root/lab",
           "chmod": "+x"
         },
         {
@@ -47,11 +47,11 @@
     }
   },
   "files": [
-    "/etc/datadog-agent/datadog.yaml","/root/docker-compose.yml" 
+    "/root/lab/datadog.yaml","/root/lab/docker-compose.yml" 
   ],
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/"
+    "uieditorpath": "/root/lab"
   },
   "backend": {
     "imageid": "ubuntu"
