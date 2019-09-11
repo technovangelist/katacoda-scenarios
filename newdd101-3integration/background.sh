@@ -1,7 +1,7 @@
 #!/bin/bash
 touch /root/start
 apt-get update -Y
-apt install redis-server nginx
+apt install redis-server nginx -Y
 sudo systemctl enable redis-server.service
 sudo sed -i '2i maxmemory 256mb' /etc/redis/redis.conf'
 sudo sed -i '3i maxmemory-policy allkeys-lru' /etc/redis/redis.conf
