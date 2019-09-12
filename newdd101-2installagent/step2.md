@@ -9,8 +9,8 @@
        environment:
        - DD_API_KEY
        volumes:
-       - /var/run/docker.sock:/var/run/docker.sock
-       - /proc/mounts:/host/proc/mounts:ro
+       - /var/run/docker.sock:/var/run/docker.sock:ro
+       - /proc/:/host/proc/:ro
        - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
    </pre>
 4. Run `docker-compose up`{{execute}} in the terminal to start.
