@@ -1,2 +1,1 @@
 So far in our hands on sections, you have seen many of the metrics that are being collected and some of the default dashboards that are available. In this section we will start looking at building a dashboard.
-xxxx
