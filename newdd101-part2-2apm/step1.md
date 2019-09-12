@@ -12,15 +12,16 @@
 6. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
 
 7. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
-  <pre><code>- name: DD_APM_ENABLED
+  <pre class="file" data-target="clipboard">
+  - name: DD_APM_ENABLED
      value: "true"
   - name: DD_APM_NON_LOCAL_TRAFFIC
      value: "true"
-  </code></pre>
+  </pre>
 
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
 
-5. Apply your new datadog-agent yaml file: 
+8. Apply your new datadog-agent yaml file: 
   `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 
   *Note that this is applying without first deleting due to the **updateStrategy** being set to **RollingUpdate**. Also, if there are any errors with indentation, the command will give you feedback about what needs to be fixed.*
