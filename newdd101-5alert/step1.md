@@ -1,15 +1,15 @@
-1.  From the first terminal, launch the `light`{{execute T1}} script.
-1.  Login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a> and navigate to the **New Monitor** page.
-1.  Choose **Metric** to create a new Metric monitor.
-1.  Choose **Change Alert** under **Choose the detection method**.
-1.  The metric we want to watch is `apache.net.hits`.
-1.  Set a Multi Alert by server by selecting **avg by** and then select **host** in the **(everything)** textbox.<br>
+1.  From the terminal, launch the `light`{{execute T1}} script.
+2.  Login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a> and navigate to the **New Monitor** page.
+3.  Choose **Metric** to create a new Metric monitor.
+4.  Choose **Change Alert** under **Choose the detection method**.
+5.  The metric we want to watch is `apache.net.hits`.
+6.  Set a Multi Alert by server by selecting **avg by** and then select **host** in the **(everything)** textbox.<br>
     _Do you think its more valuable to have a monitor for each web server, or for the combination of all of them?_
-1.  Set the **Set alert conditions** group of choices to: The `average` of the `change` over `5 minutes` compared to `1 minute` before is `above` the threshold for any host.<br>
+7.  Set the **Set alert conditions** group of choices to: The `average` of the `change` over `5 minutes` compared to `1 minute` before is `above` the threshold for any host.<br>
     _This section lets you configure when you want this monitor to fire._
-1.  Then set the alert threshold to `500` and the warning threshold to `250`. <br>
+8.  Then set the alert threshold to `500` and the warning threshold to `250`. <br>
     _This says if the average over 5 minutes is 500 more than the average over 1 minutes a minute ago, then fire the monitor._
-1.  In the **"Say what's happening"** section of the screen, populate these fields as shown:<br>
+9.  In the **"Say what's happening"** section of the screen, populate these fields as shown:<br>
 
 Example Monitor Name: Lots of Apache Hits Happening<br>
 Example Monitor Message: Host {{host.name}} with IP {{host.ip}} is under heavy load.

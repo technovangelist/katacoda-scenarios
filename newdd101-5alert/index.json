@@ -1,6 +1,6 @@
 {
   "time": "20 minutes",
-  "title": "Creating an Informational Alert",
+  "title": "Creating Alerts",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -9,8 +9,12 @@
     },
     "steps": [
       {
-        "title": "Create a metric monitor",
+        "title": "Create an informational monitor",
         "text": "step1.md"
+      }, 
+      {
+        "title": "Create an notification monitor",
+        "text": "step2.md"
       }
     ],
     "finish": {
