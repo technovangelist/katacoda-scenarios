@@ -1,1 +1,1 @@
-Congratulations! You have completed the first section of the Introduction to Datadog course. Click the button to move on to the next step.
+Congratulations! You have completed the final section of the first part of Introduction to Datadog.
