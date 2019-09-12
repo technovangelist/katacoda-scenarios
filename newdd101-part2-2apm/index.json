@@ -13,12 +13,10 @@
     },
     "steps": [
       {
-        "text": "step1.md",
-        "answer": "answer1.md"
+        "text": "step1.md"
       },
       {
-        "text": "step2.md",
-        "answer": "answer2.md"
+        "text": "step2.md"
       }
     ],
     "assets": {
