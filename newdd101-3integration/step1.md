@@ -8,7 +8,7 @@ In this section we are setting up the integrations for Redis and Nginx. They are
 5. Open the **datadog** folder and then expand the **conf.d** folder. 
    Notice that there is a folder for each of the integrations that we support.
 6. Expand the folder called **redis.d**. The first step is to rename the **conf.yaml.example** file to **conf.yaml**. This is easiest using the following command: `mv /etc/datadog-agent/conf.d/redisdb.d/conf.yaml.example /etc/datadog-agent/conf.d/redisdb.d/conf.yaml`{{execute}}. You may need to hit that same refresh button again to see the new file name.
-7. Take a look at the options in the YAML file. Notice that its looking at localhost on port 6379 for data about Redis. This is the default port. 
+7. Take a look at the options in the YAML file: `/etc/datadog-agent/conf.d/redisdb.d/conf.yaml`{{open}}. Notice that its looking at localhost on port 6379 for data about Redis. This is the default port. 
 8. Restart the Datadog Agent. Give the system a few seconds to update, then run the status command. 
    Scroll back up to the Collector section. Do you see a block about Redis metrics being collected?
 9. Try enabling the logs as well. You will have take a look at the /var/log/redis directory to find the file name and change the setting in the integration's yaml file. 
