@@ -33,7 +33,7 @@ EOL
   fi
 fi
 sleep 1
-source /root/.nvm/nvm.sh
+# source /root/.nvm/nvm.sh
 clear
 
 prepenvironment
