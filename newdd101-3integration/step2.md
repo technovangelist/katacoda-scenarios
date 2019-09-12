@@ -6,10 +6,10 @@ Now we are going to do the same process but for the two services hosted in Docke
 4. Open the `docker/docker-compose.yaml`{{open}} file in the editor. 
 5. We could mount a volume for the Nginx integration yaml file, but there is a better way: labels. In the nginx service, add the following at the same indent level as `image:`:
    <pre class="file" data-target="clipboard">
-        labels:
-            com.datadoghq.ad.check_names: '["nginx"]'
-            com.datadoghq.ad.init_configs: '[{}]'
-            com.datadoghq.ad.instances: '[{"nginx_status_url": "http://%%host%%:%%port%%/nginx_status"}]'
+    labels:
+      com.datadoghq.ad.check_names: '["nginx"]'
+      com.datadoghq.ad.init_configs: '[{}]'
+      com.datadoghq.ad.instances: '[{"nginx_status_url": "http://%%host%%:%%port%%/nginx_status"}]'
    </pre>
 
 explain labels, point to docs for labels, point to original file for nginx yaml.
