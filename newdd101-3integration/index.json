@@ -13,7 +13,8 @@
             }, 
             {
                 "text": "step2.md", 
-                "title": "Setting up on Docker"
+                "title": "Setting up on Docker",
+                "code": "prepforstep2.sh"
             }, 
             {
                 "text": "step3.md", 
