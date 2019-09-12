@@ -10,6 +10,14 @@
         "steps": [
             {
                 "text": "step1.md"
+            }, 
+            {
+                "text": "step2.md", 
+                "title": "Setting up on Docker"
+            }, 
+            {
+                "text": "step3.md", 
+                "title": "Setting up in Datadog"
             }
         ],
         "finish": {
