@@ -17,7 +17,6 @@ services:
     - DD_API_KEY
     - DD_APM_ENABLED
     - DD_LOGS_ENABLED
-
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock:ro
     - /proc/:/host/proc/:ro
