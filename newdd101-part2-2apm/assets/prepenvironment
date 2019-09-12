@@ -31,4 +31,4 @@ if [ ! -f "/root/provisioned" ]; then
 else
   printf "\n\nWelcome back to the training lab.\n\n"
 fi
-printf "Provisioning Complete\n\n
+printf "Provisioning Complete\n\n"
