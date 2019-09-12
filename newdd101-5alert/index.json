@@ -52,7 +52,13 @@
   "environment": {
     "uilayout": "terminal",
     "uimessage1": "",
-    "showdashboard": true
+    "showdashboard": true, 
+    "terminals": [
+      {
+        "name": "web2",
+        "command": "ssh -o StrictHostKeyChecking=no web2"
+      }
+    ]
   },
   "backend": {
     "imageid": "datadog-intro"

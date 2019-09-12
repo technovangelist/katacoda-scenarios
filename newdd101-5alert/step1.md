@@ -1,4 +1,4 @@
-1.  From the terminal, launch the `light`{{execute T1}} script.
+1.  From the first terminal, launch the `light`{{execute T1}} script.
 2.  Login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a> and navigate to the **New Monitor** page.
 3.  Choose **Metric** to create a new Metric monitor.
 4.  Choose **Change Alert** under **Choose the detection method**.
