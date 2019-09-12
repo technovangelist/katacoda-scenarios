@@ -26,6 +26,14 @@
                     "file": "done",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
+                },
+                {
+                    "file": "nginx.conf",
+                    "target": "/root/lab/docker"
+                },
+                {
+                    "file": "docker-compose.yaml",
+                    "target": "/root/lab/docker"
                 }
             ]
         }

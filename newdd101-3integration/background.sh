@@ -1,6 +1,6 @@
 #!/bin/bash
 wall -n Starting to install Redis and Nginx
-mkdir -p /root/lab
+mkdir -p /root/lab/docker
 
 mkdir -p /etc/datadog-agent
 touch /etc/datadog-agent/empty
@@ -27,5 +27,6 @@ docker pull nginx
 docker pull datadog/agent
 chmod 666 /var/log/nginx/access.log
 chmod 666 /var/log/nginx/error.log
+docker config create nstatus /root/lab/docker/nginx.conf
 
 rm /root/install.sh
