@@ -1,39 +1,56 @@
 {
-    "time": "3 minutes",
-    "title": "Introduction to the Course",
-    "details": {
-        "intro": {
-            "courseData": "background.sh",
-            "code": "foreground.sh",
-            "text": "intro.md"
+  "time": "20 minutes",
+  "title": "Creating an Informational Alert",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Create a metric monitor",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
         },
-        "steps": [
-            {
-                "text": "step1.md"
-            }
-        ],
-        "finish": {
-          "text": "finish.md"
-        }, 
-        "assets": {
-            "host01": [
-                {
-                    "file": "start",
-                    "target": "/usr/local/bin/",
-                    "chmod": "+x"
-                },
-                {
-                    "file": "done",
-                    "target": "/usr/local/bin/",
-                    "chmod": "+x"
-                }
-            ]
+        {
+          "file": "light",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "heavy",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "status.txt",
+          "target": "/root"
+        },
+        {
+          "file": "kcsetapi.sh",
+          "target": "/root",
+          "chmod": "+x"
         }
-    },
-    "environment": {
-        "uilayout": "editor-terminal"
-    },
-    "backend": {
-        "imageid": "ubuntu"
+      ]
     }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "",
+    "showdashboard": true
+  },
+  "backend": {
+    "imageid": "datadog-intro"
+  }
 }

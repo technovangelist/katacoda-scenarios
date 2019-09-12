@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+curl  -X POST -H "Content-type: application/json" -d '{"title": "Light Util Testing","text": "The Light script has start banging on the demo environment","tags": ["shell", "bash", "lightscript"]}' 'https://api.datadoghq.com/api/v1/events?api_key='$DD_API_KEY > /dev/null 2>&1
+pkill -f autocannon || echo 'process is not running'
+autocannon -f -d 10 -c 2 -r 1 lb

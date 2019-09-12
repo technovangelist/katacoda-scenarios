@@ -1,0 +1,51 @@
+#!/bin/bash
+# if [ ! $TRAININGENVIRONMENT ]; then
+#     printf "\033[32mIt looks like you are running this in Katacoda \nand not from the Datadog Training Environment. \n\nPlease login to https://learn.datadoghq.com for a working environment.\033[0m\n"
+#     exit
+#     exit 1;
+# fi
+show_progress()
+{
+  local -r pid="${1}"
+  local -r delay='0.01'
+
+  local spinstr='\|/-'
+  local temp
+  local prevstatus="Starting Installation"
+  while true; do 
+
+    grep -i "done" status.txt &> /dev/null
+    if [[ "$?" -ne 0 ]]; then     
+      status=`cat status.txt`
+      if [[ "$status" != "$prevstatus" ]]; then
+        printf "\r                                                         \r${prevstatus}\n"
+        prevstatus=${status}
+      
+        printf "${status}"
+      else
+        temp="${spinstr#?}"
+
+        printf " [%c]  " "${spinstr}"
+        spinstr=${temp}${spinstr%"${temp}"}
+        sleep "${delay}"
+        printf "\b\b\b\b\b\b"
+
+      fi
+
+      
+    else
+      break
+    fi
+    
+  done
+  printf "\r                                           \r${prevstatus}\nInstallation Complete\n"
+}
+if [ ! -f "/root/provisioned" ]; then
+TRAININGENVIRONMENT=$(echo $TRAININGENVIRONMENT | tr - " ")
+echo "Now preparing training environment for $TRAININGENVIRONMENT."
+show_progress
+touch /root/provisioned
+printf "\n\nOK, the training environment is installed and ready to go.\n\n"
+else
+printf "\n\nWelcome back to the training lab.\n\n"
+fi
