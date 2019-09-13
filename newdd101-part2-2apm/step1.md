@@ -12,12 +12,11 @@
 6. On the next page you will see the instructions for getting your traces into Datadog. We already have a Datadog yaml file, but we need to configure everything to start collecting traces.
 
 7. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
-  <pre class="file" data-target="clipboard">
-            - name: DD_APM_ENABLED
-              value: "true"
-            - name: DD_APM_NON_LOCAL_TRAFFIC
-              value: "true"
-            </pre>
+  <pre class="file" data-target="clipboard">- name: DD_APM_ENABLED
+               value: "true"
+             - name: DD_APM_NON_LOCAL_TRAFFIC
+               value: "true"
+             </pre>
 
   *note: formatting here is a little weird to ensure it pastes into the editor correctly*
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
