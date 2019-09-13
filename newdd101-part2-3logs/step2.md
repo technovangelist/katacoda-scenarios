@@ -16,4 +16,4 @@
 9. One more thing to look at that is incredibly useful before and after you do any configuration is the <a href="https://app.datadoghq.com/logs/patterns" target="_datadog">Log Patterns</a> view.
    _Scroll through the patterns. You can very quickly identify problems and issues you should work on right away_
 
-There is so much you can do with logs in Datadog and if you haven't worked with the feature, please check out our training here on the Learning Platform. Let's move on to setting up Application Performance Monitoring.
+There is so much you can do with logs in Datadog and if you haven't worked with the feature, please check out our training here on the Learning Platform. 
