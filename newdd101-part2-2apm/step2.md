@@ -21,12 +21,12 @@ We are already collecting traces, but let's customize the environment a bit furt
 4. Continue updating the other yaml files as follows, applying the changes as you go:
    **node-api.yaml**
      <pre class="file" data-target="clipboard">- name: DD_SERVICE_NAME
-            value: 'users-api'
-          - name: DD_LOGS_INJECTION
-            value: 'true'
-          - name: DD_TRACE_ANALYTICS_ENABLED
-            value: 'true'
-          </pre>
+             value: 'users-api'
+           - name: DD_LOGS_INJECTION
+             value: 'true'
+           - name: DD_TRACE_ANALYTICS_ENABLED
+             value: 'true'
+           </pre>
 
    *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
@@ -35,12 +35,12 @@ We are already collecting traces, but let's customize the environment a bit furt
   **pumps-service.yaml**
 
   <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
-          value: 'true'
-        - name: DATADOG_SERVICE_NAME
-          value: 'pumps-service'
-        - name: DD_TRACE_ANALYTICS_ENABLED
-          value: 'true'
-     </pre>
+             value: 'true'
+           - name: DATADOG_SERVICE_NAME
+             value: 'pumps-service'
+           - name: DD_TRACE_ANALYTICS_ENABLED
+             value: 'true'
+           </pre>
 
   *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
@@ -49,12 +49,12 @@ We are already collecting traces, but let's customize the environment a bit furt
   **sensors-api.yaml**
 
   <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
-          value: 'true'
-        - name: DATADOG_SERVICE_NAME
-          value: 'sensors-api'
-        - name: DD_TRACE_ANALYTICS_ENABLED
-          value: 'true'
-       </pre>
+             value: 'true'
+           - name: DATADOG_SERVICE_NAME
+             value: 'sensors-api'
+           - name: DD_TRACE_ANALYTICS_ENABLED
+             value: 'true'
+          </pre>
 
   *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
