@@ -42,11 +42,11 @@ We are already collecting traces, but let's customize the environment a bit furt
 **sensors-api.yaml**
 
   <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
-     value: 'true'
-  - name: DATADOG_SERVICE_NAME
-     value: 'sensors-api'
-  - name: DD_TRACE_ANALYTICS_ENABLED
-     value: 'true'</pre>
+       value: 'true'
+     - name: DATADOG_SERVICE_NAME
+       value: 'sensors-api'
+     - name: DD_TRACE_ANALYTICS_ENABLED
+       value: 'true'</pre>
 
 `kubectl apply -f k8s-yaml-files/sensors-api.yaml`{{execute}}
 
@@ -57,4 +57,4 @@ We are already collecting traces, but let's customize the environment a bit furt
 
     `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 
-6. Take a look around the other features of APM. As with the Logs section, this is not intended to be a training on using APM, but rather a look at how to setup APM on Kubernetes. For more about APM, see our training here on the Learning Platform.
+

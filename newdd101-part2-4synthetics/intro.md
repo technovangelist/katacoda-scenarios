@@ -1,1 +1,1 @@
-In this hands-on section we will start to work with Logs in Datadog. And like the last section, we are using Kubernetes.
+Now we have our application and we are collecting logs and traces. Now lets set up synthetics to get a better idea of how our users are experiencing the app.
