@@ -13,12 +13,13 @@
 
 7. Open the datadog-agent.yaml file in the editor to the right. Scroll down to the **`env`**section. Add the following:
   <pre class="file" data-target="clipboard">
-  - name: DD_APM_ENABLED
-     value: "true"
-  - name: DD_APM_NON_LOCAL_TRAFFIC
-     value: "true"
-  </pre>
+            - name: DD_APM_ENABLED
+              value: "true"
+            - name: DD_APM_NON_LOCAL_TRAFFIC
+              value: "true"
+            </pre>
 
+  *note: formatting here is a little weird to ensure it pastes into the editor correctly*
   *You need to make sure the indent level is correct. All of the **- name:** keys under **env:** should be at the same level.*
 
 8. Apply your new datadog-agent yaml file: 

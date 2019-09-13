@@ -54,7 +54,7 @@ We are already collecting traces, but let's customize the environment a bit furt
              value: 'sensors-api'
            - name: DD_TRACE_ANALYTICS_ENABLED
              value: 'true'
-          </pre>
+           </pre>
 
   *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
