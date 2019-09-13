@@ -12,4 +12,6 @@ So far in this course we have looked at getting a better handle on the backend o
 10. Set an interval and then click **Test URL**. If you don't test it, you cannot save the test. The response will be shown as pure text. If you want to see an image of your website, you will have to use the Browser Test option. We will do that later.
 11. Now add an assertion and chose some conditions that are required to be in good standing.
 12. Click Create Test at the bottom.
+13. Pretty soon you should start to see results showing up on the page. 
+
     
