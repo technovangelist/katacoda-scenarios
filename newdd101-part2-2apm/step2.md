@@ -2,33 +2,32 @@ We are already collecting traces, but let's customize the environment a bit furt
 
 1. Open the **frontend-service.yaml** file in the editor. Scroll down to the **env:** section and add:
 
-  <pre class="file" data-target="clipboard">
-          - name: DD_LOGS_INJECTION
-            value: 'true'
-          - name: DATADOG_SERVICE_NAME
-            value: 'frontend-service'
-          - name: DD_TRACE_ANALYTICS_ENABLED
-            value: 'true'
+  <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
+             value: 'true'
+           - name: DATADOG_SERVICE_NAME
+             value: 'frontend-service'
+           - name: DD_TRACE_ANALYTICS_ENABLED
+             value: 'true'
      </pre>
 
-_note: formatting here is a little weird to ensure it pastes into the editor correctly_
+  *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
 2. Apply the frontend-service yaml file:
    `kubectl apply -f k8s-yaml-files/frontend-service.yaml`{{execute}}
 
 3. Return to the <a href="https://app.datadoghq.com/apm/traces" target="_datadog">Trace List view</a> in Datadog. You should see that the service has been renamed.
-   _If you aren't seeing any traces coming in, visit the application dashboard again_
+   *If you aren't seeing any traces coming in, visit the application dashboard again*
 
 4. Continue updating the other yaml files as follows, applying the changes as you go:
    **node-api.yaml**
      <pre class="file" data-target="clipboard">- name: DD_SERVICE_NAME
-                  value: 'users-api'
-                - name: DD_LOGS_INJECTION
-                  value: 'true'
-                - name: DD_TRACE_ANALYTICS_ENABLED
-                  value: 'true'
+        value: 'users-api'
+      - name: DD_LOGS_INJECTION
+        value: 'true'
+      - name: DD_TRACE_ANALYTICS_ENABLED
+        value: 'true'
       </pre>
-   _note: formatting here is a little weird to ensure it pastes into the editor correctly_
+   *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
   `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
 
@@ -42,7 +41,7 @@ _note: formatting here is a little weird to ensure it pastes into the editor cor
           value: 'true'
      </pre>
 
-  _note: formatting here is a little weird to ensure it pastes into the editor correctly_
+  *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
   `kubectl apply -f k8s-yaml-files/pumps-service.yaml`{{execute}}
 
@@ -56,7 +55,7 @@ _note: formatting here is a little weird to ensure it pastes into the editor cor
           value: 'true'
        </pre>
 
-  _note: formatting here is a little weird to ensure it pastes into the editor correctly_
+  *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
   `kubectl apply -f k8s-yaml-files/sensors-api.yaml`{{execute}}
 
