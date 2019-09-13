@@ -8,7 +8,7 @@ We are already collecting traces, but let's customize the environment a bit furt
              value: 'frontend-service'
            - name: DD_TRACE_ANALYTICS_ENABLED
              value: 'true'
-     </pre>
+           </pre>
 
   *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
@@ -21,12 +21,13 @@ We are already collecting traces, but let's customize the environment a bit furt
 4. Continue updating the other yaml files as follows, applying the changes as you go:
    **node-api.yaml**
      <pre class="file" data-target="clipboard">- name: DD_SERVICE_NAME
-        value: 'users-api'
-      - name: DD_LOGS_INJECTION
-        value: 'true'
-      - name: DD_TRACE_ANALYTICS_ENABLED
-        value: 'true'
-      </pre>
+            value: 'users-api'
+          - name: DD_LOGS_INJECTION
+            value: 'true'
+          - name: DD_TRACE_ANALYTICS_ENABLED
+            value: 'true'
+          </pre>
+
    *note: formatting here is a little weird to ensure it pastes into the editor correctly*
 
   `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
