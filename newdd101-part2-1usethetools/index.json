@@ -36,7 +36,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/editor"
+    "uieditorpath": "/root"
   },
   "backend": {
     "imageid": "ubuntu"
