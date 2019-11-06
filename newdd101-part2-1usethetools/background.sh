@@ -1,2 +1,3 @@
 mkdir editor
 
+wall $(env)
