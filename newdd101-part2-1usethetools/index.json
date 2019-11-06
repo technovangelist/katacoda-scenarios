@@ -2,14 +2,11 @@
   "time": "3 minutes",
   "title": "Introduction to the Course",
   "details": {
-    "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh",
-      "text": "intro.md"
-    },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "step1.md",
+        "courseData": "background.sh",
+        "code": "foreground.sh"
       }
     ],
     "finish": {
@@ -26,7 +23,7 @@
           "file": "finish",
           "target": "/usr/local/bin/",
           "chmod": "+x"
-        }, 
+        },
         {
           "file": "samplefile.txt",
           "target": "/root/editor"
@@ -35,7 +32,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "editor-terminal",
     "uieditorpath": "/root/editor"
   },
   "backend": {
