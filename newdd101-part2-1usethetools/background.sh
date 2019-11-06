@@ -1,4 +1,4 @@
 wall -n $(cat /root/.bashrc)
 source /root/.bashrc
 
-wall -n 1
+wall -n 2
