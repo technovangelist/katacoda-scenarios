@@ -1,2 +1,2 @@
 wall -n $(cat .bashrc)
-echo 1
+wall -n 1
