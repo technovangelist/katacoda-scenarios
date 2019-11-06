@@ -1,3 +1,3 @@
 touch test.txt
-env >test.txt
+env | tee -a test.txt
 wall $(env)
