@@ -1,7 +1,6 @@
-while [ ! -f /root/.bashrc ]; do sleep 1; done
+while [ ! -f /root/.kcrc ]; do sleep 1; done
 
-wall -n $(cat /root/.bashrc)
-source /root/.bashrc
+source /root/.kcrc
 wall -n $(env)
 
-wall -n 6
+wall -n 7
