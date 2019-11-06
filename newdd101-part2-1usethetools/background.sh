@@ -1,6 +1,6 @@
 while [ ! -f /root/.kcrc ]; do sleep 1; done
 
 source /root/.kcrc
-wall -n $(env)
+wall -n $DD_API_KEY
 
-wall -n 7
+wall -n 8
