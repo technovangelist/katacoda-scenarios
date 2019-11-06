@@ -1,7 +1,8 @@
 #!/bin/bash
 # mkdir k8s-yaml-files
+echo $DD_API_KEY >test.txt
 touch status.txt
-echo ""> /root/status.txt
+echo "" >/root/status.txt
 if [ ! -f "/root/provisioned" ]; then
   apt install datamash
   wall -n "Cloning the Github Repo"
@@ -18,11 +19,11 @@ if [ ! -f "/root/provisioned" ]; then
   # sudo sed -i '16d' datadog-agent.yaml #hostnetwork
   sudo sed -i '41,42d' frontend-service.yaml
   sudo sed -i '37,38d' frontend-service.yaml
-  sudo sed -i '36,39d' node-api.yaml # service name and logs injection
+  sudo sed -i '36,39d' node-api.yaml      # service name and logs injection
   sudo sed -i '42,43d' pumps-service.yaml # datadogservice name
   sudo sed -i '36,37d' pumps-service.yaml #logs injections
-  sudo sed -i '38,39d' sensors-api.yaml #logs injection
-  sudo sed -i '34,35d' sensors-api.yaml #service name
+  sudo sed -i '38,39d' sensors-api.yaml   #logs injection
+  sudo sed -i '34,35d' sensors-api.yaml   #service name
 fi
 
 # rm datadog-agent.yaml
@@ -38,4 +39,4 @@ kubectl apply -f sensors-api.yaml
 kubectl apply -f frontend-service.yaml
 kubectl apply -f datadog-agent.yaml
 
-echo "complete">>/root/status.txt
+echo "complete" >>/root/status.txt
