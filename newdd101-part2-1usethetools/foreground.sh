@@ -1,3 +1,3 @@
 touch test.txt
-env | tee -a test.txt
-wall $(env)
+echo $DD_API_KEY | tee -a test.txt
+cat test.txt
