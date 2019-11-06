@@ -3,16 +3,14 @@
   "title": "Using APM",
   "time": "25 minutes",
   "details": {
-    "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh"
-    },
     "finish": {
       "text": "finish.md"
     },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "step1.md",
+        "courseData": "background.sh",
+        "code": "foreground.sh"
       },
       {
         "text": "step2.md"
