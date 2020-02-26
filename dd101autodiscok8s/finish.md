@@ -1,1 +1,0 @@
-You can now add monitoring to all of your pods in Kubernetes. Some will be automatically be monitored, but others will need a little help from you in the form of annotations.

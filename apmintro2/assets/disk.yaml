@@ -1,6 +1,0 @@
-init_config:
-
-instances:
-  - use_mount: false
-    mount_point_blacklist:
-      - /host/proc/sys/fs/binfmt_misc

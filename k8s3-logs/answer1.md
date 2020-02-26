@@ -1,1 +1,0 @@
-![Answer](/technovangelist/scenarios/k8s3-logs/assets/logs-pt1.gif)

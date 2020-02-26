@@ -1,1 +1,0 @@
-The intro.md file shows everything on the intro screen

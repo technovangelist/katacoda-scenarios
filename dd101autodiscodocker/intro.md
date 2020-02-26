@@ -1,1 +1,0 @@
-In this section we are going to figure out how to enable Autodiscovery with Docker and Docker Compose. It's pretty easy to do but it needs the correct syntax.

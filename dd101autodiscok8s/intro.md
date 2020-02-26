@@ -1,1 +1,0 @@
-In this section we are going to configure Autodiscovery for some redis pods in Kubernetes. You use a similar block in a Kubernetes YAML file that you used in Docker Compose, but they are **annotations** instead of **labels**.
