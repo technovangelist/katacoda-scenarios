@@ -1,4 +1,5 @@
 {
+  "title": "logsintro3",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -27,7 +28,7 @@
     ]
   },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "editor-terminal",
     "uieditorpath": "/etc/datadog-agent",
     "terminals": [
       {
