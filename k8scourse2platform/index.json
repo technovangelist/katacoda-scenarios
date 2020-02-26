@@ -1,11 +1,11 @@
 {
-  "difficulty": "Intermediate",
   "title": "the k8s platform",
   "time": "25 minutes",
   "details": {
     "intro": {
       "courseData": "background.sh",
-      "code": "foreground.sh"
+      "code": "foreground.sh",
+      "text": "intro.md"
     },
     "steps": [
       {
