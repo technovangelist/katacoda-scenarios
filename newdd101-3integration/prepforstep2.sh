@@ -1,1 +1,0 @@
-cd /root/lab/docker
