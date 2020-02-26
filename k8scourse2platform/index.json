@@ -4,20 +4,11 @@
   "details": {
     "intro": {
       "courseData": "background.sh",
-      "code": "foreground.sh",
-      "text": ""
-    },
-    "finish": {
-      "text": ""
+      "code": "foreground.sh"
     },
     "steps": [
       {
-        "text": "",
-        "answer": ""
-      },
-      {
-        "text": "",
-        "answer": ""
+        "text": "step1.md"
       }
     ],
     "assets": {
