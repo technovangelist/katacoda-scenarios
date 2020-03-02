@@ -29,7 +29,7 @@
         },
         {
           "file": "discounts.yaml",
-          "target": "/root/"
+          "target": "/root"
         },
         {
           "file": "db.yaml",
