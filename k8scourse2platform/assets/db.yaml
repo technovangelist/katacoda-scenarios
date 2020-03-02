@@ -26,17 +26,17 @@ spec:
       storage: 1Gi
   storageClassName: manual
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: db
+    run: db
   name: db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db
+      run: db
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -45,7 +45,7 @@ spec:
   template:
     metadata:
       labels:
-        app: db
+        run: db
     spec:
       containers:
         - image: postgres:11-alpine

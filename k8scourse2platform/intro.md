@@ -1,2 +1,3 @@
 This is the intro file
-db  using extensions beta
+db  using apps/v1
+run label
