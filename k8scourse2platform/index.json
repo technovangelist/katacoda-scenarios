@@ -18,6 +18,22 @@
           "file": "prepenvironment",
           "target": "/usr/local/bin/",
           "chmod": "+x"
+        },
+        {
+          "file": "advertisements.yaml",
+          "target": "/usr/local/bin/"
+        },
+        {
+          "file": "frontend.yaml",
+          "target": "/usr/local/bin/"
+        },
+        {
+          "file": "discounts.yaml",
+          "target": "/usr/local/bin/"
+        },
+        {
+          "file": "db.yaml",
+          "target": "/usr/local/bin/"
         }
       ]
     }
