@@ -26,7 +26,7 @@ spec:
       storage: 1Gi
   storageClassName: manual
 ---
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
