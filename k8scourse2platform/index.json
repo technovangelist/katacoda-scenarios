@@ -33,7 +33,7 @@
         },
         {
           "file": "db.yaml",
-          "target": "/root/"
+          "target": "/root"
         }
       ]
     }
