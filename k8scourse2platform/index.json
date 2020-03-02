@@ -21,26 +21,25 @@
         },
         {
           "file": "advertisements.yaml",
-          "target": "/root/k8s-yaml-files/"
+          "target": "/root/"
         },
         {
           "file": "frontend.yaml",
-          "target": "/root/k8s-yaml-files/"
+          "target": "/root/"
         },
         {
           "file": "discounts.yaml",
-          "target": "/root/k8s-yaml-files/"
+          "target": "/root/"
         },
         {
           "file": "db.yaml",
-          "target": "/root/k8s-yaml-files/"
+          "target": "/root/"
         }
       ]
     }
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "k8s-yaml-files",
     "showdashboard": true,
     "dashboards": [
       {
