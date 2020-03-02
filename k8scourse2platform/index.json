@@ -21,19 +21,19 @@
         },
         {
           "file": "advertisements.yaml",
-          "target": "/usr/local/bin/"
+          "target": "/root/k8s-yaml-files/"
         },
         {
           "file": "frontend.yaml",
-          "target": "/usr/local/bin/"
+          "target": "/root/k8s-yaml-files/"
         },
         {
           "file": "discounts.yaml",
-          "target": "/usr/local/bin/"
+          "target": "/root/k8s-yaml-files/"
         },
         {
           "file": "db.yaml",
-          "target": "/usr/local/bin/"
+          "target": "/root/k8s-yaml-files/"
         }
       ]
     }
