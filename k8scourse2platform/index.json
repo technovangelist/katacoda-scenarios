@@ -45,13 +45,12 @@
     "dashboards": [
       {
         "name": "App Dashboard",
-        "port": 30001
+        "port": 3000
       }
     ]
   },
   "backend": {
     "imageid": "datadog-kubernetes-cluster-running",
-    "reuseConnection": "true",
-    "livetime": "1h"
+    "reuseConnection": "false"
   }
 }
