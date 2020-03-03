@@ -37,11 +37,6 @@ spec:
   selector:
     matchLabels:
       run: db
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -61,7 +56,6 @@ spec:
               value: "user"
             - name: PGDATA
               value: "/var/lib/postgresql/data/mydata"
-          resources: {}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgresdb
