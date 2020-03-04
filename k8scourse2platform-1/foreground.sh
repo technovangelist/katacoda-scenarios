@@ -1,4 +1,4 @@
-while [ ! `ls -l /root/k8s-yaml-files/*.yaml | wc -l ` -eq 5 ]; do
+while [ ! `ls -l /root/k8s-yaml-files/*.yaml 2>/dev/null | wc -l ` -eq 5 ]; do
   sleep 0.3
 done
 k create secret generic datadog-api --from-literal=token=$DD_API_KEY
