@@ -21,23 +21,23 @@
         },
         {
           "file": "advertisements.yaml",
-          "target": "/root/"
+          "target": "/root/k8s-yaml-files"
         },
         {
           "file": "frontend.yaml",
-          "target": "/root/"
+          "target": "/root/k8s-yaml-files"
         },
         {
           "file": "discounts.yaml",
-          "target": "/root"
+          "target": "/root/k8s-yaml-files"
         },
         {
           "file": "db.yaml",
-          "target": "/root"
+          "target": "/root/k8s-yaml-files"
         },
         {
           "file": "datadog-agent.yaml",
-          "target": "/root"
+          "target": "/root/k8s-yaml-files"
         }
       ]
     }
