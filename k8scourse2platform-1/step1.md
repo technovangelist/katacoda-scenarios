@@ -1,4 +1,4 @@
-Let's start the course with a reminder of how to install the Datadog agent. 
+Let's start the course with a reminder of how to install the Datadog agent using the Daemonset manifests. 
 
 1. To get started we need to set a few permissions. We covered a little bit about what these manifests are for in the first Kubernetes course and will go into much more detail in a video coming up after this section. Run the following command on the master:
 `kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"`{{execute}}
