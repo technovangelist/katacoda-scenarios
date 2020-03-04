@@ -43,8 +43,8 @@ spec:
                 fieldRef:
                   fieldPath: status.hostIP
 
-            - { name: DD_CRI_SOCKET_PATH, value: /host/var/run/docker.sock }
-            - { name: DOCKER_HOST, value: unix:///host/var/run/docker.sock }
+            - { name: DD_CRI_SOCKET_PATH, value: "/host/var/run/docker.sock" }
+            - { name: DOCKER_HOST, value: "unix:///host/var/run/docker.sock" }
           resources:
             requests:
               memory: "256Mi"
