@@ -20,6 +20,10 @@
           "chmod": "+x"
         },
         {
+          "file": "values.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
           "file": "advertisements.yaml",
           "target": "/root/k8s-yaml-files"
         },
@@ -40,7 +44,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/k8s-yaml-files", 
+    "uieditorpath": "/root/k8s-yaml-files",
     "showdashboard": true,
     "dashboards": [
       {

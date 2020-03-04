@@ -8,6 +8,7 @@ Let's start the course with a reminder of how to install the Datadog agent using
 `kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"`{{execute}}
 1. Apply the manifest for the Datadog agent using the following command:
 `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
+    This yaml file is the same one provided in the documentation.
 1. Everything should be running now. To verify, run: 
 `kubectl get daemonset`{{execute}}
 You should see a list of how many agents are installed and running.
