@@ -1,0 +1,1 @@
+helm install datadogagent --set datadog.apiKey=$DD_API_KEY stable/datadog
