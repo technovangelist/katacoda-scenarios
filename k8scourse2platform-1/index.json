@@ -34,6 +34,10 @@
         {
           "file": "db.yaml",
           "target": "/root"
+        },
+        {
+          "file": "datadog-agent.yaml",
+          "target": "/root"
         }
       ]
     }

@@ -1,9 +1,11 @@
-while [ ! `ls -l *.yaml | wc -l ` -eq 4 ]; do
+while [ ! `ls -l *.yaml | wc -l ` -eq 5 ]; do
   sleep 0.3
 done
-k apply -f db.yaml
-k apply -f advertisements.yaml
-k apply -f discounts.yaml
-k apply -f frontend.yaml
+k create secret generic datadog-api --from-literal=token=$DD_API_KEY
+
+k apply -f k8s-yaml-files/db.yaml
+k apply -f k8s-yaml-files/advertisements.yaml
+k apply -f k8s-yaml-files/discounts.yaml
+k apply -f k8s-yaml-files/frontend.yaml
 clear
 prepenvironment
