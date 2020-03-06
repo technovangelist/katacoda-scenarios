@@ -13,9 +13,9 @@
 # fullnameOverride: ""
 
 datadog:
-  apiKey: DD_API_KEY
+  # apiKey: DD_API_KEY
   # apiKeyExistingSecret: <DATADOG_API_KEY_SECRET>
-  appKey: DD_APP_KEY
+  # appKey: DD_APP_KEY
   # appKeyExistingSecret: <DATADOG_APP_KEY_SECRET>
 
   # securityContext:
@@ -132,13 +132,13 @@ clusterAgent:
   #         port: 3306
   #         user: datadog
   #         pass: '<YOUR_CHOSEN_PASSWORD>'
-  resources: {}
-  # requests:
-  #   cpu: 200m
-  #   memory: 256Mi
-  # limits:
-  #   cpu: 200m
-  #   memory: 256Mi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+    limits:
+      cpu: 100m
+      memory: 64Mi
   # priorityClassName: system-cluster-critical
   # nodeSelector: {}
   healthPort: 8080
