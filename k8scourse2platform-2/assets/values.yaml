@@ -134,12 +134,12 @@ clusterAgent:
   #         pass: '<YOUR_CHOSEN_PASSWORD>'
   resources:
     requests:
-      cpu: 100m
-      memory: 64Mi
+      cpu: 50m
+      memory: 32Mi
     limits:
-      cpu: 100m
-      memory: 64Mi
-  # priorityClassName: system-cluster-critical
+      cpu: 50m
+      memory: 32Mi
+  # priorityClassName: syst   em-cluster-critical
   # nodeSelector: {}
   healthPort: 8080
   livenessProbe:
@@ -253,14 +253,18 @@ agents:
       #  limits:
       #    cpu: 100m
       #    memory: 200Mi
-  # volumes:
-  #   - hostPath:
-  #       path: <HOST_PATH>
-  #     name: <VOLUME_NAME>
-  # volumeMounts:
-  #   - name: <VOLUME_NAME>
-  #     mountPath: <CONTAINER_PATH>
-  #     readOnly: true
+  volumes:
+    - { name: dockersocketdir, hostPath: { path: /var/run } }
+    - { name: procdir, hostPath: { path: /proc } }
+    - { name: cgroups, hostPath: { path: /sys/fs/cgroup } }
+    - { name: s6-run, emptyDir: {} }
+    - { name: logpodpath, hostPath: { path: /var/log/pods } }
+  volumeMounts:
+    - { name: dockersocketdir, mountPath: /host/var/run }
+    - { name: procdir, mountPath: /host/proc, readOnly: true }
+    - { name: cgroups, mountPath: /host/sys/fs/cgroup, readOnly: true }
+    - { name: s6-run, mountPath: /var/run/s6 }
+    - { name: logpodpath, mountPath: /var/log/pods }
 
   # useHostNetwork: true
   # podAnnotations:
