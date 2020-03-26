@@ -44,10 +44,19 @@
   },
   "environment": {
     "uilayout": "terminal",
+    "uieditorpath": "/root/k8s-yaml-files",
     "showide": true,
-    "idePort": 23000
+    "idePort": 23000,
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "App Dashboard",
+        "port": 3000
+      }
+    ]
   },
   "backend": {
-    "imageid": "datadog-kubernetes-cluster-running:1.16"
+    "imageid": "datadog-kubernetes-cluster-running:1.16",
+    "reuseConnection": "false"
   }
 }
