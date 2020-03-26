@@ -43,7 +43,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "terminal",
     "showide": true,
     "idePort": 23000,
     "showdashboard": true,
