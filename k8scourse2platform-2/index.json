@@ -46,7 +46,6 @@
     "uilayout": "terminal",
     "showide": true,
     "idePort": 23000,
-    "showdashboard": true,
     "dashboards": [
       {
         "name": "App Dashboard",
@@ -55,7 +54,6 @@
     ]
   },
   "backend": {
-    "imageid": "datadog-kubernetes-cluster-running:1.16",
-    "reuseConnection": "false"
+    "imageid": "datadog-kubernetes-cluster-running:1.16"
   }
 }
