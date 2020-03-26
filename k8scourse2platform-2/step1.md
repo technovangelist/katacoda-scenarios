@@ -6,4 +6,5 @@ In the previous hands on section, you setup the agent using the daemonset manife
 1. Later on in this hands on, we are going to want to see some issues in memory configuration for the agent so lets change it to be too low. Update lines 193 to 198 to show **cpu: 20m** and **memory: 32Mi**. This is much lower than they should be and will help us see what happens when resources are low.
 1. Now run this helm install command: `helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}.
 1. Open the Datadog Events stream and within a couple minutes you should see the agent trying to start several times. Return to lines 193 to 198 and restore the original settings: **cpu: 200m** and **memory: 256MiB**.
-1. This just installs the agent with the basic configuration. To customize the installation, 
+1. Run the helm upgrade command: `helm upgrade datadogagent`{{execute}}. You should see that the agent stays up and running now without any restarts.
+1. Now lets verify the health checks;
