@@ -45,15 +45,9 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "idePort": 23000,
-    "dashboards": [
-      {
-        "name": "App Dashboard",
-        "port": 3000
-      }
-    ]
+    "idePort": 23000
   },
   "backend": {
-    "imageid": "datadog-kubernetes-cluster-running"
+    "imageid": "datadog-kubernetes-cluster-running:1.16"
   }
 }
