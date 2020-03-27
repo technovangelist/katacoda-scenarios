@@ -49,7 +49,7 @@
     "idePort": 23000,
     "showdashboard": true,
     "showvisualise": true,
-    "scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
+    "scope": "kubectl port-forward -n weave '$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath=\"{.items..metadata.name}\")' 4040",
     "scopePort": 4040,
     "dashboards": [
       {
