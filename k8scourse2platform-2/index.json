@@ -43,7 +43,7 @@
     }
   },
   "environment": {
-      "uilayout": "editor-terminal",
+    "uilayout": "terminal",
     "showide": true,
     "idePath": "/root/k8s-yaml-files",
     "idePort": 23000,
