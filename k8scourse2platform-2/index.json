@@ -47,6 +47,7 @@
     "showide": true,
     "idePath": "/root/k8s-yaml-files",
     "idePort": 23000,
+    "showdashboard": true,
     "dashboards": [
       {
         "name": "App Dashboard",
