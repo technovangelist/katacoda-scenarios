@@ -28,12 +28,12 @@ echo "Kubernetes ready.">>/root/status.txt
   cd ..
   rm -rf kube-state-metrics
   rm -rf metrics-server
-k create secret generic datadog-api --from-literal=token=$DD_API_KEY
+kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
 
-k apply -f k8s-yaml-files/db.yaml
-k apply -f k8s-yaml-files/advertisements.yaml
-k apply -f k8s-yaml-files/discounts.yaml
-k apply -f k8s-yaml-files/frontend.yaml
+kubectl apply -f k8s-yaml-files/db.yaml
+kubectl apply -f k8s-yaml-files/advertisements.yaml
+kubectl apply -f k8s-yaml-files/discounts.yaml
+kubectl apply -f k8s-yaml-files/frontend.yaml
 # if [ ! -f "/root/provisioned" ]; then
 #   apt install datamash
 # fi
