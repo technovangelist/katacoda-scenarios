@@ -7,12 +7,12 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 echo "Waiting for kubernetes to start" >>/root/status.txt
-while [ "$(k get nodes --no-headers 2>/dev/null | wc -l )" != "2"]; do
+while [ "$(k get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
   wall -n waiting for nodes to show
   sleep 1
 done
 echo "Waiting for all nodes to be ready" >>/root/status.txt
-while [ "$(k get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs)" !=  'Ready Ready']; do
+while [ "$(k get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs)" !=  'Ready Ready' ]; do
   wall -n now waiting for nodes to start
   sleep 1
 done
