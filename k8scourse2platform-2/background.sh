@@ -6,11 +6,15 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scr
 chmod 700 get_helm.sh
 ./get_helm.sh
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
-
-while [ ! 'k get nodes 2>/dev/null | wc -l ' eq 2]; do
+echo "Waiting for kubernetes to start" >>/root/status.txt
+while [ ! 'k get nodes --no-headers 2>/dev/null | wc -l ' eq 2]; do
   sleep 0.3
 done
-
+echo "Waiting for all nodes to be ready" >>/root/status.txt
+while [ ! 'k get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs' eq 'Ready Ready']; do
+  sleep 0.3
+done
+echo "Kubernetes ready.">>/root/status.txt
   git clone https://github.com/kubernetes-sigs/metrics-server.git
   cd metrics-server
   kubectl create -f deploy/kubernetes
