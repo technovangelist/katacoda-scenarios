@@ -7,6 +7,10 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 
+while [ ! 'k get nodes 2>/dev/null | wc -l ' eq 2]; do
+  sleep 0.3
+done
+
   git clone https://github.com/kubernetes-sigs/metrics-server.git
   cd metrics-server
   kubectl create -f deploy/kubernetes
@@ -17,7 +21,12 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com
   cd ..
   rm -rf kube-state-metrics
   rm -rf metrics-server
+k create secret generic datadog-api --from-literal=token=$DD_API_KEY
 
+k apply -f k8s-yaml-files/db.yaml
+k apply -f k8s-yaml-files/advertisements.yaml
+k apply -f k8s-yaml-files/discounts.yaml
+k apply -f k8s-yaml-files/frontend.yaml
 # if [ ! -f "/root/provisioned" ]; then
 #   apt install datamash
 # fi
