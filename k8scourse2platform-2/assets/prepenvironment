@@ -13,7 +13,7 @@ show_progress()
   while true; do 
     grep -i "complete" status.txt &> /dev/null
     if [[ "$?" -ne 0 ]]; then   
-        cat /root/status.txt  
+ 
         sleep "${delay}" 
     else
       break
