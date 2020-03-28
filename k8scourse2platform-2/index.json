@@ -48,9 +48,6 @@
     "ide": "ssh host01 '/opt/start-vscode.sh /root/k8s-yaml-files/'",
     "idePort": 23000,
     "showdashboard": true,
-    "showvisualise": true,
-    "scope": "kubectl port-forward -n weave '$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath=\"{.items..metadata.name}\")' 4040",
-    "scopePort": 4040,
     "dashboards": [
       {
         "name": "App Dashboard",
