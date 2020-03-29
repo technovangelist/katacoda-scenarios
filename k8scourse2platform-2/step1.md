@@ -16,6 +16,6 @@ In the previous hands on section, you setup the agent using the daemonset manife
         limits:
           cpu: 20m
           memory: 32Mi
-          
-1. Run the helm upgrade command: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}. You should see that the agent stays up and running now without any restarts.
+
+1. Run the helm upgrade command: `helm upgrade datadogagent -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}. You should see that the agent stays up and running now without any restarts.
 1. Now lets verify the health checks;
