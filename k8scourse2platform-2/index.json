@@ -58,7 +58,7 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu",
+    "imageid": "datadog-kubernetes-cluster-running",
     "reuseConnection": "false"
   }
 }
