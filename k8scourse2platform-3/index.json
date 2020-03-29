@@ -1,0 +1,64 @@
+{
+  "title": "Working with the Cluster Agent",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "values.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "advertisements.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "frontend.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "discounts.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "db.yaml",
+          "target": "/root/k8s-yaml-files"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/k8s-yaml-files",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "App Dashboard",
+        "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
+      },
+      {
+        "name": "datadog",
+        "href": "https://app.datadoghq.com"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-kubernetes-cluster-running:1.16",
+    "reuseConnection": "false"
+  }
+}
