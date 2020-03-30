@@ -31,8 +31,6 @@ kubectl apply -f k8s-yaml-files/db.yaml
 kubectl apply -f k8s-yaml-files/advertisements.yaml
 kubectl apply -f k8s-yaml-files/discounts.yaml
 kubectl apply -f k8s-yaml-files/frontend.yaml
-# if [ ! -f "/root/provisioned" ]; then
-#   apt install datamash
-# fi
+
 
 echo "complete">>/root/status.txt
