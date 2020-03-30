@@ -15,16 +15,16 @@ while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )
   sleep 1
 done
 echo "Kubernetes ready.">>/root/status.txt
-  git clone https://github.com/kubernetes-sigs/metrics-server.git
-  cd metrics-server
-  kubectl create -f deploy/kubernetes
-  cd ..
-  git clone https://github.com/kubernetes/kube-state-metrics.git
-  cd kube-state-metrics
-  kubectl apply -f examples/standard
-  cd ..
-  rm -rf kube-state-metrics
-  rm -rf metrics-server
+  # git clone https://github.com/kubernetes-sigs/metrics-server.git
+  # cd metrics-server
+  # kubectl create -f deploy/kubernetes
+  # cd ..
+  # git clone https://github.com/kubernetes/kube-state-metrics.git
+  # cd kube-state-metrics
+  # kubectl apply -f examples/standard
+  # cd ..
+  # rm -rf kube-state-metrics
+  # rm -rf metrics-server
 kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
 
 kubectl apply -f k8s-yaml-files/db.yaml
