@@ -27,6 +27,7 @@ while [ ! -f "status.txt" ]; do
   sleep 0.3
 done
 show_progress
+helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog
 if [ ! -f "/root/provisioned" ]; then
   touch /root/provisioned
   printf "\n\nOK, the training environment is installed and ready to go.\n\n"

@@ -10,4 +10,3 @@ sed -i 's|--DATADOG_API_KEY--|datadog/agent:6.11.1|' docker-compose.yml
 
 clear
 prepenvironment
-helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog
