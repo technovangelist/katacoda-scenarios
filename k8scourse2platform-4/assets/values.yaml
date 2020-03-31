@@ -126,7 +126,13 @@ clusterAgent:
     service:
       type: ClusterIP
       port: 443
-  # confd:
+  confd:
+    etcd.yaml: |-
+      ad_identifiers:
+        - etcd-amd64
+      init_config:
+      instances:
+        - prometheus_url: "http://%%host%%:2379/metrics"
   #   mysql.yaml: |-
   #     cluster_check: true
   #     instances:
@@ -159,7 +165,8 @@ clusterAgent:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
-  # podAnnotations:
+  podAnnotations:
+    rollme: { { randAlphaNum 5 | quote } }
   #   key: "value"
   # useHostNetwork: true
   # volumes:
@@ -267,7 +274,8 @@ agents:
   #     readOnly: true
 
   # useHostNetwork: true
-  # podAnnotations:
+  podAnnotations:
+    rollme: { { randAlphaNum 5 | quote } }
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
   # tolerations: []
   # nodeSelector: {}
