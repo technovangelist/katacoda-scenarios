@@ -279,7 +279,10 @@ agents:
   tolerations:
     - key: node-role.kubernetes.io/master
       effect: NoSchedule
-  # nodeSelector: {}
+    - key: CriticalAddonsOnly
+      operator: Exists
+  nodeSelector:
+    node-role.kubernetes.io/master: ""
   # affinity: {}
   updateStrategy:
     type: RollingUpdate
