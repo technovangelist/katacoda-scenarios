@@ -72,7 +72,9 @@ datadog:
     enabled: false
     port: 8126
 
-  # env:
+  env:
+    - name: DD_KUBELET_TLS_VERIFY
+      value: "false"
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
 
@@ -187,7 +189,9 @@ agents:
 
   containers:
     agent:
-      # env:
+      env:
+        - name: DD_KUBELET_TLS_VERIFY
+          value: "false"
       # logLevel: INFO
       resources: {}
       #  requests:
