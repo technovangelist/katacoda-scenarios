@@ -77,7 +77,13 @@ datadog:
       value: "false"
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
-
+  confd:
+    etcd.yaml: |-
+      ad_identifiers:
+        - etcd-amd64
+      init_config:
+      instances:
+        - prometheus_url: "http://%%host%%:2379/metrics"
   # confd:
   #   redisdb.yaml: |-
   #     init_config:
@@ -109,7 +115,7 @@ datadog:
     apparmor: unconfined
 
 clusterAgent:
-  enabled: true
+  enabled: false
   image:
     repository: datadog/cluster-agent
     tag: 1.5.2
@@ -126,13 +132,7 @@ clusterAgent:
     service:
       type: ClusterIP
       port: 443
-  confd:
-    etcd.yaml: |-
-      ad_identifiers:
-        - etcd-amd64
-      init_config:
-      instances:
-        - prometheus_url: "http://%%host%%:2379/metrics"
+
   #   mysql.yaml: |-
   #     cluster_check: true
   #     instances:
@@ -165,8 +165,7 @@ clusterAgent:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
-  podAnnotations: |-
-    rollme: { { randAlphaNum 5 | quote } }
+
   #   key: "value"
   # useHostNetwork: true
   # volumes:
@@ -274,10 +273,12 @@ agents:
   #     readOnly: true
 
   # useHostNetwork: true
-  podAnnotations: |-
-    rollme: { { randAlphaNum 5 | quote } }
+
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
   # tolerations: []
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
   # nodeSelector: {}
   # affinity: {}
   updateStrategy:
