@@ -165,7 +165,7 @@ clusterAgent:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
-  podAnnotations:
+  podAnnotations: |-
     rollme: { { randAlphaNum 5 | quote } }
   #   key: "value"
   # useHostNetwork: true
@@ -274,7 +274,7 @@ agents:
   #     readOnly: true
 
   # useHostNetwork: true
-  podAnnotations:
+  podAnnotations: |-
     rollme: { { randAlphaNum 5 | quote } }
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
   # tolerations: []
