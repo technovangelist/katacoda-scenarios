@@ -12,11 +12,6 @@ spec:
         app: datadog-agent
       name: datadog-agent
     spec:
-      tolerations:
-        - effect: NoSchedule
-          key: node-role.kubernetes.io/master
-      nodeSelector:
-        node-role.kubernetes.io/master: ""
       serviceAccountName: datadog-agent
       containers:
         - image: datadog/agent:7
@@ -34,7 +29,8 @@ spec:
               name: traceport
               protocol: TCP
           env:
-            
+            - name: DD_KUBELET_TLS_VERIFY
+              value: "false"
             - name: DD_API_KEY
               valueFrom:
                 secretKeyRef:
