@@ -85,15 +85,6 @@ datadog:
   #     init_config:
   #     instances:
   #       - prometheus_url: "https://172.17.0.42:2379/metrics"
-  confd:
-    etcd.yaml: |-
-      instances:
-      - prometheus_url: http://192.168.64.3:2381/metrics
-        leader_tag: true
-        ssl_cert: /var/lib/minikube/certs/etcd/server.crt
-        tags:
-        - "app:etcd"
-        - "etcdmain"
 
   #   redisdb.yaml: |-
   #     init_config:
@@ -125,7 +116,7 @@ datadog:
     apparmor: unconfined
 
 clusterAgent:
-  enabled: true
+  enabled: false
   image:
     repository: datadog/cluster-agent
     tag: 1.5.2
