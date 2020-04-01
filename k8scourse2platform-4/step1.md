@@ -6,10 +6,10 @@ In this Hands On section, the agent has been started automatically for you.
 1. As you can see there is an error with the etcd integration. Lets take a look at the etcd pod to see what the right url is. `k describe pod -n kube-system etcd-master`{{execute}}. You are looking for the `--listen-client-urls` line under Command. 
 1. So it's the ip address of the host and port 2379. We can override the configuration for etcd by adding a `datadog.confd` block. It doesn't really matter where in the file it is added, so let's put it at line 16. Add 
 
-        confd:
-          etcd.yaml: |-
-            instances:
-              - prometheus_url: https://%%host%%:2379/metrics
+       confd:
+         etcd.yaml: |-
+           instances:
+             - prometheus_url: https://%%host%%:2379/metrics
 
 1. Now upgrade the helm chart: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}.
 1. After the pods have started, run the agent status command again. There is still an error. Let's look at the etcd pod again by running the describe command: `k describe pod -n kube-system etcd-master`{{execute}}. 
