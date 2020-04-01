@@ -83,7 +83,7 @@ datadog:
         - etcd-amd64
       init_config:
       instances:
-        - prometheus_url: "http://%%host%%:2379/metrics"
+        - prometheus_url: "https://172.17.0.42:2379/metrics"
   # confd:
   #   redisdb.yaml: |-
   #     init_config:
