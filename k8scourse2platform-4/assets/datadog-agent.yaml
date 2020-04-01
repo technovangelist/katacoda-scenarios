@@ -17,6 +17,8 @@ spec:
           key: node-role.kubernetes.io/master
         - key: CriticalAddonsOnly
           operator: Exists
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
       serviceAccountName: datadog-agent
       containers:
         - image: datadog/agent:7
