@@ -51,4 +51,17 @@ In this Hands On section, the agent has been started automatically for you.
            ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
            ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
 
-1. Upgrade the Datadog Agent helm chart one more time, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected. 
+1. Upgrade the Datadog Agent helm chart again, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected. 
+1. Unfortunately the autodiscovered etcd is still configured as well and its not working. So we just need to force it to be ignored. We can do that with another volume and volumeMount. In the volumes block you edited before, add:
+
+         - emptyDir: {}
+           name: etcd-auto-conf
+
+1. And under volumeMounts add:
+
+         volumeMounts:
+           - name: etcd-auto-conf
+             mountPath: /etc/datadog-agent/conf.d/etcd.d/
+             readOnly: true
+
+1. Upgrade the Datadog Agent helm chart one more time, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected and there are no errors.
