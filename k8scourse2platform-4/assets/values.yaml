@@ -11,8 +11,7 @@
 ## Override the full qualified app name.
 #
 # fullnameOverride: ""
-image:
-  tag: 6.14.1-jmx
+
 datadog:
   # apiKey: DD_API_KEY
   # apiKeyExistingSecret: <DATADOG_API_KEY_SECRET>
