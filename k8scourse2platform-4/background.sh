@@ -2,10 +2,10 @@
 touch status.txt
 echo "">/root/status.txt
 
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
-helm repo add stable https://kubernetes-charts.storage.googleapis.com
+# curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+# chmod 700 get_helm.sh
+# ./get_helm.sh
+# helm repo add stable https://kubernetes-charts.storage.googleapis.com
 echo "Waiting for kubernetes to start" >>/root/status.txt
 while [ "$( kubectl get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
   sleep 1
@@ -25,7 +25,14 @@ echo "Kubernetes ready.">>/root/status.txt
   # cd ..
   # rm -rf kube-state-metrics
   # rm -rf metrics-server
-kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
+kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"
+
+kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"
+
+kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
+
+
+kubectl create secret generic datadog-secret --from-literal=api-key=$DD_API_KEY --namespace="default"
 
 kubectl apply -f k8s-yaml-files/db.yaml
 kubectl apply -f k8s-yaml-files/advertisements.yaml
