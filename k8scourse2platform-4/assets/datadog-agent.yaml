@@ -84,6 +84,8 @@ spec:
             - name: cgroups
               mountPath: /host/sys/fs/cgroup
               readOnly: true
+            - name: dd-agent-config
+              mountPath: /conf.d
           livenessProbe:
             httpGet:
               path: /health
@@ -103,3 +105,9 @@ spec:
         - hostPath:
             path: /sys/fs/cgroup
           name: cgroups
+        - name: dd-agent-config
+          configMap:
+            name: dd-agent-config
+            items:
+              - key: etcd
+                path: etcd.yaml
