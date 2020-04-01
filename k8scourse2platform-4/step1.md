@@ -51,4 +51,4 @@ In this Hands On section, the agent has been started automatically for you.
            ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
            ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
 
-1. Upgrade the Datadog Agent helm chart. 
+1. Upgrade the Datadog Agent helm chart one more time, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected. 
