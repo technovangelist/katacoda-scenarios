@@ -11,7 +11,8 @@
 ## Override the full qualified app name.
 #
 # fullnameOverride: ""
-
+image:
+  tag: 6.14.1-jmx
 datadog:
   # apiKey: DD_API_KEY
   # apiKeyExistingSecret: <DATADOG_API_KEY_SECRET>
@@ -73,18 +74,27 @@ datadog:
     port: 8126
 
   env:
-    - name: DD_KUBELET_TLS_VERIFY
-      value: "false"
+    # - name: DD_KUBELET_TLS_VERIFY
+    #   value: "false"
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
+  # confd:
+  #  etcd.yaml: |-
+  #     ad_identifiers:
+  #       - etcd
+  #     init_config:
+  #     instances:
+  #       - prometheus_url: "https://172.17.0.42:2379/metrics"
   confd:
     etcd.yaml: |-
-      ad_identifiers:
-        - etcd
-      init_config:
       instances:
-        - prometheus_url: "https://172.17.0.42:2379/metrics"
-  # confd:
+      - prometheus_url: http://192.168.64.3:2381/metrics
+        leader_tag: true
+        ssl_cert: /var/lib/minikube/certs/etcd/server.crt
+        tags:
+        - "app:etcd"
+        - "etcdmain"
+
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -115,7 +125,7 @@ datadog:
     apparmor: unconfined
 
 clusterAgent:
-  enabled: false
+  enabled: true
   image:
     repository: datadog/cluster-agent
     tag: 1.5.2
