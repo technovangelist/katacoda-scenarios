@@ -1,5 +1,3 @@
-In this Hands On section, the agent has been started automatically for you. 
-
 1. Navigate to the Datadog Integrations page and install the etcd integration.
 1. Install the Helm chart using the helm install command: `helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}.
 1. Now run the Datadog agent status command to verify that etcd metrics are being collected. As you can see there is a problem. By the way, here is a way to run that exec command without having to figure out the name of the agent pod, since there is only one agent running. `k get pod -l app=datadogagent -o jsonpath="{.items[0].metadata.name}"`{{execute}} will show us the current name of that pod, so `k exec $(k get pod -l app=datadogagent -o jsonpath="{.items[0].metadata.name}") agent status`{{execute}} will run agent status with that pod name automatically.  If you get `error: unable to upgrade connection: container not found ("agent")`, then the pod isn't ready yet. Run `k get pods`{{execute}} to see their current status.
