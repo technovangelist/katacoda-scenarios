@@ -1,9 +1,3 @@
-Install the cluster agent
-Understanding security config
-Work with autoscaler
-Work with cluster checks
-Work with EndPoint Checks
-
 In this section you are going to start to work with the Cluster Agent. Remember the Cluster Agent moves much of the job of interrogating the cluster out of the hands of each of the nodes into one instance. Since we are using a cluster made of one master and one node, we won't experience much of a performance gain, but in your production systems, you may see a significant improvement. 
 
 1. Let's start by installing the Cluster Agent. As with the previous section, we are using the helm chart, so open the `values.yaml` file in the IDE tab to the right.  
