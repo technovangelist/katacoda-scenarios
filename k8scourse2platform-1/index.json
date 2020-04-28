@@ -46,13 +46,7 @@
     "uilayout": "terminal",
     "showide": true,
     "ide": "ssh host01 '/opt/start-vscode.sh /root/k8s-yaml-files' ",
-    "idePort": 23000,
-    "dashboards": [
-      {
-        "name": "App Dashboard",
-        "port": 3000
-      }
-    ]
+    "idePort": 23000
   },
   "backend": {
     "imageid": "datadog-kubernetes-cluster-running:1.16",

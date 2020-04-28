@@ -44,13 +44,11 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/k8s-yaml-files",
+    "showide": true,
+    "ide": "ssh host01 '/opt/start-vscode.sh /root/k8s-yaml-files' ",
+    "idePort": 23000,
     "showdashboard": true,
     "dashboards": [
-      {
-        "name": "App Dashboard",
-        "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
-      },
       {
         "name": "datadog",
         "href": "https://app.datadoghq.com"

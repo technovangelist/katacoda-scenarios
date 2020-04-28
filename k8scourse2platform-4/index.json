@@ -60,10 +60,6 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "App Dashboard",
-        "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
-      },
-      {
         "name": "datadog",
         "href": "https://app.datadoghq.com"
       }
