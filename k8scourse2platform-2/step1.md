@@ -1,8 +1,8 @@
 In the previous hands on section, you setup the agent using the daemonset manifests. We need the agent in this exercise but this time we will install it using the Helm chart. 
 
 1. The command to run to install the Datadog helm chart is `helm install <release name> --set datadog.apiKey=<api key> stable/datadog`. If this is your introduction to using Helm, then release name is whatever you want to call this deployment. We will use the name datadogagent and the api key is set with an environment variable. So you could run this command now to get it installed and running, but we should first setup a custom values file to make sure we have everything configured correctly.
-1. Open values.yaml in the editor to the right.
-1. Usually the cluster's name will be automatically figured out based on configuration information, but for this training, lets set it. Uncomment line 25 and set the name to *trainingcluster*.
+1. Open values.yaml in the editor to the right (Remember, click on the IDE tab to open the editor).
+1. Usually the cluster's name will be automatically figured out based on configuration information, but for this training, lets set it. Uncomment line 25 and set the name to *trainingcluster*. (You can uncomment a line by deleting the **#** and the space that follows it, or press CMD/CTRL Slash)
 1. Now run the helm install command: `helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}.
 1. Open <a href="https://app.datadoghq.com/event/stream" target="_datadog">Datadog</a> and look in the event stream for the agents to show up. Next move over to the Integrations page and enable the Kubernetes integration. 
 1. Then you should see some kubernetes metrics show up on the Metrics Summary. But you probably aren't seeing them. Try looking at the **Kubernetes - Overview** dashboard. Most of the charts are probably empty.

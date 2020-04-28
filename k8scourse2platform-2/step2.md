@@ -1,4 +1,4 @@
-1. Everything seems to be working now, but let's go ahead and break things for a bit. Update lines 194 to 200 to show **cpu: 20m** and **memory: 32Mi**. This is much lower than they should be and will help us see what happens when resources are low.
+1. Everything seems to be working now, but let's go ahead and break things for a bit. Update lines 194 to 200 of the values.yaml file to show **cpu: 20m** and **memory: 32Mi**. This is much lower than they should be and will help us see what happens when resources are low.
     The resulting yaml will look like this:
     
         resources: 
