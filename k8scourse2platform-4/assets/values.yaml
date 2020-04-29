@@ -835,7 +835,7 @@ clusterChecksRunner:
   ## If true, deploys agent dedicated for running the Cluster Checks instead of running in the Daemonset's agents.
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/clusterchecks/
   #
-  enabled: true
+  enabled: false
 
   ## @param image - object - required
   ## Define the Datadog image to work with.
