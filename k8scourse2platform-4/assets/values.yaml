@@ -893,7 +893,7 @@ clusterChecksRunner:
   ## If you want to deploy the cluckerchecks agent in HA, keep at least clusterChecksRunner.replicas set to 2.
   ## And increase the clusterChecksRunner.replicas according to the number of Cluster Checks.
   #
-  replicas: 2
+  replicas: 1
 
   ## @param resources - object -required
   ## Datadog clusterchecks-agent resource requests and limits.
@@ -965,7 +965,7 @@ kube-state-metrics:
     ## The name of the ServiceAccount to use.
     ## If not set and create is true, a name is generated using the fullname template
     #
-    name:
+    # name:
   ## @param resources - object - optional
   ## Resource requests and limits for the kube-state-metrics container.
   #
