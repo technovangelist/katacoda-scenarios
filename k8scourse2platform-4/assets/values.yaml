@@ -60,7 +60,7 @@ datadog:
   ## Compared to the rules of GKE, dots are allowed whereas they are not allowed on GKE:
   ## https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.FIELDS.name
   #
-  clusterName: trainingcluster
+  # clusterName: <CLUSTER_NAME>
 
   ## @param site - string - optional - default: 'datadoghq.com'
   ## The site of the Datadog intake to send Agent data to.
@@ -298,7 +298,7 @@ datadog:
     ## @param enabled - boolean - required
     ## Set this to true to enable system-probe agent
     #
-    enabled: true
+    enabled: false
 
     ## @param debugPort - integer - required
     ## Specify the port to expose pprof and expvar for system-probe agent
@@ -435,13 +435,13 @@ clusterAgent:
   ## @param resources - object -required
   ## Datadog cluster-agent resource requests and limits.
   #
-  resources:
-    requests:
-      cpu: 200m
-      memory: 256Mi
-    limits:
-      cpu: 200m
-      memory: 256Mi
+  resources: {}
+  # requests:
+  #   cpu: 200m
+  #   memory: 256Mi
+  # limits:
+  #   cpu: 200m
+  #   memory: 256Mi
 
   ## @param priorityclassName - string - optional
   ## Name of the priorityClass to apply to the Cluster Agent
@@ -595,9 +595,7 @@ agents:
       ## @param env - list - required
       ## Additional environment variables for the agent container.
       #
-      env:
-        - name: DD_KUBELET_TLS_VERIFY
-          value: "false"
+      # env:
 
       ## @param logLevel - string - optional
       ## Set logging verbosity, valid log levels are:
@@ -609,13 +607,13 @@ agents:
       ## @param resources - object - required
       ## Resource requests and limits for the agent container.
       #
-      resources:
-        requests:
-          cpu: 200m
-          memory: 256Mi
-        limits:
-          cpu: 200m
-          memory: 256Mi
+      resources: {}
+      #  requests:
+      #    cpu: 200m
+      #    memory: 256Mi
+      #  limits:
+      #    cpu: 200m
+      #    memory: 256Mi
 
       ## @param livenessProbe - object - required
       ## Override the agent's liveness probe logic from the default:
@@ -648,13 +646,13 @@ agents:
       ## @param resources - object - required
       ## Resource requests and limits for the process-agent container.
       #
-      resources:
-        requests:
-          cpu: 100m
-          memory: 200Mi
-        limits:
-          cpu: 100m
-          memory: 200Mi
+      resources: {}
+      #  requests:
+      #    cpu: 100m
+      #    memory: 200Mi
+      #  limits:
+      #    cpu: 100m
+      #    memory: 200Mi
 
     traceAgent:
       ## @param env - list - required
@@ -672,13 +670,13 @@ agents:
       ## @param resources - object - required
       ## Resource requests and limits for the trace-agent container.
       #
-      resources:
-        requests:
-          cpu: 100m
-          memory: 200Mi
-        limits:
-          cpu: 100m
-          memory: 200Mi
+      resources: {}
+      #  requests:
+      #    cpu: 100m
+      #    memory: 200Mi
+      #  limits:
+      #    cpu: 100m
+      #    memory: 200Mi
 
       ## @param livenessProbe - object - optional
       ## Override the trace agent's liveness probe logic from the default:
@@ -703,30 +701,30 @@ agents:
       ## trace, debug, info, warn, error, critical, and off.
       ## If not set, fall back to the value of datadog.logLevel.
       #
-      logLevel: INFO
+      # logLevel: INFO
 
       ## @param resources - object - required
       ## Resource requests and limits for the system-probe container.
       #
-      resources:
-        requests:
-          cpu: 100m
-          memory: 200Mi
-        limits:
-          cpu: 100m
-          memory: 200Mi
+      resources: {}
+      #  requests:
+      #    cpu: 100m
+      #    memory: 200Mi
+      #  limits:
+      #    cpu: 100m
+      #    memory: 200Mi
 
     initContainers:
       ## @param resources - object - required
       ## Resource requests and limits for the init containers.
       #
-      resources:
-        requests:
-          cpu: 100m
-          memory: 200Mi
-        limits:
-          cpu: 100m
-          memory: 200Mi
+      resources: {}
+      #  requests:
+      #    cpu: 100m
+      #    memory: 200Mi
+      #  limits:
+      #    cpu: 100m
+      #    memory: 200Mi
 
   ## @param volumes - list of objects - optional
   ## Specify additional volumes to mount in the dd-agent container
@@ -835,7 +833,7 @@ clusterChecksRunner:
   ## If true, deploys agent dedicated for running the Cluster Checks instead of running in the Daemonset's agents.
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/clusterchecks/
   #
-  enabled: false
+  enabled: true
 
   ## @param image - object - required
   ## Define the Datadog image to work with.
@@ -893,18 +891,18 @@ clusterChecksRunner:
   ## If you want to deploy the cluckerchecks agent in HA, keep at least clusterChecksRunner.replicas set to 2.
   ## And increase the clusterChecksRunner.replicas according to the number of Cluster Checks.
   #
-  replicas: 1
+  replicas: 2
 
   ## @param resources - object -required
   ## Datadog clusterchecks-agent resource requests and limits.
   #
-  resources:
-    requests:
-      cpu: 200m
-      memory: 500Mi
-    limits:
-      cpu: 200m
-      memory: 500Mi
+  resources: {}
+  # requests:
+  #   cpu: 200m
+  #   memory: 500Mi
+  # limits:
+  #   cpu: 200m
+  #   memory: 500Mi
 
   ## @param affinity - object - optional
   ## Allow the ClusterChecks Deployment to schedule using affinity rules.
@@ -965,7 +963,7 @@ kube-state-metrics:
     ## The name of the ServiceAccount to use.
     ## If not set and create is true, a name is generated using the fullname template
     #
-    # name:
+    name:
   ## @param resources - object - optional
   ## Resource requests and limits for the kube-state-metrics container.
   #
