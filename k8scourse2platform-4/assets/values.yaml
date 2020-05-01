@@ -232,7 +232,9 @@ datadog:
   ## The dd-agent supports many environment variables
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#environment-variables
   #
-  # env:
+  env:
+    - name: DD_KUBELET_TLS_VERIFY
+      value: "false"
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
 
@@ -943,7 +945,9 @@ clusterChecksRunner:
   ## The dd-agent supports many environment variables
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#environment-variables
   #
-  # env:
+  env:
+    - name: DD_KUBELET_TLS_VERIFY
+      value: "false"
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
 
