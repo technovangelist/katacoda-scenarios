@@ -769,6 +769,9 @@ agents:
   ## Annotations to add to the DaemonSet's Pods
   #
   podAnnotations:
+    ad.datadoghq.com/endpoints.check_names: "['kube_apiserver_metrics']"
+    ad.datadoghq.com/endpoints.init_configs: "[{}]"
+    ad.datadoghq.com/endpoints.instances: "[{ 'prometheus_url': 'https://%%host%%:%%port%%/metrics', 'bearer_token_auth': 'false' }]"
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
 
   ## @param tolerations - array - optional
