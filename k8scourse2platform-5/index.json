@@ -45,7 +45,7 @@
         },
         {
           "file": "apiserver.yaml",
-          "target": "/root/k8s-yaml-file/kube_apiserver_metrics"
+          "target": "/root/kube_apiserver_metrics"
         }
       ]
     }
