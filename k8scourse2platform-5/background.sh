@@ -9,9 +9,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # wall -n installing minikube
 # curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin
 
-# wall -n installing kubectl
-# curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl && sudo apt-get install -y conntrack
-# sudo apt autoremove -y
+wall -n installing kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl && sudo apt-get install -y conntrack
+sudo apt autoremove -y
 
 # wall -n starting minikube
 # minikube start --driver=none
@@ -27,7 +27,7 @@ echo "Waiting for kubernetes to start" >>/root/status.txt
 # done
 
 echo "Waiting for all nodes to be ready" >>/root/status.txt
-while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )" !=  "Ready" ]; do
+while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )" !=  "Ready Ready" ]; do
   kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs
   sleep 1
 done
