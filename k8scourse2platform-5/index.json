@@ -42,6 +42,10 @@
         {
           "file": "datadog-agent.yaml",
           "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "apiserver.yaml",
+          "target": "/root/k8s-yaml-files"
         }
       ]
     }

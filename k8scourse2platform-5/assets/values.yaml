@@ -515,9 +515,9 @@ clusterAgent:
   ## Annotations to add to the cluster-agents's pod(s)
   #
   podAnnotations:
-    ad.datadoghq.com/endpoints.check_names: "['kube_apiserver_metrics']"
-    ad.datadoghq.com/endpoints.init_configs: "[{}]"
-    ad.datadoghq.com/endpoints.instances: "[{ 'prometheus_url': 'https://%%host%%:%%port%%/metrics', 'bearer_token_auth': 'true' }]"
+    # ad.datadoghq.com/endpoints.check_names: "['kube_apiserver_metrics']"
+    # ad.datadoghq.com/endpoints.init_configs: "[{}]"
+    # ad.datadoghq.com/endpoints.instances: "[{ 'prometheus_url': 'https://%%host%%:%%port%%/metrics', 'bearer_token_auth': 'true' }]"
 
   ## @param useHostNetwork - boolean - optional
   ## Bind ports on the hostNetwork. Useful for CNI networking where hostPort might
@@ -758,17 +758,8 @@ agents:
   #
   volumes:
     - hostPath:
-        path: /var/lib/minikube/certs/etcd/ca.crt
-        type: File
-      name: etcd-ca
-    - hostPath:
-        path: /var/lib/minikube/certs/etcd/peer.crt
-        type: File
-      name: etcd-crt
-    - hostPath:
-        path: /var/lib/minikube/certs/etcd/peer.key
-        type: File
-      name: etcd-private-key
+        path: /root/k8s-yaml-files/apiserver.yaml
+      name: apiserveryaml
     - emptyDir: {}
       name: etcd-auto-conf
     - emptyDir: {}
@@ -780,21 +771,12 @@ agents:
     ## Specify additional volumes to mount in the dd-agent container
     #
   volumeMounts:
-    - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
-      name: etcd-ca
-      readOnly: true
-    - mountPath: /etc/datadog-agent/certs/etcd-client.crt
-      name: etcd-crt
-      readOnly: true
-    - mountPath: /etc/datadog-agent/certs/etcd-client.key
-      name: etcd-private-key
-      readOnly: true
+    - name: apiserveryaml
+      mountpath: /conf.d/kube_apiserver_metrics.d/
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
-    - name: kubeapiserver-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
-      readOnly: true
+
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
