@@ -253,13 +253,13 @@ datadog:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
   confd:
-    # etcd.yaml: |-
-    #   instances:
-    #     - prometheus_url: https://localhost:2379/metrics
-    #       ssl_verify: true
-    #       ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
-    #       ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
-    #       ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
+    etcd.yaml: |-
+      instances:
+        - prometheus_url: https://localhost:2379/metrics
+          ssl_verify: true
+          ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
+          ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
+          ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
 
   #   redisdb.yaml: |-
   #     init_config:
@@ -757,18 +757,18 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
-    # - hostPath:
-    #     path: /var/lib/minikube/certs/etcd/ca.crt
-    #     type: File
-    #   name: etcd-ca
-    # - hostPath:
-    #     path: /var/lib/minikube/certs/etcd/peer.crt
-    #     type: File
-    #   name: etcd-crt
-    # - hostPath:
-    #     path: /var/lib/minikube/certs/etcd/peer.key
-    #     type: File
-    #   name: etcd-private-key
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd/ca.crt
+        type: File
+      name: etcd-ca
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd/peer.crt
+        type: File
+      name: etcd-crt
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd/peer.key
+        type: File
+      name: etcd-private-key
     - emptyDir: {}
       name: etcd-auto-conf
     - emptyDir: {}
@@ -780,15 +780,15 @@ agents:
     ## Specify additional volumes to mount in the dd-agent container
     #
   volumeMounts:
-    # - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
-    #   name: etcd-ca
-    #   readOnly: true
-    # - mountPath: /etc/datadog-agent/certs/etcd-client.crt
-    #   name: etcd-crt
-    #   readOnly: true
-    # - mountPath: /etc/datadog-agent/certs/etcd-client.key
-    #   name: etcd-private-key
-    #   readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
+      name: etcd-ca
+      readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-client.crt
+      name: etcd-crt
+      readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-client.key
+      name: etcd-private-key
+      readOnly: true
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
