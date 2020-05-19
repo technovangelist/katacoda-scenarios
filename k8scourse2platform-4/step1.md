@@ -9,7 +9,7 @@
            instances:
              - prometheus_url: https://%%host%%:2379/metrics
 
-1. Now upgrade the helm chart: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}.
+1. Now reinstall the helm chart: `helm uninstall datadogagent;helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}.
 1. After the pods have started, run the agent status command again. There is still an error. Let's look at the etcd pod again by running the describe command: `k describe pod -n kube-system etcd-master`{{execute}}. 
 1. It looks like the command shows a number of certs being used. The reason our metrics call is failing is that we aren't making that secure connection. In order to make the certs available to the Datadog agent, we need to create a volume, mount it, and then add those to the configuration for the etcd integration. First add the volumes. At line 270, add the following volume declarations:
 
@@ -49,7 +49,7 @@
            ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
            ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
 
-1. Upgrade the Datadog Agent helm chart again, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected. 
+1. Reinstall the Datadog Agent helm chart again, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected. 
 1. Unfortunately the autodiscovered etcd is still configured as well and its not working. So we just need to force it to be ignored. We can do that with another volume and volumeMount. In the volumes block you edited before, add:
 
          - emptyDir: {}
@@ -62,4 +62,4 @@
              mountPath: /etc/datadog-agent/conf.d/etcd.d/
              readOnly: true
 
-1. Upgrade the Datadog Agent helm chart one more time, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected and there are no errors.
+1. Reinstall the Datadog Agent helm chart one more time, wait for the agent pod to start, and check the agent status and you should see that etcd data is being collected and there are no errors.

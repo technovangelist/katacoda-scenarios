@@ -260,7 +260,10 @@ datadog:
     #       ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
     #       ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
     #       ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
-
+    kube_apiserver_metrics.yaml: |-
+      instances:
+        - prometheus_url: https://kubernetes.default.svc/metrics
+          bearer_token_auth: true
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -360,7 +363,7 @@ clusterAgent:
   ## @param enabled - boolean - required
   ## Set this to true to enable Datadog Cluster Agent
   #
-  enabled: true
+  enabled: false
 
   ## @param image - object - required
   ## Define the Datadog Cluster-Agent image to work with.
@@ -441,11 +444,7 @@ clusterAgent:
   ## Each key will become a file in /conf.d
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
-  # confd:
-  #   kube_apiserver_metrics.yaml: |-
-  # instances:
-  #   - prometheus_url: https://kubernetes.default.svc/metrics
-  #     bearer_token_auth: true
+  confd:
   #   mysql.yaml: |-
   #     cluster_check: true
   #     instances:
@@ -515,9 +514,7 @@ clusterAgent:
   ## Annotations to add to the cluster-agents's pod(s)
   #
   podAnnotations:
-    ad.datadoghq.com/endpoints.check_names: "['kube_apiserver_metrics']"
-    ad.datadoghq.com/endpoints.init_configs: "[{}]"
-    ad.datadoghq.com/endpoints.instances: "[{ 'prometheus_url': 'https://%%host%%:%%port%%/metrics', 'bearer_token_auth': 'true' }]"
+  #   key: "value"
 
   ## @param useHostNetwork - boolean - optional
   ## Bind ports on the hostNetwork. Useful for CNI networking where hostPort might
@@ -757,41 +754,42 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
-    # - hostPath:
-    #     path: /var/lib/minikube/certs/etcd/ca.crt
-    #     type: File
-    #   name: etcd-ca
-    # - hostPath:
-    #     path: /var/lib/minikube/certs/etcd/peer.crt
-    #     type: File
-    #   name: etcd-crt
-    # - hostPath:
-    #     path: /var/lib/minikube/certs/etcd/peer.key
-    #     type: File
-    #   name: etcd-private-key
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd/ca.crt
+        type: File
+      name: etcd-ca
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd/peer.crt
+        type: File
+      name: etcd-crt
+    - hostPath:
+        path: /var/lib/minikube/certs/etcd/peer.key
+        type: File
+      name: etcd-private-key
     - emptyDir: {}
       name: etcd-auto-conf
     - emptyDir: {}
       name: kubeapiserver-auto-conf
-    #   - hostPath:
-    #       path: <HOST_PATH>
-    #     name: <VOLUME_NAME>
-    ## @param volumeMounts - list of objects - optional
-    ## Specify additional volumes to mount in the dd-agent container
-    #
+  #   - hostPath:
+  #       path: <HOST_PATH>
+  #     name: <VOLUME_NAME>
+
+  ## @param volumeMounts - list of objects - optional
+  ## Specify additional volumes to mount in the dd-agent container
+  #
   volumeMounts:
-    # - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
-    #   name: etcd-ca
-    #   readOnly: true
-    # - mountPath: /etc/datadog-agent/certs/etcd-client.crt
-    #   name: etcd-crt
-    #   readOnly: true
-    # - mountPath: /etc/datadog-agent/certs/etcd-client.key
-    #   name: etcd-private-key
-    #   readOnly: true
-    - name: etcd-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/etcd.d/
+    - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
+      name: etcd-ca
       readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-client.crt
+      name: etcd-crt
+      readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-client.key
+      name: etcd-private-key
+      readOnly: true
+    # - name: etcd-auto-conf
+    #   mountPath: /etc/datadog-agent/conf.d/etcd.d/
+    #   readOnly: true
     - name: kubeapiserver-auto-conf
       mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
       readOnly: true
@@ -812,13 +810,10 @@ agents:
   ## @param podAnnotations - list of key:value strings - optional
   ## Annotations to add to the DaemonSet's Pods
   #
-  # podAnnotations:
-  #   ad.datadoghq.com/etcd.check_names: "['etcd']"
-  #   ad.datadoghq.com/etcd.init_configs: "[{}]"
-  #   # ad.datadoghq.com/etcd.instances: "[{ 'prometheus_url': 'http://%%host%%:%%port%%/metrics/'}]"
-  #   #   ad.datadoghq.com/endpoints.check_names: "['etcd']"
-  #   #   ad.datadoghq.com/endpoints.init_configs: "[{}]"
-  #   ad.datadoghq.com/etcd.instances: "[{ 'prometheus_url': 'http://%%host%%:%%port%%/metrics/', 'tls_verify': 'true', 'tls_ca_cert': '/etc/datadog-agent/certs/etcd-ca.crt', 'tls_cert': '/etc/datadog-agent/certs/etcd-client.crt', 'tls_private_key': '/etc/datadog-agent/certs/etcd-client.key'}]"
+  podAnnotations:
+    ad.datadoghq.com/endpoints.check_names: "['etcd']"
+    ad.datadoghq.com/endpoints.init_configs: "[{}]"
+    ad.datadoghq.com/endpoints.instances: "[{ 'prometheus_url': 'http://%%host%%:%%port%%/metrics/', 'tls_verify': 'false', 'tls_ca_cert': '/etc/datadog-agent/certs/etcd-ca.crt', 'tls_cert': '/etc/datadog-agent/certs/etcd-client.crt', 'tls_private_key': '/etc/datadog-agent/certs/etcd-client.key'}]"
 
   #   ad.datadoghq.com/endpoints.check_names: "['kube_apiserver_metrics']"
   #   ad.datadoghq.com/endpoints.init_configs: "[{}]"

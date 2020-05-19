@@ -1,0 +1,1 @@
+Now that we are gathering etcd metrics, let's take a look at which metrics we need to look at. Of course, the metrics that are most important to you man 
