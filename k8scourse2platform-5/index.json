@@ -54,13 +54,13 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "datadog-kubernetes-cluster-running:1.16",
+        "name": "datadog",
         "href": "https://app.datadoghq.com"
       }
     ]
   },
   "backend": {
-    "imageid": "datadog-ubuntu",
+    "imageid": "datadog-kubernetes-cluster-running:1.16",
     "reuseConnection": "false"
   }
 }
