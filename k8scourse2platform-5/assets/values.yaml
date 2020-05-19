@@ -772,7 +772,7 @@ agents:
     #
   volumeMounts:
     - name: apiserveryaml
-      mountpath: /conf.d/kube_apiserver_metrics.d/
+      mountPath: /conf.d/kube_apiserver_metrics.d/kube_apiserver_metrics.yaml
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
