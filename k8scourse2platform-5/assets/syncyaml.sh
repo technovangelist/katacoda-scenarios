@@ -1,0 +1,5 @@
+while inotifywait -qq -r -e modify,create,delete,move /root/k8s-yaml-files/kube_apiserver_m
+etrics; do
+        rsync -qavz /root/k8s-yaml-files/kube_apiserver_metrics/conf.yaml node01:/root/k8s-
+yaml-files/kube_apiserver_metrics
+done
