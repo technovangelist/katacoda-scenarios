@@ -53,7 +53,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "ide": "ssh host01 '/opt/start-vscode.sh /root/k8s-yaml-files' ",
+    "uieditorpath": "/root/k8s-yaml-files",
     "idePort": 23000,
     "showdashboard": true,
     "dashboards": [

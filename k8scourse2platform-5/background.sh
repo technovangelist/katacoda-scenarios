@@ -4,7 +4,7 @@ echo "">/root/status.txt
 
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
-./get_helm.sh
+./get_helm.sh -v 3.1.2
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 echo "Waiting for kubernetes to start" >>/root/status.txt
 while [ "$( kubectl get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
