@@ -242,7 +242,7 @@ datadog:
   #
   env:
     - name: DD_KUBELET_TLS_VERIFY
-      value: "false"
+      value: false
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
 
@@ -543,7 +543,7 @@ clusterAgent:
   #
   volumeMounts:
     - name: apiserveryaml
-      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/conf.yaml
+      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/auto_conf.yaml
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -626,7 +626,7 @@ agents:
       #
       env:
         - name: DD_KUBELET_TLS_VERIFY
-          value: "false"
+          value: false
       ## @param logLevel - string - optional
       ## Set logging verbosity, valid log levels are:
       ## trace, debug, info, warn, error, critical, and off.
@@ -760,22 +760,26 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
+    - hostPath:
+        path: /root/k8s-yaml-files/kube_apiserver_metrics.d/conf.yaml
+        type: ""
+      name: apiserveryaml
     - emptyDir: {}
       name: etcd-auto-conf
-    - emptyDir: {}
-      name: kubeapiserver-auto-conf
-    - hostPath:
-        path: /etc/kubernetes/pki/etcd/ca.crt
-        type: File
-      name: etcd-ca
-    - hostPath:
-        path: /etc/kubernetes/pki/etcd/peer.crt
-        type: File
-      name: etcd-crt
-    - hostPath:
-        path: /etc/kubernetes/pki/etcd/peer.key
-        type: File
-      name: etcd-private-key
+    # - emptyDir: {}
+    #   name: kubeapiserver-auto-conf
+    # - hostPath:
+    #     path: /etc/kubernetes/pki/etcd/ca.crt
+    #     type: File
+    #   name: etcd-ca
+    # - hostPath:
+    #     path: /etc/kubernetes/pki/etcd/peer.crt
+    #     type: File
+    #   name: etcd-crt
+    # - hostPath:
+    #     path: /etc/kubernetes/pki/etcd/peer.key
+    #     type: File
+    #   name: etcd-private-key
     #   - hostPath:
     #       path: <HOST_PATH>
     #     name: <VOLUME_NAME>
@@ -786,18 +790,21 @@ agents:
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
-    - name: kubeapiserver-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
-      readOnly: true
-    - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
-      name: etcd-ca
-      readOnly: true
-    - mountPath: /etc/datadog-agent/certs/etcd-client.crt
-      name: etcd-crt
-      readOnly: true
-    - mountPath: /etc/datadog-agent/certs/etcd-client.key
-      name: etcd-private-key
-      readOnly: true
+    - name: apiserveryaml
+      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/auto_conf.yaml
+
+    # - name: kubeapiserver-auto-conf
+    #   mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
+    #   readOnly: true
+    # - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
+    #   name: etcd-ca
+    #   readOnly: true
+    # - mountPath: /etc/datadog-agent/certs/etcd-client.crt
+    #   name: etcd-crt
+    #   readOnly: true
+    # - mountPath: /etc/datadog-agent/certs/etcd-client.key
+    #   name: etcd-private-key
+    #   readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
