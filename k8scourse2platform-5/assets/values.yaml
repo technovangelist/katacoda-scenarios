@@ -533,14 +533,16 @@ clusterAgent:
   ## Specify additional volumes to mount in the cluster-agent container
   #
   volumes:
-  #   - hostPath:
-  #       path: <HOST_PATH>
-  #     name: <VOLUME_NAME>
+    - hostPath:
+        path: /root/k8s-yaml-files/kube_apiserver_metrics/conf.yaml
+      name: apiserveryaml
 
   ## @param volumeMounts - list of objects - optional
   ## Specify additional volumes to mount in the cluster-agent container
   #
   volumeMounts:
+    - name: apiserveryaml
+      mountPath: /conf.d
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -757,9 +759,6 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
-    - hostPath:
-        path: /root/k8s-yaml-files/kube_apiserver_metrics/conf.yaml
-      name: apiserveryaml
     - emptyDir: {}
       name: etcd-auto-conf
     - emptyDir: {}
@@ -771,12 +770,13 @@ agents:
     ## Specify additional volumes to mount in the dd-agent container
     #
   volumeMounts:
-    - name: apiserveryaml
-      mountPath: /conf.d
+
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
-
+    - name: kubeapiserver-auto-conf
+      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
+      readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
