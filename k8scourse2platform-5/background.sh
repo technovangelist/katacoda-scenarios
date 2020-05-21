@@ -1,8 +1,7 @@
 #!/bin/bash
 touch status.txt
 echo "">/root/status.txt
-sudo apt update
-sudo apt install -y inotify-tools
+
 
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
@@ -17,6 +16,7 @@ while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )
   sleep 1
 done
 echo "Kubernetes ready.">>/root/status.txt
+
   # git clone https://github.com/kubernetes-sigs/metrics-server.git
   # cd metrics-server
   # kubectl create -f deploy/kubernetes
