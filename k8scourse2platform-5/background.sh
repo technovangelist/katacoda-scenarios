@@ -17,23 +17,6 @@ while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )
 done
 echo "Kubernetes ready.">>/root/status.txt
 
-  # git clone https://github.com/kubernetes-sigs/metrics-server.git
-  # cd metrics-server
-  # kubectl create -f deploy/kubernetes
-  # cd ..
-  # git clone https://github.com/kubernetes/kube-state-metrics.git
-  # cd kube-state-metrics
-  # kubectl apply -f examples/standard
-  # cd ..
-  # rm -rf kube-state-metrics
-  # rm -rf metrics-server
-# kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"
-
-# kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"
-
-# kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
-
-
 kubectl create secret generic datadog-secret --from-literal=api-key=$DD_API_KEY --namespace=
 
 kubectl apply -f k8s-yaml-files/db.yaml

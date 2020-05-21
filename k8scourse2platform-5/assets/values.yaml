@@ -534,7 +534,8 @@ clusterAgent:
   #
   volumes:
     - hostPath:
-        path: /root/k8s-yaml-files/kube_apiserver_metrics/conf.yaml
+        path: /root/k8s-yaml-files/kube_apiserver_metrics.d/conf.yaml
+        type: ""
       name: apiserveryaml
 
   ## @param volumeMounts - list of objects - optional
@@ -542,7 +543,7 @@ clusterAgent:
   #
   volumeMounts:
     - name: apiserveryaml
-      mountPath: /conf.d
+      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/conf.yaml
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -763,6 +764,18 @@ agents:
       name: etcd-auto-conf
     - emptyDir: {}
       name: kubeapiserver-auto-conf
+    - hostPath:
+        path: /etc/kubernetes/pki/etcd/ca.crt
+        type: File
+      name: etcd-ca
+    - hostPath:
+        path: /etc/kubernetes/pki/etcd/peer.crt
+        type: File
+      name: etcd-crt
+    - hostPath:
+        path: /etc/kubernetes/pki/etcd/peer.key
+        type: File
+      name: etcd-private-key
     #   - hostPath:
     #       path: <HOST_PATH>
     #     name: <VOLUME_NAME>
@@ -770,12 +783,20 @@ agents:
     ## Specify additional volumes to mount in the dd-agent container
     #
   volumeMounts:
-
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
     - name: kubeapiserver-auto-conf
       mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
+      readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
+      name: etcd-ca
+      readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-client.crt
+      name: etcd-crt
+      readOnly: true
+    - mountPath: /etc/datadog-agent/certs/etcd-client.key
+      name: etcd-private-key
       readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>

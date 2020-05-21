@@ -45,12 +45,7 @@
         },
         {
           "file": "apiserver/conf.yaml",
-          "target": "/root/k8s-yaml-files/kube_apiserver_metrics"
-        },
-        {
-          "file": "syncyaml.sh",
-          "target": "/usr/local/bin",
-          "chmod": "+x"
+          "target": "/root/k8s-yaml-files/kube_apiserver_metrics.d"
         }
       ]
     }
