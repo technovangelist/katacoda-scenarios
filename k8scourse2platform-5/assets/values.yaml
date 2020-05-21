@@ -253,13 +253,13 @@ datadog:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
   confd:
-    etcd.yaml: |-
-      instances:
-        - prometheus_url: https://localhost:2379/metrics
-          ssl_verify: true
-          ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
-          ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
-          ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
+    # etcd.yaml: |-
+    #   instances:
+    #     - prometheus_url: https://localhost:2379/metrics
+    #       ssl_verify: true
+    #       ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
+    #       ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
+    #       ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
 
   #   redisdb.yaml: |-
   #     init_config:
@@ -543,7 +543,7 @@ clusterAgent:
   #
   volumeMounts:
     - name: apiserveryaml
-      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/auto_conf.yaml
+      mountPath: /conf.d/kube_apiserver_metrics.yaml
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -760,10 +760,10 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
-    - hostPath:
-        path: /root/k8s-yaml-files/kube_apiserver_metrics.d/conf.yaml
-        type: ""
-      name: apiserveryaml
+    # - hostPath:
+    #     path: /root/k8s-yaml-files/kube_apiserver_metrics.d/conf.yaml
+    #     type: ""
+    #   name: apiserveryaml
     - emptyDir: {}
       name: etcd-auto-conf
     # - emptyDir: {}
@@ -790,9 +790,8 @@ agents:
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
-    - name: apiserveryaml
-      mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/auto_conf.yaml
-
+    # - name: apiserveryaml
+    #   mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/auto_conf.yaml
     # - name: kubeapiserver-auto-conf
     #   mountPath: /etc/datadog-agent/conf.d/kube_apiserver_metrics.d/
     #   readOnly: true
