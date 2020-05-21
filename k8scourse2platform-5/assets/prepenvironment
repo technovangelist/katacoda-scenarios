@@ -20,6 +20,9 @@ show_progress()
     fi
     
   done
+
+  ssh -q -o StrictHostKeyChecking=no root@node01 mkdir -p /root/k8s-yaml-files/kube_apiserver_metrics.d  > /dev/null
+  rsync -qavz /root/k8s-yaml-files/ node01:/root
 }
 TRAININGENVIRONMENT=$(echo $TRAININGENVIRONMENT | tr - " ")
 echo "Now preparing training environment for $TRAININGENVIRONMENT."
