@@ -1,7 +1,9 @@
 #!/bin/bash
 touch status.txt
 echo "">/root/status.txt
-
+sudo apt update
+sudo apt install -y inotify-tools
+ssh -q -o StrictHostKeyChecking=no root@node01 mkdir -p /root/k8s-yaml-files/
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh --version v3.1.2

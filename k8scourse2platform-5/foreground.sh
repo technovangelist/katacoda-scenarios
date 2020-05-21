@@ -4,7 +4,7 @@ done
 
 
 
-ssh -q -o StrictHostKeyChecking=no root@node01 mkdir -p /root/k8s-yaml-files/kube_apiserver_metrics  > /dev/null
+kube_apiserver_metrics  > /dev/null
 syncyaml.sh &
 
 clear
