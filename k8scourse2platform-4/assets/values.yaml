@@ -540,6 +540,10 @@ clusterAgent:
   ## Specify additional volumes to mount in the cluster-agent container
   #
   volumes:
+    - hostPath:
+        path: /root/k8s-yaml-files/etcd.yaml
+        type: ""
+      name: etcdyaml
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
@@ -548,6 +552,8 @@ clusterAgent:
   ## Specify additional volumes to mount in the cluster-agent container
   #
   volumeMounts:
+    - name: etcdyaml
+      mountPath: /conf.d/etcd.yaml
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true

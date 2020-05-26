@@ -38,6 +38,10 @@
         {
           "file": "db.yaml",
           "target": "/root/k8s-yaml-files"
+        }, 
+        {
+          "file": "etcd.yaml", 
+          "target": "/root/k8s-yaml-files"
         }
       ]
     }
