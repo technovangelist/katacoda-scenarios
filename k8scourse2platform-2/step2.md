@@ -10,5 +10,5 @@
             memory: 32Mi
 
 1. Run the Helm upgrade command again: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}
-1. Open the Datadog Events stream and within a couple minutes you should see the agent trying to start several times. After a while you will also see the agent has restarted a few times when you run `k get pods`{{execute}}. Return to lines 194 to 200 and restore the original settings: **cpu: 200m** and **memory: 256MiB**.
+1. Open the Datadog Events stream and within a couple minutes you should see the agent trying to start several times. After a while you will also see the agent has restarted a few times when you run `k get pods`{{execute}}. If you aren't seeing any restarts, try running the `agent status` command as you did before. Return to lines 194 to 200 and restore the original settings: **cpu: 200m** and **memory: 256MiB**.
 1. Run the helm upgrade command: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}. You should see that the agent stays up and running now without any restarts.
