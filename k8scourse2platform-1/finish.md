@@ -1,1 +1,1 @@
-this is the finish
+Now that you remember how to install the agent with the manifests, watch the video where I explain what you did in a bit more detail. 
