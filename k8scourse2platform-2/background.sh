@@ -35,6 +35,6 @@ kubectl apply -f k8s-yaml-files/frontend.yaml
 #   apt install datamash
 # fi
 
-echo 'complete -F __start_kubectl k' >>~/.bashrc
+
 
 echo "complete">>/root/status.txt
