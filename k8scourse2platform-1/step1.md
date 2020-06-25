@@ -23,4 +23,4 @@ You should see a list of how many agents are installed and running.
 1. Now apply the file again:
 `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
 1. Get the daemonset again and you should see two agents are running.
-1. Open the datadog-agent.yaml file. Notice that many of the configuration options for the agent are defined with environment variables. 
+1. Open the datadog-agent.yaml file in the editor again. Notice that many of the configuration options for the agent are defined with environment variables. 

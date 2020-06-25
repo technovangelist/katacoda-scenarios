@@ -1,5 +1,5 @@
 {
-  "title": "the k8s platform",
+  "title": "Installing the Datadog Agent using the Manifests",
   "time": "25 minutes",
   "details": {
     "intro": {
@@ -12,6 +12,9 @@
         "text": "step1.md"
       }
     ],
+    "finish": {
+      "text": "finish.md"
+    }, 
     "assets": {
       "host01": [
         {
