@@ -2,7 +2,7 @@ In this section you are going to start to work with the Cluster Agent. Remember 
 
 1. Let's start by installing the Cluster Agent. As with the previous section, we are using the helm chart, so open the `values.yaml` file in the IDE tab to the right.  
 1. Scroll down to line 110 and set **enabled:** to true. 
-1. In the video you learned that the cluster agent communicates with the node agents. In order to secure that communication, a token needs to be shared between both configurations. If you want to provide that token, you can do so at line 117, otherwise it is generated and secured automatically. 
+1. In the video you learned that the cluster agent communicates with the node agents. In order to secure that communication, a token needs to be shared between both configurations. If you want to provide that token, you can do so at line 117, otherwise it is generated and secured automatically. ***Note regarding line numbers:*** *The Helm chart is being updated on a regular basis. The file included in this lab was current during the development of this course but has probably been updated by the time you are taking it. What appears on line 117 in this file is almost certainly not what will appear on line 117 when you download the latest. But the field names are generally the same.*
 1. Run helm install to get started. `helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog`{{execute}}
 1. Let's look at the pods that are now running. Run `k get pods`{{execute}}.
 1. Try running the different status commands for the agent. First `k exec <pod name for your cluster agent pod> agent status`. This gets you the normal agent status.
