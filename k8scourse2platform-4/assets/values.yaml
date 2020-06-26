@@ -96,7 +96,7 @@ datadog:
   ## Autodiscovery via Kube Service annotations is automatically enabled
   #
   clusterChecks:
-    enabled: true
+    enabled: false
 
   ## @param nodeLabelsAsTags - list of key:value strings - optional
   ## Provide a mapping of Kubernetes Node Labels to Datadog Tags.
@@ -210,7 +210,7 @@ datadog:
     ## Enables this to activate Datadog Agent log collection.
     ## ref: https://docs.datadoghq.com/agent/basic_agent_usage/kubernetes/#log-collection-setup
     #
-    enabled: true
+    enabled: false
 
     ## @param containerCollectAll - boolean - optional - default: false
     ## Enable this to allow log collection for all containers.
@@ -233,7 +233,7 @@ datadog:
     ## Enable this to enable APM and tracing, on port 8126
     ## ref: https://github.com/DataDog/docker-dd-agent#tracing-from-the-host
     #
-    enabled: true
+    enabled: false
 
     ## @param port - integer - optional - default: 8126
     ## Override the trace Agent port.
@@ -314,7 +314,7 @@ datadog:
     ## Note: /etc/passwd is automatically mounted to allow username resolution.
     ## ref: https://docs.datadoghq.com/graphing/infrastructure/process/#kubernetes-daemonset
     #
-    enabled: true
+    enabled: false
 
     ## @param processCollection - boolean - required
     ## Set this to true to enable process collection in process monitoring agent
@@ -431,7 +431,7 @@ clusterAgent:
   ## Enable the metricsProvider to be able to scale based on metrics in Datadog
   #
   metricsProvider:
-    enabled: true
+    enabled: false
 
     ## @param wpaController - boolean - optional
     ## Enable informer and controller of the watermark pod autoscaler
@@ -769,6 +769,8 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
+    - emptyDir: {}
+      name: etcd-auto-conf
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
@@ -777,6 +779,9 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumeMounts:
+    - name: etcd-auto-conf
+      mountPath: /etc/datadog-agent/conf.d/etcd.d/
+      readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -810,9 +815,8 @@ agents:
   ## Allow the DaemonSet to schedule on selected nodes
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   #
-  nodeSelector:
-    node-role.kubernetes.io/master: "" # {}
-
+  # nodeSelector:
+  #   dedicated: master
   ## @param affinity - object - optional
   ## Allow the DaemonSet to schedule using affinity rules
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
@@ -972,7 +976,7 @@ clusterChecksRunner:
   ## Allow the ClusterChecks Deployment to schedule on selected nodes
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   #
-  nodeSelector: # {}
+  # nodeSelector: {}
 
   ## @param tolerations - array - required
   ## Tolerations for pod assignment
