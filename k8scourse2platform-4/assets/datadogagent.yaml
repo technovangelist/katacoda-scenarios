@@ -53,6 +53,8 @@ spec:
               value: "true"
             - name: DD_HEALTH_PORT
               value: "5555"
+            - name: DD_KUBELET_TLS_VERIFY
+              value: "false"
           volumeMounts:
             - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
               name: etcd-ca

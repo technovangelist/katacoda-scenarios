@@ -960,7 +960,7 @@ agents:
   #     - name: docker
   #       polling: true
   #
-  #   # Enable APM by setting the DD_APM_ENABLED envvar to true, or override this configuration
+  #   # Enable APM by setting the DD_APM_ENABLED env;var to true, or override this configuration
   #   apm_config:
   #     enabled: false
   #     apm_non_local_traffic: true
