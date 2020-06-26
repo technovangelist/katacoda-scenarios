@@ -1,5 +1,0 @@
-init_config:
-
-instances:
-  - prometheus_url: "https://localhost:2379/metrics"
-
