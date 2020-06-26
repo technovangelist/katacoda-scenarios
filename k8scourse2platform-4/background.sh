@@ -31,6 +31,11 @@ echo "Kubernetes ready.">>/root/status.txt
 
 # kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
 
+kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"
+
+kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"
+
+kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
 
 
 
@@ -49,6 +54,6 @@ kubectl apply -f k8s-yaml-files/frontend.yaml
   "$KREW" install --manifest=krew.yaml --archive=krew.tar.gz &&
   "$KREW" update
 )
-
+kubectl krew install match-name
 
 echo "complete">>/root/status.txt
