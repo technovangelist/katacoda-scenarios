@@ -56,14 +56,13 @@ spec:
             - name: DD_KUBELET_TLS_VERIFY
               value: "false"
           volumeMounts:
-            - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
-              name: etcd-ca
+            - name: etcd-auto-conf
+              mountPath: /etc/datadog-agent/conf.d/etcd.d/
               readOnly: true
-            - mountPath: /etc/datadog-agent/certs/etcd-client.crt
-              name: etcd-crt
-              readOnly: true
-            - mountPath: /etc/datadog-agent/certs/etcd-client.key
-              name: etcd-private-key
+            - name: etcdyaml
+              mountPath: /conf.d/etcd.yaml
+            - mountPath: /keys
+              name: etcdkeys
               readOnly: true
             - name: config
               mountPath: /etc/datadog-agent
@@ -112,15 +111,7 @@ spec:
             - name: runtimesocketdir
               mountPath: /host/var/run
               readOnly: true
-            - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
-              name: etcd-ca
-              readOnly: true
-            - mountPath: /etc/datadog-agent/certs/etcd-client.crt
-              name: etcd-crt
-              readOnly: true
-            - mountPath: /etc/datadog-agent/certs/etcd-client.key
-              name: etcd-private-key
-              readOnly: true
+
           env:
             - name: DD_API_KEY
               valueFrom:
@@ -138,17 +129,8 @@ spec:
           resources: {}
       volumes:
         - hostPath:
-            path: /etc/kubernetes/pki/etcd/ca.crt
-            type: File
-          name: etcd-ca
-        - hostPath:
-            path: /etc/kubernetes/pki/etcd/peer.crt
-            type: File
-          name: etcd-crt
-        - hostPath:
-            path: /etc/kubernetes/pki/etcd/peer.key
-            type: File
-          name: etcd-private-key
+            path: /etc/kubernetes/pki/etcd
+          name: etcdkeys
 
         - name: config
           emptyDir: {}

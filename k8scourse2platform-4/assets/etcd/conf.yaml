@@ -1,9 +1,9 @@
 init_config:
 
 instances:
-  - prometheus_url: https://%%host%%:2379/metrics
+  - prometheus_url: https://localhost:2379/metrics
     use_preview: true
     ssl_verify: true
-    ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
-    ssl_cert: /etc/datadog-agent/certs/etcd-client.crt
-    ssl_private_key: /etc/datadog-agent/certs/etcd-client.key
+    ssl_ca_cert: /keys/ca.crt
+    ssl_cert: /keys/server.crt
+    ssl_private_key: /keys/server.key
