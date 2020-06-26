@@ -1,1 +1,1 @@
-In this Hands On section you will start working with the API Server
+As you now know, etcd is the primary datastore for your Kubernetes cluster. You need to make sure your etcd environment is always healthy, otherwise nothing will work. You will see how to start monitoring etcd as well as what to look for. In this lab, etcd is running on the master node, but you could have 5 or 7 nodes dedicated to etcd alone. 

@@ -1,5 +1,5 @@
 {
-  "title": "Monitoring the API Server",
+  "title": "Monitoring the Control Plane: etcd",
   "time": "25 minutes",
   "details": {
     "intro": {
@@ -12,6 +12,9 @@
         "text": "step1.md"
       }
     ],
+    "finish": {
+      "text": "finish.md"
+    }, 
     "assets": {
       "host01": [
         {
