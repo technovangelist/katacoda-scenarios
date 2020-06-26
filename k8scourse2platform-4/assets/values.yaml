@@ -837,7 +837,7 @@ agents:
       name: etcd-crt
     - hostPath:
         path: /etc/kubernetes/pki/etcd/peer.key
-        type: File
+        type: File\ 
       name: etcd-private-key
     # - emptyDir: {}
     #   name: etcd-auto-conf

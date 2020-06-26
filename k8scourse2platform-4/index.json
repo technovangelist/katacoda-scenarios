@@ -43,8 +43,8 @@
           "target": "/root/k8s-yaml-files"
         }, 
         {
-          "file": "etcd.yaml", 
-          "target": "/root/k8s-yaml-files"
+          "file": "etcd/conf.yaml", 
+          "target": "/root/k8s-yaml-files/etcd"
         }
       ]
     }
