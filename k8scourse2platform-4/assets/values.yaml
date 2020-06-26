@@ -373,7 +373,7 @@ clusterAgent:
   ## @param enabled - boolean - required
   ## Set this to true to enable Datadog Cluster Agent
   #
-  enabled: true
+  enabled: false
 
   ## @param image - object - required
   ## Define the Datadog Cluster-Agent image to work with.
@@ -803,12 +803,15 @@ agents:
   tolerations:
     - key: node-role.kubernetes.io/master
       effect: NoSchedule
+    - key: CriticalAddonsOnly
+      operator: Exists
 
   ## @param nodeSelector - object - optional
   ## Allow the DaemonSet to schedule on selected nodes
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   #
-  nodeSelector: # {}
+  nodeSelector:
+    node-role.kubernetes.io/master: "" # {}
 
   ## @param affinity - object - optional
   ## Allow the DaemonSet to schedule using affinity rules
