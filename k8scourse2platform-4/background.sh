@@ -32,7 +32,7 @@ echo "Kubernetes ready.">>/root/status.txt
 # kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
 
 
-kubectl create secret generic datadog-secret --from-literal=api-key=$DD_API_KEY --namespace=
+
 
 kubectl apply -f k8s-yaml-files/db.yaml
 kubectl apply -f k8s-yaml-files/advertisements.yaml
