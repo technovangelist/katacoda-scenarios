@@ -1,7 +1,7 @@
 init_config:
 
 instances:
-  - prometheus_url: "https://localhost:2379/metrics"
+  - prometheus_url: https://kubernetes.default.svc:2379/metrics
     use_preview: true
     ssl_verify: true
     ssl_ca_cert: /etc/datadog-agent/certs/etcd-ca.crt
