@@ -23,10 +23,6 @@
           "chmod": "+x"
         },
         {
-          "file": "values.yaml",
-          "target": "/root/k8s-yaml-files"
-        },
-        {
           "file": "advertisements.yaml",
           "target": "/root/k8s-yaml-files"
         },
@@ -47,8 +43,8 @@
           "target": "/root/k8s-yaml-files"
         },
         {
-          "file": "etcd/conf.yaml",
-          "target": "/root/k8s-yaml-files/etcd"
+          "file": "adpod.yaml",
+          "target": "/root/k8s-yaml-files"
         }
       ]
     }

@@ -13,20 +13,7 @@ spec:
       labels:
         app: datadog-agent
       name: datadog-agent
-      annotations:
-        ad.datadoghq.com/etcd.check_names: "[etcd]"
-        ad.datadoghq.com/etcd.init_configs: "[{}]"
-        ad.datadoghq.com/etcd.instances: |
-          [
-            {
-              "prometheus_url": "https://%%host%%:2379/metrics", 
-              "use_preview": "true",
-              "ssl_verify": "true", 
-              "ssl_ca_cert": "/etc/datadog-agent/certs/etcd-ca.crt", 
-              "ssl_cert": "/etc/datadog-agent/certs/etcd-client.crt ", 
-              "ssl_private_key": "/etc/datadog-agent/certs/etcd-client.key"
-            }
-          ]
+      annotations: {}
     spec:
       containers:
         - name: agent
@@ -67,11 +54,6 @@ spec:
             - name: DD_HEALTH_PORT
               value: "5555"
           volumeMounts:
-            - name: etcd-auto-conf
-              mountPath: /etc/datadog-agent/conf.d/etcd.d/
-              readOnly: true
-            - name: etcdyaml
-              mountPath: /conf.d/etcd.yaml
             - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
               name: etcd-ca
               readOnly: true
@@ -128,11 +110,6 @@ spec:
             - name: runtimesocketdir
               mountPath: /host/var/run
               readOnly: true
-            - name: etcd-auto-conf
-              mountPath: /etc/datadog-agent/conf.d/etcd.d/
-              readOnly: true
-            - name: etcdyaml
-              mountPath: /conf.d/etcd.yaml
             - mountPath: /etc/datadog-agent/certs/etcd-ca.crt
               name: etcd-ca
               readOnly: true
@@ -159,10 +136,6 @@ spec:
           resources: {}
       volumes:
         - hostPath:
-            path: /root/k8s-yaml-files/etcd/conf.yaml
-            type: ""
-          name: etcdyaml
-        - hostPath:
             path: /etc/kubernetes/pki/etcd/ca.crt
             type: File
           name: etcd-ca
@@ -174,8 +147,7 @@ spec:
             path: /etc/kubernetes/pki/etcd/peer.key
             type: File
           name: etcd-private-key
-        - emptyDir: {}
-          name: etcd-auto-conf
+
         - name: config
           emptyDir: {}
         - hostPath:

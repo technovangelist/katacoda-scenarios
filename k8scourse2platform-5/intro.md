@@ -1,2 +1,3 @@
-In this Hands On section you will start working with etcd. From the video, you know that etcd is the main datastore for configuration data about the cluster. So it's critical that it stays in good working order. In this training environment we only have a single node etcd cluster, but it will be enough to cover most concepts.
+It's time to move on to the second component of the Kubernetes control plane: the API Server. While etcd is the datastore for Kubernetes, the API Server is your interface to the entire platform, including etcd. In this lab we will start to look at what's needed to monitor the API Server as well as the key metrics to pay attention to.
+
 
