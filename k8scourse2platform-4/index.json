@@ -14,7 +14,7 @@
     ],
     "finish": {
       "text": "finish.md"
-    }, 
+    },
     "assets": {
       "host01": [
         {
@@ -41,9 +41,13 @@
         {
           "file": "db.yaml",
           "target": "/root/k8s-yaml-files"
-        }, 
+        },
         {
-          "file": "etcd/conf.yaml", 
+          "file": "datadogagent.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "etcd/conf.yaml",
           "target": "/root/k8s-yaml-files/etcd"
         }
       ]
