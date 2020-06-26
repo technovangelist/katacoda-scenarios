@@ -49,6 +49,6 @@ kubectl apply -f k8s-yaml-files/frontend.yaml
   "$KREW" install --manifest=krew.yaml --archive=krew.tar.gz &&
   "$KREW" update
 )
-kubectl krew install match-name
+
 
 echo "complete">>/root/status.txt
