@@ -1,1 +1,3 @@
-Now that we are gathering etcd metrics, let's take a look at which metrics we need to look at. Of course, the metrics that are most important to you man 
+Now that we are gathering etcd metrics, let's take a look at which metrics we need to look at. Of course, the metrics that are most important to you depend on your business objectives, but the metrics we look at in this lab are a good start.
+
+1. Log in to your Datadog Learning Center organization. Navigate to the Integrations page at https://app.datadoghq.com/account/settings#integrations and enable the **etcd** integration. 

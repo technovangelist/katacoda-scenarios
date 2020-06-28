@@ -827,10 +827,6 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumeMounts:
-    # - mountPath: /keys
-    #   name: etcd-keys
-    #   readOnly: true
-
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
