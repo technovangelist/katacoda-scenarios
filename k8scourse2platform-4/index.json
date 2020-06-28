@@ -39,12 +39,8 @@
           "target": "/root/k8s-yaml-files"
         },
         {
-          "file": "datadogagent.yaml",
+          "file": "values.yaml",
           "target": "/root/k8s-yaml-files"
-        },
-        {
-          "file": "etcd/conf.yaml",
-          "target": "/root/k8s-yaml-files/etcd.d"
         }
       ]
     }

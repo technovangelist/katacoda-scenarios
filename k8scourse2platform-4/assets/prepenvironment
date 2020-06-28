@@ -23,9 +23,9 @@ show_progress()
 }
 TRAININGENVIRONMENT=$(echo $TRAININGENVIRONMENT | tr - " ")
 echo "Now preparing training environment for $TRAININGENVIRONMENT."
-while [ ! -f "status.txt" ]; do
-  sleep 0.3
-done
+# while [ ! -f "/root/status.txt" ]; do
+#   sleep 0.3
+# done
 show_progress
 # helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog
 if [ ! -f "/root/provisioned" ]; then
