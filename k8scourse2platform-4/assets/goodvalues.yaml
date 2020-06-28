@@ -88,7 +88,7 @@ datadog:
   ## If true, deploys the kube-state-metrics deployment.
   ## ref: https://github.com/kubernetes/charts/tree/master/stable/kube-state-metrics
   #
-  kubeStateMetricsEnabled: false
+  kubeStateMetricsEnabled: true
 
   ## @param clusterChecks - object - required
   ## Enable the Cluster Checks feature on both the cluster-agents and the daemonset
@@ -863,6 +863,16 @@ agents:
   ## specify dns configuration options for datadog cluster agent containers e.g ndots
   ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
   dnsConfig:
+    nameservers:
+      - 10.96.0.10
+      - 1.1.1.1
+    searches:
+      - default.svc.cluster.local
+      - svc.cluster.local
+      - cluster.local
+    options:
+      - name: ndots
+        value: "5"
   #  options:
   #  - name: ndots
   #    value: "1"
