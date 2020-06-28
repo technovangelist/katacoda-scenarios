@@ -1,7 +1,9 @@
 #!/bin/bash
 touch status.txt
 echo "">/root/status.txt
-sudo snap install helm --classic
+curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+
 # curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 # chmod 700 get_helm.sh
 # ./get_helm.sh
@@ -37,11 +39,11 @@ echo "Kubernetes ready.">>/root/status.txt
   # rm -rf kube-state-metrics
   # rm -rf metrics-server
 
-kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"
+# kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrole.yaml"
 
-kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"
+# kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/serviceaccount.yaml"
 
-kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
+# kubectl apply -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"
 
 
 
