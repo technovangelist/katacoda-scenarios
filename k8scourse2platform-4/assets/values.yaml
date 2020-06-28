@@ -271,17 +271,7 @@ datadog:
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
-  confd:
-    etcd.yaml: |-
-      ad_identifiers:
-        - etcd
-      instances:
-        - prometheus_url: https://%%host%%:2379/metrics
-  #         ssl_verify: false
-  #         use_preview: true
-  #         ssl_ca_cert: /keys/ca.crt
-  #         ssl_cert: /keys/peer.crt
-  #         ssl_private_key: /keys/peer.key
+  #confd:
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -829,11 +819,6 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
-    # - hostPath:
-    #     path: /etc/kubernetes/pki/etcd
-    #   name: etcd-keys
-    - emptyDir: {}
-      name: etcd-auto-conf
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
@@ -842,9 +827,6 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumeMounts:
-    - name: etcd-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/etcd.d/
-      readOnly: true
     # - mountPath: /keys
     #   name: etcd-keys
     #   readOnly: true
