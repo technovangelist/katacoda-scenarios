@@ -277,11 +277,11 @@ datadog:
         - etcd
       instances:
         - prometheus_url: https://%%host%%:2379/metrics
-  #         ssl_verify: false
-  #         use_preview: true
-  #         ssl_ca_cert: /keys/ca.crt
-  #         ssl_cert: /keys/peer.crt
-  #         ssl_private_key: /keys/peer.key
+          ssl_verify: false
+          use_preview: true
+          ssl_ca_cert: /keys/ca.crt
+          ssl_cert: /keys/peer.crt
+          ssl_private_key: /keys/peer.key
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -297,7 +297,7 @@ datadog:
   ## @param checksd - list of key:value strings - optional
   ## Provide additional custom checks as python code
   ## Each key becomes a file in /checks.d
-  ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes;;
+  ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   #
   checksd:
   #   service.py: |-
@@ -477,18 +477,14 @@ clusterAgent:
   ## Each key will become a file in /conf.d
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   #
-  # confd:
-  # etcd.yaml: |-
-  #   cluster_check: true
-  #   ad_identifiers:
-  #     - etcd
-  #   instances:
-  #     - prometheus_url: https://%%host%%:2379/metrics
-  #       ssl_verify: false
-  #       use_preview: true
-  #       ssl_ca_cert: /keys/ca.crt
-  #       ssl_cert: /keys/peer.crt
-  #       ssl_private_key: /keys/peer.key
+  confd: {}
+  #   mysql.yaml: |-
+  #     cluster_check: true
+  #     instances:
+  #       - server: '<EXTERNAL_IP>'
+  #         port: 3306
+  #         user: datadog
+  #         pass: '<YOUR_CHOSEN_PASSWORD>'
 
   ## @param resources - object -required
   ## Datadog cluster-agent resource requests and limits.
@@ -587,7 +583,7 @@ clusterAgent:
   #  - name: ndots
   #    value: "1"
 
-  ## @param volumes; - list of objects - optional
+  ## @param volumes - list of objects - optional
   ## Specify additional volumes to mount in the cluster-agent container
   #
   volumes:
@@ -829,9 +825,9 @@ agents:
   ## Specify additional volumes to mount in the dd-agent container
   #
   volumes:
-    # - hostPath:
-    #     path: /etc/kubernetes/pki/etcd
-    #   name: etcd-keys
+    - hostPath:
+        path: /etc/kubernetes/pki/etcd
+      name: etcd-keys
     - emptyDir: {}
       name: etcd-auto-conf
   #   - hostPath:
@@ -845,9 +841,9 @@ agents:
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
-    # - mountPath: /keys
-    #   name: etcd-keys
-    #   readOnly: true
+    - mountPath: /keys
+      name: etcd-keys
+      readOnly: true
 
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
@@ -934,13 +930,13 @@ agents:
   ## ref: https://github.com/DataDog/datadog-agent/blob/master/pkg/config/config_template.yaml
   ## Note the `agent.useConfigMap` needs to be set to `true` for this parameter to be taken into account.
   #
-  # customAgentConfig:
+  customAgentConfig:
   #   # Autodiscovery for Kubernetes
-  # listeners:
-  #   - name: kubelet
-  # config_providers:
-  #   - name: kubelet
-  #     polling: true
+  #   listeners:
+  #     - name: kubelet
+  #   config_providers:
+  #     - name: kubelet
+  #       polling: true
   #     # needed to support legacy docker label config templates
   #     - name: docker
   #       polling: true

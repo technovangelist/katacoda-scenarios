@@ -56,11 +56,11 @@ spec:
             - name: DD_KUBELET_TLS_VERIFY
               value: "false"
           volumeMounts:
-            - name: etcd-auto-conf
-              mountPath: /etc/datadog-agent/conf.d/etcd.d/
-              readOnly: true
-            - name: etcdyaml
-              mountPath: /conf.d/etcd.yaml
+            # - name: etcd-auto-conf
+            #   mountPath: /etc/datadog-agent/conf.d/etcd.d/
+            #   readOnly: true
+            # - name: etcdyaml
+            #   mountPath: /conf.d/etcd.yaml
             - mountPath: /keys
               name: etcdkeys
               readOnly: true
