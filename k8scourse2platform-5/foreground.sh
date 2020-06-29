@@ -6,7 +6,7 @@ while ! grep -q "helm installed" /root/status.txt; do
   sleep 0.3
   echo "helm not installed"
 done
-helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f values.yaml stable/datadog
+helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f /root/k8s-yaml-files/values.yaml stable/datadog
 
 while ! grep -q "krew installed" /root/status.txt; do 
   echo "krew not installed"
