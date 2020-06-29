@@ -7,12 +7,11 @@ fi
 show_progress()
 {
   sleep 0.5
-  local -r pid="${1}"
   local -r delay='1'
 
   while ! grep "complete" /root/status.txt; do 
     echo "not complete"
-    sleep 0.3
+    sleep "${delay}"
   done
   # while true; do 
   #   grep -i "complete" status.txt &> /dev/null
