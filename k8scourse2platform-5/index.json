@@ -59,7 +59,7 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "datadog",
+        "name": "Datadog",
         "href": "https://app.datadoghq.com"
       }
     ]
