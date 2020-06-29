@@ -38,14 +38,6 @@
         {
           "file": "db.yaml",
           "target": "/root/k8s-yaml-files"
-        },
-        {
-          "file": "datadog-agent.yaml",
-          "target": "/root/k8s-yaml-files"
-        },
-        {
-          "file": "apiserver/conf.yaml",
-          "target": "/root/k8s-yaml-files/kube_apiserver_metrics.d"
         }
       ]
     }
