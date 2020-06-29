@@ -10,16 +10,19 @@ show_progress()
   local -r pid="${1}"
   local -r delay='1'
 
-  while true; do 
-    grep -i "complete" status.txt &> /dev/null
-    if [[ "$?" -ne 0 ]]; then   
- 
-        sleep "${delay}" 
-    else
-      break
-    fi
-    
+  while ! grep "complete" /root/status.txt; do 
+    echo "not complete"
+    sleep 0.3
   done
+  # while true; do 
+  #   grep -i "complete" status.txt &> /dev/null
+  #   if [[ "$?" -ne 0 ]]; then   
+ 
+  #       sleep "${delay}" 
+  #   else
+  #     break
+  #   fi
+  # done
 }
 TRAININGENVIRONMENT=$(echo $TRAININGENVIRONMENT | tr - " ")
 echo "Now preparing training environment for $TRAININGENVIRONMENT."
