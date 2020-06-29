@@ -28,7 +28,7 @@ echo "Now preparing training environment for $TRAININGENVIRONMENT."
 while [ ! -f "status.txt" ]; do
   sleep 0.3
 done
-show_progress
+# show_progress
   while ! grep "complete" /root/status.txt; do 
     echo "not complete"
     sleep "${delay}"
