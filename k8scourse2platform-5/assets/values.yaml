@@ -216,7 +216,7 @@ datadog:
     ## Enable this to allow log collection for all containers.
     ## ref: https://docs.datadoghq.com/agent/basic_agent_usage/kubernetes/#log-collection-setup
     #
-    containerCollectAll: # false
+    containerCollectAll: true
 
     ## @param containerUseFiles - boolean - optional - default: true
     ## Collect logs from files in /var/log/pods instead of using container runtime API.

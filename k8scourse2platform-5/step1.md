@@ -25,22 +25,8 @@ Ideally, all components of the control plane are autodiscovered. That didn't wor
 
     Add the three metrics that are called out above into three separate Timeseries widgets. Try out the different ways to visualize the data, such as looking at the count, grouping by verb or user, adding forecasts and so forth.
 
+1. Remember the API Server is a webserver. So also consider looking `docker.container.open_fds`, the various `docker.mem` metrics, and the `kubernetes.cpu` metrics, all filtered down to the tag `short_image:kube-apiserver`.
+
+There are a number of other metrics that come from the API Server you can choose to add to your dashboard. Be sure to take a look at the metrics that deal with Go Threads and Goroutines, certificates, and etcd objects.
 
 
-api server
-
-- video is about this:
-- Understanding the metrics to watch
-- Request rates and latency
-- Controller worker queues
-- Etcd objects
-- System metrics
-- cpu, mem, file descriptors, 
-- Reviewing audit logs (did the blog post ever happen)
-
-api server is a specialized webserver, watch request rates and latencies, more general proces stats, file descriptors, memory, cpu
-
-look at the etcd and controller metrics that are part of api server
-
-show how to log to datadog, then loook at controle plane components, authentication issues, client cert, slow requests
-a
