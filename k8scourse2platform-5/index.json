@@ -29,6 +29,11 @@
           "chmod": "+x"
         },
         {
+          "file": "statuscheck",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
           "file": "values.yaml",
           "target": "/root/k8s-yaml-files"
         },
