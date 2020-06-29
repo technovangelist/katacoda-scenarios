@@ -4,31 +4,35 @@ if [ ! $TRAININGENVIRONMENT ]; then
     exit
     exit 1;
 fi
-show_progress()
-{
-  sleep 0.5
-  local -r delay='1'
+# show_progress()
+# {
+#   sleep 0.5
+#   local -r delay='1'
 
-  while ! grep "complete" /root/status.txt; do 
-    echo "not complete"
-    sleep "${delay}"
-  done
-  # while true; do 
-  #   grep -i "complete" status.txt &> /dev/null
-  #   if [[ "$?" -ne 0 ]]; then   
+#   while ! grep "complete" /root/status.txt; do 
+#     echo "not complete"
+#     sleep "${delay}"
+#   done
+#   # while true; do 
+#   #   grep -i "complete" status.txt &> /dev/null
+#   #   if [[ "$?" -ne 0 ]]; then   
  
-  #       sleep "${delay}" 
-  #   else
-  #     break
-  #   fi
-  # done
-}
+#   #       sleep "${delay}" 
+#   #   else
+#   #     break
+#   #   fi
+#   # done
+# }
 TRAININGENVIRONMENT=$(echo $TRAININGENVIRONMENT | tr - " ")
 echo "Now preparing training environment for $TRAININGENVIRONMENT."
 while [ ! -f "status.txt" ]; do
   sleep 0.3
 done
 show_progress
+  while ! grep "complete" /root/status.txt; do 
+    echo "not complete"
+    sleep "${delay}"
+  done
 # helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog
 if [ ! -f "/root/provisioned" ]; then
   touch /root/provisioned
