@@ -9,5 +9,5 @@ sed -i 's|--DATADOG_API_KEY--|datadog/agent:6.11.1|' docker-compose.yml
 
 alias k=kubectl
 
-clear
+# clear
 prepenvironment
