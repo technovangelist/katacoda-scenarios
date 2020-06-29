@@ -30,7 +30,7 @@ while [ ! -f "status.txt" ]; do
 done
 # show_progress
   while ! grep "complete" /root/status.txt; do 
-    echo "not complete"
+    echo "Waiting for everything to complete"
     sleep "${delay}"
   done
 # helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f k8s-yaml-files/values.yaml stable/datadog

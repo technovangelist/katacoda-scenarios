@@ -3,14 +3,14 @@ while [ ! `ls -l /root/k8s-yaml-files/*.yaml 2>/dev/null | wc -l ` -eq 5 ]; do
 done
 clear
 while ! grep -q "helm installed" /root/status.txt; do
-  sleep 0.3
-  echo "helm not installed"
+  sleep 1
+  echo "Waiting for Helm"
 done
 helm install datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f /root/k8s-yaml-files/values.yaml stable/datadog
 
 while ! grep -q "krew installed" /root/status.txt; do 
-  echo "krew not installed"
-  sleep 0.3
+  echo "Waiting for kubectl plugins"
+  sleep 1
 done
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
