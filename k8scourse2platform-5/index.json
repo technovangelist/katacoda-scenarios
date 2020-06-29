@@ -1,5 +1,5 @@
 {
-  "title": "Monitoring etcd",
+  "title": "Monitoring the Control Plane: The API Server",
   "time": "25 minutes",
   "details": {
     "intro": {
@@ -9,7 +9,16 @@
     },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "step1.md",
+        "title": "Monitoring the API Server"
+      },
+      {
+        "text": "step2.md",
+        "title": "Working with the API Server to get etcd and controller metrics"
+      },
+      {
+        "text": "step3.md",
+        "title": "Leveraging the API Server Audit Logs"
       }
     ],
     "assets": {
