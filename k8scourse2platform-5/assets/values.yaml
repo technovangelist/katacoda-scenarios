@@ -190,7 +190,7 @@ datadog:
   ## Enables this to start event collection from the kubernetes API
   ## ref: https://docs.datadoghq.com/agent/kubernetes/event_collection/
   #
-  collectEvents: # false
+  collectEvents: true
 
   ## @param leaderElection - boolean - optional - default: false
   ## Enables leader election mechanism for event collection.
