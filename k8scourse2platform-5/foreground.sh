@@ -21,5 +21,5 @@ kubectl create secret generic datadog-secret --from-literal=api-key=$DD_API_KEY
 
 cd k8s-yaml-files
 
-clear
+# clear
 prepenvironment
