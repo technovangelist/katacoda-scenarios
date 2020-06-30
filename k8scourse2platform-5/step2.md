@@ -30,7 +30,7 @@ In this lab we will configure the Datadog Agent to start collecting those audit 
                 service: kube-apiserver-audit
                 source: kubernetes.audit
 
-1.  In `volumes` add blocks for `klogpath` and `agent-audit-logs`:
+1.  In `volumes` add the block for `klogpath` (around line 830):
 
         volumes:
           - hostPath:
@@ -41,10 +41,6 @@ In this lab we will configure the Datadog Agent to start collecting those audit 
           - hostPath:
               path: /var/log/kubernetes
             name: klogpath
-          - configMap:
-              defaultMode: 420
-              name: agent-audit-logs
-            name: agent-audit-logs
 
 1.  Add the corresponding blocks in `volumeMounts`:
 
@@ -58,21 +54,12 @@ In this lab we will configure the Datadog Agent to start collecting those audit 
           - name: klogpath
             mountPath: /var/log/kubernetes
             readOnly: true
-          - mountPath: /conf.d/kube_audit.yaml
-            name: agent-audit-logs
-            subPath: kube_audit.yaml
-            readOnly: true
+
 
 1.  Apply the changes to our Helm chart `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f values.yaml stable/datadog`{{execute}}.
 1.  Check that the logs are being collected by running the status command and looking at the list of logs being collected: `k exec $(k match-name datadogagent-[a-z0-9]{5}) agent configcheck`{{execute}} 
+1.  Navigate to the Logs page that you opened at the beginning of this lab. You should soon see a large number of logs coming from the service: **kube-apiserver-audit**. 
 
+Soon after the Audit logs start coming in, the Logs integration for Kubernetes Audit Logs automatically install the audit pipeline.
 
-api server
-
-- video is about this:
-- Etcd objects 
-- Reviewing audit logs (did the blog post ever happen)
-
-
-show how to log to datadog, then loook at controle plane components, authentication issues, client cert, slow requests
-a
+Start looking around the logs to see what kind of information is being collected. You can open the Logs configuration to see how the Kubernetes audit pipeline works. Then take a look at the facets and measures that have been created. If you haven't worked with Logs in Datadog, take a look at the Introduction to Logs course here on the Datadog Learning Center. 
