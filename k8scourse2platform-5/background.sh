@@ -22,6 +22,7 @@ while [ ! `ls -l /root/k8s-yaml-files/auditpolicy.yaml 2>/dev/null | wc -l ` -eq
   sleep 0.3
 done
 sleep 0.3
+mkdir -p /etc/kubernetes/audit-policies
 cp /root/k8s-yaml-files/auditpolicy.yaml /etc/kubernetes/audit-policies/policy.yaml
 
 grep "audit-policy-file" /etc/kubernetes/manifests/kube-apiserver.yaml || \
