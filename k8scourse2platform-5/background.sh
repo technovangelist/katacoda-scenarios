@@ -43,6 +43,10 @@ grep "path: /var/log/kubernetes" /etc/kubernetes/manifests/kube-apiserver.yaml |
 grep "mountPath: /var/log/kubernetes" /etc/kubernetes/manifests/kube-apiserver.yaml || \
 	sed -i '/volumeMounts:/a \ \ \ \ - {mountPath: /var/log/kubernetes, name: k8s-logs}' /etc/kubernetes/manifests/kube-apiserver.yaml
 
+until curl -ksf https://localhost:6443/healthz ;
+do 
+    sleep 1
+done
 
 echo "kubernetes nodes up and running">>/root/status.txt
 

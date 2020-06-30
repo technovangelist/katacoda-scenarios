@@ -1,4 +1,4 @@
-while [ ! `ls -l /root/k8s-yaml-files/*.yaml 2>/dev/null | wc -l ` -eq 7 ]; do
+while [ ! `ls -l /root/k8s-yaml-files/*.yaml 2>/dev/null | wc -l ` -eq 8 ]; do
   sleep 0.3
 done
 clear
