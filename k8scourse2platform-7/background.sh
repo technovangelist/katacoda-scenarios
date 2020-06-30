@@ -20,7 +20,14 @@ kubectl delete clusterrolebinding permissive-binding
 while [ ! `ls -l /root/k8s-yaml-files/auditpolicy.yaml 2>/dev/null | wc -l ` -eq 1 ]; do
   sleep 0.3
 done
+
+
 cp /root/k8s-yaml-files/auditpolicy.yaml /etc/kubernetes/audit-policies/policy.yaml
+
+until curl -ksf https://localhost:6443/healthz ;
+do 
+    sleep 2
+done
 
 grep "audit-policy-file" /etc/kubernetes/manifests/kube-apiserver.yaml || \
 	sed -i '/tls-private-key-file/a \ \ \ \ - --audit-policy-file=/etc/kubernetes/audit-policies/policy.yaml' /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -35,6 +42,10 @@ grep "path: /var/log/kubernetes" /etc/kubernetes/manifests/kube-apiserver.yaml |
 grep "mountPath: /var/log/kubernetes" /etc/kubernetes/manifests/kube-apiserver.yaml || \
 	sed -i '/volumeMounts:/a \ \ \ \ - {mountPath: /var/log/kubernetes, name: k8s-logs}' /etc/kubernetes/manifests/kube-apiserver.yaml
 
+until curl -ksf https://localhost:6443/healthz ;
+do 
+    sleep 2
+done
 echo "kubernetes nodes up and running">>/root/status.txt
 
 curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
