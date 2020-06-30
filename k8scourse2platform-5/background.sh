@@ -2,15 +2,6 @@
 touch status.txt
 echo "">/root/status.txt
 
-echo "Waiting for kubernetes to start" >>/root/status.txt
-while [ "$( kubectl get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
-  sleep 1
-done
-echo "Waiting for all nodes to be ready" >>/root/status.txt
-while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )" !=  "Ready Ready" ]; do
-  sleep 1
-done
-
 # Deleting permissive rbac policy
 until curl -ksf https://localhost:6443/healthz ;
 do 
@@ -42,6 +33,17 @@ grep "path: /var/log/kubernetes" /etc/kubernetes/manifests/kube-apiserver.yaml |
 
 grep "mountPath: /var/log/kubernetes" /etc/kubernetes/manifests/kube-apiserver.yaml || \
 	sed -i '/volumeMounts:/a \ \ \ \ - {mountPath: /var/log/kubernetes, name: k8s-logs}' /etc/kubernetes/manifests/kube-apiserver.yaml
+
+
+echo "Waiting for kubernetes to start" >>/root/status.txt
+while [ "$( kubectl get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
+  sleep 1
+done
+echo "Waiting for all nodes to be ready" >>/root/status.txt
+while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )" !=  "Ready Ready" ]; do
+  sleep 1
+done
+
 
 until curl -ksf https://localhost:6443/healthz ;
 do 
