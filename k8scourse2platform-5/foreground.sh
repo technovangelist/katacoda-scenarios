@@ -19,10 +19,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 kubectl completion bash >/etc/bash_completion.d/kubectl
 complete -F __start_kubectl k
-
-kubectl create secret generic datadog-secret --from-literal=api-key=$DD_API_KEY
-
 cd k8s-yaml-files
 
-# clear
+clear
 prepenvironment
