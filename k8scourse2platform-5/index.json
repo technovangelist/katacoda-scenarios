@@ -66,7 +66,7 @@
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster:1.16",
+    "imageid": "kubernetes-cluster:1.18",
     "reuseConnection": "false"
   }
 }
