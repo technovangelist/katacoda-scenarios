@@ -52,14 +52,6 @@
         {
           "file": "auditpolicy.yaml",
           "target": "/root/k8s-yaml-files"
-        },
-        {
-          "file": "patchdaemonsetauditlogs.yaml",
-          "target": "/root/k8s-yaml-files"
-        },
-        {
-          "file": "auditconfigmap.yaml",
-          "target": "/root/k8s-yaml-files"
         }
       ]
     }
