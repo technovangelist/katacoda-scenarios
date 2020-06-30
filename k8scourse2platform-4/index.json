@@ -1,6 +1,7 @@
 {
   "title": "Monitoring the Control Plane: etcd",
   "time": "25 minutes",
+  "difficulty": "Intermediate",
   "details": {
     "intro": {
       "courseData": "background.sh",

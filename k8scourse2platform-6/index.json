@@ -1,6 +1,7 @@
 {
   "title": "Monitoring the Control Plane: the Controller Manager and the Scheduler",
   "time": "25 minutes",
+  "difficulty": "Intermediate",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -19,7 +20,7 @@
     ],
     "finish": {
       "text": "finish.md"
-    }, 
+    },
     "assets": {
       "host01": [
         {
