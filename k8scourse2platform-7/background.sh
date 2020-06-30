@@ -21,12 +21,12 @@ while [ ! `ls -l /root/k8s-yaml-files/auditpolicy.yaml 2>/dev/null | wc -l ` -eq
   sleep 0.3
 done
 
-
 cp /root/k8s-yaml-files/auditpolicy.yaml /etc/kubernetes/audit-policies/policy.yaml
 
 until curl -ksf https://localhost:6443/healthz ;
 do 
     sleep 2
+    wall -n not up
 done
 
 grep "audit-policy-file" /etc/kubernetes/manifests/kube-apiserver.yaml || \
