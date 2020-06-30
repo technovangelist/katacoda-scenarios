@@ -2,19 +2,21 @@
 touch status.txt
 echo "">/root/status.txt
 
-echo "Waiting for kubernetes to start" >>/root/status.txt
-while [ "$( kubectl get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
-  sleep 1
-done
-echo "Waiting for all nodes to be ready" >>/root/status.txt
-while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )" !=  "Ready Ready" ]; do
-  sleep 1
-done
-echo "kubernetes nodes up and running">>/root/status.txt
+# echo "Waiting for kubernetes to start" >>/root/status.txt
+# while [ "$( kubectl get nodes --no-headers 2>/dev/null | wc -l )" != "2" ]; do
+#   sleep 1
+# done
+# echo "Waiting for all nodes to be ready" >>/root/status.txt
+# while [ "$( kubectl get nodes --no-headers 2>/dev/null| awk '{print $2}'|xargs )" !=  "Ready Ready" ]; do
+#   sleep 1
+# done
+# echo "kubernetes nodes up and running">>/root/status.txt
+minikube start --extra-config=apiserver.audit-policy-file=/etc/ssl/certs/audit-policy.yaml --extra-config=apiserver.audit-log-path=-
 
 curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 echo "helm installed" >>/root/status.txt
+
 
 (
   set -x; cd "$(mktemp -d)" &&
@@ -25,7 +27,7 @@ echo "helm installed" >>/root/status.txt
   "$KREW" update
 )
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-kubectl krew install match-name
+# kubectl krew install match-name
 echo "krew installed" >>/root/status.txt
 
 
