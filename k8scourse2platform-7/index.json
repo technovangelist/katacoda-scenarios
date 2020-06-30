@@ -1,5 +1,5 @@
 {
-  "title": "Monitoring the Control Plane: The API Server",
+  "title": "Monitoring the Control Plane: CoreDNS",
   "time": "25 minutes",
   "details": {
     "intro": {
@@ -10,13 +10,12 @@
     "steps": [
       {
         "text": "step1.md",
-        "title": "Monitoring the API Server"
-      },
-      {
-        "text": "step2.md",
-        "title": "Leveraging the API Server Audit Logs"
+        "title": "Monitoring CoreDNS"
       }
     ],
+    "finish": {
+      "text": "finish.md"
+    }, 
     "assets": {
       "host01": [
         {
@@ -48,6 +47,10 @@
         {
           "file": "db.yaml",
           "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "auditpolicy.yaml",
+          "target": "/root/k8s-yaml-files"
         }
       ]
     }
@@ -66,7 +69,7 @@
     ]
   },
   "backend": {
-    "imageid": "minikube",
+    "imageid": "datadog-kubernetes-cluster-running:1.16",
     "reuseConnection": "false"
   }
 }
