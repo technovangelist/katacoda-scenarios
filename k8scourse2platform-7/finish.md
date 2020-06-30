@@ -1,1 +1,3 @@
-summary
+In this final lab of the Monitoring the Kubernetes Platform course, we looked at the few metrics you need to watch from CoreDNS. This is the component of the control plane that allows for all autodiscovery as well as finding the other pods and resources running on your Kubernetes cluster. Without a smoothly running DNS, etcd, the API Server, the Controller Manager, and the Scheduler cannot do their jobs. 
+
+Now click the **Next** button below to download your Certificate of Completion. 

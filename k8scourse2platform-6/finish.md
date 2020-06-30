@@ -1,1 +1,3 @@
-summary
+In this short lab we looked at some of the key metrics you need to keep an eye on to ensure both the Controller Manager and the Scheduler stay in full working order. While both etcd and the API Server are incredibly important, its the Controller Manager and the Scheduler that do most of the 'real work' when it comes to starting and running your pods, services, endpoints, and all the other resources in your Kubernetes cluster.
+
+When you are ready to move on to learning about Monitoring CoreDNS, click the **Next** button. 
