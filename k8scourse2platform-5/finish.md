@@ -1,1 +1,3 @@
-about what we did
+In this lab we didn't have to worry about configuring the Datadog integration with the API Server. In fact, **etcd** is the only component we need to do that for in this course. Instead we were able to focus on building a dashboard for API Server as well as configuring logs for the audit logs that come from the API Server. If you haven't taken the Introduction to Logs course yet, now is a great time to jump over. Also check out the documentation at https://docs.datadoghq.com/logs/
+
+Now click the **Next** button to move on to learning about the Controller Manager and the Scheduler. 
