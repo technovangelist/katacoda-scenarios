@@ -52,10 +52,6 @@
         {
           "file": "db.yaml",
           "target": "/root/k8s-yaml-files"
-        },
-        {
-          "file": "auditpolicy.yaml",
-          "target": "/root/k8s-yaml-files"
         }
       ]
     }
