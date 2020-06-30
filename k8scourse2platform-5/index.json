@@ -17,6 +17,9 @@
         "title": "Leveraging the API Server Audit Logs"
       }
     ],
+    "finish": {
+      "text": "finish.md"
+    }, 
     "assets": {
       "host01": [
         {
