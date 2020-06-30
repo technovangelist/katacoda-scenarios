@@ -1,0 +1,72 @@
+{
+  "title": "Monitoring the Control Plane: The API Server",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md",
+        "title": "Monitoring the API Server"
+      },
+      {
+        "text": "step2.md",
+        "title": "Leveraging the API Server Audit Logs"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "prepenvironment",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "statuscheck",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "values.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "advertisements.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "frontend.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "discounts.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "db.yaml",
+          "target": "/root/k8s-yaml-files"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/k8s-yaml-files",
+    "idePort": 23000,
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Datadog",
+        "href": "https://app.datadoghq.com"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu:1804",
+    "reuseConnection": "false"
+  }
+}
