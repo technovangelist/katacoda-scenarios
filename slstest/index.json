@@ -21,6 +21,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "datadog-aws"
+    "imageid": "kubernetes-cluster-running"
   }
 }
