@@ -18,7 +18,10 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/k8s-yaml-files",
+    "idePort": 23000
   },
   "backend": {
     "imageid": "kubernetes-cluster-running"
