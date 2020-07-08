@@ -31,6 +31,10 @@ kubectl apply -f k8s-yaml-files/frontend.yaml
   "$KREW" install --manifest=krew.yaml --archive=krew.tar.gz &&
   "$KREW" update
 )
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+kubectl krew install match-name
+
 # if [ ! -f "/root/provisioned" ]; then
 #   apt install datamash
 # fi

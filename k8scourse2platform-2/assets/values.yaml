@@ -22,7 +22,7 @@ datadog:
   #   seLinuxOptions:
   #     seLinuxLabel: "spc_t"
 
-  clusterName: trainingcluster
+  # clusterName: 
   # site: datadoghq.com
   # dd_url: https://app.datadoghq.com
 

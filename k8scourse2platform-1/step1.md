@@ -8,11 +8,11 @@ Let's start the course with a reminder of how to install the Datadog agent using
 `kubectl create -f "https://raw.githubusercontent.com/DataDog/datadog-agent/master/Dockerfiles/manifests/rbac/clusterrolebinding.yaml"`{{execute}}
 1. Apply the manifest for the Datadog agent using the following command:
 `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
-    This yaml file is the same one provided in the documentation.
+    This yaml file is the same one [provided in the documentation](https://docs.datadoghq.com/agent/kubernetes/#installation).
 1. Everything should be running now. To verify, run: 
 `kubectl get daemonset`{{execute}}
 You should see a list of how many agents are installed and running.
-1. But wait, we have a cluster that is running on two servers, why aren’t there two agents running. Normally, only the nodes in the cluster will run the agent, but it’s also possible to run the agent on master if you add the tolerance to the pod. Click on the IDE tab on the right and then open datadog-agent.yaml in the editor. After line 15 in datadog-agent.yaml, add the following:
+1. But wait, we have a cluster that is running on two servers, why aren’t there two agents running. Normally, only the worker nodes in the cluster will run the agent, but it’s also possible to run the agent on the master nodes if you add the tolerance to the pod. Click on the IDE tab on the right and then open datadog-agent.yaml in the editor. After line 15 in datadog-agent.yaml, add the following:
   <pre><code>tolerations:
   - key: node-role.kubernetes.io/master
      effect: NoSchedule

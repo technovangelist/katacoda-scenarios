@@ -38,7 +38,7 @@
 
 1. Run the Helm upgrade command again. 
 There is still an error. Let's look at the etcd pod again by running the describe command: `k describe pod -n kube-system etcd-master`{{execute}}. 
-1. It looks like the command shows a number of certs being used. The reason our metrics call is failing is that we aren't making that secure connection. In order to make the certs available to the Datadog agent, we need to create a volume, mount it, and then add those to the configuration for the etcd integration. First add the volumes. At around line 830, add the following to your volume declarations:
+1. It looks like the command shows a number of certs being used. The reason our metrics call is failing is that we aren't making that secure connection. In order to make the certs available to the Datadog agent, we need to create a volume, mount it, and then add those to the configuration for the etcd integration. First add the volumes. At around line 830, update your volume declarations:
 
         volumes:
           - hostPath:
@@ -47,7 +47,7 @@ There is still an error. Let's look at the etcd pod again by running the describ
           - emptyDir: {}
             name: etcd-auto-conf
 
-1. Just below that in the volumeMounts block add: 
+1. Just below that in the volumeMounts update as shown: 
 
         volumeMounts:
         - name: etcd-auto-conf
@@ -56,7 +56,6 @@ There is still an error. Let's look at the etcd pod again by running the describ
         - mountPath: /keys
           name: etcd-keys
           readOnly: true
-
 
 1. Now the etcd keys are located at /keys so add the mountPaths to the etcd integration configuration. Remember, that's back up around line 274.
 
