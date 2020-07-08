@@ -24,6 +24,6 @@
     "idePort": 23000
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
+    "imageid": "datadog-aws"
   }
 }
