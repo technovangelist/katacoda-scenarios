@@ -1,1 +1,3 @@
 In this Hands On section you will learn more about setting up the agent using the Helm Chart. You will see that it's much easier to use Helm than using the manifests. The Helm chart for the agent has its roots as a community project and still lives there, though today most of the approvers are Datadog employees. We will be using the Helm chart throughout the entire course. 
+
+The **Previous** and **Next** buttons at the bottom of the page will navigate you away from the lab. 
