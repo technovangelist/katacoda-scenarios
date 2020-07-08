@@ -12,5 +12,5 @@ In this section you are going to start to work with the Cluster Agent. Remember 
 There are a number of other features you get with the Cluster Agent that help with applications running on top of your Kubernetes cluster. These will be covered in detail in the Advanced Kubernetes Monitoring course focused on the applications, versus the course that you are in focused on the platform.  
 
 * Horizontal Pod Autoscaler - You can autoscale your pods based on any metric collected. For instance, if the number of requests to your nginx pod increases, add a few pods to handle the load. 
-* Cluster Checks - 
-* Endpoint Checks -
+* Cluster Checks - Checks that can be autodiscovered and performed by the cluster agent against Kubernetes control plane services as well as out-of-cluster datastores and endpoints.
+* Endpoint Checks - Checks that can be autodiscovered and perfomed to monitor any endpoint behind cluster services.
