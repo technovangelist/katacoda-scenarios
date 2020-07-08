@@ -8,15 +8,3 @@ As with the API Server, there is nothing here we need to configure to start coll
 1. As with the other components, watching the numbers of requests coming in is important, so create a Timeseries for `kube_controller_manager.client.http.requests` and group by method and code. 
 1. Finally add another Query Value for `kube_controller_manager.goroutines`.
 
-
-latency
-the workqueue latency - kube_controller_manager.queue.queue_duration.sum
-the number of items per time - high value can indicate problems in cluster of some nodes: kube_controller_manager.queue.adds
-number of things waiting: kube_controller_manager.queue.depth
-
-
-node availability and health
-
-scheduled and unscheduled attempts
-goroutines and http req
-

@@ -1,6 +1,5 @@
 Now that we are gathering etcd metrics, let's take a look at which metrics we need to look at. Of course, the metrics that are most important to you depend on your business objectives, but the metrics we look at in this lab are a good start.
 
-1. Log in to your Datadog Learning Center organization. Navigate to the Integrations page at https://app.datadoghq.com/account/settings#integrations and enable the **etcd** integration. Depending on how long it's been since you started collecting etcd metrics, the etcd integration may already be enabled.
 1. Let's start with creating a new Timeboard and name it `Training ETCD`. If you aren't familiar with creating dashboards, review the **Introduction to Datadog** course here on the Learning Center. 
 1. Add a new group widget to the dashboard and call it **Proposals**. 
 1. Add a Timeseries widget to the group and add the metric `etcd.server.proposals.commited.total`. Repeat for `etcd.server.proposals.applied.total`.

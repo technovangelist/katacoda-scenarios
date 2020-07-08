@@ -55,9 +55,8 @@ In this lab we will configure the Datadog Agent to start collecting those audit 
             mountPath: /var/log/kubernetes
             readOnly: true
 
-
 1.  Apply the changes to our Helm chart `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f values.yaml stable/datadog`{{execute}}.
-1.  Check that the logs are being collected by running the status command and looking at the list of logs being collected: `k exec $(k match-name datadogagent-[a-z0-9]{5}) agent configcheck`{{execute}} 
+1.  Check that the logs are being collected by running the status command and looking at the list of logs being collected: `k exec $(k match-name datadogagent-[a-z0-9]{5}) agent status`{{execute}} 
 1.  Navigate to the Logs page that you opened at the beginning of this lab. You should soon see a large number of logs coming from the service: **kube-apiserver-audit**. 
 
 Soon after the Audit logs start coming in, the Logs integration for Kubernetes Audit Logs automatically install the audit pipeline.
