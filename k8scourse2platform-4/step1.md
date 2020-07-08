@@ -13,7 +13,7 @@
 
 1. Now upgrade the helm chart: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f values.yaml stable/datadog`{{execute}}.
 1. After the pods have started, run the agent configcheck command again (`k exec $(k match-name datadogagent-[a-z0-9]{5}) agent configcheck`{{execute}}). Remember, if you get some sort of error instead of any output, the pod is probably not fully started. Wait a few more moments. 
-1. Notice that there are two etcd configs. And one of them has an ip address and the other still says %%host%%. Update the confd block we added above to this:
+1. Notice that there are two etcd configs. And one of them has an ip address and the other still says %%host%%. The reason for this is that we need to tell Datadog that this should be autodiscovered. Update the confd block we added above to this:
 
        confd:
          etcd.yaml: |-
@@ -22,8 +22,9 @@
            instances:
              - prometheus_url: https://%%host%%:2379/metrics
 
+1. Upgrade the helm chart again: `helm upgrade datadogagent --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f values.yaml stable/datadog`{{execute}}.
 1. Run the `configcheck` command again. Notice there are still two etcd checks running, but they both have the correct ip address filled in. 
-1. The autodiscovery feature is still finding etcd so lets fix that. Around line 830 in the Helm values file you will find the `volumes:` block. Add the following:
+1. The autodiscovery feature is still finding etcd so let's fix that by removing the auto_conf.yaml file for etcd. Around line 830 in the Helm values file you will find the `volumes:` block. Add the following:
 
        volumes:
          - emptyDir: {}
@@ -36,7 +37,7 @@
            mountPath: /etc/datadog-agent/conf.d/etcd.d/
            readOnly: true
 
-1. Run the Helm upgrade command again. 
+1. Run the Helm upgrade and the agent status commands again. 
 There is still an error. Let's look at the etcd pod again by running the describe command: `k describe pod -n kube-system etcd-master`{{execute}}. 
 1. It looks like the command shows a number of certs being used. The reason our metrics call is failing is that we aren't making that secure connection. In order to make the certs available to the Datadog agent, we need to create a volume, mount it, and then add those to the configuration for the etcd integration. First add the volumes. At around line 830, update your volume declarations:
 

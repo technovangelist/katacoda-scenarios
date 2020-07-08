@@ -1,6 +1,6 @@
 By default the API Server does not enable audit logs. In preparation for this lab we went through the following process:
-  1. Create a new audit policy yaml file. You can see the file in the editor under auditpolicy.yaml. 
-  1. Modify the kube-apiserver.yaml file located at /etc/kubernetes/manifests/ on the master node
+  1. Added a new audit policy yaml file. You can see the file in the editor under auditpolicy.yaml. 
+  1. Updated the kube-apiserver.yaml file located at /etc/kubernetes/manifests/ on the master node as follows:
     * point to the new audit policy
     * configure the volumemounts for writing the new logs. 
 
