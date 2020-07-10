@@ -116,7 +116,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "terminal",
     "uieditorpath": "workshop",
     "showide": true
   },
