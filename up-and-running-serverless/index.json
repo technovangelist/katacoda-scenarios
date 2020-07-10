@@ -1,0 +1,128 @@
+{
+  "title": "Getting up and Running with Serverless",
+  "description": "learn how to automate serverless deployments with code, and gain observability into their infrastructure by combining metrics, traces, and logs in Datadog.",
+  "time": "Two hours",
+  "details": {
+    "intro": {
+      "text": "01-01-introduction-to-image-problem.md",
+      "courseData": "setup.sh",
+      "code": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Set up serverless framework",
+        "text": "01-02-set-up-serverless-framework.md"
+      },
+      {
+        "title": "Create handler function package",
+        "text": "01-03-create-npm-package.md"
+      },
+      {
+        "title": "Write handler function code",
+        "text": "01-04-write-handler-function.md"
+      },
+      {
+        "title": "Create serverless YAML",
+        "text": "01-05-create-serverless-yaml.md"
+      },
+      {
+        "title": "Deploy Serverless project",
+        "text": "deploy.md"
+      },
+      {
+        "title": "Set Up Datadog AWS Integration",
+        "text": "aws.md"
+      },
+      {
+        "title": "Set Up Datadog Forwarder",
+        "text": "forwarder.md"
+      },
+      {
+        "title": "Add Datadog Lambda Layer",
+        "text": "layer.md"
+      },
+      {
+        "title": "Custom Metric",
+        "text": "metric.md"
+      },
+      {
+        "title": "Log",
+        "text": "log.md"
+      },
+      {
+        "title": "Tracing",
+        "text": "tracing.md"
+      },
+      {
+        "title": "Deploy",
+        "text": "deploy-second.md"
+      },
+      {
+        "title": "Break",
+        "text": "break.md"
+      },
+      {
+        "title": "Sign into Datadog",
+        "text": "demo0.md"
+      },
+      {
+        "title": "Using the Serverless Page",
+        "text": "demo1.md"
+      },
+      {
+        "title": "Finding Cold Starts",
+        "text": "demo2.md"
+      },
+      {
+        "title": "Using the Service Map",
+        "text": "demo3.md"
+      },
+      {
+        "title": "Debugging with Log Analytics",
+        "text": "demo4.md"
+      },
+      {
+        "title": "Add New Function to Serverless.yml",
+        "text": "3-01-update-serverless-yml-function.md"
+      },
+      {
+        "title": "Install Jimp",
+        "text": "3-03-install-jimp.md"
+      },
+      {
+        "title": "Implement Process Image Lambda",
+        "text": "3-04-add-process-image-lambda.md"
+      },
+      {
+        "title": "Deploy and Test",
+        "text": "3-05-deploy-and-test.md"
+      },
+      {
+        "title": "Another Test Case",
+        "text": "3-06-now-with-a-bigger-image.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "upload.sh",
+          "target": "/root/workshop",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "workshop",
+    "showide": true
+  },
+  "backend": {
+    "imageid": "datadog-aws",
+    "reuseConnection": true,
+    "livetime": "4h"
+  }
+}
