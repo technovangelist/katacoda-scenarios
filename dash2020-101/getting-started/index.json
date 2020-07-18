@@ -22,6 +22,6 @@
     "uilayout": "editor-terminal"
   },
   "backend": {
-    "imageid": "ubuntu1804"
+    "imageid": "datadog-ddtest:1.01"
   }
 }
