@@ -3,10 +3,9 @@
   "description": "Updated 101 for Dash",
   "courses": [
     {
-      "pathway_id": "technovangelist/dash2020-101",
       "course_id": "getting-started",
-      "id": "getting-started",
-      "title": "getting started"
+      "title": "getting started",
+      "description": "this is getting started"
     }
   ]
 }
