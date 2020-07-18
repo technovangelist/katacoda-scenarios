@@ -1,0 +1,12 @@
+{
+  "title": "test",
+  "description": "test",
+  "courses": [
+    {
+      "pathway_id": "datadog/dash2020-101",
+      "course_id": "getting-started",
+      "id": "getting-started",
+      "title": "getting started"
+    }
+  ]
+}
