@@ -1,9 +1,9 @@
 {
-  "title": "test",
-  "description": "test",
+  "title": "Dash 101",
+  "description": "Updated 101 for Dash",
   "courses": [
     {
-      "pathway_id": "datadog/dash2020-101",
+      "pathway_id": "technovangelist/dash2020-101",
       "course_id": "getting-started",
       "id": "getting-started",
       "title": "getting started"
