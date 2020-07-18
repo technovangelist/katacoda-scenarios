@@ -22,6 +22,6 @@
     "uilayout": "editor-terminal"
   },
   "backend": {
-    "imageid": "datadog-ddtest:1.01"
+    "imageid": "datadog-ddtest-1-01"
   }
 }
