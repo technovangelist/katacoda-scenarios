@@ -4,7 +4,10 @@ Welcome to the first section of the Introduction to Datadog course.
 
     `ls -la`{{execute}}
 
-2. In most of the sections of this course you will find the instructions for the course on the left, a simple editor and file explorer on the top right, and a terminal on the bottom right. Files in the editor are automatically saved.
+2. In most of the sections of this course you will find the instructions for the course on the left and a terminal on the right. Above the terminal is a tab bar that also has a tab for an IDE. That is a VS Code and is the editor we will use for the labs. The editor takes a few seconds to start, and if you try to access it too early it may show a screen saying that port isn't ready. Within a few seconds, that window will refresh and you will see the familiar editor. A few seconds after that you may get an error about losing a connection. The editor will update and you won't have any problems after that. 
+
+Autosave in the terminal is enabled 1 second after you stop typing. 
+
 3. If you ever create a new file in the terminal the file explorer should update within a few seconds. If it doesn't, click the refresh button above the file explorer and the view will update. The command below will create a new file called newfile.txt.
 
     `touch editor/newfile.txt`{{execute}}
