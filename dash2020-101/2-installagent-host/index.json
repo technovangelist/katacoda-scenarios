@@ -18,8 +18,8 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
-    "uieditorpath": "/root/lab",
+    "uilayout": "terminal",
+    "showide": true,
     "terminals": [
       {
         "name": "Terminal 2",
@@ -28,6 +28,6 @@
     ]
   },
   "backend": {
-    "imageid": "datadog-ubuntu"
+    "imageid": "datadog-base-v1"
   }
 }

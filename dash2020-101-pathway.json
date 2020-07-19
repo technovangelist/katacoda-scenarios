@@ -3,12 +3,12 @@
   "description": "Updated 101 for Dash",
   "courses": [
     {
-      "course_id": "getting-started",
+      "course_id": "1-getting-started",
       "title": "getting started",
       "description": "this is getting started"
     },
     {
-      "course_id": "installagent-host",
+      "course_id": "2-installagent-host",
       "title": "Installing the Agent on a Host",
       "description": "All about installing the agent on the host"
     },
