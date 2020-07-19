@@ -1,6 +1,5 @@
-statusupdate toolsv1
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
-statusupdate toolsv2
+statusupdate tools
 echo '{"files.exclude": {".*": true}}' > ~/.vscode/settings.json
 mkdir ~/editor
 statusupdate complete
