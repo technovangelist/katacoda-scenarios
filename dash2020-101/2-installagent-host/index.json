@@ -1,0 +1,33 @@
+{
+  "time": "10 minutes",
+  "title": "Installing the Agent",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md",
+        "title": "Install the Agent on a VM"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/lab",
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "command": "cd /root/lab"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-ubuntu"
+  }
+}

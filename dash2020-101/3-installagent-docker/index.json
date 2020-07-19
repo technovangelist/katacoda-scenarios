@@ -1,0 +1,58 @@
+{
+  "time": "10 minutes",
+  "title": "Installing the Agent",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [ 
+      {
+        "text": "step1.md",
+        "title": "Install the Agent on Docker",
+        "code": "recordstart.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "start",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "finish",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "docker-compose.yml",
+          "target": "/root/lab",    
+          "chmod": "+x"
+        },
+        {
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/lab", 
+    "terminals": [
+      {
+        "name": "Terminal 2", 
+        "command": "cd /root/lab"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-ubuntu"
+  }
+}

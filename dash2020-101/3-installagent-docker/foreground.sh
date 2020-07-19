@@ -1,0 +1,2 @@
+cd /root/lab 
+clear

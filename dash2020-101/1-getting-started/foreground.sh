@@ -1,5 +1,6 @@
 statuscheck tools
-debuginfo east
-prepenvironment
 ln -s /ecommworkshop /root/workshop
 cd workshop
+clear 
+debuginfo east
+prepenvironment

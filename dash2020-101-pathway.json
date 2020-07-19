@@ -6,6 +6,16 @@
       "course_id": "getting-started",
       "title": "getting started",
       "description": "this is getting started"
+    },
+    {
+      "course_id": "installagent-host",
+      "title": "Installing the Agent on a Host",
+      "description": "All about installing the agent on the host"
+    },
+    {
+      "course_id": "installagent-docker",
+      "title": "Installing the Agent on Docker",
+      "description": "All about installing the agent on the host"
     }
   ]
 }
