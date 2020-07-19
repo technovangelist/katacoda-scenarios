@@ -4,7 +4,7 @@
     ![agentinstalled](assets/agentinstalled.png)
 4. To verify that everything is running the way it should, run the status command: `datadog-agent status`{{execute}}.
 5. Scroll up and review what is shown. Notice that your API Key is listed and you should recognize the last 4 characters. Also notice that the Logs Agent is not running. Let's change that.
-6. Open the `datadog-agent/datadog.yaml`{{open}} file in the editor to the right and find the line with `logs_enabled`. Set it to true and uncomment the line. *Notice that you can click on that file name to open it. The goal here is to scan the file to get a feel for what you can configure here. This line is part of a larger section called **Log Collection Configuration**. You can find the line using the standard Find shortcut in whichever OS you are using*. 
+6. Open the `/etc/datadog-agent/datadog.yaml`{{open}} file in the editor to the right and find the line with `logs_enabled`. Set it to true and uncomment the line. *Notice that you can click on that file name to open it. The goal here is to scan the file to get a feel for what you can configure here. This line is part of a larger section called **Log Collection Configuration**. You can find the line using the standard Find shortcut in whichever OS you are using*. 
    *Note that the **datadog-agent** directory under **lab** is a symbolic link to **/etc/datadog-agent** so that it shows up in the editor*
 7. Run `systemctl restart datadog-agent`{{execute}} to restart the agent and then `datadog-agent status`{{execute}} to verify the status. 
     *Notice that the section for the Logs Agent no longer says that the **Logs agent is not running**.*

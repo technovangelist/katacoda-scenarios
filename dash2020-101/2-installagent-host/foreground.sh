@@ -1,5 +1,5 @@
 ln -s /ecommworkshop /root/workshop
-cd workshop
+cd lab
 statuscheck tools
 clear 
 
