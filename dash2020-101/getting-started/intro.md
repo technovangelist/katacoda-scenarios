@@ -4,6 +4,8 @@ Note: If you ever experience an error in the environment, refresh your browser.
 
 The objectives of this section are:
 
+<p>
 1. Get familiar with the lab environment.
 2. Login to Datadog with the account created for you.
 3. Ensure you are in the right Datadog account.
+</p>
