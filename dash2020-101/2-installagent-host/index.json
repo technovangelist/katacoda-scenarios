@@ -19,13 +19,7 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "showide": true,
-    "terminals": [
-      {
-        "name": "Terminal 2",
-        "command": "cd /root/lab"
-      }
-    ]
+    "showide": true
   },
   "backend": {
     "imageid": "datadog-base-v1"
