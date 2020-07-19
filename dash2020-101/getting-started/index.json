@@ -19,9 +19,11 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "terminal", 
+    "showide": true
+
   },
   "backend": {
-    "imageid": "datadog-ddtest-1-01"
+    "imageid": "datadog-base-v1"
   }
 }
