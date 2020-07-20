@@ -29,7 +29,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-
+    "uieditorpath": "/root/lab",
     "terminals": [
       {
         "name": "Terminal 2",
