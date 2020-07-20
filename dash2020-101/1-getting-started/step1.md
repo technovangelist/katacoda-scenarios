@@ -15,4 +15,4 @@ Welcome to the first section of the Introduction to Datadog course.
 6. Now verify that you are in the right account. Visit <a href="https://app.datadoghq.com/account/settings#api" target="_datadog">the API keys section</a>, expand API Keys and identify your API key.
 7. In the terminal, run the `env|grep DD_API_KEY`{{execute}} command and look for the API Key environment variable. Verify that they are the same. You don't have to memorize the entire key. Just making sure that the first and last couple of characters are the same should be good enough to ensure a match.
     _Note: You can also look for the DD_APP_KEY which is used for other reasons._
-8. Now that your are finished, run the `complete`{{execute}} command.
+8. Now that your are finished, run the `finish`{{execute}} command.

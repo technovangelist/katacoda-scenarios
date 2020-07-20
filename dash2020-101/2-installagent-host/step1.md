@@ -12,4 +12,4 @@
 9.  Using that knowledge, uncomment **logs_config** and **container_collect_all**, changing that last one from false to true.
 10. Restart the agent again, and run the status command again.
 11. Scroll down and find the corresponding settings for APM. See if you can enable it.
-12. When you are done with this section, run the `complete`{{execute}} command and then click the **Continue** button.
+12. When you are done with this section, run the `finish`{{execute}} command and then click the **Continue** button.
