@@ -1,4 +1,4 @@
-2. Open the file `docker-compose.yml` in the editor to the right. 
+1. Open the IDE tab to the right and open `docker-compose.yml`{{open}}. 
 3. Notice that only a single Redis image is in the file, but we want to add the Datadog agent. Datadog will run as a sidecar container on our host. 
 4. Copy the following text, then paste it into the file.
 
