@@ -1,0 +1,37 @@
+{
+  "time": "10 minutes",
+  "title": "Working with Metrics",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md",
+        "title": "Working with Metrics"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": []
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "command": "cd /root/lab"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-base-v1"
+  }
+}
