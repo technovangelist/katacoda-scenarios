@@ -16,6 +16,11 @@
       "course_id": "3-installagent-docker",
       "title": "Installing the Agent on Docker",
       "description": "All about installing the agent on the host"
+    }, 
+    {
+      "course_id": "4-using-the-app", 
+      "title": "Using the App", 
+      "description": "Start working with the app"
     }
   ]
 }
