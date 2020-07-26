@@ -8,7 +8,7 @@ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose -f /root/lab/ec
 statusupdate dockerstart
 clear 
 statuscheck dbup
-docker-compose -f ./docker-compose.yaml exec -T -d db psql -U postgres -c  "create user datadog with password 'password';grant pg_monitor to datadog;"
+docker-compose -f ./docker-compose.yaml exec -T -d db psql -U postgres -c  "create user datadog with password 'password';grant pg_monitor to datadog;grant SELECT ON pg_stat_database to datadog;"
 
 
 clear
