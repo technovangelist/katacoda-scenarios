@@ -1,6 +1,6 @@
-# ln -s /ecommworkshop /root/lab/ecommerceapp
 clear
 statuscheck tools
+ln -s /ecommworkshop /root/lab/ecommerceapp
 clear 
 debuginfo east
 prepenvironment
