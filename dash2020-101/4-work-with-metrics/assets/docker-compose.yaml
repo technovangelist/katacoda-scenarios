@@ -90,4 +90,4 @@ services:
     labels:
       com.datadoghq.ad.check_names: '["postgres"]'
       com.datadoghq.ad.init_configs: "[{}]"
-      com.datadoghq.ad.instances: '[{"host": "localhost", "password":"password", "username": "datadog"}]'
+      com.datadoghq.ad.instances: '[{"host": "%%host%%", "port": "%%port%%" "password":"password", "username": "datadog"}]'
