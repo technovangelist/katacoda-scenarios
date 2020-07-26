@@ -24,12 +24,8 @@
     "uilayout": "terminal",
     "showide": true,
     "uieditorpath": "/root/lab",
-    "terminals": [
-      {
-        "name": "Terminal 2",
-        "command": "cd /root/lab"
-      }
-    ]
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
     "imageid": "datadog-base-v1"
