@@ -10,3 +10,5 @@ docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instr
 statusupdate dockerpulls
 
 statusupdate complete
+docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml up
+
