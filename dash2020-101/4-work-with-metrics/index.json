@@ -17,7 +17,15 @@
       "text": "finish.md"
     },
     "assets": {
-      "host01": []
+      "host01": [
+
+        {
+          "file": "docker-compose.yaml",
+          "target": "/root/lab/ecommerceapp",
+          "chmod": "+x"
+        }
+
+      ]
     }
   },
   "environment": {
