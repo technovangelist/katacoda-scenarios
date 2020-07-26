@@ -1,1 +1,0 @@
-This lab is going to be a short one. Let's just take a quic
