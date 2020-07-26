@@ -1,4 +1,5 @@
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+rmdir /root/lab/ecommerceapp
 statusupdate tools
 mkdir -p /root/lab
 cd /ecommworkshop
