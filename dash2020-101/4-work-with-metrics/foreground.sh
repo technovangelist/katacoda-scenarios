@@ -4,7 +4,7 @@ ln -s /ecommworkshop /root/lab/ecommerceapp
 cd /root/lab/ecommerceapp/docker-compose-files
 clear 
 while [ -z `docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml ps -q db` ] || [ -z `docker ps -q --no-trunc | grep $(docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml ps -q db)` ]; do
-  sleep 500
+  sleep .5
   echo "trying again"
 done
 
