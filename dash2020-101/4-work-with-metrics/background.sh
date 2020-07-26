@@ -13,6 +13,7 @@ while [ -z `docker-compose -f /ecommworkshop/docker-compose-files/docker-compose
   sleep .5
 done
 sleep 2
-docker-compose -f ./docker-compose-fixed-instrumented.yml exec db psql -U postgres -c  "create user datadog with password 'password';grant pg_monitor to datadog;"
+statusupdate dbup
+
 statusupdate complete
 
