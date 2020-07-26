@@ -3,11 +3,9 @@ statusupdate tools
 mkdir -p /root/lab
 cd /ecommworkshop
 git pull
-cd /root
+cd /root/lab/ecommworkshop
 ln -s /ecommworkshop /root/lab/ecommerceapp
 statusupdate createdirs
 docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml pull
-docker pull redis
-docker pull datadog/agent
 statusupdate dockerpulls
 statusupdate complete
