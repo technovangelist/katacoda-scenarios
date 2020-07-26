@@ -1,3 +1,5 @@
+ln -s /ecommworkshop /root/lab/ecommerceapp
+clear
 statuscheck tools
 clear 
 clear
