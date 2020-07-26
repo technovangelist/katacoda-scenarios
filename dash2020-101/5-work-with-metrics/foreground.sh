@@ -1,7 +1,8 @@
 statuscheck tools
 clear 
-cd /root/lab 
+
 clear
 
 debuginfo east
 prepenvironment
+cd /root/lab/ecommerceapp/docker-compose-files
