@@ -9,6 +9,6 @@ while [ -z `docker-compose -f /ecommworkshop/docker-compose-files/docker-compose
 done
 
 
-# docker-compose -f ./docker-compose-fixed-instrumented.yml exec db psql-U postgres -c  "create user datadog with password 'password';grant pg_monitor to datadog;"
+docker-compose -f ./docker-compose-fixed-instrumented.yml exec db psql -U postgres -c  "create user datadog with password 'password';grant pg_monitor to datadog;"
 prepenvironment
 
