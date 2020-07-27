@@ -1,1 +1,1 @@
-Let's start working with our ecommerce app and start collecting some metrics and working with Dashboards.
+Now let's switch over to a broken version of our application and use APM traces to get a better idea of what is happening.

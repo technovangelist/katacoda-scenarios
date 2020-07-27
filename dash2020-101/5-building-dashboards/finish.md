@@ -1,1 +1,1 @@
-Congratulations! You have completed the section of the Introduction to Datadog course focusing on how to install the Datadog Agent. Now you have seen how to install and configure the agent on both a virtual machine and on Docker. Click the Next button below to move on to the next step.
+Now you know a bit more about creating dashboards. We looked specifically at the Postgres dashboard since we are using Postgres in our application. In the next section we will get a better look at APM and the actual traces for our application.
