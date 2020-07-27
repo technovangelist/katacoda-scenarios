@@ -1,1 +1,1 @@
-Let's start working with our ecommerce app and start collecting some metrics and working with Dashboards.
+Let's start working with our ecommerce app and start collecting some metrics. In this lab and the next one, our application is completely up and running. We will see that it's a bit broken later in the course.

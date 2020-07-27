@@ -15,12 +15,22 @@
     {
       "course_id": "3-installagent-docker",
       "title": "Installing the Agent on Docker",
-      "description": "All about installing the agent on the host"
+      "description": "All about installing the agent on Docker"
     },
     {
       "course_id": "4-work-with-metrics",
       "title": "Working with Metrics",
-      "description": "Start working with the app"
+      "description": "Start working with Metrics"
+    },
+    {
+      "course_id": "5-building-dashboards",
+      "title": "Building Dashboards",
+      "description": "Start Building Dashboards"
+    },
+    {
+      "course_id": "6-getting-started-with-apm",
+      "title": "Working with Traces",
+      "description": "Start working with APM"
     }
   ]
 }

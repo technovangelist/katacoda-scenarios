@@ -1,6 +1,6 @@
 {
   "time": "10 minutes",
-  "title": "Working with Metrics",
+  "title": "Getting Started with APM",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -10,11 +10,7 @@
     "steps": [
       {
         "text": "step1.md",
-        "title": "Configuring Metrics"
-      }, 
-      {
-        "text": "step2.md",
-        "title": "Working with Metrics"
+        "title": "Working with APM"
       }
     ],
     "finish": {
@@ -36,8 +32,11 @@
     "uilayout": "terminal",
     "showide": true,
     "uieditorpath": "/root/lab/ecommerceapp",
+    "terminals": [{
+      "name": "Terminal 2", "target": "host01"
+    }], 
     "showdashboard": true,
-    "dashboards": [{ "name": "Storedog", "port": 3000 }]
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
     "imageid": "datadog-base-v1"
