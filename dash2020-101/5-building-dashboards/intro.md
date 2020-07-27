@@ -1,1 +1,1 @@
-Let's start working with our ecommerce app and start collecting some metrics and working with Dashboards.
+Now that we have metrics and have a better idea of how to access them, let's try out making a dashboard and discovering how to make it our own.

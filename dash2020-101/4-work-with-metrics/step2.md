@@ -5,4 +5,4 @@
 5. While we are here, let's look at two more pages in Datadog that are especially interesting due to our environment. 
 6. Navigate to **Containers**. You can find that under the **Infrastructure** menu. This is giving us a better view of the containers that are running. 
 7. Now look at the Host Map, also under the **Infrastructure** menu. At the top left, change the Hosts dropdown to show Containers. Try changing the metrics that are used to fill and size the container hexagons. 
-8. Return to the **Metrics Summary** and search for `postgres`. Think about the different buckets for metrics and consider how many of these fit into those buckets.
+8. Return to the **Metrics Summary** and search for `postgres`. Think about the different buckets for metrics and consider how many of these fit into those buckets. Click on some of the metrics and see what information is available and that you can edit the description. This is especially useful if you want to describe a metric in the context of your business.
