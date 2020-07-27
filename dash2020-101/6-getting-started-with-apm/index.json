@@ -21,8 +21,7 @@
 
         {
           "file": "docker-compose.yaml",
-          "target": "/root/lab/ecommerceapp",
-          "chmod": "+x"
+          "target": "/root/lab/ecommerceapp"
         }
 
       ]
