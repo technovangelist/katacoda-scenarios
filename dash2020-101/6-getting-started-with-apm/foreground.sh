@@ -12,7 +12,7 @@ clear
 statuscheck dbup
 docker-compose exec -T -d db psql -U postgres -c  "create user datadog with password 'password';grant pg_monitor to datadog;grant SELECT ON pg_stat_database to datadog;"
 
-ln -s /root/ecommworkshop/docker-compose-file/docker-compose.yaml /root/ecommworkshop/store-frontend-broken-instrumented/docker-compose.yaml
+ln -s /root/ecommworkshop/docker-compose-files/docker-compose.yaml /root/ecommworkshop/store-frontend-broken-instrumented/docker-compose.yaml
 clear
 prepenvironment
 
