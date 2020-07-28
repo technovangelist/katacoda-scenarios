@@ -1,6 +1,7 @@
 clear
 statuscheck tools
 ln -s /ecommworkshop /root
+mv /root/docker-compose.yaml /root/ecommworkshop/docker-compose-files
 cd /root/ecommworkshop/
 clear
 statuscheck dockerpulls
