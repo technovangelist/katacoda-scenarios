@@ -1,0 +1,1 @@
+Now you know a bit more about creating dashboards. We looked specifically at the Postgres dashboard since we are using Postgres in our application. In the next section we will get a better look at APM and the actual traces for our application.

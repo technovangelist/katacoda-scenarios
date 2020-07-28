@@ -1,0 +1,25 @@
+1.  Open the Datadog app in a new window (unless it's already open). 
+2.  Navigate to Dashboards. Notice the two dashboards for Postgres. The **Postgres - Metrics** dashboard has a stopwatch icon, indicating its a **Timeboard**. And the **Postgres - Overview** dashboard shows a computer monitor, indicating it's a **Screenboard**.
+3.  Click on the **Timeboard**. Hover over any of the graphs, or widgets, in the dashboard. Notice the time indicator and that it points to the same time on all the graphs. 
+4.  Click on the gear icon at the top right of any graph. We have a menu with two options: **Create Monitor** and **Metrics Info**. We won't be getting into alerting in this lab, but the **Create Monitor** option will let us easily create one. **Metrics Info** will take us to the metrics summary page that we used before. 
+5.  Click the gear icon for the dashboard above all the graphs. Here we have an option to export the JSON. This is great if you need to create many copies of this dashboard slightly modified or to add them to different organizations. 
+6.  Click the expansion icon to the right of the header for the dashboard. This describes the dashboard and what you can do with it. 
+7.  Now click on the **Clone Dashboard** button. Give the dashboard a name and click **Clone**.
+8.  Since this is a dashboard we can edit, we have a few more options. Click the pencil icon for the **Rows fetched / returned / inserted / updated (per sec)** graph at the top left. 
+9.  Try out the different visualizations available. Since we have just a single database, many of these won't be very interesting. 
+10. Click the first dropdown for the first metric. **Metric** is selected but you can also choose to add a trace, log, and more. 
+11. Next is the metric itself. The first one is `postgresql.rows_fetched`. After that it says that we are showing this metric from `$scope`. This refers to a template variable at the top of the dashboard. We will look at this later.
+12. Next is how you want to aggregate the metric. We can choose `avg by` and others and can choose to group it by any tag. We only have a single database, but if we had more than one we could choose `db` or `host`. Or if we had them in multiple availability zones, group it by that. There is a course on learn.datadoghq.com that goes into great detail about getting the most out of tags.
+13. Click the plus icon to the right of that. This shows the functions that we can run on our metric. Hover over the different options and notice the image showing what the function can do.
+14. On the right side of the screen on the same line, there is a button labeled **as**. This let's you assign an alias that you would like to see on the graph. If **rows_inserted** has a direct relationship to **customers added**, you could say that here and customers added will be displayed. 
+15. To the right of that there is a button to see the raw text for this metric. This is a format that is a bit more agreeable to copy/paste.
+16. Click the **Advanced...** link. Here we can combine multiple metrics to display as a single line. Try clicking on **Add Query**, and adding all the metrics here: rows_returned, rows_inserted, and rows_updated. Notice that each metric gets a letter. Since we have four metrics, they are **a**, **b**, **c**, and **d**. Now in the **Formula** text box we can say a+b+c+d or any other formula combining metrics in a way that makes sense to you. Then you can click the letters and/or the formula to choose whether you want them displayed on the graph. This is super powerful.
+17. Below each metric you can also show how you want the metric displayed and what color theme to use. 
+18. Below the metrics section there is a section for event overlay. This is useful when you want to overlay something like a deployment event, or github merge to help correlate unexpected metrics with certain events. 
+19. Markers let you set values you want to keep in mind when looking at. Perhaps a minimum level that you want to ensure you don't go below.
+20. Finally you can set the scale of the Y axis. 
+21. If you don't set a title for the graph one will be created based on the metrics included, but it's usually not a very descriptive title. It's better to set one.
+22. Scroll all the way up to the top of the window. Currently you are on the **Edit** tab. Switch over to the **Overview** tab.
+23. Here we can get an overview of our graph, adjust the timespan easily and even apply some of the more common formulas. 
+24. The final tab here is correlations, but since the data is so new in our account, there are no correlations yet.
+25. Let's finish up this section by adding a host map to our dashboard. Click the **Edit Widgets** button at the top and add a **Host Map**. At the top left, change **Hosts** to **Containers**. Click **Save** and then **Finish Editing**

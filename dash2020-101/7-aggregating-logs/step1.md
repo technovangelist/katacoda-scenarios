@@ -13,4 +13,10 @@ Make sure you wait for the **Provisioning Complete** message in the terminal bef
 11. If you click on the currently selected service, it will go back to showing everything. 
 12. Under Source just above that you can see that you can filter based on **ruby**, **python**, or the **agent**. Most of the other **facets** don't apply to our logs.
 13. Try clicking on some of the log lines. Notice the details panel that comes out. Depending on the source of the logs, more detail may be displayed here.
-14. 
+14. Switch over to the Patterns view. You can do this by clicking the second icon under **Log Explorer**.
+15. When you have thousands of log lines, many of them will look very similar to each other. The Patterns view will pluck out the common patterns in your logs allowing you to see a higher level aggregate.
+16. Click on any one of the Patterns to see all the logs with that pattern.
+17. Finally there is the Graph view that allows you to visualize the quantity of lines that match your query.
+18. As new logs get ingested by Datadog it can be a few seconds before they appear in the Search view. Switching to Live Tail
+19. You might be wondering how we know how to parse any of these lines. From the **Logs** menu, navigate to **Configuration**.
+20. The Pipelines are the configuration for each type of log. Click on a Pipeline to see the configuration. Then click on each Parser and Remapper to see how they are configured. In the Rules section, you can click the question mark to learn more.

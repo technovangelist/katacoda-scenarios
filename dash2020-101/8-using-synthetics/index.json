@@ -1,6 +1,6 @@
 {
   "time": "10 minutes",
-  "title": "Aggregating Logs",
+  "title": "Using Synthetics",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -10,7 +10,7 @@
     "steps": [
       {
         "text": "step1.md",
-        "title": "Looking at Logs"
+        "title": "Using Synthetics"
       }
     ],
     "finish": {
@@ -20,7 +20,8 @@
       "host01": [
         {
           "file": "docker-compose.yaml",
-          "target": "/root"
+          "target": "/root/lab/ecommerceapp",
+          "chmod": "+x"
         }
       ]
     }
@@ -28,13 +29,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/ecommworkshop",
-    "terminals": [
-      {
-        "name": "Terminal 2",
-        "target": "host01"
-      }
-    ],
+    "uieditorpath": "/root/lab/ecommerceapp",
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
