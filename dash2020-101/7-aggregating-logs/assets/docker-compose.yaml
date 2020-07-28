@@ -84,7 +84,7 @@ services:
   db:
     image: postgres:11-alpine
     restart: always
-    command: ["postgres", "-c", "log_statement=all"]
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_directory=pg_log", "-c", "log_filename=pg.log", "-c", "log_file_mode=0644"]
 
     environment:
       - POSTGRES_PASSWORD
