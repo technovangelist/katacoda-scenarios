@@ -28,7 +28,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/ecommerceworkshop",
+    "uieditorpath": "/root/ecommworkshop",
     "terminals": [
       {
         "name": "Terminal 2",
