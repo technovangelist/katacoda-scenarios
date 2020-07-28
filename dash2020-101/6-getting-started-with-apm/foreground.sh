@@ -2,7 +2,7 @@ clear
 statuscheck tools
 # ln -s /ecommworkshop /root/ecommerceworkshop
 statuscheck pulls
-mv /ecommworkshop /root/ecommerceworkshop
+mv /ecommworkshop /root
 mv /root/docker-compose.yaml /root/ecommerceworkshop/docker-compose-files/
 cd /root/ecommerceworkshop/docker-compose-files
 clear
