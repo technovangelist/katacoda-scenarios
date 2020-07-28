@@ -1,1 +1,1 @@
-Congratulations! You have completed the section of the Introduction to Datadog course focusing on how to install the Datadog Agent. Now you have seen how to install and configure the agent on both a virtual machine and on Docker. Click the Next button below to move on to the next step.
+You have completed the Hands On scenario introducing you to the APM product. This is a really deep topic and you could spend days learning about it's intricacies. But we need to move on to look at Logs. 
