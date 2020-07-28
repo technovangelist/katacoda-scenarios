@@ -10,6 +10,10 @@
     "steps": [
       {
         "text": "step1.md",
+        "title": "Configuring our application to use APM"
+      }, 
+      {
+        "text": "step2.md",
         "title": "Working with APM"
       }
     ],
