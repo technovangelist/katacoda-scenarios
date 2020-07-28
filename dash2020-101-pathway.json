@@ -31,6 +31,21 @@
       "course_id": "6-getting-started-with-apm",
       "title": "Working with Traces",
       "description": "Start working with APM"
+    },
+    {
+      "course_id": "7-aggregating-logs",
+      "title": "Aggregating Logs",
+      "description": "Start working with Logs"
+    },
+    {
+      "course_id": "8-using-synthetics",
+      "title": "Using Synthetics",
+      "description": "Start working with Synthetics"
+    },
+    {
+      "course_id": "9-real-user-monitoring",
+      "title": "Working with RUM",
+      "description": "Start working with Rum"
     }
   ]
 }

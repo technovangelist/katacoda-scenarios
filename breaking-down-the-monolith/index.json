@@ -1,0 +1,40 @@
+{
+  "title": "Breaking Down the Monolith with the Help of Distributed Tracing",
+  "description": "Learn tools and techniques to breaking apart monoliths into smaller microservices",
+  "details": {
+      "steps": [
+        {
+          "title": "Our Monolith Web Application",
+          "text": "step1.md"
+        },
+        {
+          "title": "Instrumenting our Services",
+          "text": "step2.md"
+        },
+        {
+          "title": "Visualizing our Services",
+          "text": "step3.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md",
+        "code": "foreground.sh",
+        "courseData": "background.sh"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+  },
+    "files": [
+        "/ecommerce-observability/docker-compose-files/docker-compose-fixed-instrumented.yml"
+    ],
+    "environment": {
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/ecommerce-observability",
+      "showdashboard": true,
+      "dashboards": [{"name": "storedog", "port": 3000}]
+    },
+    "backend": {
+      "imageid": "datadog-ubuntu"
+    }
+  }
