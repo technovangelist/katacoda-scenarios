@@ -9,7 +9,7 @@ statusupdate createdirs
 docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-broken-instrumented.yml pull
 statusupdate dockerpulls
 statuscheck dockerstart
-while [ -z `docker-compose -f /root/ecommworkshop/docker-compose.yaml ps -q db` ] || [ -z `docker ps -q --no-trunc | grep $(docker-compose -f /root/ecommworkshop/docker-compose.yaml ps -q db)` ]; do
+while [ -z `docker-compose -f /root/ecommerceworkshop/docker-compose.yaml ps -q db` ] || [ -z `docker ps -q --no-trunc | grep $(docker-compose -f /root/ecommerceworkshop/docker-compose.yaml ps -q db)` ]; do
   sleep .5
 done
 sleep 2

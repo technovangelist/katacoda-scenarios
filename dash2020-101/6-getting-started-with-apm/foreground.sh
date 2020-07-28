@@ -1,8 +1,8 @@
 clear
 statuscheck tools
 ln -s /ecommworkshop /root/ecommerceworkshop
-mv /root/docker-compose.yaml /root/ecommworkshop/docker-compose-files
-cd /root/ecommworkshop/
+mv /root/docker-compose.yaml /root/ecommerceworkshop/docker-compose-files
+cd /root/ecommworkshop/docker-compose-files
 clear
 statuscheck dockerpulls
 POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose up -d
