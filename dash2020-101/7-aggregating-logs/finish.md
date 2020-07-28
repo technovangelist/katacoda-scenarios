@@ -1,0 +1,1 @@
+You have completed the Hands On scenario introducing you to the APM product. This is a really deep topic and you could spend days learning about it's intricacies. But we need to move on to look at Logs. 

@@ -1,0 +1,48 @@
+{
+  "time": "10 minutes",
+  "title": "Aggregating Logs",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md",
+        "title": "Configuring our application to collect Logs"
+      }, 
+      {
+        "text": "step2.md",
+        "title": "Working with Logs"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yaml",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/ecommworkshop",
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "target": "host01"
+      }
+    ],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v1"
+  }
+}
