@@ -28,7 +28,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/ecommworkshop/store-frontend-broken-instrumented",
+    "uieditorpath": "/root/ecommworkshop",
     "terminals": [
       {
         "name": "Terminal 2",
