@@ -1,1 +1,1 @@
-Now you know a bit more about creating dashboards. We looked specifically at the Postgres dashboard since we are using Postgres in our application. In the next section we will get a better look at APM and the actual traces for our application.
+This was a quick introduction to using Synthetics in Datadog. There is much more to learn. We don't have a course on learn.datadoghq.com just yet, but you should definitely have a look at the [documentation](https://docs.datadoghq.com/getting_started/synthetics/#overview). 
