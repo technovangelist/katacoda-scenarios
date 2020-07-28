@@ -21,7 +21,7 @@
 
         {
           "file": "docker-compose.yaml",
-          "target": "/root/lab/ecommerceapp"
+          "target": "/root/lab/ecommerceapp/"
         }
 
       ]

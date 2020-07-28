@@ -1,6 +1,6 @@
 clear
 statuscheck tools
-ln -s /ecommworkshop /root/lab/ecommerceapp
+ln -s /ecommworkshop /root
 cd /root/lab/ecommerceapp/
 clear
 statuscheck dockerpulls
