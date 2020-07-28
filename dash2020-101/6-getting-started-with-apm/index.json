@@ -28,7 +28,10 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/ecommworkshop",
+    "uieditorpath": [
+      "/root/ecommworkshop/store-frontend-broken-instrumented",
+      "/root/ecommworkshop/docker-compose-files"
+    ],
     "terminals": [
       {
         "name": "Terminal 2",
