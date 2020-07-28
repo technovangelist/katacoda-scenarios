@@ -88,6 +88,8 @@ services:
       [
         "postgres",
         "-c",
+        "logging_collector=on",
+        "-c",
         "log_statement=all",
         "-c",
         "log_directory=/var/log",
