@@ -1,7 +1,7 @@
 clear
 statuscheck tools
 ln -s /ecommworkshop /root
-cd /root/lab/ecommerceapp/
+cd /root/ecommworkshop/
 clear
 statuscheck dockerpulls
 POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose up -d

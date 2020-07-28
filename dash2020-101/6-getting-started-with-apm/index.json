@@ -18,22 +18,23 @@
     },
     "assets": {
       "host01": [
-
         {
           "file": "docker-compose.yaml",
-          "target": "/root/lab/ecommerceapp/"
+          "target": "/root/ecommworkshop"
         }
-
       ]
     }
   },
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/lab/ecommerceapp",
-    "terminals": [{
-      "name": "Terminal 2", "target": "host01"
-    }], 
+    "uieditorpath": "/root/ecommworkshop",
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "target": "host01"
+      }
+    ],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
