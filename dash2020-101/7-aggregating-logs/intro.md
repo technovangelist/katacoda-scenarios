@@ -1,3 +1,1 @@
-Now let's switch over to a broken version of our application and use APM traces to get a better idea of what is happening.
-
-In this scenario we are going to be updating a bit of code. Since we don't know what you know, we will show you exactly what code to update and where. Our application uses Ruby on Rails,  Python Flask, and Spree. 
+We got a taste of APM in the last Hands On. In this section we are going to take a look at Logs. Three of the most important types of data to look at to understand the state of your environment is Metrics, Traces, and Logs. In fact for a long time we talked about the Three Pillars of Observability. Those are the three. We have now looked at Metrics and Traces, so in this exercise we will look at Logs and how to make your Logs more useful. 

@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   agent:
     image: "datadog/agent:7.21.0"
@@ -84,6 +84,19 @@ services:
   db:
     image: postgres:11-alpine
     restart: always
+    command:
+      [
+        "postgres",
+        "-c",
+        "logging_collector=on",
+        "-c",
+        "log_directory=/logs",
+        "-c",
+        "log_filename=postgresql.log",
+        "-c",
+        "log_statement=all",
+      ]
+
     environment:
       - POSTGRES_PASSWORD
       - POSTGRES_USER
