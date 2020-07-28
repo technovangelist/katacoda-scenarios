@@ -1,6 +1,6 @@
 clear
 statuscheck tools
-ln -s /ecommworkshop /root
+ln -s /ecommworkshop /root/ecommerceworkshop
 mv /root/docker-compose.yaml /root/ecommworkshop/docker-compose-files
 cd /root/ecommworkshop/
 clear
