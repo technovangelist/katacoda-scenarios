@@ -29,7 +29,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/ecommerceapp",
+    "uieditorpath": "/root/ecommworkshop",
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
