@@ -8,12 +8,12 @@ git pull
 statusupdate createdirs
 docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml pull
 statusupdate dockerpulls
-statuscheck dockerstart
-while [ -z `docker-compose -f /root/lab/ecommerceapp/docker-compose.yaml ps -q db` ] || [ -z `docker ps -q --no-trunc | grep $(docker-compose -f /root/lab/ecommerceapp/docker-compose.yaml ps -q db)` ]; do
-  sleep .5
-done
-sleep 2
-statusupdate dbup
+# statuscheck dockerstart
+# while [ -z `docker-compose -f /root/lab/ecommerceapp/docker-compose.yaml ps -q db` ] || [ -z `docker ps -q --no-trunc | grep $(docker-compose -f /root/lab/ecommerceapp/docker-compose.yaml ps -q db)` ]; do
+#   sleep .5
+# done
+# sleep 2
+# statusupdate dbup
 
 statusupdate complete
 
