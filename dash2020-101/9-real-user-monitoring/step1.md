@@ -5,7 +5,7 @@ In this lab we are going to use the fixed version of our site, but it's not star
 2. get the token
 
 3. copy this to the terminal changing the token to your token
-   `DD_CLIENT_TOKEN=CHANGEME`{{copy}}
+   `DD_CLIENT_TOKEN=CHANGEME DD_APPLICATION_ID=CHANGEME2`{{copy}}
 
     `POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres docker-compose -f /root/ecommworkshop/docker-compose-files/docker-compose.yaml up -d`{{copy}}
 
