@@ -1,1 +1,1 @@
-rum intro
+In this final hands on lab, we will look at real user monitoring
