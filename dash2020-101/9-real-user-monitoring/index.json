@@ -20,7 +20,7 @@
       "host01": [
         {
           "file": "docker-compose.yaml",
-          "target": "/root/lab/ecommerceapp",
+          "target": "/root",
           "chmod": "+x"
         }
       ]
