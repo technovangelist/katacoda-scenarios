@@ -3,7 +3,7 @@
   "description": "test course",
   "courses": [
     {
-      "course_id": ".",
+      "course_id": "test",
       "title": "asht",
       "description": "ashtashtasht"
     }
