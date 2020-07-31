@@ -1,9 +1,9 @@
 {
-  "title": "tesc",
+  "title": "tesc2",
   "description": "test course",
   "courses": [
     {
-      "course_id": "",
+      "course_id": ".",
       "title": "asht",
       "description": "ashtashtasht"
     }
