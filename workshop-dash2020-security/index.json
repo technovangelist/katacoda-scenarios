@@ -1,0 +1,108 @@
+{
+  "title": "Real-time Threat Detection and Remediation",
+  "description": "With the growing complexity and velocity of security threats in dynamic, cloud-native environments, it’s more important than ever for security teams to have the same visibility into their infrastructure, network, and applications that developers and operations do. Conversely, as developers and operations become responsible for securing their services, they need their monitoring platform to help surface possible threats. In this workshop, attendees will analyze application and infrastructural code, implement observability best practices, and troubleshoot a live environment using Datadog Security Monitoring. The goals are to identify problem areas in a vulnerable application stack, integrate monitoring and observability tooling, write custom threat detection rules, and build efficient visualizations and dashboards. Attendees will leave with real-world experience detecting and remediating security issues in production applications while under siege. Some experience modifying and deploying production applications in containerized environments is required.",
+  "difficulty": "Intermediate",
+  "time": "2 hours",
+  "details": {
+    "steps": [
+      {
+        "title": "Overview",
+        "text": "steps/step1.md",
+        "courseData": "scripts/step1.sh"
+      },
+      {
+        "title": "Review Logs",
+        "text": "steps/step2.md"
+      },
+      {
+        "title": "Modify the Logs",
+        "text": "steps/step3.md"
+      },
+      {
+        "title": "Structured Logging Format",
+        "text": "steps/step4.md"
+      },
+      {
+        "title": "Standard Attributes",
+        "text": "steps/step5.md"
+      },
+      {
+        "title": "Allow List for Certain Attributes",
+        "text": "steps/step6.md"
+      },
+      {
+        "title": "Modify the Logs (again)",
+        "text": "steps/step7.md"
+      },
+      {
+        "title": "Logs Processor",
+        "text": "steps/step8.md"
+      },
+      {
+        "title": "Redeploy Application",
+        "text": "steps/step9.md"
+      },
+      {
+        "title": "Review Logs (again)",
+        "text": "steps/step10.md"
+      },
+      {
+        "title": "Adding Facets",
+        "text": "steps/step11.md"
+      },
+      {
+        "title": "Log Analytics",
+        "text": "steps/step12.md"
+      },
+      {
+        "title": "Log Analytics to Detection Rule",
+        "text": "steps/step13.md"
+      },
+      {
+        "title": "Writing a Detection Rule (part 1)",
+        "text": "steps/step14.md"
+      },
+      {
+        "title": "Writing a Detection Rule (part 2)",
+        "text": "steps/step15.md"
+      },
+      {
+        "title": "Writing a Detection Rule (part 3)",
+        "text": "steps/step16.md"
+      },
+      {
+        "title": "Writing a Detection Rule (part 4)",
+        "text": "steps/step17.md"
+      },
+      {
+        "title": "Writing a Detection Rule (part 5)",
+        "text": "steps/step18.md"
+      },
+      {
+        "title": "Writing a Detection Rule (part 6)",
+        "text": "steps/step19.md"
+      },
+      {
+        "title": "Investigating a Security Signal",
+        "text": "steps/step20.md"
+      },
+      {
+        "title": "Visualizing Logs and Signals",
+        "text": "steps/step21.md"
+      }
+    ],
+    "intro": {
+      "text": "steps/intro.md"
+    },
+    "finish": {
+      "text": "steps/finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/workspace"
+  },
+  "backend": {
+    "imageid": "datadog-ubuntu"
+  }
+}
