@@ -1,0 +1,84 @@
+{
+  "title": "Preventing Data Breaches",
+  "description": "A Tour on Tightening Your Security Stance",
+  "difficulty": "Intermediate",
+  "time": "2 hours",
+  "details": {
+    "assets": {
+      "host01": [
+        {
+          "file": ".get_envvars.sh",
+          "target": "~",
+          "chmod": "x"
+        },
+        {
+          "file": "app_basic.py",
+          "target": "~",
+          "chmod": "rw"
+        },
+        {
+          "file": "app_aws_secrets_static.py",
+          "target": "~",
+          "chmod": "rw"
+        },
+        {
+          "file": "app_vault_static.py",
+          "target": "~",
+          "chmod": "rw"
+        },
+        {
+          "file": "app_vault_dynamic.py",
+          "target": "~",
+          "chmod": "rw"
+        },
+        {
+          "file": "app_approzium.py",
+          "target": "~",
+          "chmod": "rw"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "title": "Environment overview",
+        "text": "step1.md"
+      },
+      {
+        "title": "Credentials from environment variables",
+        "text": "step2.md"
+      },
+      {
+        "title": "Static secret from AWS Secrets Manager",
+        "text": "step3.md"
+      },
+      {
+        "title": "Static credentials from Vault",
+        "text": "step4.md"
+      },
+      {
+        "title": "Dynamic credentials from Vault",
+        "text": "step5.md"
+      },
+      {
+        "title": "Password-less Authentication through Approzium",
+        "text": "step6.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh",
+      "background": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": "true",
+    "hidefinish": true
+  },
+  "backend": {
+    "imageid": "ubuntu:1804"
+  }
+}

@@ -1,0 +1,1 @@
+This Katacoda scenario walks through the various ways apps can access database credentials, and demonstrates how [Approzium](https://approzium.com/) can be used to perform secure, password-less database authentication.
