@@ -1,8 +1,4 @@
 #!/bin/bash
-cd /root/ecommerce-observability
-ls
-cd
-clear
 # Load it up!
 while true; do
   sleep 1
