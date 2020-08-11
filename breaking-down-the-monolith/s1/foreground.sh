@@ -1,4 +1,8 @@
 #!/bin/bash
+cd /root/ecommerceapp
+ls
+cd
+clear
 # Load it up!
 while true; do
   sleep 1
