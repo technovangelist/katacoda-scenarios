@@ -39,9 +39,9 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/ecommerce-observability",
+    "uieditorpath": "/root/ecommerceapp",
     "showdashboard": true,
-    "dashboards": [{"name": "storedog", "port": 3000}]
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
     "imageid": "datadog-ubuntu"
