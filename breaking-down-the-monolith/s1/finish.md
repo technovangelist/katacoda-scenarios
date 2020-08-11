@@ -12,6 +12,6 @@ Things to remember when moving from a Monolith to Microservices:
 
 Here are some useful resources to check out after this workshop:
 
-* Book: Microservice Architecture by Mike Amundsen and Matt Mclarty (ISBN 1491956259)
+* Book: Microservice Architecture by Mike Amundsen and Matt McLarty (ISBN 1491956259)
 * Book: Monolith to Microservices by Sam Newman (ISBN 1492047848)
 * Research paper: [Pivot Tracing](https://cs.brown.edu/~jcmace/papers/mace15pivot.pdf)

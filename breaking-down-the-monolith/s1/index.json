@@ -2,39 +2,48 @@
   "title": "Breaking Down the Monolith with the Help of Distributed Tracing",
   "description": "Learn tools and techniques to breaking apart monoliths into smaller microservices",
   "details": {
-      "steps": [
-        {
-          "title": "Our Monolith Web Application",
-          "text": "step1.md"
-        },
-        {
-          "title": "Instrumenting our Services",
-          "text": "step2.md"
-        },
-        {
-          "title": "Visualizing our Services",
-          "text": "step3.md"
-        }
-      ],
-      "intro": {
-        "text": "intro.md",
-        "code": "foreground.sh",
-        "courseData": "background.sh"
+    "steps": [
+      {
+        "title": "Your First Day",
+        "text": "step1.md"
       },
-      "finish": {
-        "text": "finish.md"
+      {
+        "title": "Up and Running",
+        "text": "step2.md"
+      },
+      {
+        "title": "Exploring Our Services",
+        "text": "step3.md"
+      },
+      {
+        "title": "Connecting The Dots",
+        "text": "step4.md"
+      },
+      {
+        "title": "A Watchful Eye",
+        "text": "step5.md"
+      },
+      {
+        "title": "Testing for Resilience",
+        "text": "step6.md"
       }
-  },
-    "files": [
-        "/ecommerce-observability/docker-compose-files/docker-compose-fixed-instrumented.yml"
     ],
-    "environment": {
-      "uilayout": "editor-terminal",
-      "uieditorpath": "/ecommerce-observability",
-      "showdashboard": true,
-      "dashboards": [{"name": "storedog", "port": 3000}]
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
     },
-    "backend": {
-      "imageid": "datadog-ubuntu"
+    "finish": {
+      "text": "finish.md"
     }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/ecommerce-observability",
+    "showdashboard": true,
+    "dashboards": [{"name": "storedog", "port": 3000}]
+  },
+  "backend": {
+    "imageid": "datadog-ubuntu"
   }
+}
