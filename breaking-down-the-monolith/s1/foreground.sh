@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /root/ecommerceapp
+cd /root/ecommerce-observability
 ls
 cd
 clear
