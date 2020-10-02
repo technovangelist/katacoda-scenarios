@@ -4,6 +4,11 @@ statusupdate tools
 mkdir -p /root/lab
 cd /ecommworkshop
 git pull
+# locked to specific commit on 2020-10-02
+git checkout 9ce34516d9a65d6f09a6fffd5c4911a409d31e3f
+git reset --hard
+
+
 
 statusupdate createdirs
 docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml pull
