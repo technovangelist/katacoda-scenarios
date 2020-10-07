@@ -1,3 +1,4 @@
+#!/bin/bash
 while [ ! `ls -l /root/k8s-yaml-files/*.yaml 2>/dev/null | wc -l ` -eq 5 ]; do
   sleep 0.3
 done
@@ -9,4 +10,5 @@ k apply -f k8s-yaml-files/discounts.yaml
 k apply -f k8s-yaml-files/frontend.yaml
 clear
 statuscheck tools
+clear
 prepenvironment
