@@ -8,4 +8,5 @@ k apply -f k8s-yaml-files/advertisements.yaml
 k apply -f k8s-yaml-files/discounts.yaml
 k apply -f k8s-yaml-files/frontend.yaml
 clear
+statuscheck tools
 prepenvironment
