@@ -1,0 +1,1 @@
+In this final hands on lab, we will look at Real User Monitoring. This will track the performance of each page on our Store Dog website for each visitor to the site. 

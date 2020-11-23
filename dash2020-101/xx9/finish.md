@@ -1,0 +1,1 @@
+That was a quick taste of what you can do with Real User Monitoring. As with all the other topics we have looked at today, there is so much more you can do with RUM. But we only had 2.5 hours to cover all of it. Be sure to read the [RUM Documentation](https://docs.datadoghq.com/real_user_monitoring/) to learn more. 
