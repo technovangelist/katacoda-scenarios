@@ -46,6 +46,11 @@
       "course_id": "9-real-user-monitoring",
       "title": "Working with RUM",
       "description": "Start working with Rum"
+    },
+    {
+      "course_id": "xx9",
+      "title": "broken stuff",
+      "description": "Start working with Rum"
     }
   ]
 }
