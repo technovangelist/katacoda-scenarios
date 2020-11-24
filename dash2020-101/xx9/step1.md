@@ -22,3 +22,4 @@ In this lab we are going to use the fixed version of our site, but it's not star
 18. Here you can see all the paths you opened when you looked around your application. Notice that this view looks very similar to what we saw with the containers view, logs. 
 19. Look around this page. Explore the different tabs at the top: Views, Resources, Long Tasks, etc. Click into the requests to see the details. If you have done any web development, you know how valuable this data can be in the same location as all your other traces and analytics. 
 20. At the top of the page there is a dropdown for Dashboards. Choose the Performance dashboard. Here you can see a high level view of all the requests to the site. Using the template variables at the top you can focus in on specific devices, paths, and more. 
+sat
