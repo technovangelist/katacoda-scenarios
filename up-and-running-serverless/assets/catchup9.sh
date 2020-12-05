@@ -1,7 +1,9 @@
 #!/bin/bash
 cd ~/workshop
 
-if [ -z ${STAGE+x} ]; then read STAGE; export STAGE; fi
+if [ -z ${STAGE+x} ]; then echo Enter your first initial and last name as one word. So Matt williams would be mwilliams; read STAGE; export STAGE; fi
+
+echo $STAGE
 
 echo Installing Serverless Framework
 npm install -g serverless
