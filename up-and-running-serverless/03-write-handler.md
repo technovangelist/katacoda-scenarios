@@ -20,6 +20,8 @@ module.exports.handler = async (event, context) => {
   const id = `${uuid()}.jpg`;
   const key = `${stage}/unprocessed/${id}`;
 
+  //placeholder 3: Log the image id
+
   const unprocessedImageUrl = `http://${bucket}.s3.amazonaws.com/${stage}/unprocessed/${id}`;
   const processedImageUrl = `http://${bucket}.s3.amazonaws.com/${stage}/processed/${id}`;
 
@@ -44,7 +46,7 @@ module.exports.handler = async (event, context) => {
 
   //placeholder 2: send the metric
 
-  
+
   return {
     statusCode: 202,
     body: JSON.stringify({

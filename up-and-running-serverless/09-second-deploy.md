@@ -9,3 +9,5 @@ And again run this script to test posting the image to our service:
 ```bash
 ./upload.sh "$STAGE" testimage.jpg
 ```
+
+If there was a problem with your environment, you can catch up to where we are by running `catchup9.sh`{{execute}}

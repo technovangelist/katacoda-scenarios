@@ -95,6 +95,11 @@
           "file": "upload.sh",
           "target": "/root/workshop",
           "chmod": "+x"
+        },
+        {
+          "file": "catchup9.sh",
+          "target": "/usr/local/bin",
+          "chmod": "+x"
         }
       ]
     }
