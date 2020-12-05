@@ -5,7 +5,8 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "courseData": "setup.sh"
+      "courseData": "setup.sh",
+      "code": "foreground.sh"
     },
     "steps": [
       {
@@ -103,7 +104,7 @@
     "uieditorpath": "workshop"
   },
   "backend": {
-    "imageid": "ubuntu",
+    "imageid": "datadog-base-v1",
     "reuseConnection": true,
     "livetime": "4h"
   }

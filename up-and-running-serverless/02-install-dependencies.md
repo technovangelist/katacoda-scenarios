@@ -21,7 +21,6 @@ Fill `package.json` with this to specify our NPM dependencies:
 
 Now fetch our dependencies: 
 
-```
 cd workshop
 npm install
 ```
