@@ -19,8 +19,5 @@ Fill `package.json` with this to specify our NPM dependencies:
 }
 ```{{copy}}
 
-Now fetch our dependencies: 
+Now fetch our dependencies with `npm install`{{execute}}
 
-cd workshop
-npm install
-```

@@ -6,4 +6,4 @@ The service will consist of two Lambda functions:
 
 First we will implement the image upload URL Lambda. Then we will add the image processing Lambda.
 
-2
+3

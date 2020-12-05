@@ -1,5 +1,8 @@
 Now we're going to write our Lambda handler code.
-Create another file called `create-image-upload-url.js` with these contents::
+Create another file called `create-image-upload-url.js` with this command: `touch ~/workshop/create-image-upload-url.js`{{execute}}
+
+Copy the following code into that file.
+
 
 ```
 const AWS = require("aws-sdk");
