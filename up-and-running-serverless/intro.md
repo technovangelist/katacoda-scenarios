@@ -5,3 +5,5 @@ The service will consist of two Lambda functions:
 - A Lambda that processes an image by making it square and grayscale
 
 First we will implement the image upload URL Lambda. Then we will add the image processing Lambda.
+
+1
