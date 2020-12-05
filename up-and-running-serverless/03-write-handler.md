@@ -42,6 +42,9 @@ module.exports.handler = async (event, context) => {
     `https://tinyurl.com/api-create.php?url=${processedImageUrl}`
   );
 
+  //placeholder 2: send the metric
+
+  
   return {
     statusCode: 202,
     body: JSON.stringify({
