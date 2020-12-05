@@ -1,6 +1,6 @@
 Now we'll create the YAML config file for our Serverless project.
 
-Open your editor and create a new file called `serverless.yml`. Then copy the YAML content below into your editor:
+Create the serverless YAML new file: `touch ~/workshop/serverless.yml`{{execute}}. Then copy the YAML content below into the new file:
 
 ```
 service: dash-serverless-workshop
