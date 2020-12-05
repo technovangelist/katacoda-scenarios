@@ -2,6 +2,7 @@ We can add a custom metric to our Lambda function.
 
 Replace `//placeholder 1: Import senddistributionmetric` in the code with:
 
+
 ```
 // Import sendDistributionMetric() from datadog-lambda-js
 // This library is provided by the Serverless framework plugin, so we don't have to install it.
