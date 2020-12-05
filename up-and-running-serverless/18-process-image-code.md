@@ -1,5 +1,5 @@
 Next let's add the implementation for the process image Lambda. Create a new file called
-`process-image.js` and add the following code:
+`process-image.js` using this command `touch ~/workshop/process-image.js`{{execute}} and add the following code:
 
 ```js
 const AWS = require("aws-sdk");
