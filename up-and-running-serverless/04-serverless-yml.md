@@ -9,8 +9,8 @@ provider:
   name: aws
   stage: ${opt:stage}
   deploymentBucket:
-    name: dash-serverless-workshop-deployment
-  imageBucketName: dash-serverless-workshop-images
+    name: dd-serverless-workshop-deployment
+  imageBucketName: dd-serverless-workshop-images
   environment:
     BUCKET_NAME: ${self:provider.imageBucketName}
     STAGE: ${self:provider.stage}
