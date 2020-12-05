@@ -19,5 +19,5 @@ Fill `package.json` with this to specify our NPM dependencies:
 }
 ```{{copy}}
 
-Now fetch our dependencies with `npm install`{{execute}}
+Ensure that you are in the workshop directory (`cd ~/workshop`{{execute}}), and then fetch the dependencies with `npm install`{{execute}}
 
