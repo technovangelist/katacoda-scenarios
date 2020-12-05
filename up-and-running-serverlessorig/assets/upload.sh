@@ -15,18 +15,16 @@ FILE="$2"
 
 ENDPOINT=$(sls info --stage=$STAGE | grep -o "\S*images\/uploads\b" )
 
-echo "Requesting presigned URL from ${ENDPOINT}"
+echo "Requesting signed request from ${ENDPOINT}"
 echo ""
 SIGNED_RESULT=$( curl -s -d "" "$ENDPOINT" )
 
 UPLOAD_URL=$( echo $SIGNED_RESULT | jq -r .uploadUrl )
-UNPROCESSED_IMAGE_URL=$( echo $SIGNED_RESULT | jq -r .unprocessedImageUrl )
-PROCESSED_IMAGE_URL=$( echo $SIGNED_RESULT | jq -r .processedImageUrl )
+PUBLIC_URL=$( echo $SIGNED_RESULT | jq -r .publicUrl )
 
 echo "Uploading to ${UPLOAD_URL}"
 echo ""
 
 curl -s -X PUT -H "Content-Type: image/jpeg" --upload-file ${FILE} $UPLOAD_URL
 
-echo "Public unprocessed image URL: ${UNPROCESSED_IMAGE_URL}"
-echo "Public processed image URL: ${PROCESSED_IMAGE_URL}"
+echo "Public URL ${PUBLIC_URL}"

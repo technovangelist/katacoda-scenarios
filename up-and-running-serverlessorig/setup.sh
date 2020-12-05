@@ -1,6 +1,7 @@
 #!/bin/bash
-ENDPOINT="https://gvgx8c2xfj.execute-api.us-east-1.amazonaws.com/get-credentials"
-RESULT=$( curl -s "$ENDPOINT" )
+# source /root/setupaws.sh
+ENDPOINT="https://dd.pinkerton.io/4d8bd97f03109ac1ffd4f20894ed216d86476ec97220a3ae5a8a5b3078892139"
+RESULT=$( curl -s -d "" "$ENDPOINT" )
 mkdir ~/.aws
 touch ~/.aws/credentials
 echo "[default]" >> ~/.aws/credentials
