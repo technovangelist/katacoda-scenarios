@@ -1,0 +1,49 @@
+{
+  "title": "Getting Started with technovangelist@dd v2",
+  "description": "",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "pathway_id": "technovangelist@dd/101v2",
+      "course_id": "dd101-1intro",
+      "id": "dd101-1intro",
+      "title": "Introduction",
+      "description": "Let's get started with the platform"
+    },
+    {
+      "pathway_id": "technovangelist@dd/101v2",
+      "course_id": "dd101-2-1installagenthost",
+      "id": "dd101-2-1installagenthost",
+      "title": "Install the Agent on a VM",
+      "description": "Learn about the environment you are going to use in this course"
+    },
+    {
+      "pathway_id": "technovangelist@dd/101v2",
+      "course_id": "dd101-2-2installagentdocker",
+      "id": "dd101-2-2installagentdocker",
+      "title": "Install the Agent on Docker",
+      "description": "Learn about the environment you are going to use in this course"
+    },
+    {
+      "pathway_id": "technovangelist@dd/101v2",
+      "course_id": "dd101-3integration",
+      "id": "dd101-3integration",
+      "title": "Using integrations",
+      "description": "Learn about setting up integrations"
+    },
+    {
+      "pathway_id": "technovangelist@dd/101v2",
+      "course_id": "dd101-4dashboard",
+      "id": "dd101-4dashboard",
+      "title": "Working with Dashboards",
+      "description": "Learn how to setup and use alerts"
+    },
+    {
+      "pathway_id": "technovangelist@dd/101v2",
+      "course_id": "dd101-5alert",
+      "id": "dd101-5alert",
+      "title": "Working with alerts",
+      "description": "Learn how to setup and use alerts"
+    }
+  ]
+}
