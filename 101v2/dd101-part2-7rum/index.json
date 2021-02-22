@@ -1,0 +1,50 @@
+{
+  "time": "30 minutes",
+  "title": "Using Real User Monitoring",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      },
+      {
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      },
+      {
+        "text": "step4.md"
+      },
+      {
+        "text": "step5.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yaml",
+          "target": "/root",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/ecommworkshop",
+    "showdashboard": true,
+    "dashboards": [{ "name": "StoreDog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v1"
+  }
+}

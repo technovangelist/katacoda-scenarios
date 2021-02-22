@@ -1,0 +1,1 @@
+In this section of this course, we want to take a look at creating alerts. Sometimes it's useful to create alerts for informational purposes, for living documentation. And other times you want to actually be alerted. We will cover both cases.

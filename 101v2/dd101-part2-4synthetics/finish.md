@@ -1,0 +1,1 @@
+Congratulations on completing the introductory Synthetics lesson. Stay tuned to the Learning Center for a deeper dive on Synthetics coming soon.

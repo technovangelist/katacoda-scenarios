@@ -1,0 +1,1 @@
+That was a brief introduction to Logs in Datadog. For more information, you can read the Datadog <a href="https://docs.datadoghq.com/logs/" target="_datadog">Log Management</a> docs, and go through the Going Deeper With Logs: Parsing course. 

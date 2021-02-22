@@ -1,0 +1,25 @@
+version: "3"
+services:
+  redis:
+    image: redis
+  nginx:
+    image: nginx
+    # insert labels here
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 8000:8000
+  datadog:
+    links:
+      - redis
+      - nginx
+    image: datadog/agent:latest
+    environment:
+      - DD_API_KEY
+      - DD_APM_ENABLED
+      - DD_LOGS_ENABLED=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - /root/lab/docker/conf:/conf.d

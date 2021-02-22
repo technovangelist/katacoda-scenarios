@@ -1,0 +1,50 @@
+{
+  "time": "10 minutes",
+  "title": "Creating a Dashboard!",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Create a Timeboard",
+        "text": "step1.md"
+      },
+      {
+        "title": "Add a Few Widgets",
+        "text": "step2.md"
+      },
+      {
+        "title": "Using Formulas",
+        "text": "step3.md"
+      },
+      {
+        "title": "Further Populate the Dashboard",
+        "text": "step4.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "kcsetapi.sh",
+          "target": "/root",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "",
+    "showdashboard": true
+  },
+  "backend": {
+    "imageid": "datadog-intro",
+    "reuseConnection": "false"
+  }
+}

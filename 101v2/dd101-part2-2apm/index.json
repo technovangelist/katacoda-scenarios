@@ -1,0 +1,51 @@
+{
+  "difficulty": "Intermediate",
+  "title": "Using APM",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      },
+      {
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        
+        {
+          "file": "finish",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "k8s-yaml-files",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "App Dashboard",
+        "href": "https://[[HOST2_SUBDOMAIN]]-30001-[[KATACODA_HOST]].environments.katacoda.com/"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-kubernetes-cluster-running",
+    "reuseConnection": "false"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "time": "40 minutes",
+  "title": "Network Performance Monitoring",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md",
+        "title": "Getting Started"
+      },
+      {
+        "text": "step2.md",
+        "title": "Observe the Network"
+      },
+      {
+        "text": "step3.md",
+        "title": "Diagnose Latency"
+      }
+    ],
+    "finish" : {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "frontend-docker-entrypoint.sh",
+          "target": "/root"
+        }
+
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": "true",
+    "uieditorpath": "/root", 
+    "terminals": [
+      {
+        "name": "Terminal 2"
+      }
+    ],
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Storedog",
+        "port": 3000
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-base-v1",
+    "reuseConnection": "false"
+  }
+}
