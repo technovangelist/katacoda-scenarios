@@ -26,7 +26,7 @@
           "file": "finish",
           "target": "/usr/local/bin/",
           "chmod": "+x"
-        }, 
+        },
         {
           "file": "samplefile.txt",
           "target": "/root/editor"
@@ -35,11 +35,11 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "vscode-terminal-split",
     "uieditorpath": "/root/editor"
   },
   "backend": {
-    "imageid": "datadog-base-v2",
+    "imageid": "datadog-base-3",
     "reuseConnection": "false"
   }
 }
