@@ -3,8 +3,8 @@
   "title": "Introduction to the Course",
   "details": {
     "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh",
+      "background": "background.sh",
+      "foreground": "foreground.sh",
       "text": "intro.md"
     },
     "steps": [
