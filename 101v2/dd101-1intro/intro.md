@@ -7,3 +7,4 @@ The objectives of this section are:
 1. Get familiar with the lab environment.
 2. Login to Datadog with the account created for you.
 3. Ensure you are in the right Datadog account.
+x
