@@ -39,7 +39,7 @@
     "uieditorpath": "/root/editor"
   },
   "backend": {
-    "imageid": "datadog-base-v3",
+    "imageid": "datadog-base-v2",
     "reuseConnection": "false"
   }
 }
