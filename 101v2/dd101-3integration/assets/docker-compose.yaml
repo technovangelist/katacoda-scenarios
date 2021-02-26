@@ -1,9 +1,9 @@
 version: "3"
 services:
   redis:
-    image: redis
+    image: redis:6.0.11
   nginx:
-    image: nginx
+    image: nginx:1.19.7
     # insert labels here
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
@@ -13,7 +13,7 @@ services:
     links:
       - redis
       - nginx
-    image: datadog/agent:latest
+    image: datadog/agent:7.25.1
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED

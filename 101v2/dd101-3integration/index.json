@@ -3,8 +3,8 @@
   "title": "Setting up Integrations",
   "details": {
     "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh",
+      "background": "background.sh",
+      "foreground": "foreground.sh",
       "text": "intro.md"
     },
     "steps": [
@@ -26,16 +26,6 @@
     },
     "assets": {
       "host01": [
-        {
-          "file": "start",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "finish",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
         {
           "file": "nginx.conf",
           "target": "/root/lab/docker"

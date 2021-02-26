@@ -33,9 +33,9 @@ sudo sed -i '20i location /nginx_status {\n stub_status on;\n  access_log   off;
 ln -s /etc/nginx /root/lab/nginx
 ln -s /etc/datadog-agent /root/lab/datadog
 
-docker pull redis:6.0.10
+docker pull redis:6.0.11
 docker pull nginx:1.19.7
-docker pull datadog/agent:7
+docker pull datadog/agent:7.25.1
 chmod 666 /var/log/nginx/access.log
 chmod 666 /var/log/nginx/error.log
 
