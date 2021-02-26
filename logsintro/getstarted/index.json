@@ -29,6 +29,6 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "datadog-base-v2"
   }
 }
