@@ -3,8 +3,8 @@
   "time": "25 minutes",
   "details": {
     "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh",
+      "background": "background.sh",
+      "foreground": "foreground.sh",
       "text": "intro.md"
     },
     "steps": [
@@ -29,7 +29,7 @@
     ]
   },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "editor-terminal",
     "uieditorpath": "/etc/datadog-agent",
     "terminals": [
       {
@@ -38,6 +38,6 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "datadog-base-v2"
   }
 }
