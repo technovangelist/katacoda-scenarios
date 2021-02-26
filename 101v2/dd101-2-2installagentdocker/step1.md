@@ -5,7 +5,7 @@
    datadog:
        links:
        - redis # Ensures datadog container can connect to redis container
-       image: datadog/agent:latest
+       image: datadog/agent:7
        environment:
        - DD_API_KEY
        - DD_HOSTNAME=dockerhost
