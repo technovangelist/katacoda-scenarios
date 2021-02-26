@@ -1,0 +1,28 @@
+{
+  "title": "Introduction to Logs with Datadog",
+  "description": "",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "pathway_id": "datadog/logsintro",
+      "course_id": "exampleapp",
+      "id": "exampleapp",
+      "title": "Working with the Example Application",
+      "description": ""
+    }, 
+    {
+      "pathway_id": "datadog/logsintro", 
+      "course_id": "getstarted",
+      "id": "getstarted", 
+      "title": "Getting Started with Logs",
+      "description": ""
+    },
+    {
+      "pathway_id": "datadog/logsintro",
+      "course_id": "gofurther",
+      "id": "gofurther",
+      "title": "Go Further with Logs",
+      "description": ""
+    }    
+  ]
+}

@@ -1,5 +1,7 @@
 {
-  "title": "logsintro 2",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "title": "Intro to Logs: Getting Started",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -9,7 +11,7 @@
     "steps": [
       {
         "text": "step1.md"
-      },
+      }, 
       {
         "text": "step2.md"
       }
@@ -19,7 +21,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "editor-terminal", 
     "terminals": [
       {
         "name": "Terminal 2"
