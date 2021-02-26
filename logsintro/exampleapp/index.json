@@ -21,7 +21,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
+    "uilayout": "editor-terminal",
     "terminals": [
       {
         "name": "Terminal 2"
@@ -29,6 +29,6 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "datadog-base-v2"
   }
 }
