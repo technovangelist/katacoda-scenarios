@@ -1,0 +1,68 @@
+{
+  "title": "Instrumenting a Docker App Deployment",
+  "description": "Instrumenting a Docker App Deployment",
+  "difficulty": "Beginner",
+  "time": "30 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Preparing the Environment",
+        "text": "step1.md"
+      },
+      {
+        "title": "Enabling Trace Collection by the Datadog Agent",
+        "text": "step2.md"
+      },
+      {
+        "title": "Instrumenting a Rails App Service",
+        "text": "step3.md"
+      },
+      {
+        "title": "Viewing Incoming Trace Data",
+        "text": "step4.md"
+      },
+      {
+        "title": "Instrumenting Python Flask App Services",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "envready",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "check-file",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "/ecommworkshop",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{"name": "storedog", "port": 3000}]
+  },
+  "backend": {
+    "imageid": "datadog-base-v2"
+  }
+}
