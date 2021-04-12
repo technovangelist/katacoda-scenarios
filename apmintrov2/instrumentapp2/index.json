@@ -55,7 +55,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "vscode-terminal-split",
     "uieditorpath": "/ecommworkshop",
     "showide": true,
     "hideHiddenFiles": true,
