@@ -1,0 +1,21 @@
+{
+  "title": "Introduction to Application Perfomance Monitoring",
+  "description": "",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "pathway_id": "datadog/apmintrov2",
+      "course_id": "instrumentapp2",
+      "id": "instrumentapp2",
+      "title": "Instrumenting a Docker App Deployment",
+      "description": "Instrumenting a Docker App Deployment"
+    },
+    {
+      "pathway_id": "datadog/apmintrov2",
+      "course_id": "fixapp",
+      "id": "fixapp",
+      "title": "Monitoring App Performance",
+      "description": "Monitoring App Performance"
+    }
+  ]
+} 
