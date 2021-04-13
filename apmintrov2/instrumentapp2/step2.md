@@ -6,9 +6,9 @@ For APM in Datadog, you need to enable trace collection by the Datadog agent. To
 3. Click **Copy to Editor** in the block below or manually copy and paste the text where indicated to add the following to the list of environment variables for the agent.
 
    <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add agent env variables">
-        - DD_APM_ENABLED=true
-        - DD_LOGS_ENABLED=true
-        - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true</pre>
+         - DD_APM_ENABLED=true
+         - DD_LOGS_ENABLED=true
+         - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true</pre>
 
    `DD_APM_ENABLED=true` enables trace collection. (Note: This is enabled by default for Agent 6+.)
 
@@ -18,7 +18,7 @@ For APM in Datadog, you need to enable trace collection by the Datadog agent. To
 
 4. Click **Copy to Editor** below or manually copy and paste the text where indicated to add the ports for tracing between the agent container and other containers.
 
-   <pre class="file" data-filename="docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add agent trace port">
+   <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add agent trace port">
       ports:
         - "8126:8126"</pre>
 
@@ -26,7 +26,7 @@ For APM in Datadog, you need to enable trace collection by the Datadog agent. To
 
 5. Click **Copy to Editor** below or manually copy and paste the text where indicated to add labels to the logs.
 
-   <pre class="file" data-filename="docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add agent log labels">
+   <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add agent log labels">
       labels:
         com.datadoghq.ad.logs: '[{"source": "datadog-agent", "service": "agent"}]'</pre>
 
