@@ -63,6 +63,6 @@
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-base-v2"
+    "imageid": "datadog-base-v1"
   }
 }
