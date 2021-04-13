@@ -57,7 +57,6 @@
   "environment": {
     "uilayout": "vscode-terminal-split",
     "uieditorpath": "/ecommworkshop",
-    "showide": true,
     "hideHiddenFiles": true,
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
