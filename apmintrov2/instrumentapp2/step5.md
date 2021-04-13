@@ -17,7 +17,7 @@ The `discounts` and `advertisements` services have a Python Flask framework, so 
 
 5.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add the `ddtrace-run` wrapper to the command that brings up the Flask server.
 
-        <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="command: flask run --port=5001 --host=0.0.0.0">
+<pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="command: flask run --port=5001 --host=0.0.0.0">
 
     command: ddtrace-run flask run --port=5001 --host=0.0.0.0</pre>
 
@@ -50,7 +50,7 @@ Because the advertisements service also has a Python-Flask framework, the advert
 
 3.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add the `ddtrace-run` wrapper to the command that brings up the Flask server. Note that the port for this service is 5002.
 
-        <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="command: flask run --port=5002 --host=0.0.0.0">
+<pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="command: flask run --port=5002 --host=0.0.0.0">
 
     command: ddtrace-run flask run --port=5002 --host=0.0.0.0</pre>
 
