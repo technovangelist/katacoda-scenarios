@@ -11,9 +11,9 @@ The `discounts` and `advertisements` services have a Python Flask framework, so 
 4.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add the following to the list of environment variables for the service.
 
 <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add discounts env variables">
-     - DD_AGENT_HOST=agent
-     - DD_LOGS_INJECTION=true
-     - DD_ANALYTICS_ENABLED=true</pre>
+      - DD_AGENT_HOST=agent
+      - DD_LOGS_INJECTION=true
+      - DD_ANALYTICS_ENABLED=true</pre>
 
 5.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add the `ddtrace-run` wrapper to the command that brings up the Flask server.
 
@@ -26,8 +26,8 @@ The `discounts` and `advertisements` services have a Python Flask framework, so 
 6.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add labels to enable logs.
 
 <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add discounts log labels">
-   labels:
-     com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'</pre>
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'</pre>
 
 7.  Click `rm /ecommworkshop/store-frontend-broken-instrumented/store-frontend/tmp/pids/*; docker-compose -f docker-compose-broken-no-apm-instrumentation.yml up -d`{{execute}} to restart the docker deployment to apply these changes. <p> The **discounts** section of the docker-compose file should now look like the screenshot below. <p> ![instrumented-discounts](instrumentapp2/assets/instrumented-discounts.png)
 
@@ -44,9 +44,9 @@ Because the advertisements service also has a Python-Flask framework, the advert
 2.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add the following to the list of environment variables for the service.
 
 <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add ads env variables">
-     - DD_AGENT_HOST=agent
-     - DD_LOGS_INJECTION=true
-     - DD_ANALYTICS_ENABLED=true</pre>
+      - DD_AGENT_HOST=agent
+      - DD_LOGS_INJECTION=true
+      - DD_ANALYTICS_ENABLED=true</pre>
 
 3.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add the `ddtrace-run` wrapper to the command that brings up the Flask server. Note that the port for this service is 5002.
 
@@ -57,8 +57,8 @@ Because the advertisements service also has a Python-Flask framework, the advert
 4.  Click **Copy to Editor** below or manually copy and paste the text where indicated to add labels to enable logs.
 
 <pre class="file" data-filename="docker-compose-files/docker-compose-broken-no-apm-instrumentation.yml" data-target="insert" data-marker="# add ads log labels">
-   labels:
-     com.datadoghq.ad.logs: '[{"source": "python", "service": "advertisements-service"}]'</pre>
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "python", "service": "advertisements-service"}]'</pre>
 
 5.  Click `rm /ecommworkshop/store-frontend-broken-instrumented/store-frontend/tmp/pids/*; docker-compose -f docker-compose-broken-no-apm-instrumentation.yml up -d`{{execute}} to restart the docker deployment to apply these changes. <p> The **advertisements** section of the docker-compose file should now look like the screenshot below. <p> ![instrumented-adverstisements](instrumentapp2/assets/instrumented-advertisements.png)
 
