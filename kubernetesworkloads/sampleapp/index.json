@@ -17,7 +17,19 @@
       "text": "finish.md"
     }
   },
-  "environment": {},
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/k8s-yaml-files",
+    "idePort": 23000,
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Datadog",
+        "href": "https://app.datadoghq.com"
+      }
+    ]
+  },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
   }
