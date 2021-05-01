@@ -8,5 +8,4 @@ curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 
 watch -g -n 3 'curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" <my katacoda scenario url> | htmlq head meta[name=lastUpdated] -a content'
 
-
 watch -g -n 3 'curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" <my katacoda url> | htmlq head meta[name=lastUpdated] -a content ' && terminal-notifier -message "katacoda updated" -sound default
