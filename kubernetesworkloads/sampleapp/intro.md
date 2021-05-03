@@ -1,11 +1,1 @@
-xxyy
-
-git commit; git push; watch -g -n 3 'curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" https://katacoda.com/technovangelist@dd/courses/kubernetesworkloads/sampleapp | htmlq head meta[name=lastUpdated] -a content' && tput bel
-
-
-curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" https://katacoda.com/technovangelist@dd/courses/kubernetesworkloads/sampleapp | htmlq head meta[name=lastUpdated] 
-
-
-watch -g -n 3 'curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" <my katacoda scenario url> | htmlq head meta[name=lastUpdated] -a content'
-
-watch -g -n 3 'curl  -s -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" <my katacoda url> | htmlq head meta[name=lastUpdated] -a content ' && terminal-notifier -message "katacoda updated" -sound default
+In this scenario we are going to walk through the features and functionality of the example application. This is the application we are going to migrate to Kubernetes. 
