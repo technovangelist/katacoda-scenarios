@@ -18,11 +18,12 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "showide": true,
-    "uieditorpath": "/root/k8s-yaml-files",
-    "idePort": 23000,
+    "uilayout": "iframe",
+    "showide": false,
     "showdashboard": true,
+    "showvisualise": true,
+    "scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
+    "scopePort": 4040,
     "dashboards": [
       {
         "name": "Datadog",
@@ -31,6 +32,6 @@
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "datadog-base-v2"
   }
 }
