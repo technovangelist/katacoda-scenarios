@@ -18,18 +18,21 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-iframe-split",
+    "uilayout": "iframe",
     "showide": false,
     "showdashboard": true,
     "dashboards": [
       {
         "name": "Datadog",
         "href": "https://app.datadoghq.com"
+      },
+      {
+        "name": "asht",
+        "href": "https://google.com"
       }
     ]
   },
   "backend": {
-    "imageid": "datadog-base-v2",
-    "port": 3000
+    "imageid": "datadog-base-v2"
   }
 }
