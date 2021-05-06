@@ -19,16 +19,17 @@
   },
   "environment": {
     "uilayout": "terminal-iframe",
-    "showide": false,
     "showdashboard": true,
     "dashboards": [
       {
         "name": "Datadog",
-        "href": "https://app.datadoghq.com"
+        "href": "https://app.datadoghq.com",
+        "port": 443
       },
       {
         "name": "asht",
-        "href": "https://google.com"
+        "href": "https://google.com",
+        "port": 443
       }
     ]
   },
