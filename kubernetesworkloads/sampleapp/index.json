@@ -18,7 +18,7 @@
     }
   },
   "environment": {
-    "uilayout": "iframe",
+    "uilayout": "terminal-iframe",
     "showide": false,
     "showdashboard": true,
     "dashboards": [
