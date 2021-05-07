@@ -19,6 +19,6 @@
   },
   "environment": {},
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "datadog-base-v3"
   }
 }
