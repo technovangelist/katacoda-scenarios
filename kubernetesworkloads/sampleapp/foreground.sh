@@ -1,4 +1,4 @@
 #!/bin/bash
 
-statuscheck dockerrunning
-prepenvironment
+# statuscheck dockerrunning
+# prepenvironment
