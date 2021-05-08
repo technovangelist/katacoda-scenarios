@@ -19,6 +19,6 @@
   },
   "environment": {},
   "backend": {
-    "imageid": "datadog-base-v3"
+    "imageid": "datadog-base-v2"
   }
 }
