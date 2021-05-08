@@ -1,7 +1,5 @@
 {
   "title": "Walkthrough the Sample App",
-  "description": "",
-  "difficulty": "Beginner",
   "time": "20 minutes",
   "details": {
     "steps": [
@@ -24,14 +22,8 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "Datadog",
-        "href": "https://app.datadoghq.com",
-        "port": 443
-      },
-      {
-        "name": "asht",
-        "href": "https://google.com",
-        "port": 443
+        "name": "Storedog",
+        "port": 3000
       }
     ]
   },
