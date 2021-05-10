@@ -4,7 +4,7 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "pathway_id": "technovangelist@dd/kubernetesworkloads",
+      "pathway_id": "technovangelist@dd/k8sworkloads",
       "course_id": "sampleapp",
       "id": "sampleapp",
       "title": "Walkthrough the Sample Application",
