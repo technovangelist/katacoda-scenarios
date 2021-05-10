@@ -1,9 +1,12 @@
 {
   "title": "Monitoring Workloads on Kubernetes",
   "description": "This course demonstrates what is unique about monitoring an application on top of Kubernetes",
+  "icon": "fa-katacoda",
   "courses": [
     {
+      "pathway_id": "technovangelist@dd/kubernetesworkloads",
       "course_id": "sampleapp",
+      "id": "sampleapp",
       "title": "Walkthrough the Sample Application",
       "description": "this is getting started"
     }
