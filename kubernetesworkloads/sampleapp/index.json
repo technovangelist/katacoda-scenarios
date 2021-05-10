@@ -18,7 +18,10 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-iframe",
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/ecommworkshop",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [
       {
@@ -28,6 +31,6 @@
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "datadog-base-v2"
   }
 }
