@@ -4,7 +4,6 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "pathway_id": "technovangelist@dd/monitorworkloads",
       "course_id": "sampleapp",
       "title": "Getting started with the sample lab",
       "description": "Getting started with the sample lab"
