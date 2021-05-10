@@ -1,0 +1,72 @@
+{
+  "title": "Monitoring App Performance",
+  "description": "Using APM to investigate app performance ",
+  "difficulty": "Beginner",
+  "time": "40 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Preparing the Environment",
+        "text": "step1.md"
+      },
+      {
+        "title": "Creating APM Monitors",
+        "text": "step2.md"
+      },
+      {
+        "title": "Investigating Request Errors",
+        "text": "step3.md"
+      },
+      {
+        "title": "Investigating Latency Issues",
+        "text": "step4.md"
+      },
+      {
+        "title": "Analyzing Trace Data in App Analytics",
+        "text": "step5.md"
+      },
+      {
+        "title": "Investigating Inefficient Database Queries",
+        "text": "step6.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "envready",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "check-file",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "/ecommworkshop",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{"name": "storedog", "port": 3000}]
+  },
+  "backend": {
+    "imageid": "datadog-base-v2"
+  }
+}
