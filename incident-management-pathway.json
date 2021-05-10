@@ -1,0 +1,14 @@
+{
+  "title": "Introduction to Incident Management",
+  "description": "",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "pathway_id": "technovangelist@dd/incident-management",
+      "course_id": "lab",
+      "id": "lab",
+      "title": "Incident Management Lab",
+      "description": "Incident Management Lab"
+    }
+  ]
+} 
