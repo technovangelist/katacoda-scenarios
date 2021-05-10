@@ -1,1 +1,3 @@
 #!/bin/bash
+
+statusupdate complete
