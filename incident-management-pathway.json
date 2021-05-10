@@ -4,11 +4,11 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "pathway_id": "technovangelist@dd/incident-management",
+      "pathway_id": "technovangelist@dd/dadgoatincident",
       "course_id": "lab",
       "id": "lab",
       "title": "Incident Management Lab",
       "description": "Incident Management Lab"
     }
   ]
-} 
+}
