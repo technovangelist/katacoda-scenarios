@@ -1,10 +1,11 @@
 {
-  "title": "Intro to Monitoring Workloads on Kubernetes",
+  "title": "Introduction to Monitoring Workloads on Kubernetes",
   "description": "",
   "icon": "fa-katacoda",
   "courses": [
     {
       "course_id": "sampleapp",
+      "id": "sampleapp",
       "title": "Getting started with the sample lab",
       "description": "Getting started with the sample lab"
     }
