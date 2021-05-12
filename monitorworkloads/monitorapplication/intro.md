@@ -1,0 +1,1 @@
+In this scenario we are going to walk through the features and functionality of the example application. This is the application we are going to migrate to Kubernetes. 

@@ -1,0 +1,34 @@
+{
+  "title": "Migrating the application to Kubernetes",
+  "description": "Let's migrate the application from a traditional EC2 environment to Kubernetes",
+  "difficulty": "Beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Preparing the Environment",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "iframe-terminal",
+    "uieditorpath": "/ecommworkshop",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3",
+    "port": 3000
+  }
+}

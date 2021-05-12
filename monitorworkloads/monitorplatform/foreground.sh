@@ -6,6 +6,4 @@ docker-compose -f /ecommworkshop/deploy/docker-compose/docker-compose-fixed-inst
 cd /ecommworkshop || exit
 ./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000" &
 echo 'here'
-clear
-statuscheck labtools
 prepenvironment
