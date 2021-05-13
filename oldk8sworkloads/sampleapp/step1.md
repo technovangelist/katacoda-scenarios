@@ -1,1 +1,0 @@
-The sample application will take a few seconds to load. Once it is loaded
