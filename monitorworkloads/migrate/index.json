@@ -1,12 +1,12 @@
 {
   "title": "Migrating the application to Kubernetes",
-  "description": "Let's migrate the application from a traditional EC2 environment to Kubernetes",
+  "description": "Let's migrate the application to Kubernetes",
   "difficulty": "Beginner",
   "time": "20 minutes",
   "details": {
     "steps": [
       {
-        "title": "Preparing the Environment",
+        "title": "Start building the Kubernetes environment",
         "text": "step1.md"
       }
     ],
@@ -23,12 +23,9 @@
     "uilayout": "iframe-terminal",
     "uieditorpath": "/ecommworkshop",
     "hideHiddenFiles": true,
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
-    "showdashboard": true,
-    "dashboards": [{ "name": "storedog", "port": 3000 }]
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18",
-    "port": 3000
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }

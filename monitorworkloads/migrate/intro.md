@@ -1,1 +1,1 @@
-Let's now start looking at migrating the application to Kubernetes. 
+In this lab we are going to migrate our application to Kubernetes. Due to some limitations of the lab platform, we won't be able to use the application on EC2 and instead you will have seen that part in the video. 
