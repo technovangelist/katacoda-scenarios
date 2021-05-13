@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../../datadog/katacodalabtools/katacodaindexjsonschema.json", 
+  "$schema": "../../../../datadog/katacodalabtools/katacodaindexjsonschema.json",
   "title": "Geting started with the sample lab",
   "description": "Using APM to investigate app performance ",
   "difficulty": "Beginner",
@@ -30,7 +30,7 @@
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.20",
+    "imageid": "kubernetes-cluster-running:1.18",
     "port": 3000
   }
 }
