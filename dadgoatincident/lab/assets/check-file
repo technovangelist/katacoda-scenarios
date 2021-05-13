@@ -1,7 +1,0 @@
-#! /usr/bin/env bash
-
-while [ ! -f /root/app-files/docker-compose.yml ]; do
-    printf '.'
-    sleep 2; 
-done
-printf '\n'
