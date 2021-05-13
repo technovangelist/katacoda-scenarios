@@ -26,6 +26,6 @@
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "datadog-k8s-cluster-v1"
   }
 }
