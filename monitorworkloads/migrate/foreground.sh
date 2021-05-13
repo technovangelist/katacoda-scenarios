@@ -4,4 +4,5 @@ until [ -f "/usr/local/bin/prepenvironment" ]; do
 done
 statuscheck labtools
 clear
+echo "blah" > /root/test.txt
 prepenvironment
