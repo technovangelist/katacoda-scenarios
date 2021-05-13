@@ -9,7 +9,7 @@
       "description": "Getting started with the sample lab"
     },
     {
-      "course_id": "migrate",
+      "course_id": "migrateapplication",
       "title": "Migrating the Application to Kubernetes",
       "description": "Migrating the Application to Kubernetes"
     },
