@@ -28,7 +28,7 @@
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-base-v3",
+    "imageid": "kubernetes-cluster-running:1.18",
     "port": 3000
   }
 }
