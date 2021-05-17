@@ -27,6 +27,6 @@
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"]
   },
   "backend": {
-    "imageid": "datadog-k8s-cluster-v1"
+    "imageid": "datadog-k8s-v1-cluster-running"
   }
 }

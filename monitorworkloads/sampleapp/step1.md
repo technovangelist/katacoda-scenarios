@@ -8,4 +8,3 @@ In this course, we are going to work with the StoreDog ecommerce app. This lab w
 7.  Click on Store Frontend and choose to View the Service Overview. Scroll down the page and notice the different types of information available. 
 8.  Click on the Spree::HomeController endpoint. Click on one of the spans at the bottom of the page. You should see a flamegraph representing that particular request. 
 9.  Try the other options from the Service Map. Take a look at the other services on the map. 
-10. 
