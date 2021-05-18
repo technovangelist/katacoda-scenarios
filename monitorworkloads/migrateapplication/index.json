@@ -6,8 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "Start building the Kubernetes environment",
+        "title": "Deploy the Database",
         "text": "step1.md"
+      }, 
+      {
+        "title": "Deploy the Discounts Service", 
+        "text": "step2.md"
       }
     ],
     "intro": {

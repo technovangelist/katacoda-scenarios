@@ -1,0 +1,62 @@
+We now have a working database. Let's work on the first of our web server components: discounts. This is a flask-based Python application. 
+
+1.  Create a discounts.yaml file using this command `touch ~/workshop/discounts.yaml`{{execute}}.
+2.  Add the following content to this file: <pre class="file" data-target="clipboard">
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+        app: ecommerce
+        service: discounts
+      name: discounts
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          service: discounts
+          app: ecommerce
+      strategy: {}
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            service: discounts
+            app: ecommerce
+        spec:
+          containers:
+          - image: ddtraining/discounts-fixed:latest
+            name: discounts
+            command: ["flask"]
+            args: ["run", "--port=5001", "--host=0.0.0.0"]
+            env:
+              - name: FLASK_APP
+                value: "discounts.py"
+              - name: FLASK_DEBUG
+                value: "1"
+              - name: POSTGRES_PASSWORD
+                value: "password"
+              - name: POSTGRES_USER
+                value: "user"
+            ports:
+            - containerPort: 5001
+            resources: {}
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        service: discounts
+        app: ecommerce
+      name: discounts
+    spec:
+      ports:
+      - port: 5001
+        protocol: TCP
+        targetPort: 5001
+      selector:
+        service: discounts
+        app: ecommerce
+      type: ClusterIP
+      </pre>
+
+1.  Looking at the contents of discount.yaml, you can see that it's loading an image called ddtraining/discounts-service
