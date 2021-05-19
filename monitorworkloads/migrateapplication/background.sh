@@ -15,5 +15,5 @@ cp -r /ecommworkshop/discounts-service-fixed /root/workshop/discounts-service
 cp /ecommworkshop/gor /root/workshop
 cp -r /ecommworkshop/traffic-replay /root/workshop/traffic-replay
 
-launch.sh
+# launch.sh
 statusupdate complete
