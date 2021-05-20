@@ -3,67 +3,67 @@ We now have a working database. Let's work on the first of our web server compon
 1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the db.yaml file: `cp -i /root/completedfiles/db.yaml /root/workshop/db.yaml`{{execute}}
 2.  Create a discounts.yaml file using this command `touch ~/workshop/discounts.yaml`{{execute}}.
 3.  Add the following content to this file: 
-<pre class="file" data-target="clipboard">
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: ecommerce
-    service: discounts
-  name: discounts
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      service: discounts
-      app: ecommerce
-  strategy: {}
-  template:
+    <pre class="file" data-target="clipboard">
+    apiVersion: apps/v1
+    kind: Deployment
     metadata:
-      creationTimestamp: null
+      labels:
+        app: ecommerce
+        service: discounts
+      name: discounts
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          service: discounts
+          app: ecommerce
+      strategy: {}
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            service: discounts
+            app: ecommerce
+        spec:
+          containers:
+          - image: ddtraining/discounts-fixed:latest
+            name: discounts
+            command: ["flask"]
+            args: ["run", "--port=5001", "--host=0.0.0.0"]
+            env:
+              - name: FLASK_APP
+                value: "discounts.py"
+              - name: FLASK_DEBUG
+                value: "1"
+              - name: POSTGRES_PASSWORD
+                value: "password"
+              - name: POSTGRES_USER
+                value: "user"
+            ports:
+            - containerPort: 5001
+            resources: {}
+    </pre>
+
+4.  Just below that add the following:
+    <pre class="file" data-target="clipboard">
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
       labels:
         service: discounts
         app: ecommerce
+      name: discounts
     spec:
-      containers:
-      - image: ddtraining/discounts-fixed:latest
-        name: discounts
-        command: ["flask"]
-        args: ["run", "--port=5001", "--host=0.0.0.0"]
-        env:
-          - name: FLASK_APP
-            value: "discounts.py"
-          - name: FLASK_DEBUG
-            value: "1"
-          - name: POSTGRES_PASSWORD
-            value: "password"
-          - name: POSTGRES_USER
-            value: "user"
-        ports:
-        - containerPort: 5001
-        resources: {}
-</pre>
-
-4.  Just below that add the following:
-<pre class="file" data-target="clipboard">
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    service: discounts
-    app: ecommerce
-  name: discounts
-spec:
-  ports:
-  - port: 5001
-    protocol: TCP
-    targetPort: 5001
-  selector:
-    service: discounts
-    app: ecommerce
-  type: ClusterIP
-</pre>
+      ports:
+      - port: 5001
+        protocol: TCP
+        targetPort: 5001
+      selector:
+        service: discounts
+        app: ecommerce
+      type: ClusterIP
+    </pre>
 
 1.  Now run `k apply -f discount.yaml`{{execute}} 
 2.  Looking at the contents of discount.yaml, you can see that it's loading an image called ddtraining/discounts-fixed. This is a simple docker image based on python:3.9.1-slim-buster that has installed the requirements that you can see in the discounts-service folder in this lab. The only other thing defined in that docker image is that the package build-essential has been installed. 
