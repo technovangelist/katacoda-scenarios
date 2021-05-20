@@ -3,7 +3,7 @@ We now have a working database. Let's work on the first of our web server compon
 1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the db.yaml file: `cp -i /root/completedfiles/db.yaml /root/workshop/db.yaml`{{execute}}
 2.  Create a discounts.yaml file using this command `touch ~/workshop/discounts.yaml`{{execute}}.
 3.  Add the following content to this file: 
-<pre class="file" data-target="clipboard">
+<pre class="file" data-target="clipboard"><code>
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -59,7 +59,8 @@ spec:
     service: discounts
     app: ecommerce
   type: ClusterIP
-  </pre>
+
+  </code></pre>
 
 1.  Now run `k apply -f discount.yaml`{{execute}} 
 2.  Looking at the contents of discount.yaml, you can see that it's loading an image called ddtraining/discounts-fixed. This is a simple docker image based on python:3.9.1-slim-buster that has installed the requirements that you can see in the discounts-service folder in this lab. The only other thing defined in that docker image is that the package build-essential has been installed. 
