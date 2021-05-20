@@ -14,6 +14,6 @@ cp -r /ecommworkshop/storedog /root/workshop/storedog
 cp -r /ecommworkshop/discounts-service-fixed /root/workshop/discounts-service
 cp /ecommworkshop/gor /root/workshop
 cp -r /ecommworkshop/traffic-replay /root/workshop/traffic-replay
-
+mkdir /root/completedfiles
 # launch.sh
 statusupdate complete

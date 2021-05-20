@@ -1,0 +1,1 @@
+Now let's deploy the fourth component of the application: the front end server. This is a xxxx application. 

@@ -11,11 +11,16 @@
       },
       {
         "title": "Deploy the Discounts Service",
-        "text": "step2.md"
+        "text": "step2.md",
+        "background": "step2.sh"
       },
       {
         "title": "Deploy the Advertisements Service",
         "text": "step3.md"
+      },
+      {
+        "title": "Deploy the Frontend",
+        "text": "step4.md"
       }
     ],
     "intro": {

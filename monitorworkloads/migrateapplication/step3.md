@@ -64,4 +64,4 @@ spec:
     app: ecommerce
 status:
 </pre>
-3.  This yaml file should look pretty familiar. We are using a different docker container image, but it's configured in exactly the same way. In fact, both discounts and advertisements are very similar Python Flask apps. 
+3.  This yaml file should look pretty familiar. We are using a different docker container image, but it's configured in exactly the same way. In fact, both discounts and advertisements are very similar Python Flask apps. We will be updating all of these files when we need to start monitoring the application.
