@@ -83,12 +83,12 @@ We now have a working database. Let's work on the first of our web server compon
     </pre>
 
 6.  Now we can reuse that secret in both db and discounts.yaml. Replace the POSTGRES_PASSWORD and POSTGRES_USER environment variables in both YAML files with this:
-<pre class="file" data-target="clipboard">
-- name: POSTGRES_PASSWORD
-  valueFrom:
-    secretKeyRef:
-      key: pw
-      name: db-password
-- name: POSTGRES_USER
-  value: "user"
-</pre>
+    <pre class="file" data-target="clipboard">
+    - name: POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: pw
+          name: db-password
+    - name: POSTGRES_USER
+      value: "user"
+    </pre>
