@@ -1,6 +1,6 @@
 We now have a working database. Let's work on the first of our web server components: discounts. This is a flask-based Python application. 
 
-1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the db.yaml file: `cp -i /root/completedfiles/db.yaml /root/workshop/db.yaml`{{execute}}
+1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the db.yaml file: `mv -i /root/completedfiles/db.yaml /root/workshop/db.yaml`{{execute}}
 2.  Create a discounts.yaml file using this command `touch ~/workshop/discounts.yaml`{{execute}}.
 3.  Add the following content to this file: 
     <pre class="file" data-target="clipboard">
