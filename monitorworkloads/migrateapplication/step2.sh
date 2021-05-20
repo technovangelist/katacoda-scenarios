@@ -61,3 +61,4 @@ status:
   loadBalancer: {}
 EOL
 clear
+creds
