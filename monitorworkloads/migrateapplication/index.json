@@ -16,11 +16,13 @@
       },
       {
         "title": "Deploy the Advertisements Service",
-        "text": "step3.md"
+        "text": "step3.md", 
+        "courseData": "step3.sh"
       },
       {
         "title": "Deploy the Frontend",
-        "text": "step4.md"
+        "text": "step4.md", 
+        "courseData": "step4.sh"
       }
     ],
     "intro": {
