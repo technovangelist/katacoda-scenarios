@@ -64,7 +64,6 @@ We now have a working database. Let's work on the first of our web server compon
         app: ecommerce
       type: ClusterIP
     </pre>
-
 1.  Now run `k apply -f discount.yaml`{{execute}} 
 2.  Looking at the contents of discount.yaml, you can see that it's loading an image called ddtraining/discounts-fixed. This is a simple docker image based on python:3.9.1-slim-buster that has installed the requirements that you can see in the discounts-service folder in this lab. The only other thing defined in that docker image is that the package build-essential has been installed. 
 3.  You can see in the YAML, the flask command is being run with a few command line parameters to specify the host and port. And then a few environment variables are defined. 
