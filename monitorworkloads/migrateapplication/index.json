@@ -6,6 +6,10 @@
   "details": {
     "steps": [
       {
+        "title": "Understanding the Configuration File",
+        "text": "step0.md"
+      },
+      {
         "title": "Deploy the Database",
         "text": "step1.md"
       },
