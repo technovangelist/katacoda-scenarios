@@ -60,3 +60,4 @@ spec:
 status:
   loadBalancer: {}
 EOL
+clear
