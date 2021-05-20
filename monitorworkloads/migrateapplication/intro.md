@@ -2,4 +2,4 @@ In this lab we are going to migrate our application to Kubernetes. Due to some l
 
 The lab starts with each of the components of the application in the workshop directory. 
 
-xxxyyy
+asht
