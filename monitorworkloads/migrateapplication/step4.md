@@ -38,7 +38,7 @@ Now let's deploy the fourth component of the application: the front end server. 
                 secretKeyRef:
                   key: pw
                   name: db-password
-            image: ddtraining/ecommerce-frontend:latest
+            image: ddtraining/storefront-fixed:latest
             imagePullPolicy: Always
             name: ecommerce-spree-observability
             ports:
@@ -63,4 +63,4 @@ Now let's deploy the fourth component of the application: the front end server. 
         app: ecommerce
       type: ClusterIP
     </pre>
-    1.  asht
+4.  And now the app should be all setup. Just deploy the frontend yaml file: `k apply -f frontend.yaml`{{execute}}

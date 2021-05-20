@@ -1,7 +1,9 @@
 Let's continue rolling out our application to Kubernetes. Here we are going to enable the third service which is the advertisements server. 
 
-1.  Create an advertisements yaml file: `touch ~/workshop/advertisements.yaml`{{execute}}.
-2.  Now add the following content to that yaml file: 
+1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the files: `mv -i /root/completedfiles/db.yaml /root/workshop/db.yaml;mv -i /root/completedfiles/dbpassword.yaml /root/workshop/dbpassword.yaml;mv -i /root/completedfiles/discounts.yaml /root/workshop/discounts.yaml`{{execute}}. 
+2.  Apply the yaml files: `k apply -f db.yaml;k apply -f discounts.yaml;k apply -f dbpassword.yaml`{{execute}}
+3.  Create an advertisements yaml file: `touch ~/workshop/advertisements.yaml`{{execute}}.
+4.  Now add the following content to that yaml file: 
     <pre class="file" data-target="clipboard">
     apiVersion: apps/v1
     kind: Deployment
@@ -64,4 +66,4 @@ Let's continue rolling out our application to Kubernetes. Here we are going to e
         app: ecommerce
     status:
     </pre>
-3.  This yaml file should look pretty familiar. We are using a different docker container image, but it's configured in exactly the same way. In fact, both discounts and advertisements are very similar Python Flask apps. We will be updating all of these files when we need to start monitoring the application.
+5.  This yaml file should look pretty familiar. We are using a different docker container image, but it's configured in exactly the same way. In fact, both discounts and advertisements are very similar Python Flask apps. We will be updating all of these files when we need to start monitoring the application.
