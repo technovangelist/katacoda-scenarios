@@ -63,4 +63,4 @@ Now let's deploy the fourth component of the application: the front end server. 
         app: ecommerce
       type: ClusterIP
     </pre>
-4.  ashtast
+4.  ashta
