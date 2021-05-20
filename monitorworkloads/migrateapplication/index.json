@@ -12,7 +12,7 @@
       {
         "title": "Deploy the Discounts Service",
         "text": "step2.md",
-        "background": "step2.sh"
+        "courseData": "step2.sh"
       },
       {
         "title": "Deploy the Advertisements Service",
