@@ -1,5 +1,6 @@
 1.  Next let's expose the port that the user needs to access the postgres application. And if you look at the [image on DockerHub](https://hub.docker.com/_/postgres) you will see that a number of environment variables need to be defined. 
 
+
     ```
     apiVersion: apps/v1
     kind: Deployment
