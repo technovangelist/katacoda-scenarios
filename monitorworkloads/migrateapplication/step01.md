@@ -29,6 +29,7 @@
             - name: PGDATA
               value: "/var/lib/postgresql/data/mydata"
     ```
+
 1.  The postgres database also needs a folder to write it's data to. So we need to add spec.containers.volumeMounts and spec.volumes:
 
     ```
