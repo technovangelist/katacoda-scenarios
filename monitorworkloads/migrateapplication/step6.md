@@ -63,6 +63,6 @@ Now let's deploy the fourth component of the application: the front end server. 
         app: ecommerce
       type: ClusterIP
     </pre>
-4.  And now the app should be all setup. Deploy the yaml files: `k apply -f .`{{execute}}
+4.  And now the app should be all setup. Deploy the yaml files: `mv -i /root/completedfiles/frontend.yaml /root/workshop/frontend.yaml`{{execute}} `k apply -f .`{{execute}}
 5.  Finally, visit https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
 
