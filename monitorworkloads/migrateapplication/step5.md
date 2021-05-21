@@ -1,7 +1,7 @@
 Let's continue rolling out our application to Kubernetes. Here we are going to enable the third service which is the advertisements server. 
 
 1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the files: `mv -i /root/completedfiles/db.yaml /root/workshop/db.yaml;mv -i /root/completedfiles/dbpassword.yaml /root/workshop/dbpassword.yaml;mv -i /root/completedfiles/discounts.yaml /root/workshop/discounts.yaml`{{execute}}. 
-2.  Apply the yaml files: `k apply -f db.yaml;k apply -f discounts.yaml;k apply -f dbpassword.yaml`{{execute}}
+2.  Apply the yaml files: `k apply -f .`{{execute}}
 3.  Create an advertisements yaml file: `touch ~/workshop/advertisements.yaml`{{execute}}.
 4.  Now add the following content to that yaml file: 
     <pre class="file" data-target="clipboard">

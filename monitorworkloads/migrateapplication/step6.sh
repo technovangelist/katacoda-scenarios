@@ -61,5 +61,67 @@ spec:
     app: ecommerce
 status:
 EOL
+
+cat > /root/completedfiles/frontend.yaml <<EOL
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: frontend
+    app: ecommerce
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: frontend
+      app: ecommerce
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        service: frontend
+        app: ecommerce
+    spec:
+      containers:
+      - args:
+        - docker-entrypoint.sh
+        command:
+        - sh
+        env:
+        - name: DB_USERNAME
+          value: user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: pw
+              name: db-password
+        image: ddtraining/storefront-fixed:latest
+        imagePullPolicy: Always
+        name: ecommerce-spree-observability
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: frontend
+    app: ecommerce
+  name: frontend
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+      name: http
+  selector:
+    service: frontend
+    app: ecommerce
+  type: ClusterIP
+EOL
+
 clear
 creds
