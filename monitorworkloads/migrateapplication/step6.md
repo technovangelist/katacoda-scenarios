@@ -18,6 +18,9 @@ Now let's deploy the fourth component of the application: the front end server. 
           service: frontend
           app: ecommerce
       strategy:
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%
         type: RollingUpdate
       template:
         metadata:
@@ -38,12 +41,17 @@ Now let's deploy the fourth component of the application: the front end server. 
                 secretKeyRef:
                   key: pw
                   name: db-password
-            image: ddtraining/storefront-fixed:latest
+            image: ddtraining/ecommerce-frontend:latest
             imagePullPolicy: Always
             name: ecommerce-spree-observability
             ports:
             - containerPort: 3000
               protocol: TCP
+            resources:
+              requests:
+                cpu: 100m
+                memory: 100Mi
+              limits: {}
     ---
     apiVersion: v1
     kind: Service
@@ -54,14 +62,14 @@ Now let's deploy the fourth component of the application: the front end server. 
       name: frontend
     spec:
       ports:
-        - port: 80
+        - port: 3000
           protocol: TCP
           targetPort: 3000
           name: http
       selector:
         service: frontend
         app: ecommerce
-      type: ClusterIP
+      type: LoadBalancer
     </pre>
 4.  And now the app should be all setup. Deploy the yaml files: `mv -i /root/completedfiles/frontend.yaml /root/workshop/frontend.yaml`{{execute}} `k apply -f .`{{execute}}
 5.  Finally, visit https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/

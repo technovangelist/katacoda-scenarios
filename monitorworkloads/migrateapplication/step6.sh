@@ -77,6 +77,9 @@ spec:
       service: frontend
       app: ecommerce
   strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
     type: RollingUpdate
   template:
     metadata:
@@ -97,12 +100,17 @@ spec:
             secretKeyRef:
               key: pw
               name: db-password
-        image: ddtraining/storefront-fixed:latest
+        image: ddtraining/ecommerce-frontend:latest
         imagePullPolicy: Always
         name: ecommerce-spree-observability
         ports:
         - containerPort: 3000
           protocol: TCP
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits: {}
 ---
 apiVersion: v1
 kind: Service
@@ -113,14 +121,14 @@ metadata:
   name: frontend
 spec:
   ports:
-    - port: 80
+    - port: 3000
       protocol: TCP
       targetPort: 3000
       name: http
   selector:
     service: frontend
     app: ecommerce
-  type: ClusterIP
+  type: LoadBalancer
 EOL
 
 clear
