@@ -1,7 +1,7 @@
-In this first step we will get started with our Kubernetes environment. When the lab has started, open the IDE from the tab about the terminal. Our Kubernetes configurations are written using YAML, so make sure the YAML plugin is installed. You may need to refresh the IDE by clicking the refresh icon in the tab for the IDE.
+Now that we have seen the basics of how the YAML files are written, let's start building out the db.yaml file.
 
-1.  Create a db.yaml file in the workshop directory `touch ~/workshop/db.yaml`{{execute}}
-2.  The following code is a good starting point for our Postgres database. Copy the YAML and paste it into your new db.yaml file in the IDE.
+1.  Create a file named `db.yaml` in the workshop directory: `touch ~/workshop/db.yaml`{{execute}}
+2.  The following code is a good starting point for our Postgres database. You'll notice that we added another label and some other keys. Copy the YAML and paste it into your new db.yaml file in the IDE.
     <pre class="file" data-target="clipboard">
     apiVersion: apps/v1
     kind: Deployment
@@ -42,11 +42,6 @@ In this first step we will get started with our Kubernetes environment. When the
               name: postgresdb 
           volumes:
           - name: postgresdb
-      </pre>
-
-3.  You can apply this configuration by running `kubectl apply -f db.yaml` from the workshop directory. In this environment we have aliased `kubectl` to `k` which is a pretty common alias. So try running `k apply -f db.yaml`{{execute}}. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
-4.  This is great, but you aren't going to be able to easy access the new Postgres pod as it is. So we need to add a `Service`. Update your `db.yaml` file, adding the following to the end of the file.
-    <pre class="file" data-target="clipboard">
     ---
     apiVersion: v1
     kind: Service
@@ -67,7 +62,8 @@ In this first step we will get started with our Kubernetes environment. When the
     status:
       loadBalancer: {}
     </pre>
+
+3.  You can apply this configuration by running `kubectl apply -f db.yaml` from the workshop directory. In this environment we have aliased `kubectl` to `k` which is a pretty common alias. So try running `k apply -f db.yaml`{{execute}}. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
 4.  This will work a lot better for us. There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
-5.  Run `k apply -f db.yaml`{{execute}} again to create the service.
 
 In the next step, we will take a look at deploying one of the components of the actual web app.
