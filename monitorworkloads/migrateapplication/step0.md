@@ -9,7 +9,6 @@ In this course we are going to build out and monitor a workload running on Kuber
     ```
 1.  If you tried to deploy this right now, you would be warned that a name is required. The name is going to be included in the metadata key:
 
-
     ```
     apiVersion: apps/v1
     kind: Deployment
