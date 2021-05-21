@@ -47,11 +47,6 @@ Now let's deploy the fourth component of the application: the front end server. 
             ports:
             - containerPort: 3000
               protocol: TCP
-            resources:
-              requests:
-                cpu: 100m
-                memory: 100Mi
-              limits: {}
     ---
     apiVersion: v1
     kind: Service
@@ -71,6 +66,7 @@ Now let's deploy the fourth component of the application: the front end server. 
         app: ecommerce
       type: LoadBalancer
     </pre>
-4.  And now the app should be all setup. Deploy the yaml files: `mv -i /root/completedfiles/frontend.yaml /root/workshop/frontend.yaml`{{execute}} `k apply -f .`{{execute}}
-5.  Finally, visit https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
+4.  And now the app should be all setup. Deploy the yaml files: `k apply -f .`{{execute}}
+5.  Now we have successfully migrated our application from a traditional VM based environment to a Kubernetes environment. This was a simple application but the process showed you what most of the parts of a configuration file are for and how you can build one too. 
+6.  Now you can visit https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/ to try out the application.
 
