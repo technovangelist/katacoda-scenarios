@@ -64,4 +64,5 @@ Now let's deploy the fourth component of the application: the front end server. 
       type: ClusterIP
     </pre>
 4.  And now the app should be all setup. Deploy the yaml files: `k apply -f .`{{execute}}
-5.  Finally, visit your new application at [https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/](https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/)
+5.  Finally, visit https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
+
