@@ -4,5 +4,5 @@ until [ -f "/usr/local/bin/prepenvironment" ]; do
 done
 statuscheck labtools
 clear
-echo "blah" > /root/test.txt
+cd /root/workshop || exit
 prepenvironment
