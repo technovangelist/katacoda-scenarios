@@ -52,6 +52,6 @@
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-k8s-cluster-running:1.18"
+    "imageid": "datadog-k8s-v1-cluster-running"
   }
 }
