@@ -66,6 +66,7 @@
           volumes:
           - name: postgresdb
     ```
+
 1.  This configuration is pretty close to complete. But as is, it's hard to access the postgres service. To make it easier, we need to create a `Service` so that other pods can access this one using the name `db`. A Service adds on to the Deployment, so it doesn't contain any containers. It does however need to specify ports and selectors:
 
     ```
@@ -83,4 +84,5 @@
       selector:
         service: db
     ```
+
 1.  You can have multiple configurations in a single file as long as they are separated by a line with three dashes.
