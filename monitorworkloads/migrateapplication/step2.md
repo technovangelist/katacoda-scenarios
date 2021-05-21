@@ -1,96 +1,88 @@
-We now have a working database. Let's work on the first of our web server components: discounts. This is a flask-based Python application. 
+1.  Next let's expose the port that the user needs to access the postgres application. And if you look at the [image on DockerHub](https://hub.docker.com/_/postgres) you will see that a number of environment variables need to be defined. 
 
-1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the db.yaml file: `mv -i /root/completedfiles/db.yaml /root/workshop/db.yaml`{{execute}}. 
-2.  Apply the db.yaml file: `k apply db.yaml`{{execute}}
-3.  Create a discounts.yaml file using this command `touch ~/workshop/discounts.yaml`{{execute}}.
-4.  Add the following content to this file: 
-    <pre class="file" data-target="clipboard">
+    ```
     apiVersion: apps/v1
     kind: Deployment
     metadata:
+      name: db
       labels:
-        app: ecommerce
-        service: discounts
-      name: discounts
+        service: db
     spec:
-      replicas: 1
       selector:
         matchLabels:
-          service: discounts
-          app: ecommerce
-      strategy: {}
+          service: db
       template:
         metadata:
-          creationTimestamp: null
           labels:
-            service: discounts
-            app: ecommerce
+            service: db
         spec:
           containers:
-          - image: ddtraining/discounts-fixed:latest
-            name: discounts
-            command: ["flask"]
-            args: ["run", "--port=5001", "--host=0.0.0.0"]
-            env:
-              - name: FLASK_APP
-                value: "discounts.py"
-              - name: FLASK_DEBUG
-                value: "1"
-              - name: POSTGRES_PASSWORD
-                value: "password"
-              - name: POSTGRES_USER
-                value: "user"
+          - image: postgres:11-alpine
+            name: postgres
             ports:
-            - containerPort: 5001
-            resources: {}
-    </pre>
+              - containerPort: 5432
+            env:
+            - name: POSTGRES_PASSWORD
+              value: "password"
+            - name: POSTGRES_USER
+              value: "user"  
+            - name: PGDATA
+              value: "/var/lib/postgresql/data/mydata"
+    ```
 
-5.  Just below that add the following:
-    <pre class="file" data-target="clipboard">
-    ---
+1.  The postgres database also needs a folder to write it's data to. So we need to add spec.containers.volumeMounts and spec.volumes:
+
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: db
+      labels:
+        service: db
+    spec:
+      selector:
+        matchLabels:
+          service: db
+      template:
+        metadata:
+          labels:
+            service: db
+        spec:
+          containers:
+          - image: postgres:11-alpine
+            name: postgres
+            ports:
+              - containerPort: 5432
+            env:
+            - name: POSTGRES_PASSWORD
+              value: "password"
+            - name: POSTGRES_USER
+              value: "user"  
+            - name: PGDATA
+              value: "/var/lib/postgresql/data/mydata"
+            volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresdb 
+          volumes:
+          - name: postgresdb
+    ```
+
+1.  This configuration is pretty close to complete. But as is, it's hard to access the postgres service. To make it easier, we need to create a `Service` so that other pods can access this one using the name `db`. A Service adds on to the Deployment, so it doesn't contain any containers. It does however need to specify ports and selectors:
+
+    ```
     apiVersion: v1
     kind: Service
     metadata:
       labels:
-        service: discounts
-        app: ecommerce
-      name: discounts
+        service: db 
+      name: db
     spec:
       ports:
-      - port: 5001
+      - port: 5432
         protocol: TCP
-        targetPort: 5001
+        targetPort: 5432
       selector:
-        service: discounts
-        app: ecommerce
-      type: ClusterIP
-    </pre>
-6.  Now run `k apply -f discounts.yaml`{{execute}} 
-7.  Looking at the contents of discount.yaml, you can see that it's loading an image called ddtraining/discounts-fixed. This is a simple docker image based on python:3.9.1-slim-buster that has installed the requirements that you can see in the discounts-service folder in this lab. The only other thing defined in that docker image is that the package build-essential has been installed. 
-8.  You can see in the YAML, the flask command is being run with a few command line parameters to specify the host and port. And then a few environment variables are defined. 
-9.  In the IDE, open bootstrap.py under the discounts-service directory. You can see at line 22 the url is generated for postgres that includes the database password. This is being pulled from an environment variable at line 15. And notice that that environment variable is defined on line 33 of the discounts.yaml file you created. And there is the corresponding variable in db.yaml. In case we ever want to change that password, we should define it once and then use it over and over again. And we should define it as a secret. 
-10. Create a dbpassword.yaml file (`touch ~/workshop/dbpassword.yaml`{{execute}}) and add the following to that file:
-    <pre class="file" data-target="clipboard">
-    apiVersion: v1
-    kind: Secret
-    metadata:
-      name: db-password
-      labels:
-        app: ecommerce
         service: db
-    type: Opaque
-    data:
-      pw: password
-    </pre>
+    ```
 
-11. Now we can reuse that secret in both db and discounts.yaml. Replace the POSTGRES_PASSWORD and POSTGRES_USER environment variables in both YAML files with this:
-    <pre class="file" data-target="clipboard">
-    - name: POSTGRES_PASSWORD
-      valueFrom:
-        secretKeyRef:
-          key: pw
-          name: db-password
-    - name: POSTGRES_USER
-      value: "user"
-    </pre>
-12. Apply the three yaml files again: `k apply -f db.yaml;k apply -f discounts.yaml;k apply -f dbpassword.yaml`{{execute}}
+1.  You can have multiple configurations in a single file as long as they are separated by a line with three dashes.

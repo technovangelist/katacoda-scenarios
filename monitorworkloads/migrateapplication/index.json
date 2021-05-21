@@ -7,30 +7,30 @@
     "steps": [
       {
         "title": "Understanding the Configuration File",
-        "text": "step0.md"
-      },
-      {
-        "title": "Continuing to work with the Configuration File",
-        "text": "step01.md"
-      },
-      {
-        "title": "Deploy the Database",
         "text": "step1.md"
       },
       {
+        "title": "Continuing to work with the Configuration File",
+        "text": "step2.md"
+      },
+      {
+        "title": "Deploy the Database",
+        "text": "step3.md"
+      },
+      {
         "title": "Deploy the Discounts Service",
-        "text": "step2.md",
-        "code": "step2.sh"
+        "text": "step4.md",
+        "code": "step4.sh"
       },
       {
         "title": "Deploy the Advertisements Service",
-        "text": "step3.md",
-        "code": "step3.sh"
+        "text": "step5.md",
+        "code": "step5.sh"
       },
       {
         "title": "Deploy the Frontend",
-        "text": "step4.md",
-        "code": "step4.sh"
+        "text": "step6.md",
+        "code": "step6.sh"
       }
     ],
     "intro": {

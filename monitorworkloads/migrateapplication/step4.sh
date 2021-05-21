@@ -1,65 +1,65 @@
 #!/bin/bash
-cat > /root/completedfiles/advertisements.yaml <<EOL
+
+cat > /root/completedfiles/db.yaml <<EOL
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: advertisements
+    service: db
     app: ecommerce
-  name: advertisements 
+  name: db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: advertisements
+      service: db
       app: ecommerce
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        service: advertisements
+        service: db
         app: ecommerce
     spec:
       containers:
-      - image: ddtraining/advertisements-fixed:latest
-        name: advertisements 
-        command: ["flask"]
-        args: ["run", "--port=5002", "--host=0.0.0.0"]
-        env:
-          - name: FLASK_APP
-            value: "ads.py"
-          - name: FLASK_DEBUG
-            value: "1"
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                key: pw
-                name: db-password
-          - name: POSTGRES_USER
-            value: "user"
-          - name: POSTGRES_HOST
-            value: "db"
+      - image: postgres:11-alpine
+        name: postgres
+        securityContext:
+          privileged: true 
         ports:
-        - containerPort: 5002
+          - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "password"
+        - name: POSTGRES_USER
+          value: "user"
+        - name: PGDATA
+          value: "/var/lib/postgresql/data/mydata"
         resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgresdb 
+      volumes:
+      - name: postgresdb
 ---
 apiVersion: v1
 kind: Service
 metadata:
+  creationTimestamp: null
   labels:
-    service: advertisements
     app: ecommerce
-  name: advertisements
+    service: db 
+  name: db
 spec:
   ports:
-  - port: 5002
+  - port: 5432
     protocol: TCP
-    targetPort: 5002
+    targetPort: 5432
   selector:
-    service: advertisements
     app: ecommerce
+    service: db
 status:
+  loadBalancer: {}
 EOL
 clear
 creds
+

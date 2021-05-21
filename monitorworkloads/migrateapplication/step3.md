@@ -1,69 +1,69 @@
-Let's continue rolling out our application to Kubernetes. Here we are going to enable the third service which is the advertisements server. 
+Now that we have seen the basics of how the YAML files are written, let's start building out the db.yaml file.
 
-1.  If you weren't able to complete the last section or the yaml file doesn't work, run this command to reset the files: `mv -i /root/completedfiles/db.yaml /root/workshop/db.yaml;mv -i /root/completedfiles/dbpassword.yaml /root/workshop/dbpassword.yaml;mv -i /root/completedfiles/discounts.yaml /root/workshop/discounts.yaml`{{execute}}. 
-2.  Apply the yaml files: `k apply -f db.yaml;k apply -f discounts.yaml;k apply -f dbpassword.yaml`{{execute}}
-3.  Create an advertisements yaml file: `touch ~/workshop/advertisements.yaml`{{execute}}.
-4.  Now add the following content to that yaml file: 
+1.  Create a file named `db.yaml` in the workshop directory: `touch ~/workshop/db.yaml`{{execute}}
+2.  The following code is a good starting point for our Postgres database. You'll notice that we added another label and some other keys. Copy the YAML and paste it into your new db.yaml file in the IDE.
     <pre class="file" data-target="clipboard">
     apiVersion: apps/v1
     kind: Deployment
     metadata:
       labels:
-        service: advertisements
+        service: db
         app: ecommerce
-      name: advertisements 
+      name: db
     spec:
       replicas: 1
       selector:
         matchLabels:
-          service: advertisements
+          service: db
           app: ecommerce
-      strategy: {}
       template:
         metadata:
-          creationTimestamp: null
           labels:
-            service: advertisements
+            service: db
             app: ecommerce
         spec:
           containers:
-          - image: ddtraining/advertisements-fixed:latest
-            name: advertisements 
-            command: ["flask"]
-            args: ["run", "--port=5002", "--host=0.0.0.0"]
-            env:
-              - name: FLASK_APP
-                value: "ads.py"
-              - name: FLASK_DEBUG
-                value: "1"
-              - name: POSTGRES_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    key: pw
-                    name: db-password
-              - name: POSTGRES_USER
-                value: "user"
-              - name: POSTGRES_HOST
-                value: "db"
+          - image: postgres:11-alpine
+            name: postgres
+            securityContext:
+              privileged: true 
             ports:
-            - containerPort: 5002
+              - containerPort: 5432
+            env:
+            - name: POSTGRES_PASSWORD
+              value: "password"
+            - name: POSTGRES_USER
+              value: "user"
+            - name: PGDATA
+              value: "/var/lib/postgresql/data/mydata"
             resources: {}
+            volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresdb 
+          volumes:
+          - name: postgresdb
     ---
     apiVersion: v1
     kind: Service
     metadata:
+      creationTimestamp: null
       labels:
-        service: advertisements
         app: ecommerce
-      name: advertisements
+        service: db 
+      name: db
     spec:
       ports:
-      - port: 5002
+      - port: 5432
         protocol: TCP
-        targetPort: 5002
+        targetPort: 5432
       selector:
-        service: advertisements
         app: ecommerce
+        service: db
     status:
+      loadBalancer: {}
     </pre>
-5.  This yaml file should look pretty familiar. We are using a different docker container image, but it's configured in exactly the same way. In fact, both discounts and advertisements are very similar Python Flask apps. We will be updating all of these files when we need to start monitoring the application.
+
+3.  You can apply this configuration by running `kubectl apply -f db.yaml` from the workshop directory. In this environment we have aliased `kubectl` to `k` which is a pretty common alias. So try running `k apply -f db.yaml`{{execute}}. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
+4.  This will work a lot better for us. There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
+
+In the next step, we will take a look at deploying one of the components of the actual web app.

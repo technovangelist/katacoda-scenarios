@@ -1,69 +1,41 @@
-Now that we have seen the basics of how the YAML files are written, let's start building out the db.yaml file.
+In this course we are going to build out and monitor a workload running on Kubernetes. Workloads and all the resources that make up the workload are defined in YAML files. Some of the components that are defined in YAML files include Deployments, ReplicaSets, DemonSets, Services, and more. In this first step we will look at most of the key parts of the YAML file so that the rest of this section makes more sense. 
 
-1.  Create a file named `db.yaml` in the workshop directory: `touch ~/workshop/db.yaml`{{execute}}
-2.  The following code is a good starting point for our Postgres database. You'll notice that we added another label and some other keys. Copy the YAML and paste it into your new db.yaml file in the IDE.
-    <pre class="file" data-target="clipboard">
+1.  The first line of a YAML file in Kubernetes is the apiVersion. This is a key/value pair that defines what configuration version the API server should use when parsing the file. The current version we are using in this course is "apps/v1".
+1.  Generally there isn't a required order of items in the YAML, but in our files, the next line is the 'kind' of resource. Each of our application components are going to include a 'Deployment'. So far, our config file looks like this:
+
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    ```
+1.  If you tried to deploy this right now, you would be warned that a name is required. The name is going to be included in the metadata key:
+
+    ```
     apiVersion: apps/v1
     kind: Deployment
     metadata:
+      name: db
+    ```
+1.  Next we need to define spec.selector, spec.template.metadata.labels, and spec.template.spec.containers. It's not good enough just to provide the keys, you also have to assign values to them. Also each of the selectors and labels should match up with the labels under metadata. For the containers key, you need to provide an image and name. 
+
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: db
       labels:
         service: db
-        app: ecommerce
-      name: db
     spec:
-      replicas: 1
       selector:
         matchLabels:
           service: db
-          app: ecommerce
       template:
         metadata:
           labels:
             service: db
-            app: ecommerce
         spec:
           containers:
           - image: postgres:11-alpine
             name: postgres
-            securityContext:
-              privileged: true 
-            ports:
-              - containerPort: 5432
-            env:
-            - name: POSTGRES_PASSWORD
-              value: "password"
-            - name: POSTGRES_USER
-              value: "user"
-            - name: PGDATA
-              value: "/var/lib/postgresql/data/mydata"
-            resources: {}
-            volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgresdb 
-          volumes:
-          - name: postgresdb
-    ---
-    apiVersion: v1
-    kind: Service
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: ecommerce
-        service: db 
-      name: db
-    spec:
-      ports:
-      - port: 5432
-        protocol: TCP
-        targetPort: 5432
-      selector:
-        app: ecommerce
-        service: db
-    status:
-      loadBalancer: {}
-    </pre>
+    ```
 
-3.  You can apply this configuration by running `kubectl apply -f db.yaml` from the workshop directory. In this environment we have aliased `kubectl` to `k` which is a pretty common alias. So try running `k apply -f db.yaml`{{execute}}. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
-4.  This will work a lot better for us. There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
-
-In the next step, we will take a look at deploying one of the components of the actual web app.
+1.  We have labels and selectors set to `service: db` but there is no requirement that it has to be the word service. You could use `color: blue` or `muppet: kermit` or combinations of anything you like. But they need to match for Kubernetes to see that they are related. This is a fully working deployment and it will load as is, but you won't be able to do anything with it. 
