@@ -15,5 +15,11 @@ cp -r /ecommworkshop/discounts-service-fixed /root/workshop/discounts-service
 cp /ecommworkshop/gor /root/workshop
 cp -r /ecommworkshop/traffic-replay /root/workshop/traffic-replay
 mkdir /root/completedfiles
+launch.sh
+helm repo add datadog https://helm.datadoghq.com
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+cp /ecommworkshop/deploy/datadog/helm-values.yaml.example /ecommworkshop/deploy/datadog/helm-values.yaml
+statusupdate k8s
 # launch.sh
 statusupdate complete
