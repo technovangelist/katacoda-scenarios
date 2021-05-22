@@ -64,6 +64,7 @@ Now that we have seen the basics of how the YAML files are written, let's start 
     </pre>
 
 3.  You can apply this configuration by running `kubectl apply -f db.yaml` from the workshop directory. In this environment we have aliased `kubectl` to `k` which is a pretty common alias. So try running `k apply -f db.yaml`{{execute}}. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
-4.  This will work a lot better for us. There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
+4.  If you ever see an error in these labs that looks something like `The connection to the server localhost:8080 was refused`, Kubernetes has not had a chance to start. Wait a few more seconds for it to start.
+5.  This will work a lot better for us. There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
 
 In the next step, we will take a look at deploying one of the components of the actual web app.
