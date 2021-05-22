@@ -1,12 +1,12 @@
 {
   "title": "Monitoring the Platform",
-  "description": "",
+  "description": "Let's remind ourselves how to monitor the Kubernetes Platform",
   "difficulty": "Beginner",
   "time": "40 minutes",
   "details": {
     "steps": [
       {
-        "title": "Preparing the Environment",
+        "title": "Reviewing the configuration",
         "text": "step1.md"
       }
     ],
@@ -21,14 +21,14 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uieditorpath": "/ecommworkshop",
+    "uieditorpath": "/root/workshop",
     "hideHiddenFiles": true,
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-k8s-v1-cluster-running",
+    "imageid": "datadog-k8s-v118-cluster-running",
     "port": 3000
   }
 }

@@ -47,6 +47,11 @@ Now let's deploy the fourth component of the application: the front end server. 
             ports:
             - containerPort: 3000
               protocol: TCP
+            resources:
+              requests:
+                cpu: 100m
+                memory: 100Mi
+              limits: {}
     ---
     apiVersion: v1
     kind: Service

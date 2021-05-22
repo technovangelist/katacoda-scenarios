@@ -1,9 +1,11 @@
 #!/bin/bash
+until [ -f "/usr/local/bin/prepenvironment" ]; do
+  sleep 0.3
+done
+statuscheck labtools
+clear
+statuscheck k8s
+helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /ecommworkshop/deploy/datadog/helm-values.yaml
 
-export POSTGRES_USER=postgres
-export POSTGRES_PASSWORD=postgres
-docker-compose -f /ecommworkshop/deploy/docker-compose/docker-compose-fixed-instrumented.yml up -d
-cd /ecommworkshop || exit
-./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000" &
-echo 'here'
+cd /root/workshop || exit
 prepenvironment
