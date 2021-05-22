@@ -1,1 +1,1 @@
-In this scenario we are going to walk through the features and functionality of the example application. This is the application we are going to migrate to Kubernetes. 
+Hopefully you have already taken the Introduction to Monitoring the Kubernetes Platform course. This section is a quick review of some of the concepts of that course. If you have not taken the course yet, please consider holding off on this one, and taking that one to get up to speed on monitoring all the components of the Kubernetes platform. 

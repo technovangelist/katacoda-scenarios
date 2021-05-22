@@ -22,6 +22,7 @@
   "environment": {
     "uilayout": "terminal",
     "uieditorpath": "/root/workshop",
+    "showide": "true",
     "hideHiddenFiles": true,
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
