@@ -130,7 +130,7 @@ datadog:
           fieldPath: status.hostIP
     # datadog.kubelet.tlsVerify -- Toggle kubelet TLS verification
     # @default -- true
-    tlsVerify:  # false
+    tlsVerify: false
     # datadog.kubelet.hostCAPath -- Path (on host) where the Kubelet CA certificate is stored
     # @default -- None (no mount from host)
     hostCAPath:
@@ -965,17 +965,17 @@ agents:
 
   # agents.dnsConfig -- specify dns configuration options for datadog cluster agent containers e.g ndots
   ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
-  dnsConfig: 
-    nameservers:
-      - 10.96.0.10
-      - 1.1.1.1
-    searches:
-      - default.svc.cluster.local
-      - svc.cluster.local
-      - cluster.local
-    options:
-      - name: ndots
-        value: "5"
+  # dnsConfig: 
+  #   nameservers:
+  #     - 10.96.0.10
+  #     - 1.1.1.1
+  #   searches:
+  #     - default.svc.cluster.local
+  #     - svc.cluster.local
+  #     - cluster.local
+  #   options:
+  #     - name: ndots
+  #       value: "5"
   #  options:
   #  - name: ndots
   #    value: "1"

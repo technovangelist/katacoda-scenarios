@@ -5,7 +5,7 @@ done
 statuscheck labtools
 clear
 statuscheck k8s
-helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /ecommworkshop/deploy/datadog/helm-values.yaml
+helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
 
 cd /root/workshop || exit
 prepenvironment
