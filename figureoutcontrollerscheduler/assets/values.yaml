@@ -253,15 +253,21 @@ datadog:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   confd: 
     etcd.yaml: |-
-      ad_identifiers:
-        - etcd
       instances:
         - prometheus_url: https://%%host%%:2379/metrics
+          url: https://%%host%%:2379
           ssl_verify: false
           use_preview: true
           ssl_ca_cert: /keys/ca.crt
           ssl_cert: /keys/peer.crt
           ssl_private_key: /keys/peer.key
+    kube_scheduler.yaml: |-
+      instances:
+        - prometheus_url: http://localhost:10251/metrics
+          tags:
+            - "kube_scheduler"
+          leader_election: true
+          prometheus_timeout: 15
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
