@@ -6,8 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "Reviewing the configuration",
+        "title": "Reviewing the configuration and etcd",
         "text": "step1.md"
+      }, 
+      {
+        "title": "Looking at the APIServer",
+        "text": "step2.md"
       }
     ],
     "intro": {
@@ -37,7 +41,7 @@
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-k8s-v118-cluster-running",
+    "imageid": "datadog-k8s-v120-cluster-running",
     "port": 3000
   }
 }
