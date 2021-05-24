@@ -22,7 +22,7 @@
     }
   },
   "environment": {
-    "showintro": false, 
+    "hideintro": true, 
     "uilayout": "terminal",
     "uieditorpath": "/root/workshop",
     "showide": "true",
