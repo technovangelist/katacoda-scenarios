@@ -262,24 +262,16 @@ datadog:
           ssl_cert: /keys/peer.crt
           ssl_private_key: /keys/peer.key
     kube_scheduler.yaml: |-
+      ad_identifiers:
+        - kube-scheduler
       instances:
-        - prometheus_url: http://localhost:10251/metrics
+        - prometheus_url: https://%%host%%:%%port%%/metrics
           tags:
             - "kube_scheduler"
           leader_election: true
           prometheus_timeout: 15
-    kube_controller_manager.yaml: |-
-      instances:
-        - prometheus_url: http://localhost:10252/metrics
-          leader_election: true
-          prometheus_timeout: 15
-    kube_apiserver_metrics.yaml: |-
-      instances:
-        - prometheus_url: localhost:443/metrics
-          scheme: "https"
-          bearer_token_auth: true
-          bearer_token_path: "/var/run/secrets/kubernetes.io/serviceaccount/token"
-          ssl_verify: false    
+  
+          
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -956,6 +948,8 @@ agents:
       name: etcd-keys
     - emptyDir: {}
       name: etcd-auto-conf
+    - emptyDir: {}
+      name: scheduler-auto-conf
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
@@ -967,6 +961,9 @@ agents:
       readOnly: true
     - mountPath: /keys
       name: etcd-keys
+      readOnly: true
+    - name: scheduler-auto-conf
+      mountPath: /etc/datadog-agent/conf.d/kube_scheduler.d/
       readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
