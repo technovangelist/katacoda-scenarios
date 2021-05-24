@@ -273,7 +273,13 @@ datadog:
         - prometheus_url: http://localhost:10252/metrics
           leader_election: true
           prometheus_timeout: 15
-          
+    kube_apiserver_metrics.yaml: |-
+      instances:
+        - prometheus_url: localhost:443/metrics
+          scheme: "https"
+          bearer_token_auth: true
+          bearer_token_path: "/var/run/secrets/kubernetes.io/serviceaccount/token"
+          ssl_verify: false    
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
