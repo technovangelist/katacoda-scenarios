@@ -56,7 +56,7 @@ datadog:
   ## * Overall length should not be higher than 80 characters.
   ## Compared to the rules of GKE, dots are allowed whereas they are not allowed on GKE:
   ## https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.FIELDS.name
-  clusterName:  # <CLUSTER_NAME>
+  clusterName: figureitout
 
   # datadog.site -- The site of the Datadog intake to send Agent data to
   ## Set to 'datadoghq.eu' to send data to the EU site.
@@ -201,11 +201,11 @@ datadog:
   logs:
     # datadog.logs.enabled -- Enables this to activate Datadog Agent log collection
     ## ref: https://docs.datadoghq.com/agent/basic_agent_usage/kubernetes/#log-collection-setup
-    enabled: false
+    enabled: true
 
     # datadog.logs.containerCollectAll -- Enable this to allow log collection for all containers
     ## ref: https://docs.datadoghq.com/agent/basic_agent_usage/kubernetes/#log-collection-setup
-    containerCollectAll: false
+    containerCollectAll: true
 
     # datadog.logs.containerCollectUsingFiles -- Collect logs from files in /var/log/pods instead of using container runtime API
     ## It's usually the most efficient way of collecting logs.
@@ -216,7 +216,7 @@ datadog:
   apm:
     # datadog.apm.enabled -- Enable this to enable APM and tracing, on port 8126
     ## ref: https://github.com/DataDog/docker-dd-agent#tracing-from-the-host
-    enabled: false
+    enabled: true
 
     # datadog.apm.port -- Override the trace Agent port
     ## Note: Make sure your client is sending to the same UDP port.
@@ -251,7 +251,17 @@ datadog:
   ## Each key becomes a file in /conf.d
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
-  confd: {}
+  confd: 
+    etcd.yaml: |-
+      ad_identifiers:
+        - etcd
+      instances:
+        - prometheus_url: https://%%host%%:2379/metrics
+          ssl_verify: false
+          use_preview: true
+          ssl_ca_cert: /keys/ca.crt
+          ssl_cert: /keys/peer.crt
+          ssl_private_key: /keys/peer.key
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -346,7 +356,7 @@ datadog:
     # datadog.orchestratorExplorer.enabled -- Set this to false to disable the orchestrator explorer
     ## This requires processAgent.enabled and clusterAgent.enabled to be set to true
     ## ref: TODO - add doc link
-    enabled: true
+    enabled: false
 
     # datadog.orchestratorExplorer.container_scrubbing -- Enable the scrubbing of containers in the kubernetes resource YAML for sensitive information
     ## The container scrubbing is taking significant resources during data collection.
@@ -407,9 +417,9 @@ datadog:
   ## ref: https://docs.datadoghq.com/agent/kubernetes/prometheus/
   prometheusScrape:
     # datadog.prometheusScrape.enabled -- Enable autodiscovering pods and services exposing prometheus metrics.
-    enabled: false
+    enabled: true
     # datadog.prometheusScrape.serviceEndpoints -- Enable generating dedicated checks for service endpoints.
-    serviceEndpoints: false
+    serviceEndpoints: true
     # datadog.prometheusScrape.additionalConfigs -- Allows adding advanced openmetrics check configurations with custom discovery rules. (Requires Agent version 7.27+)
     additionalConfigs: []
       # -
@@ -437,7 +447,7 @@ datadog:
 ## ref: https://docs.datadoghq.com/agent/kubernetes/cluster/
 clusterAgent:
   # clusterAgent.enabled -- Set this to false to disable Datadog Cluster Agent
-  enabled: true
+  enabled: false
 
   ## Define the Datadog Cluster-Agent image to work with
   image:
@@ -498,7 +508,7 @@ clusterAgent:
   # Enable the metricsProvider to be able to scale based on metrics in Datadog
   metricsProvider:
     # clusterAgent.metricsProvider.enabled -- Set this to true to enable Metrics Provider
-    enabled: false
+    enabled: true
 
     # clusterAgent.metricsProvider.wpaController -- Enable informer and controller of the watermark pod autoscaler
     ## NOTE: You need to install the `WatermarkPodAutoscaler` CRD before
@@ -532,7 +542,7 @@ clusterAgent:
 
   admissionController:
     # clusterAgent.admissionController.enabled -- Enable the admissionController to be able to inject APM/Dogstatsd config and standard tags (env, service, version) automatically into your pods
-    enabled: false
+    enabled: true
 
     # clusterAgent.admissionController.mutateUnlabelled -- Enable injecting config without having the pod label 'admission.datadoghq.com/enabled="true"'
     mutateUnlabelled: false
@@ -884,7 +894,7 @@ agents:
 
       # agents.containers.systemProbe.securityContext -- Allows you to overwrite the default container SecurityContext for the system-probe container.
       securityContext:
-        privileged: false
+        privileged: true
         capabilities:
           add: ["SYS_ADMIN", "SYS_RESOURCE", "SYS_PTRACE", "NET_ADMIN", "NET_BROADCAST", "NET_RAW", "IPC_LOCK"]
 
