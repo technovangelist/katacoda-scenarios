@@ -253,6 +253,8 @@ datadog:
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
   confd: 
     etcd.yaml: |-
+      ad_identifiers:
+        - etcd
       instances:
         - prometheus_url: https://%%host%%:2379/metrics
           url: https://%%host%%:2379
@@ -796,7 +798,6 @@ agents:
       # agents.containers.agent.logLevel -- Set logging verbosity, valid log levels are: trace, debug, info, warn, error, critical, and off
       ## If not set, fall back to the value of datadog.logLevel.
       logLevel:  # INFO
-
       # agents.containers.agent.resources -- Resource requests and limits for the agent container.
       resources: {}
       #  requests:
