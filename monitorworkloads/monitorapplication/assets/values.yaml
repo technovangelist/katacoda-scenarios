@@ -965,10 +965,10 @@ agents:
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
     - name: scheduler-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/kube-scheduler.d/
+      mountPath: /etc/datadog-agent/conf.d/kube_scheduler.d/
       readOnly: true
     - name: controller-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/kube-controller-manager.d/
+      mountPath: /etc/datadog-agent/conf.d/kube_controller_manager.d/
       readOnly: true
     - mountPath: /keys
       name: etcd-keys
