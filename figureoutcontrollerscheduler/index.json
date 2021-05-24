@@ -1,0 +1,37 @@
+{
+  "title": "grrs",
+  "description": "figure out controller and scheduler",
+  "difficulty": "Beginner",
+  "time": "40 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "figure it out",
+        "text": "step1.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "values.yaml",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uieditorpath": "/root/workshop",
+    "showide": "true",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-k8s-v118-cluster-running",
+    "port": 3000
+  }
+}
