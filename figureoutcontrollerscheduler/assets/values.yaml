@@ -130,7 +130,7 @@ datadog:
           fieldPath: status.hostIP
     # datadog.kubelet.tlsVerify -- Toggle kubelet TLS verification
     # @default -- true
-    tlsVerify:  # false
+    tlsVerify: false
     # datadog.kubelet.hostCAPath -- Path (on host) where the Kubelet CA certificate is stored
     # @default -- None (no mount from host)
     hostCAPath:
