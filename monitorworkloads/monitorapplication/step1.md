@@ -16,8 +16,8 @@
       value: "true"
     - name: DD_PROFILING_ENABLED
       value: "true"
-
 2.  In discounts add the following environment variables:
+
     - name: DATADOG_SERVICE_NAME
       value: "discountsservice"
     - name: DD_AGENT_HOST
@@ -34,7 +34,6 @@
       valueFrom:
         fieldRef:
           fieldPath: metadata.labels['tags.datadoghq.com/env']
-
 3.  And in frontend, add the following environment variables:
 
     - name: DD_AGENT_HOST
@@ -49,3 +48,4 @@
           fieldPath: metadata.labels['tags.datadoghq.com/env']
     - name: DD_ANALYTICS_ENABLED
       value: "true"
+4.  asht
