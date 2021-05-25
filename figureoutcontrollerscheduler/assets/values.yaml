@@ -263,15 +263,15 @@ datadog:
           ssl_ca_cert: /keys/ca.crt
           ssl_cert: /keys/peer.crt
           ssl_private_key: /keys/peer.key
-    kube_scheduler.yaml: |-
-      ad_identifiers:
-        - kube-scheduler
-      instances:
-        - prometheus_url: https://%%host%%:%%port%%/metrics
-          tags:
-            - "kube_scheduler"
-          leader_election: true
-          prometheus_timeout: 15
+    # kube_scheduler.yaml: |-
+    #   ad_identifiers:
+    #     - kube-scheduler
+    #   instances:
+    #     - prometheus_url: https://%%host%%:%%port%%/metrics
+    #       tags:
+    #         - "kube_scheduler"
+    #       leader_election: true
+    #       prometheus_timeout: 15
   
           
   #   redisdb.yaml: |-
@@ -949,8 +949,8 @@ agents:
       name: etcd-keys
     - emptyDir: {}
       name: etcd-auto-conf
-    - emptyDir: {}
-      name: scheduler-auto-conf
+    # - emptyDir: {}
+    #   name: scheduler-auto-conf
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
@@ -963,9 +963,9 @@ agents:
     - mountPath: /keys
       name: etcd-keys
       readOnly: true
-    - name: scheduler-auto-conf
-      mountPath: /etc/datadog-agent/conf.d/kube_scheduler.d/
-      readOnly: true
+    # - name: scheduler-auto-conf
+    #   mountPath: /etc/datadog-agent/conf.d/kube_scheduler.d/
+    #   readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -991,7 +991,12 @@ agents:
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
 
   # agents.tolerations -- Allow the DaemonSet to schedule on tainted nodes (requires Kubernetes >= 1.6)
-  tolerations: []
+  # tolerations: []
+
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
+
 
   # agents.nodeSelector -- Allow the DaemonSet to schedule on selected nodes
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
