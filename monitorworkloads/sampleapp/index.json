@@ -9,6 +9,10 @@
       {
         "title": "Preparing the Environment",
         "text": "step1.md"
+      },
+      {
+        "title": "Setting up RUMonito",
+        "text": "step2.md"
       }
     ],
     "intro": {
