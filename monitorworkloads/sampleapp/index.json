@@ -11,8 +11,12 @@
         "text": "step1.md"
       },
       {
-        "title": "Setting up RUMonito",
+        "title": "Getting started with Datadog",
         "text": "step2.md"
+      },
+      {
+        "title": "Setting up Real User Monitoring",
+        "text": "step3.md"
       }
     ],
     "intro": {
