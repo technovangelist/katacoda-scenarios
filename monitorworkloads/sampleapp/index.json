@@ -31,9 +31,8 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/ecommworkshop",
+    "uieditorpath": "/root",
     "hideHiddenFiles": true,
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
