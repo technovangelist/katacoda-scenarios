@@ -1,1 +1,1 @@
-asht
+Now that you have seen how the sample app works and how to monitor some parts of it, let's move it over to a Kubernetes cluster.
