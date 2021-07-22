@@ -6,14 +6,6 @@
   "details": {
     "steps": [
       {
-        "title": "Understanding the Configuration File",
-        "text": "step1.md"
-      },
-      {
-        "title": "Continuing to work with the Configuration File",
-        "text": "step2.md"
-      },
-      {
         "title": "Deploy the Database",
         "text": "step3.md"
       },
