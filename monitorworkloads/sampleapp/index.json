@@ -34,7 +34,7 @@
     "uieditorpath": "/root",
     "hideHiddenFiles": true,
     "showdashboard": true,
-    "dashboards": [{ "name": "storedog", "port": 3000 }]
+    "dashboards": [{ "name": "StoreDog", "port": 3000 }]
   },
   "backend": {
     "imageid": "datadog-base-v3",
