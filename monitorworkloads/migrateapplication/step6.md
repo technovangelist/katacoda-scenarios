@@ -69,8 +69,7 @@ Now let's deploy the fourth component of the application: the front end server. 
       selector:
         service: frontend
         app: ecommerce
-      type: LoadBalancer
-    </pre>
+      type: LoadBalancer</pre>
 4.  And now the app should be all setup. Deploy the yaml files: `k apply -f .`{{execute}}
 5.  Now we have successfully migrated our application from a traditional VM based environment to a Kubernetes environment. This was a simple application but the process showed you what most of the parts of a configuration file are for and how you can build one too. 
 6.  Now you can visit https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/ to try out the application. If the site isn't available, try running `k get pods`{{execute}} to see if all the pods are running. It can take a minute for them to start completely. 

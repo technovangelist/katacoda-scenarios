@@ -63,10 +63,9 @@ Now that we have seen the basics of how the YAML files are written, let's start 
       loadBalancer: {}
     </pre>
 
-3.  You can apply this configuration by running `kubectl apply -f db.yaml` from the section2 directory. If you get an error like **No objects to apply**, you haven't saved the file yet. If you get an error like **the path db.yaml does not exist** you are not in the correct directory. Make sure you are in the **~/environment/section2** directory when you run the apply command. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
-4.  If you know you are going to have a problem remembering to save files, open the Cloud9 Preferences by clicking the gear icon at the top right. Scroll down to **Experimental** on the left side of the Preferences window. And then set **Auto-Save** to **After Delay**. You can now close the Preferences window.![auto save cloud9](/images/dd-auto-save-cloud9.png)
-5.  As you start to work with kubernetes, typing **kubectl** every time gets a bit tiresome. When you ran the setup script, an alias for kubectl was create like this: `alias k=kubectl`. This is a pretty common alias on a lot of systems. So try running `k apply -f db.yaml`. Another alias was created setting **kubectl -n kube-system** to **ks** making it easier to do anything with that namespace.
-6.  There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
-7.  Run `k get pods` to ensure the database pod has started. 
+3.  You can apply this configuration by running `kubectl apply -f db.yaml`{{execute T1}} from the terminal. If you get an error like **the path db.yaml does not exist** you are not in the correct directory. Make sure you are in the **/root/workshop** directory when you run the apply command. Note: *if anything in this file or any of the other yaml files in this scenario are new to you, then visit https://kubernetes.io/docs/home/ and search for the keyword that is not clear.*
+4.  As you start to work with kubernetes, typing **kubectl** every time gets a bit tiresome. When you ran the setup script, an alias for kubectl was create like this: `alias k=kubectl`. This is a pretty common alias on a lot of systems. So try running `k apply -f db.yaml`. 
+5.  There are still some things we should do like create a persistent volume and not specify the password here, but this will work for our first pass.
+6.  Run `k get pods` to ensure the database pod has started. 
 
 In the next step, we will take a look at deploying one of the components of the actual web app.
