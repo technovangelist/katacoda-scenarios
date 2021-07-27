@@ -40,6 +40,8 @@ We now have a working database. Let's work on the first of our web server compon
                 value: "password"
               - name: POSTGRES_USER
                 value: "user"
+              - name: POSTGRES_HOST
+                value: "db"
             ports:
             - containerPort: 5001
             resources: {}

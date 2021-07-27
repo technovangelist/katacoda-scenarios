@@ -102,6 +102,8 @@ spec:
                 name: db-password
           - name: POSTGRES_USER
             value: "user"
+          - name: POSTGRES_HOST
+            value: "db"
         ports:
         - containerPort: 5001
         resources: {}
