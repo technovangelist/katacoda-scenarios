@@ -6,12 +6,20 @@
   "details": {
     "steps": [
       {
-        "title": "Reviewing the configuration and etcd",
+        "title": "Install the Agent",
         "text": "step1.md"
-      }, 
+      },
       {
-        "title": "Looking at the APIServer",
+        "title": "Start monitoring Kubernetes",
         "text": "step2.md"
+      },
+      {
+        "title": "Review the Dashboards",
+        "text": "step3.md"
+      },
+      {
+        "title": "Review the Dashboards",
+        "text": "step4.md"
       }
     ],
     "intro": {
@@ -21,7 +29,7 @@
     },
     "finish": {
       "text": "finish.md"
-    }, 
+    },
     "assets": {
       "host01": [
         {
