@@ -35,6 +35,10 @@
         {
           "file": "values.yaml",
           "target": "/root"
+        }, 
+        {
+          "file": "frontend.yaml",
+          "target": "/root"
         }
       ]
     }

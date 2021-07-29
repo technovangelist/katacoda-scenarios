@@ -2,7 +2,7 @@
   "title": "Migrating the application to Kubernetes",
   "description": "Let's migrate the application to Kubernetes",
   "difficulty": "Beginner",
-  "time": "20 minutes",
+  "time": "20 minutes", 
   "details": {
     "steps": [
       {
