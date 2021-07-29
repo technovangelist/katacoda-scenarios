@@ -1,14 +1,9 @@
-+++
-title = "3.2.3 Create a Dashboard"
-chapter = false
-weight = 10
-+++
 
-1.  From the Dashboard menu, you can also create new Dashboards. There are now three choices: **New Dashboard**, **New Timeboard**, and **New Screenboard**. ![create a dashboard](/images/dd-create-a-dashboard.png) We have always had the last two, but we are merging the best features of each into the Dashboard. Enter a name for your dashboard and click the **New Dashboard** button.
+1.  From the Dashboard menu, you can also create new Dashboards. There are now three choices: **New Dashboard**, **New Timeboard**, and **New Screenboard**. We have always had the last two, but we are merging the best features of each into the Dashboard. Enter a name for your dashboard and click the **New Dashboard** button.
 2.  Scroll through the list of available widgets and then drag and drop the Timeseries onto the canvas.
 3.  Under Graph your data, click on Metric to see the other types of data that you can graph. Click on the metric, which defaults to **system.cpu.user** to see the list of all the metrics available. There are thousands of metrics available. 
 4.  Take a look at some of the other options available on this page. You can also combine multiple metrics using the **Advanced...** link. 
-5.  Click the **Overview** tab at the top. This is a nice way to preview some of the functions available, though there are many more on the main Edit tab when you click the plus button to the right of any metric. ![functions on a graph](/images/dd-functions-on-a-graph.png)
+5.  Click the **Overview** tab at the top. This is a nice way to preview some of the functions available, though there are many more on the main Edit tab when you click the plus button to the right of any metric.
 6.  In the previous section we saw the Correlations view. When you click the Correlations tab here, you can customize how correlations are found.
 7.  That’s a quick look at creating a dashboard. When you start working with Kubernetes, you will probably start with the dashboards provided and then gradually customize them and build your own. We have a complete course on Monitoring the Kubernetes Platform available on the [Datadog Learning Center](https://learn.datadoghq.com).  Here are some of the key metrics you should consider keeping an eye on:
 
