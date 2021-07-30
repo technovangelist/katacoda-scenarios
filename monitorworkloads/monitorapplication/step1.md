@@ -1,4 +1,4 @@
-1.  As with the previous lab, we have already launched the Datadog Agent using the Helm chart. We have also launched the application. Upgrade your Datadog agent Helm chart with the following command: `helm upgrade datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f ./values.yaml`, and then apply the changes for the application with this command: `k apply -f ./db.yaml;k apply -f ./discounts.yaml;k apply -f ./advertisements.yaml;k apply -f ./frontend.yaml`
+1.  As with the previous lab, we have already launched the Datadog Agent using the Helm chart. We have also launched the application. 
 2.  The values file that we used to upgrade the helm chart was specifically tweaked for our control plane node. Let's deploy again for the nodes: `helm install datadogagentnode datadog/datadog --set datadog.apiKey=$DD_API_KEY --set clusterAgent.enabled=false --set datadog.orchestratorExplorer.enabled=false`
 3.  Now lets take a look at what has changed. 
     1.  Open the **advertisements.yaml** file in the editor.
