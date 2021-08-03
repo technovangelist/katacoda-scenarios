@@ -1,7 +1,7 @@
 1.  As with the previous lab, we have already launched the Datadog Agent using the Helm chart. We have also launched the application. 
 2.  Now lets take a look at what has changed. In the IDE tab, navigate to **deploy/generic-k8s/ecommerce-app**. You should see 4 YAML files there for advertisements, db, discounts, and frontend.
     1.  Open the **advertisements.yaml** file in the editor.
-    2.  Scroll down to **spec.template.spec.containers.env**. You can see a number of new environment variables here, including: `DATADOG_SERVICE_NAME`, `DD_ENV`, `DD_AGENT_HOST`, `DD_LOGS_INJECTION`, `DD_ANALYTICS_ENABLED`, and `DD_PROFILING_ENABLED`. These environment variables are all that is needed to enable different features like profiling, and more. 
+    2.  Scroll down to **spec.template.spec.containers.env**. You can see a number of new environment variables here, including: `DATADOG_SERVICE_NAME`, `DD_ENV`, `DD_AGENT_HOST`, `DD_LOGS_INJECTION`, `DD_ANALYTICS_ENABLED`, and `DD_PROFILING_ENABLED` . These environment variables are all that is needed to enable different features like profiling, and more. 
     3.  Open the **discounts.yaml** file in the editor. 
     4.  You will find many of the same environment variables here. You will also find that we changed the command at **spec.template.spec.containers.command**. It is now ddtrace-run, with flask being moved to the first of the command line variables. ddtrace-run is a tool for auto instrumenting python-based applications. 
     5.  Finally open **frontend.yaml**. Not much has changed here beyond the environment variables, but we will update this later to enable **Real User Monitoring**.

@@ -1,7 +1,6 @@
 {
   "$schema": "../../../../datadog/katacodalabtools/katacodaindexjsonschema.json",
-  "title": "Geting started with the sample lab",
-  "description": "Using APM to investigate app performance ",
+  "title": "Geting Started with the Sample Application",
   "difficulty": "Beginner",
   "time": "40 minutes",
   "details": {
