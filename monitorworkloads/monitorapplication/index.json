@@ -6,19 +6,15 @@
   "details": {
     "steps": [
       {
-        "title": "Start collecting metrics",
         "text": "step1.md"
       },
       {
-        "title": "Looking at the APIServer",
         "text": "step2.md"
       },
       {
-        "title": "Looking at the APIServer",
         "text": "step3.md"
       },
       {
-        "title": "Looking at the APIServer",
         "text": "step4.md"
       }
     ],
