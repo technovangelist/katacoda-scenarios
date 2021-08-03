@@ -1,13 +1,13 @@
 
 
-In our quick look at some of the Datadog features, monitoring your workloads on Kubernetes is almost identical to monitoring workloads hosted in a VM. But there are some things that are unique about Kubernetes that you should pay attention to. 
+In our quick look at some of the Datadog features, monitoring your workloads on Kubernetes is almost identical to monitoring workloads hosted in a VM. But there is one main thing that is unique about Kubernetes that you should pay attention to. 
 
 With older clustering technologies, there was a hard requirement that all nodes must be equal: equal memory, storage, CPU, IO, and everything else. But with Kubernetes there is no such requirement. So in a cluster with 10 nodes, all of them may have slightly different configurations. The way the scheduler works is that it looks at the processor and memory requirements of the deployment, and finds a node that is capable of accommodating those requirements. 
 
 As a result, paying attention to the key metrics of the Scheduler is very important. 
 
 1.  From the Dashboards menu, open the **Kubernetes Scheduler - Overview** dashboard. 
-1.  Scheduled Attempts at the top of the dashboard is a great one to watch. Let's update our frontend deployment to be partially unschedulable. In the editor, open **section4/frontend.yaml**.
+1.  Scheduled Attempts at the top of the dashboard is a great one to watch. Let's update our frontend deployment to be partially unschedulable. In the editor, open **deploy/generic-k8s/ecommerce-app/frontend.yaml**.
 2.  Line 41 defines the ports that the frontend should respond to. Update that block to:
     
         ports:

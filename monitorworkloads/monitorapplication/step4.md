@@ -1,10 +1,4 @@
-
-![hazel does its magic](/images/dd-hazel-does-its-magic.png)
-
 Now try looking at Synthetic Tests. RUM waits for real users to experience the product, but Synthetic Tests visit the site from different locations  around the world at regular intervals to simulate what a real user might experience.  You can define a flow around the app and even test the APIs that you use in the app. 
-![frontend synthetics](/images/dd-frontend-synthetics.png)
-
-![turn off extensions](/images/dd-turn-off-extensions.png)
 
 To try this section, you must be using Google Chrome. Other browsers are not supported when recording a test.
 
