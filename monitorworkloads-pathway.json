@@ -6,8 +6,8 @@
     {
       "course_id": "1-configuredatadogagent",
       "title": "Configuring the agent",
-      "description": ""
-    }, 
+      "description": "asht"
+    },
     {
       "course_id": "monitorapplication",
       "title": "Monitoring the Application on top of Kubernetes",
