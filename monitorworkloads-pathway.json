@@ -4,9 +4,9 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "course_id": "1.configuredatadogagent",
-      "title": "Getting started with the sample lab",
-      "description": "Getting started with the sample lab"
+      "course_id": "1-configuredatadogagent",
+      "title": "Configuring the agent",
+      "description": ""
     }, 
     {
       "course_id": "monitorapplication",
