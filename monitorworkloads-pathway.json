@@ -4,29 +4,14 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "course_id": "sampleapp",
+      "course_id": "1.configuredatadogagent",
       "title": "Getting started with the sample lab",
       "description": "Getting started with the sample lab"
-    },
-    {
-      "course_id": "migrateapplication",
-      "title": "Migrating the Application to Kubernetes",
-      "description": "Migrating the Application to Kubernetes"
-    },
-    {
-      "course_id": "monitorplatform",
-      "title": "Monitoring the Kuberenetes Platform",
-      "description": "Monitoring the Kuberenetes Platform"
-    },
+    }, 
     {
       "course_id": "monitorapplication",
       "title": "Monitoring the Application on top of Kubernetes",
       "description": "Monitoring the Application on top of Kubernetes"
-    },
-    {
-      "course_id": "troubleshoot",
-      "title": "Troubleshooting the Application",
-      "description": "Troubleshooting the Application"
     }
   ]
 }
