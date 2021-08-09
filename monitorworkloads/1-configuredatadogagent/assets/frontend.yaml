@@ -23,29 +23,29 @@ spec:
         app: ecommerce
     spec:
       containers:
-      - args:
-        - docker-entrypoint.sh
-        command:
-        - sh
-        env:
-        - name: DB_USERNAME
-          value: user
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              key: pw
-              name: db-password
-        image: ddtraining/ecommerce-frontend:latest
-        imagePullPolicy: Always
-        name: ecommerce-spree-observability
-        ports:
-        - containerPort: 3000
-          protocol: TCP
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-          limits: {}
+        - args:
+            - docker-entrypoint.sh
+          command:
+            - sh
+          env:
+            - name: DB_USERNAME
+              value: user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: pw
+                  name: db-password
+          image: ddtraining/storefront:latest
+          imagePullPolicy: Always
+          name: ecommerce-spree-observability
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits: {}
 ---
 apiVersion: v1
 kind: Service
