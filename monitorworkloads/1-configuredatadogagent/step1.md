@@ -1,1 +1,4 @@
+When you are working with virtual machines and cloud instances, you typically configure the Datadog Agent to process an application's metrics in the YAML file for the agent. But with Kubernetes you perform that configuration in the manifest for the application. In this lab, we have an application that is running as well as a Datadog Agent that is submitting metrics, logs, and more to Datadog. But it doesn't know anything about our Frontend application yet. In this lab we will configure the application to submit metrics to the Agent. 
 
+1.  In the IDE, open the file called `frontend.yaml` located under `deploy/generic-k8s/ecommerce-app`. You can see that this manifest defines a **deployment** and a **service**. 
+2.  Under `spec/template/spec/containers/env` you will see a few environment variables defined to tell the application how to connect to the database. We are going to add a few more environment variables here to configure the connection to Datadog. 
