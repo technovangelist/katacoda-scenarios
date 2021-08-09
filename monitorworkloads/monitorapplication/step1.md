@@ -1,5 +1,6 @@
-1.  As with the previous lab, we have already launched the Datadog Agent using the Helm chart. We have also launched the application. 
-2.  Now lets take a look at what has changed. In the IDE tab, navigate to **deploy/generic-k8s/ecommerce-app**. You should see 4 YAML files there for advertisements, db, discounts, and frontend.
+Let's start by figuring out what is required to start monitoring 
+
+1.  Now lets take a look at what has changed. In the IDE tab, navigate to **deploy/generic-k8s/ecommerce-app**. You should see 4 YAML files there for advertisements, db, discounts, and frontend.
     1.  Open the **advertisements.yaml** file in the editor.
     2.  Scroll down to **spec.template.spec.containers.env**. You can see a number of new environment variables here, including: `DATADOG_SERVICE_NAME`, `DD_ENV`, `DD_AGENT_HOST`, `DD_LOGS_INJECTION`, `DD_ANALYTICS_ENABLED`, and `DD_PROFILING_ENABLED` . These environment variables are all that is needed to enable different features like profiling, and more. 
     3.  Open the **discounts.yaml** file in the editor. 

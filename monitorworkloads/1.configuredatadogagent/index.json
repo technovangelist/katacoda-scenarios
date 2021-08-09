@@ -1,0 +1,59 @@
+{
+  "title": "Configuring the Datadog Agent",
+  "description": "How to configure the Datadog Agent for use with a workload on Kubernetes",
+  "difficulty": "Beginner",
+  "time": "40 minutes",
+  "details": {
+    "steps": [
+      {
+        "text": "step1.md"
+      },
+      {
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      },
+      {
+        "text": "step4.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "values.yaml",
+          "target": "/root"
+        },
+        {
+          "file": "frontend.yaml",
+          "target": "/root"
+        },
+        {
+          "file": "nodevalues.yaml",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uieditorpath": "/root/workshop",
+    "showide": "true",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-k8s-v118-cluster-running",
+    "port": 3000
+  }
+}
