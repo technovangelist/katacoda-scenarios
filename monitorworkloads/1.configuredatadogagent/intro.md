@@ -1,0 +1,1 @@
+Welcome to the first lab in the Monitoring Workloads course on the Learning Center. In this section we are going to take a look at some of the basics of monitoring a workload on Kubernetes and what's different about running on Kubernetes vs on another platform. 
