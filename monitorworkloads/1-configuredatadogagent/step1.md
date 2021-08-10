@@ -6,9 +6,14 @@ When you are working with virtual machines and cloud instances, you typically co
         annotations:
         ad.datadoghq.com/postgres.check_names: '["postgres"]'
         ad.datadoghq.com/postgres.init_configs: '[{}]'
-        ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "user","password": "password" }]'
+        ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
 4.  Now apply the manifest by running `k apply -f deploy/generic-k8s/ecommerce-app/db.yaml`{{execute}}.
-5.  Open <a href="https://app.datadoghq.com" target="_datadog">app.datadoghq.com</a> and navigate to Integrations. Enable the Postgres integration, if it isn't already enabled. 
-6.  Now you should be able to visit Dashboards and open either of the Postgres dashboards and see their metrics show up.
+5.  You can verify that this works by first running `k get pods`{{execute}} to get the name of our Datadog Agent pod, and then use that in `k exec <agentpodname> agent status`.
+6.  You will see that the Postgres integration isn't working yet. That’s because the **datadog** user in **Postgres** doesn't exist yet. So run `k get pods`{{execute}} again to get the name of our database pod. 
+7.  Now run `k exec <dbpodname> -it bash` to run an interactive shell on the pod. 
+8.  Run `psql -h localhost -U user postgres`{{execute}}. Then in the psql environment run: 
+        create user datadog with password 'datadog';
+        grant pg_monitor to datadog;
+        grant SELECT ON pg_stat_database to datadog;
 
-On the next page we will configure the frontend to submit APM traces to Datadog. 
+9.  Exit out of the psql environment and exit out of the db pod shell. Now run the agent status command again to see if there is a different result. You should see that the postgres metrics are being collected.

@@ -1,5 +1,6 @@
 
+1. Open <a href="https://app.datadoghq.com" target="_datadog">app.datadoghq.com</a> and navigate to Integrations. Enable the Postgres integration, if it isn't already enabled. 
+2. Now you should be able to visit Dashboards and open either of the Postgres dashboards and see their metrics show up.
+3. 
 
-1.  In the IDE, open the file called `frontend.yaml` located under `deploy/generic-k8s/ecommerce-app`. You can see that this manifest defines a **deployment** and a **service**. 
-2.  Under `spec/template/spec/containers/env` you will see a few environment variables defined to tell the application how to connect to the database. We are going to add a few more environment variables here to configure the connection to Datadog. 
-3.  Add 
+On the next page we will configure the frontend to submit APM traces to Datadog. 
