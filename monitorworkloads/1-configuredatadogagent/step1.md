@@ -15,5 +15,4 @@ When you are working with virtual machines and cloud instances, you typically co
         create user datadog with password 'datadog';
         grant pg_monitor to datadog;
         grant SELECT ON pg_stat_database to datadog;
-
 9.  Exit out of the psql environment and exit out of the db pod shell. Now run the agent status command again to see if there is a different result. You should see that the postgres metrics are being collected.
