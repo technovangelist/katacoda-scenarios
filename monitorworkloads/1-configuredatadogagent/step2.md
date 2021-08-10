@@ -3,4 +3,4 @@
 2. Now you should be able to visit Dashboards and open either of the Postgres dashboards and see their metrics show up.
 3. 
 
-On the next page we will configure the frontend to submit APM traces to Datadog. 
+On the next page we will configure the frontend to submit APM traces to Datadog.
