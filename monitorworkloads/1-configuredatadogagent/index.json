@@ -39,6 +39,10 @@
         {
           "file": "nodevalues.yaml",
           "target": "/root"
+        },
+        {
+          "file": "inituserdb.sh",
+          "target": "/root"
         }
       ]
     }
