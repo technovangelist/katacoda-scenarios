@@ -1,4 +1,4 @@
-1.  Open https://app.datadoghq.com and login using the credentials provided in the terminal. To make it easier, you may want to open
+1.  Open https://app.datadoghq.com and login using the credentials provided in the terminal. 
 2.  Under Infrastructure take a look at the Host Map. Each hexagon represents a single host or instance in our environment. 
 3.  Click on the hexagon that represents our single host. If you have gone through any other classes recently you may still see some other hosts being displayed.
 4.  Now change the drop-down at the top left from Hosts to Containers. 
