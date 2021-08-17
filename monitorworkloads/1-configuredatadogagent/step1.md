@@ -9,7 +9,7 @@ When you are working with virtual machines and cloud instances, you typically co
         ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
 4.  Now apply the manifest by running `k apply -f deploy/generic-k8s/ecommerce-app/db.yaml`{{execute}}.
 5.  You can verify that this works by first running `k get pods`{{execute}} to get the name of our Datadog Agent pod, and then use that in `k exec <agentpodname> agent status`.
-6.  You will see that the Postgres integration isn't working yet. That’s because the **datadog** user in **Postgres** doesn't exist yet. So run `k get pods`{{execute}} again to get the name of our database pod. 
+6.  You will see that the Postgres integration isn't working yet. Take a look at the documentation for the Postgres integration. The reason it's not working is that the **datadog** user in **Postgres** doesn't exist yet. Normally in a Kubernetes environment we would add this with a script on the initialization of the pod, but our database is already running so we need to go through some manual steps. So run `k get pods`{{execute}} again to get the name of our database pod. 
 7.  Now run `k exec <dbpodname> -it bash` to run an interactive shell on the pod. 
 8.  Run `psql -h localhost -U user postgres`{{execute}}. Then in the psql environment run: 
         create user datadog with password 'datadog';
