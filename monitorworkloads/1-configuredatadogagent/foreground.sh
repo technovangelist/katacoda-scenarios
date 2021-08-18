@@ -7,6 +7,9 @@ clear
 statuscheck k8s
 helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
+k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
+wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):5432
+
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/
 cd /root/workshop || exit
 prepenvironment
