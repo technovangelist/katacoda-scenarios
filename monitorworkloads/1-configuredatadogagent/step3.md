@@ -22,5 +22,11 @@ Now that we have configured the database to collect metrics, lets look at adding
         - name: DD_PROFILING_ENABLED
           value: "true"
 6.  Setting the environment variables is important, but to get the full effect of Unified Service Tagging, we also need to set labels at the deployment and the pod level. Add the following labels under metadata.labels at line 5:
-        
-7.  asht
+            tags.datadoghq.com/env: "development"
+            tags.datadoghq.com/service: "store-frontend"
+            tags.datadoghq.com/version: "1.0"  
+7.  Next we need to add these same labels to the  spec.template.metadata.labels section:
+            tags.datadoghq.com/env: "development"
+            tags.datadoghq.com/service: "store-frontend"
+            tags.datadoghq.com/version: "1.0"
+8.  e
