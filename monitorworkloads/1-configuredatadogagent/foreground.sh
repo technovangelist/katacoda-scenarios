@@ -6,9 +6,13 @@ statuscheck labtools
 clear
 statuscheck k8s
 helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
+k wait deploy/datadogagent-controlplane-cluster-agent --for condition=available
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
+kubectl wait --for=condition=ready pod -l app=datadogagent
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
+clear
 wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):5432
+k wait deploy/db --for condition=available
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/discounts.yaml
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
