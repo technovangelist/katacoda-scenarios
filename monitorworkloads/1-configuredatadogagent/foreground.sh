@@ -6,7 +6,8 @@ statuscheck labtools
 clear
 statuscheck k8s
 helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
-sleep 5
+# sleep 5
+waitfork8s
 k wait deploy/datadogagent-controlplane-cluster-agent --for condition=available
 
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
