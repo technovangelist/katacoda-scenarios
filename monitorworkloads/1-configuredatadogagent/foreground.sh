@@ -28,7 +28,7 @@ helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
 # kubectl wait --for=condition=ready pod -l app=datadogagent
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
-while [ "$(k get pod -l service=db -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" == "False" ]; do
+while [ "$(k get pod -l service=db -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" != "True" ]; do
 sleep 1
 done
 k get pod/db
