@@ -11,6 +11,11 @@ wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):6443
 waitfork8s
 k wait deploy/datadogagent-controlplane-cluster-agent --for condition=available
 k config get-clusters 
+while ! k get pods
+do
+    sleep 1
+done
+
 k get pods
 k get nodes
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
