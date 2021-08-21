@@ -6,6 +6,11 @@ statuscheck labtools
 clear
 statuscheck k8s
 helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
+
+while [ k get pod -l app=datadogagent-controlplane -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status' != "True" ]; do
+sleep 1
+done
+
 # sleep 5
 # wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):6443
 # waitfork8s
@@ -34,7 +39,7 @@ k get deploy/db -o jsonpath='{.status}' |jq
 sleep 2
 k get deploy/db -o jsonpath='{.status}' |jq
 sleep 2
-k get deploy/db -o jsonpath='{.status}' |jq
+k get deploy/db -o jsonpath='{.status}' |jq   
 # clear
 # wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):5432
 # k wait deploy/db --for condition=available
