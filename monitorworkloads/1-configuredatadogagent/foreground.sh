@@ -7,9 +7,9 @@ clear
 statuscheck k8s
 helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
 
-# while [ "$(k get pod -l app=datadogagent-controlplane -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" == "False" ]; do
-# sleep 1
-# done
+while [ "$(k get pod -l app=datadogagent-controlplane -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" != "True" ]; do
+sleep 1
+done
 
 # sleep 5
 # wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):6443
@@ -31,21 +31,6 @@ k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
 while [ "$(k get pod -l service=db -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" != "True" ]; do
 sleep 1
 done
-k get pod/db
-k get deploy/db -o jsonpath='{.status}' |jq
-sleep 2
-k get deploy/db -o jsonpath='{.status}' |jq
-sleep 2
-k get deploy/db -o jsonpath='{.status}' |jq
-sleep 2
-k get deploy/db -o jsonpath='{.status}' |jq
-sleep 2
-k get deploy/db -o jsonpath='{.status}' |jq
-sleep 2
-k get deploy/db -o jsonpath='{.status}' |jq   
-# clear
-# wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):5432
-# k wait deploy/db --for condition=available
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/discounts.yaml
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
