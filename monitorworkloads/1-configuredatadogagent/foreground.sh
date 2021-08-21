@@ -10,7 +10,9 @@ helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_
 wait-for-it $(k get service/db -o jsonpath='{.spec.clusterIP}'):6443
 waitfork8s
 k wait deploy/datadogagent-controlplane-cluster-agent --for condition=available
-k config get-clusters | wc -l
+k config get-clusters 
+k get pods
+k get nodes
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
 kubectl wait --for=condition=ready pod -l app=datadogagent
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
