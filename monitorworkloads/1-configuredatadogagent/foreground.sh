@@ -7,7 +7,7 @@ clear
 statuscheck k8s
 helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
 
-while [ k get pod -l app=datadogagent-controlplane -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status' != "True" ]; do
+while [ "$(k get pod -l app=datadogagent-controlplane -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" == "False" ]; do
 sleep 1
 done
 
