@@ -13,11 +13,11 @@ while ! k get pods
 do
     sleep 1
 done
-k wait deploy/datadogagent-controlplane-cluster-agent --for condition=available
-k config get-clusters 
+# k wait deploy/datadogagent-controlplane-cluster-agent --for condition=available
+# k config get-clusters 
 
-k get pods
-k get nodes
+# k get pods
+# k get nodes
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
 kubectl wait --for=condition=ready pod -l app=datadogagent
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
