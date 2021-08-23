@@ -51,7 +51,7 @@ datadog:
   networkMonitoring:
     enabled: true
 clusterAgent:
-  enabled: false
+  enabled: true
   image:
     name: cluster-agent
     tag: 1.12.0
