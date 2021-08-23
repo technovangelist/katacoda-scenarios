@@ -29,4 +29,4 @@ Now that we have configured the database to collect metrics, lets look at adding
             tags.datadoghq.com/env: "development"
             tags.datadoghq.com/service: "store-frontend"
             tags.datadoghq.com/version: "1.0"
-8.  e
+8.  Now if you open the Logs Search and Filter by the Service store-frontend, you can click on any log and see the related Metrics, Processes, and if there are any, Traces. Similarly you can start at the Container view then choose Pods at the top left and choose the Frontend pod, then find all the related information. Unified Service Tagging is the key to getting all of this data to show up correctly as related to each other.
