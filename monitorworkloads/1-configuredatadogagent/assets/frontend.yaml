@@ -35,10 +35,10 @@ spec:
                 secretKeyRef:
                   key: pw
                   name: db-password
-            # - name: DD_CLIENT_TOKEN
-            #   value: <your_client_token>
-            # - name: DD_APPLICATION_ID
-            #   value: <your_application_id>
+          # - name: DD_CLIENT_TOKEN
+          #   value: <your_client_token>
+          # - name: DD_APPLICATION_ID
+          #   value: <your_application_id>
           image: ddtraining/storefront:latest
           imagePullPolicy: Always
           name: ecommerce-spree-observability

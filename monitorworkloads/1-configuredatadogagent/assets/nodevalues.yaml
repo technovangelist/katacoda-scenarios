@@ -51,7 +51,7 @@ datadog:
   networkMonitoring:
     enabled: true
 clusterAgent:
-  enabled: false
+  enabled: true
   image:
     name: cluster-agent
     tag: 1.12.0
@@ -70,7 +70,7 @@ clusterAgent:
       maxUnavailable: 0
 
 existingClusterAgent:
-  join: false
+  join: true
   tokenSecretName: datadogagent-controlplane-cluster-agent
   serviceName: datadogagent-controlplane-cluster-agent
   clusterchecksEnabled: false
@@ -86,8 +86,8 @@ agents:
       logLevel: # INFO
     processAgent:
       env:
-        # - name: "DD_ORCHESTRATOR_EXPLORER_EXTRA_TAGS"
-        #   value: "orchestrator:on"
+        - name: "DD_ORCHESTRATOR_EXPLORER_EXTRA_TAGS"
+          value: "orchestrator:on"
 
 clusterChecksRunner:
   enabled: false

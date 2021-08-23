@@ -5,7 +5,7 @@ done
 statuscheck labtools
 clear
 statuscheck k8s
-# helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
+helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-values.yaml
 
 # while [ "$(k get pod -l app=datadogagent-controlplane -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" != "True" ]; do
 # sleep 3
@@ -28,6 +28,7 @@ statuscheck k8s
 helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY -f /root/workshop/deploy/datadog/helm-node-values.yaml
 # kubectl wait --for=condition=ready pod -l app=datadogagent
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
+clear
 while [ "$(k get pod -l service=db -o jsonpath='{.items[*].status}' | jq -r '.conditions[] | select( .type=="Ready") | .status')" != "True" ]; do
 sleep 2
 done
@@ -36,4 +37,4 @@ k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 
 cd /root/workshop || exit
-# prepenvironment
+prepenvironment
