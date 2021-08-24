@@ -37,6 +37,10 @@
           "target": "/root"
         },
         {
+          "file": "db.yaml",
+          "target": "/root"
+        },
+        {
           "file": "nodevalues.yaml",
           "target": "/root"
         }
