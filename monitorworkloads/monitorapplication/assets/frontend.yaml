@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
+    tags.datadoghq.com/env: "development"
+    tags.datadoghq.com/service: "store-frontend"
+    tags.datadoghq.com/version: "1.0" 
     service: frontend
     app: ecommerce
   name: frontend
@@ -19,6 +22,9 @@ spec:
   template:
     metadata:
       labels:
+        tags.datadoghq.com/env: "development"
+        tags.datadoghq.com/service: "store-frontend"
+        tags.datadoghq.com/version: "1.0" 
         service: frontend
         app: ecommerce
     spec:
@@ -35,6 +41,22 @@ spec:
             secretKeyRef:
               key: pw
               name: db-password
+        - name: DATADOG_SERVICE_NAME
+          value: "store-frontend"
+        - name: DD_ENV
+          value: "development"
+        - name: DD_VERSION
+          value: "1.0"
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: DD_LOGS_INJECTION
+          value: "true"
+        - name: DD_ANALYTICS_ENABLED
+          value: "true"
+        - name: DD_PROFILING_ENABLED
+          value: "true"
         image: ddtraining/ecommerce-frontend:latest
         imagePullPolicy: Always
         name: ecommerce-spree-observability

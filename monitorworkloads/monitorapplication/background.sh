@@ -14,6 +14,7 @@ cp -r /ecommworkshop/* /root/workshop
 cp /root/values.yaml /root/workshop/deploy/datadog/helm-values.yaml
 cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
 cp /root/frontend.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
+cp /root/db.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
 statusupdate k8s
 # launch.sh
 statusupdate complete
