@@ -41,6 +41,14 @@
           "target": "/root"
         },
         {
+          "file": "discounts.yaml",
+          "target": "/root"
+        },
+        {
+          "file": "advertisements.yaml",
+          "target": "/root"
+        },
+        {
           "file": "nodevalues.yaml",
           "target": "/root"
         }

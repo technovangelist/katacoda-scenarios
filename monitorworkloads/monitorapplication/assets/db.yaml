@@ -58,6 +58,9 @@ metadata:
   labels:
     service: db
     app: ecommerce
+    tags.datadoghq.com/env: "development"
+    tags.datadoghq.com/service: "db"
+    tags.datadoghq.com/version: "1.0" 
   name: db
 spec:
   replicas: 1
@@ -73,6 +76,9 @@ spec:
         ad.datadoghq.com/postgres.init_configs: '[{}]'
         ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
       labels:
+        tags.datadoghq.com/env: "development"
+        tags.datadoghq.com/service: "db"
+        tags.datadoghq.com/version: "1.0" 
         service: db
         app: ecommerce
     spec:
