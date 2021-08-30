@@ -3,10 +3,12 @@ When you are working with virtual machines and cloud instances, you typically co
 1.  In the IDE, open the file called `db.yaml` located under `deploy/generic-k8s/ecommerce-app`. You can see that this manifest defines a deployment, a service account and secret, a volume, and a service. 
 2.  What we don't have here is any way to collect Postgres metrics with the Datadog Agent. To do that we need to add annotations. You can learn more about Auto Discovery Annotations at https://docs.datadoghq.com/agent/kubernetes/integrations/?tab=kubernetes
 3.  The documentation says "If you define pods indirectly with replication controllers, replica sets, or deployments, add pod annotations under `.spec.template.metadata.`", so add the following to that section around line 61:
-        annotations:
-          ad.datadoghq.com/postgres.check_names: '["postgres"]'
-          ad.datadoghq.com/postgres.init_configs: '[{}]'
-          ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
+    <pre class="file" data-target="clipboard">    
+    annotations:
+      ad.datadoghq.com/postgres.check_names: '["postgres"]'
+      ad.datadoghq.com/postgres.init_configs: '[{}]'
+      ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
+    </pre>
 4.  Now apply the manifest by running `k apply -f deploy/generic-k8s/ecommerce-app/db.yaml`{{execute}}.
 5.  You can verify that this works by first running `k get pods`{{execute}} to get the name of our Datadog Agent pod, and then use that in `k exec <agentpodname> agent status`.
 6.  You will see that the Postgres integration isn't working yet. Take a look at the documentation for the Postgres integration. The reason it's not working is that the **datadog** user in **Postgres** doesn't exist yet. Normally in a Kubernetes environment we would add this with a script on the initialization of the pod, but our database is already running so we need to go through some manual steps. So run `k get pods`{{execute}} again to get the name of our database pod. 
