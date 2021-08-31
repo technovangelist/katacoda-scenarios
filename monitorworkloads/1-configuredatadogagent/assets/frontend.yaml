@@ -4,7 +4,6 @@ metadata:
   labels:
     service: frontend
     app: ecommerce
-    tags.datadoghq.com/env: "development"
   name: frontend
 spec:
   replicas: 1
@@ -22,7 +21,6 @@ spec:
       labels:
         service: frontend
         app: ecommerce
-        tags.datadoghq.com/env: "development"
     spec:
       containers:
         - args:
