@@ -12,7 +12,7 @@ When you are working with virtual machines and cloud instances, you typically co
 6.  You will see that the Postgres integration isn't working yet. Take a look at the documentation for the Postgres integration. The reason it's not working is that the **datadog** user in **Postgres** doesn't exist yet. Normally in a Kubernetes environment we would add this with a script on the initialization of the pod, but our database is already running so we need to go through some manual steps. So run `k get pods`{{execute}} again to get the name of our database pod. 
 7.  Now run `k exec <dbpodname> -it bash` to run an interactive shell on the pod. If you describe the pod, you will see it has a service label set to db, so you can also run `k exec $(k get pod -l service=db -o name) -it bas`{{execute}}. 
 8.  Run `psql -h localhost -U user postgres`{{execute}}. Then copy and run the following in the psql environment: 
-        <pre class="file" data-target="clipboard">create user datadog with password 'datadog';
-        grant pg_monitor to datadog;
-        grant SELECT ON pg_stat_database to datadog;</pre>
+    <pre class="file" data-target="clipboard">create user datadog with password 'datadog';
+    grant pg_monitor to datadog;
+    grant SELECT ON pg_stat_database to datadog;</pre>
 9.  Exit out of the psql environment and exit out of the db pod shell. Now run the agent status command again to see if there is a different result. You should see that the postgres metrics are being collected. It can take a few seconds for the agent to see the changes, so if you see the same error try again.
