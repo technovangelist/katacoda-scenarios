@@ -1,1 +1,1 @@
-Welcome to the first lab in the Monitoring Workloads course on the Learning Center. In this section we are going to take a look at some of the basics of monitoring a workload on Kubernetes and what's different about running on Kubernetes vs on another platform. 
+In the previous scenario, you configured the Datadog Agent so that it could monitor the application we are working with. In this scenario we will start to understand what is different with monitoring an application on Kubernetes vs doing the same with an application on a virtual machine. 
