@@ -70,7 +70,7 @@ metadata:
     app: ecommerce
     tags.datadoghq.com/env: "production"
     tags.datadoghq.com/service: "db"
-    tags.datadoghq.com/version: "1.0" 
+    tags.datadoghq.com/version: "1.0"
   name: db
 spec:
   replicas: 1
@@ -83,13 +83,13 @@ spec:
     metadata:
       annotations:
         ad.datadoghq.com/postgres.check_names: '["postgres"]'
-        ad.datadoghq.com/postgres.init_configs: '[{}]'
+        ad.datadoghq.com/postgres.init_configs: "[{}]"
         ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
         ad.datadoghq.com/postgres.logs: '[{"source":"postgres","service":"db"}]'
       labels:
         tags.datadoghq.com/env: "production"
         tags.datadoghq.com/service: "db"
-        tags.datadoghq.com/version: "1.0" 
+        tags.datadoghq.com/version: "1.0"
         service: db
         app: ecommerce
     spec:
@@ -114,6 +114,7 @@ spec:
           volumeMounts:
             - name: postgresconfig-configmap
               mountPath: /var/lib/postgresql/postgresql.conf
+              subPath: postgresql.conf
             - mountPath: /var/lib/postgresql/data
               name: postgresdb
             - name: postgres-initdb-configmap
@@ -126,7 +127,7 @@ spec:
         - name: postgresconfig-configmap
           configMap:
             name: postgresconfig-configmap
-            items: 
+            items:
               - key: postgresconfig
                 path: postgresql.conf
         - name: postgres-initdb-configmap
