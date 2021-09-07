@@ -10,7 +10,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  postgresconfig: |
+  postgresql.conf: |
     listen_addresses = '*'
     track_activity_query_size = 4096	# (change requires restart)
     pg_stat_statements.track = 'ALL'
@@ -112,13 +112,13 @@ spec:
               value: "/var/lib/postgresql/data/mydata"
           resources: {}
           volumeMounts:
-            - name: postgresconfig-configmap
-              mountPath: /var/lib/postgresql/postgresql.conf
-              subPath: postgresql.conf
             - mountPath: /var/lib/postgresql/data
               name: postgresdb
             - name: postgres-initdb-configmap
               mountPath: /docker-entrypoint-initdb.d/
+            - name: postgresconfig-configmap
+              mountPath: /var/lib/postgresql/postgresql.conf
+              subPath: postgresql.conf
       serviceAccountName: postgres
       volumes:
         - name: postgresdb
@@ -128,7 +128,7 @@ spec:
           configMap:
             name: postgresconfig-configmap
             items:
-              - key: postgresconfig
+              - key: postgresql.conf
                 path: postgresql.conf
         - name: postgres-initdb-configmap
           configMap:
