@@ -51,6 +51,10 @@
         {
           "file": "nodevalues.yaml",
           "target": "/root"
+        },
+        {
+          "file": "postgresql.conf",
+          "target": "/root"
         }
       ]
     }

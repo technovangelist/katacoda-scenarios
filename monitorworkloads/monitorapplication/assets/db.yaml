@@ -8,6 +8,16 @@ kind: ConfigMap
 metadata:
   name: postgres-initdb-configmap
 ---
+apiVersion: v1
+data:
+  createdatadoguser: |
+    listen_addresses = '*'
+    track_activity_query_size = 4096	# (change requires restart)
+    pg_stat_statements.track = 'ALL'
+kind: ConfigMap
+metadata:
+  name: postgresconfig-configmap
+---
 kind: ServiceAccount
 apiVersion: v1
 metadata:
@@ -102,6 +112,8 @@ spec:
               value: "/var/lib/postgresql/data/mydata"
           resources: {}
           volumeMounts:
+            - name: postgresconfig-configmap
+              mountpath: /var/lib/postgresql/postgresql.conf
             - mountPath: /var/lib/postgresql/data
               name: postgresdb
             - name: postgres-initdb-configmap
@@ -111,6 +123,12 @@ spec:
         - name: postgresdb
           persistentVolumeClaim:
             claimName: task-pvc-volume
+        - name: postgresconfig-configmap
+          configMap:
+            name: postgresconfig-configmap
+            items: 
+              - key: postgresconfig
+                path: postgresql.conf
         - name: postgres-initdb-configmap
           configMap:
             name: postgres-initdb-configmap
