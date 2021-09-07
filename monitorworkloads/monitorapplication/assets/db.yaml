@@ -31,7 +31,6 @@ data:
   postgresql.conf: |
     listen_addresses = '*'
     track_activity_query_size = 4096	# (change requires restart)
-    pg_stat_statements.track = 'ALL'
     shared_preload_libraries = 'pg_stat_statements'
 kind: ConfigMap
 metadata:
