@@ -113,7 +113,7 @@ spec:
           resources: {}
           volumeMounts:
             - name: postgresconfig-configmap
-              mountpath: /var/lib/postgresql/postgresql.conf
+              mountPath: /var/lib/postgresql/postgresql.conf
             - mountPath: /var/lib/postgresql/data
               name: postgresdb
             - name: postgres-initdb-configmap
