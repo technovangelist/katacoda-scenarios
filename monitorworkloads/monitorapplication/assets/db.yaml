@@ -4,6 +4,25 @@ data:
     CREATE USER datadog WITH PASSWORD 'datadog';
     GRANT pg_monitor to datadog;
     GRANT SELECT ON pg_stat_database to datadog;
+    CREATE SCHEMA datadog;
+    GRANT USAGE ON SCHEMA datadog TO datadog;
+    GRANT USAGE ON SCHEMA public TO datadog;
+    GRANT pg_monitor TO datadog;
+    CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+    CREATE OR REPLACE FUNCTION datadog.explain_statement (
+      l_query text,
+      out explain JSON
+    )
+    RETURNS SETOF JSON AS
+    $$
+    BEGIN
+      RETURN QUERY EXECUTE 'EXPLAIN (FORMAT JSON) ' || l_query;
+    END;
+    $$
+    LANGUAGE 'plpgsql'
+    RETURNS NULL ON NULL INPUT
+    SECURITY DEFINER;
+
 kind: ConfigMap
 metadata:
   name: postgres-initdb-configmap
@@ -14,6 +33,7 @@ data:
     listen_addresses = '*'
     track_activity_query_size = 4096	# (change requires restart)
     pg_stat_statements.track = 'ALL'
+    shared_preload_libraries = 'pg_stat_statements'
 kind: ConfigMap
 metadata:
   name: postgresconfig-configmap
