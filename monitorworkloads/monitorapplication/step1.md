@@ -1,4 +1,4 @@
-Let's start by figuring out what is required to start monitoring 
+We have updated the configuration of all the components of our app to be in line with what we did in the previous lab. So let's just do a quick review of that. And then we will update the Real User Monitoring ID's to ensure that data is showing up in our account correctly. 
 
 1.  Now lets take a look at what has changed. In the IDE tab, navigate to **deploy/generic-k8s/ecommerce-app**. You should see 4 YAML files there for advertisements, db, discounts, and frontend.
     1.  Open the **advertisements.yaml** file in the editor.
