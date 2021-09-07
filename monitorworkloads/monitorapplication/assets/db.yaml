@@ -22,7 +22,6 @@ data:
     LANGUAGE 'plpgsql'
     RETURNS NULL ON NULL INPUT
     SECURITY DEFINER;
-
 kind: ConfigMap
 metadata:
   name: postgres-initdb-configmap
