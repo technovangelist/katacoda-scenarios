@@ -10,7 +10,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  createdatadoguser: |
+  postgresconfig: |
     listen_addresses = '*'
     track_activity_query_size = 4096	# (change requires restart)
     pg_stat_statements.track = 'ALL'
