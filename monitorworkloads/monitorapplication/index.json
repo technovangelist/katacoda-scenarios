@@ -53,7 +53,7 @@
           "target": "/root"
         },
         {
-          "file": "postgresql.conf",
+          "file": "newvals.yaml",
           "target": "/root"
         }
       ]

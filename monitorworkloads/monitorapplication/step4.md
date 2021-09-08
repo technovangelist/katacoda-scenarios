@@ -4,7 +4,7 @@ To try this section, you must be using Google Chrome. Other browsers are not sup
 
 1.  Navigate to the Synthetic Tests page on Datadog: https://app.datadoghq.com/synthetics/tests
 2.  Click the **Get Started** button.
-3.  Choose **New Browser Test**.
+3.  Choose **New BrowseQr Test**.
 4.  Paste in the URL of our website. Ensure you set the protocol at the beginning of the URL to http since our site isn't configured to use https.
 5.  Name the test **Frontend Synthetics**.
 6.  Choose a few locations to test from and set the test frequency. 6 or 12 hours is a good choice. 
