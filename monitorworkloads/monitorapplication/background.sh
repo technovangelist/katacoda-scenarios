@@ -11,8 +11,8 @@ helm repo add datadog https://helm.datadoghq.com
 helm repo add stable https://charts.helm.sh/stable
 helm repo update
 cp -r /ecommworkshop/* /root/workshop
-# cp /root/values.yaml /root/workshop/deploy/datadog/helm-values.yaml
-# cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
+cp /root/values.yaml /root/workshop/deploy/datadog/helm-values.yaml
+cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
 cp /root/frontend.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 cp /root/db.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
 cp /root/advertisements.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
