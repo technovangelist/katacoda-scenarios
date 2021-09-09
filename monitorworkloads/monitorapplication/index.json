@@ -47,10 +47,6 @@
         {
           "file": "advertisements.yaml",
           "target": "/root"
-        },
-        {
-          "file": "nodevalues.yaml",
-          "target": "/root"
         }
       ]
     }
