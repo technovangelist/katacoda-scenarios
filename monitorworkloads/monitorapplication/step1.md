@@ -7,4 +7,4 @@ We have updated the configuration of all the components of our app to be in line
 4.  **db.yaml** has a few changes. First notice the two configmaps. These are setting the datadog user in postgres, as well as giving access to the database monitoring features. Further down you will see the labels and annotations set. 
 5.  In **frontend.yaml** you will need to update the settings for RUM. In Datadog, navigate to **UX Monitoring | RUM Applications** and click on the application you configured in the previous lab. Take note of the **ApplicationID** and the **ClientToken** and update the yaml file accordingly. 
 6.  Now run `k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}} to restart the Frontend. 
-7.  Open the StoreDog app and start looking around the app so that we have some data in Datadog.
+7.  Open the StoreDog app and start looking around the app so that we have some data in Datadog. (Note: if you use a DNS-based ad blocking service like Pi-Hole, you will need to either temporarily disable the service, or add datadoghq-browser-agent.com to your Whitelist as a wildcard domain.)

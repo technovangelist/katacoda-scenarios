@@ -16,7 +16,7 @@ targetSystem: "linux"
 ## GCR - use gcr.io/datadoghq (default)
 ## DockerHub - use docker.io/datadog
 ## AWS - use public.ecr.aws/datadog
-registry: gcr.io/datadoghq
+registry: docker.io/datadog
 
 datadog:
   # datadog.apiKey -- Your Datadog API key
@@ -56,7 +56,7 @@ datadog:
   ## * Overall length should not be higher than 80 characters.
   ## Compared to the rules of GKE, dots are allowed whereas they are not allowed on GKE:
   ## https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.FIELDS.name
-  clusterName: newk8s
+  clusterName: k8sworkloads
 
   # datadog.site -- The site of the Datadog intake to send Agent data to
   ## Set to 'datadoghq.eu' to send data to the EU site.
@@ -67,10 +67,10 @@ datadog:
   dd_url: # https://app.datadoghq.com
 
   # datadog.logLevel -- Set logging verbosity, valid log levels are: trace, debug, info, warn, error, critical, off
-  logLevel: DEBUG
+  logLevel: INFO
 
   # datadog.kubeStateMetricsEnabled -- If true, deploys the kube-state-metrics deployment
-  ## ref: https://github.com/kubernetes/kube-state-metrics/tree/kube-state-metrics-helm-chart-2.13.2/charts/kube-state-metrics
+  ## ref: https://github.com/kubernetes/kube-state-metrics/tree/master/charts/kube-state-metrics
   kubeStateMetricsEnabled: true
 
   kubeStateMetricsNetworkPolicy:
@@ -130,7 +130,7 @@ datadog:
           fieldPath: status.hostIP
     # datadog.kubelet.tlsVerify -- Toggle kubelet TLS verification
     # @default -- true
-    tlsVerify: # false
+    tlsVerify: false
     # datadog.kubelet.hostCAPath -- Path (on host) where the Kubelet CA certificate is stored
     # @default -- None (no mount from host)
     hostCAPath:
@@ -160,9 +160,9 @@ datadog:
     ## https://docs.datadoghq.com/developers/dogstatsd/unix_socket/#using-origin-detection-for-container-tagging
     tagCardinality: low
 
-    # datadog.dogstatsd.useSocketVolume -- Enable dogstatsd over Unix Domain Socket with an HostVolume
+    # datadog.dogstatsd.useSocketVolume -- Enable dogstatsd over Unix Domain Socket
     ## ref: https://docs.datadoghq.com/developers/dogstatsd/unix_socket/
-    useSocketVolume: true
+    useSocketVolume: false
 
     # datadog.dogstatsd.socketPath -- Path to the DogStatsD socket
     socketPath: /var/run/datadog/dsd.socket
@@ -214,25 +214,15 @@ datadog:
 
   ## Enable apm agent and provide custom configs
   apm:
-    # datadog.apm.socketEnabled -- Enable APM over Socket (Unix Socket or windows named pipe)
-    ## ref: https://docs.datadoghq.com/agent/kubernetes/apm/
-    socketEnabled: true
-
-    # datadog.apm.portEnabled -- Enable APM over TCP communication (port 8216 by default
-    ## ref: https://docs.datadoghq.com/agent/kubernetes/apm/
-    portEnabled: false
-
     # datadog.apm.enabled -- Enable this to enable APM and tracing, on port 8126
-    # DEPRECATED. Use datadog.apm.portEnabled instead
     ## ref: https://github.com/DataDog/docker-dd-agent#tracing-from-the-host
-    enabled: false
+    portEnabled: true
 
     # datadog.apm.port -- Override the trace Agent port
     ## Note: Make sure your client is sending to the same UDP port.
     port: 8126
 
     # datadog.apm.useSocketVolume -- Enable APM over Unix Domain Socket
-    # DEPRECATED. Use datadog.apm.socketEnabled instead
     ## ref: https://docs.datadoghq.com/agent/kubernetes/apm/
     useSocketVolume: false
 
@@ -259,9 +249,20 @@ datadog:
 
   # datadog.confd -- Provide additional check configurations (static and Autodiscovery)
   ## Each key becomes a file in /conf.d
-  ## ref: https://github.com/DataDog/datadog-agent/tree/main/Dockerfiles/agent#optional-volumes
+  ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
-  confd: {}
+  confd:
+    etcd.yaml: |-
+      ad_identifiers:
+        - etcd
+      instances:
+        - prometheus_url: https://%%host%%:2379/metrics
+          ssl_verify: false
+          use_preview: true
+          ssl_ca_cert: /keys/ca.crt
+          ssl_cert: /keys/peer.crt
+          ssl_private_key: /keys/peer.key
+
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -276,7 +277,7 @@ datadog:
 
   # datadog.checksd -- Provide additional custom checks as python code
   ## Each key becomes a file in /checks.d
-  ## ref: https://github.com/DataDog/datadog-agent/tree/main/Dockerfiles/agent#optional-volumes
+  ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes
   checksd: {}
   #   service.py: |-
 
@@ -294,7 +295,7 @@ datadog:
   serviceTopology:
     # datadog.serviceTopology.enabled -- Enabling this will allow sending custom metrics and APM traces to the Datadog Agent on the same node without using a host port
     # Important note: Enabling this option without enabling Service Topology in the cluster will result in wrong tagging for traces and custom metrics
-    enabled: true
+    enabled: false
 
     # datadog.serviceTopology.serviceName -- Configure the name of the service responsible for routing the custom metrics and/or traces to the Datadog Agent
     # Important note: DD_AGENT_HOST must be configured in your app to target this service.
@@ -310,7 +311,7 @@ datadog:
 
     # datadog.processAgent.processCollection -- Set this to true to enable process collection in process monitoring agent
     ## Requires processAgent.enabled to be set to true to have any effect
-    processCollection: false
+    processCollection: true
 
   ## Enable systemProbe agent and provide custom configs
   systemProbe:
@@ -380,7 +381,7 @@ datadog:
 
     runtime:
       # datadog.securityAgent.runtime.enabled -- Set to true to enable the Security Runtime Module
-      enabled: false
+      enabled: true
 
       policies:
         # datadog.securityAgent.runtime.policies.configMap -- Contains policies that will be used
@@ -439,38 +440,6 @@ datadog:
   #  - redisdb
   #  - kubernetes_state
 
-  # datadog.containerExclude -- Exclude containers from the Agent
-  # Autodiscovery, as a space-sepatered list
-  ## ref: https://docs.datadoghq.com/agent/guide/autodiscovery-management/?tab=containerizedagent#exclude-containers
-  containerExclude: # "image:datadog/agent"
-
-  # datadog.containerInclude -- Include containers in the Agent Autodiscovery,
-  # as a space-separated list.  If a container matches an include rule, it’s
-  # always included in the Autodiscovery
-  ## ref: https://docs.datadoghq.com/agent/guide/autodiscovery-management/?tab=containerizedagent#include-containers
-  containerInclude:
-
-  # datadog.containerExcludeLogs -- Exclude logs from the Agent Autodiscovery,
-  # as a space-separated list
-  containerExcludeLogs:
-
-  # datadog.containerIncludeLogs -- Include logs in the Agent Autodiscovery, as
-  # a space-separated list
-  containerIncludeLogs:
-
-  # datadog.containerExcludeMetrics -- Exclude metrics from the Agent
-  # Autodiscovery, as a space-separated list
-  containerExcludeMetrics:
-
-  # datadog.containerIncludeMetrics -- Include metrics in the Agent
-  # Autodiscovery, as a space-separated list
-  containerIncludeMetrics:
-
-  # datadog.excludePauseContainer -- Exclude pause containers from the Agent
-  # Autodiscovery.
-  ## ref: https://docs.datadoghq.com/agent/guide/autodiscovery-management/?tab=containerizedagent#pause-containers
-  excludePauseContainer: true
-
 ## This is the Datadog Cluster Agent implementation that handles cluster-wide
 ## metrics more cleanly, separates concerns for better rbac, and implements
 ## the external metrics API so you can autoscale HPAs based on datadog metrics
@@ -485,7 +454,7 @@ clusterAgent:
     name: cluster-agent
 
     # clusterAgent.image.tag -- Cluster Agent image tag to use
-    tag: 1.14.0
+    tag: 1.12.0
 
     # clusterAgent.image.repository -- Override default registry + image.name for Cluster Agent
     repository:
@@ -523,11 +492,8 @@ clusterAgent:
     # clusterAgent.rbac.create -- If true, create & use RBAC resources
     create: true
 
-    # clusterAgent.rbac.serviceAccountName -- Specify a preexisting ServiceAccount to use if clusterAgent.rbac.create is false
+    # clusterAgent.rbac.serviceAccountName -- Specify service account name to use (usually pre-existing, created if create is true)
     serviceAccountName: default
-
-    # clusterAgent.rbac.serviceAccountAnnotations -- Annotations to add to the ServiceAccount if clusterAgent.rbac.create is true
-    serviceAccountAnnotations: {}
 
   ## Provide Cluster Agent pod security configuration
   podSecurity:
@@ -541,7 +507,7 @@ clusterAgent:
   # Enable the metricsProvider to be able to scale based on metrics in Datadog
   metricsProvider:
     # clusterAgent.metricsProvider.enabled -- Set this to true to enable Metrics Provider
-    enabled: true
+    enabled: false
 
     # clusterAgent.metricsProvider.wpaController -- Enable informer and controller of the watermark pod autoscaler
     ## NOTE: You need to install the `WatermarkPodAutoscaler` CRD before
@@ -591,26 +557,6 @@ clusterAgent:
   #         port: 3306
   #         user: datadog
   #         pass: '<YOUR_CHOSEN_PASSWORD>'
-
-  # clusterAgent.advancedConfd -- Provide additional cluster check configurations
-  ## Each key is an integration containing several config files, it replaces clusterAgent.confd if set
-  ## ref: https://docs.datadoghq.com/agent/autodiscovery/
-  advancedConfd: {}
-  #  mysql.d:
-  #    1.yaml: |-
-  #      cluster_check: true
-  #      instances:
-  #        - server: '<EXTERNAL_IP>'
-  #          port: 3306
-  #          user: datadog
-  #          pass: '<YOUR_CHOSEN_PASSWORD>'
-  #    2.yaml:  |-
-  #      cluster_check: true
-  #      instances:
-  #        - server: '<EXTERNAL_IP>'
-  #          port: 3306
-  #          user: datadog
-  #          pass: '<YOUR_CHOSEN_PASSWORD>'
 
   # clusterAgent.resources -- Datadog cluster-agent resource requests and limits.
   resources: {}
@@ -744,13 +690,8 @@ agents:
     name: agent
 
     # agents.image.tag -- Define the Agent version to use
-    tag: 7.30.1
-
-    # agents.image.tagSuffix -- Suffix to append to Agent tag
-    ## Ex:
-    ##  jmx        to enable jmx fetch collection
-    ##  servercore to get Windows images based on servercore
-    tagSuffix: ""
+    ## Use 7-jmx to enable jmx fetch collection
+    tag: 7.27.0
 
     # agents.image.repository -- Override default registry + image.name for Agent
     repository:
@@ -776,11 +717,8 @@ agents:
     # agents.rbac.create -- If true, create & use RBAC resources
     create: true
 
-    # agents.rbac.serviceAccountName -- Specify a preexisting ServiceAccount to use if agents.rbac.create is false
+    # agents.rbac.serviceAccountName -- Specify service account name to use (usually pre-existing, created if create is true)
     serviceAccountName: default
-
-    # agents.rbac.serviceAccountAnnotations -- Annotations to add to the ServiceAccount if agents.rbac.create is true
-    serviceAccountAnnotations: {}
 
   ## Provide Daemonset PodSecurityPolicy configuration
   podSecurity:
@@ -1003,13 +941,25 @@ agents:
       #    memory: 200Mi
 
   # agents.volumes -- Specify additional volumes to mount in the dd-agent container
-  volumes: []
+  volumes:
+    - hostPath:
+        path: /etc/kubernetes/pki/etcd
+      name: etcd-keys
+    - emptyDir: {}
+      name: etcd-auto-conf
+
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
 
   # agents.volumeMounts -- Specify additional volumes to mount in all containers of the agent pod
-  volumeMounts: []
+  volumeMounts:
+    - name: etcd-auto-conf
+      mountPath: /etc/datadog-agent/conf.d/etcd.d/
+      readOnly: true
+    - mountPath: /keys
+      name: etcd-keys
+      readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -1025,7 +975,17 @@ agents:
 
   # agents.dnsConfig -- specify dns configuration options for datadog cluster agent containers e.g ndots
   ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
-  dnsConfig: {}
+  # dnsConfig:
+  #   nameservers:
+  #     - 10.96.0.10
+  #     - 1.1.1.1
+  #   searches:
+  #     - default.svc.cluster.local
+  #     - svc.cluster.local
+  #     - cluster.local
+  #   options:
+  #     - name: ndots
+  #       value: "5"
   #  options:
   #  - name: ndots
   #    value: "1"
@@ -1035,11 +995,14 @@ agents:
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
 
   # agents.tolerations -- Allow the DaemonSet to schedule on tainted nodes (requires Kubernetes >= 1.6)
-  tolerations: []
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
 
   # agents.nodeSelector -- Allow the DaemonSet to schedule on selected nodes
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
-  nodeSelector: {}
+  nodeSelector:
+    node-role.kubernetes.io/master: ""
 
   # agents.affinity -- Allow the DaemonSet to schedule using affinity rules
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
@@ -1069,7 +1032,7 @@ agents:
 
   # agents.customAgentConfig -- Specify custom contents for the datadog agent config (datadog.yaml)
   ## ref: https://docs.datadoghq.com/agent/guide/agent-configuration-files/?tab=agentv6
-  ## ref: https://github.com/DataDog/datadog-agent/blob/main/pkg/config/config_template.yaml
+  ## ref: https://github.com/DataDog/datadog-agent/blob/master/pkg/config/config_template.yaml
   ## Note the `agents.useConfigMap` needs to be set to `true` for this parameter to be taken into account.
   customAgentConfig: {}
   #   # Autodiscovery for Kubernetes
@@ -1107,13 +1070,8 @@ clusterChecksRunner:
     name: agent
 
     # clusterChecksRunner.image.tag -- Define the Agent version to use
-    tag: 7.30.1
-
-    # clusterChecksRunner.image.tagSuffix -- Suffix to append to Agent tag
-    ## Ex:
-    ##  jmx        to enable jmx fetch collection
-    ##  servercore to get Windows images based on servercore
-    tagSuffix: ""
+    ## Use 7-jmx to enable jmx fetch collection
+    tag: 7.27.0
 
     # clusterChecksRunner.image.repository -- Override default registry + image.name for Cluster Check Runners
     repository:
@@ -1140,7 +1098,7 @@ clusterChecksRunner:
     # clusterChecksRunner.rbac.serviceAccountAnnotations -- Annotations to add to the ServiceAccount if clusterChecksRunner.rbac.dedicated is true
     serviceAccountAnnotations: {}
 
-    # clusterChecksRunner.rbac.serviceAccountName -- Specify a preexisting ServiceAccount to use if clusterChecksRunner.rbac.create is false
+    # clusterChecksRunner.rbac.serviceAccountName -- Specify service account name to use (usually pre-existing, created if create is true)
     serviceAccountName: default
 
   # clusterChecksRunner.replicas -- Number of Cluster Checks Runner instances
@@ -1188,7 +1146,9 @@ clusterChecksRunner:
   # clusterChecksRunner.tolerations -- Tolerations for pod assignment
   ## Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
   #
-  tolerations: []
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
 
   # clusterChecksRunner.healthPort -- Port number to use in the Cluster Checks Runner for the healthz endpoint
   healthPort: 5557
@@ -1230,7 +1190,7 @@ clusterChecksRunner:
   #   key: "value"
 
   # clusterChecksRunner.env -- Environment variables specific to Cluster Checks Runner
-  ## ref: https://github.com/DataDog/datadog-agent/tree/main/Dockerfiles/agent#environment-variables
+  ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#environment-variables
   env: []
   #   - name: <ENV_VAR_NAME>
   #     value: <ENV_VAR_VALUE>
@@ -1293,15 +1253,6 @@ kube-state-metrics:
   # kube-state-metrics.nodeSelector -- Node selector for KSM. KSM only supports Linux.
   nodeSelector:
     kubernetes.io/os: linux
-
-  # # kube-state-metrics.image -- Override default image information for the kube-state-metrics container.
-  # image:
-  #  # kube-state-metrics.repository -- Override default image registry for the kube-state-metrics container.
-  #  repository: k8s.gcr.io/kube-state-metrics/kube-state-metrics
-  #  # kube-state-metrics.tag -- Override default image tag for the kube-state-metrics container.
-  #  tag: v1.9.8
-  #  # kube-state-metrics.pullPolicy -- Override default image pullPolicy for the kube-state-metrics container.
-  #  pullPolicy: IfNotPresent
 
 providers:
   gke:
