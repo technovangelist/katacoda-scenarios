@@ -2,6 +2,6 @@ There are lots of pages in Datadog we can use to start to learn about our applic
 
 1.  Navigate to https://app.datadoghq.com/containers?sort=container_name%2CASC. This shows us all the containers running in our cluster. Scroll through the list and see if you recognize some of the container names. 
 2.  Click on one of the containers and try out the different options.
-3.  Switch over to https://app.datadoghq.com/process. Here we see a similar view from the perspective of the actual processes that run across all of our containers. And if your EC2 version of the app is still running, those processes will be here too.
-4.  Take a look at https://app.datadoghq.com/network/map. Its probably not very interesting right now. That's because we are looking at how the different hosts are talking to each other. At the top there is a drop-down labelled view. Change this to **pod_name**. This just became a lot more interesting.
+3.  Switch over to https://app.datadoghq.com/process. Here we see a similar view from the perspective of the actual processes that run across all of our containers. 
+4.  Take a look at https://app.datadoghq.com/network/map. Its probably not very interesting right now. That's because we are looking at how the different hosts are talking to each other. At the top there is a drop-down labelled view. Change this to **pod_name**. This just became a lot more interesting. If it isn't interesting, then go back to the StoreDog app and navigate around the site a bit more. Give it a few seconds to update then come back here.
 
