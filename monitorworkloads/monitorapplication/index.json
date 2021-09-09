@@ -51,10 +51,6 @@
         {
           "file": "nodevalues.yaml",
           "target": "/root"
-        },
-        {
-          "file": "newvals.yaml",
-          "target": "/root"
         }
       ]
     }
