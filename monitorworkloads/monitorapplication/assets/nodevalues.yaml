@@ -23,7 +23,7 @@ datadog:
     containerCollectAll: true
     containerCollectUsingFiles: true
   apm:
-    enabled: true
+    portEnabled: true
     port: 8126
     useSocketVolume: false
     socketPath: /var/run/datadog/apm.socket
