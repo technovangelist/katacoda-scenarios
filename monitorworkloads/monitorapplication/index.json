@@ -20,6 +20,10 @@
       {
         "text": "step-scheduler.md",
         "title": "Working with the Scheduler"
+      },
+      {
+        "text": "step-limits.md",
+        "title": "Debugging Limits"
       }
     ],
     "intro": {

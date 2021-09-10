@@ -1,0 +1,3 @@
+Now we have seen one way the scheduler makes monitoring a little different on Kubernetes vs other more traditional platforms. Let's look at another aspect of the scheduler. In Kubernetes there is the concept of resources which show up in the manifests as requests and limits. 
+
+When you specify a request for memory or CPU, that is the minimum that the pod requires to run. If it requests more than is available, the scheduler
