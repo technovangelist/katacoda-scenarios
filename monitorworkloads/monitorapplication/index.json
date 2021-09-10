@@ -6,20 +6,20 @@
   "details": {
     "steps": [
       {
-        "text": "step1.md",
+        "text": "step-configreview.md",
         "title": "Reviewing the Configuration"
       },
       {
-        "text": "step2.md",
+        "text": "step-synthetics.md",
+        "title": "Using Synthetic Tests"
+      },
+      {
+        "text": "step-reviewdatadog.md",
         "title": "Starting to Assess the Application"
       },
       {
         "text": "step3.md",
         "title": "Working with the Scheduler"
-      },
-      {
-        "text": "step4.md",
-        "title": "Using Synthetic Tests"
       }
     ],
     "intro": {
