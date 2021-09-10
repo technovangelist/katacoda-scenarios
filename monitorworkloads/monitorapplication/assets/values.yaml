@@ -463,7 +463,7 @@ datadog:
 
   # datadog.containerExcludeLogs -- Exclude logs from the Agent Autodiscovery,
   # as a space-separated list
-  containerExcludeLogs:
+  containerExcludeLogs: gcr.io/google_containers/kube-keepalived-vip
 
   # datadog.containerIncludeLogs -- Include logs in the Agent Autodiscovery, as
   # a space-separated list

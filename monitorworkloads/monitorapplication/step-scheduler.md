@@ -15,10 +15,17 @@ With older clustering technologies, there was a hard requirement that all nodes 
           protocol: TCP
           hostPort: 12345
 3.  Rather than just using a port on the container that is abstracted, you are telling the pod that it always needs to use port 12345 on the host.
-4.  Apply frontend.yaml (`k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}}) and you will see that everything works as expected. This is because there is only one copy of the pod being scheduled. 
-5.  On line 12 of frontend.yaml is where the number of replicas is defined. Change the number 1 to a 3. Apply the yaml file. 
+4.  Apply frontend.yaml using the command `k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}} and you will see that everything works as expected. This is because there is only one copy of the pod being scheduled. 
+5.  On **line 12** of **frontend.yaml** is where the number of replicas is defined. Change the number 1 to a 3. Apply the yaml file. 
 6.  Open the **Kubernetes Scheduler - Overview** dashboard and watch what happens. 
 7.  We have one available node and thus one target available for the scheduler to schedule a pod that needs port 12345 on the host. That one pod will be scheduled and the second and third will be unschedulable. If it looks like nothing is different, notice the legend for the graph and that when you hover over the new bar, it shows **unschedulable**.
+8.  You probably don't want to just watch the dashboard for problems, so let's setup a monitor to notify us of a problem. Create a new Metric Threshold Monitor. 
+9.  Set the Metric to `kubernetes_state.deployment.replicas_desired`, and `sum by` `kube_deployment`. We can see the total number of replicas desired for each new or updated deployment on our cluster since the Agent started. But this doesn't let us know if there is a problem yet.
+10. Click the **Advanced** link and then the **Add Query** button.
+11. Set the second Metric to be `kubernetes_state.deployment.replicas_available` and `sum by` `kube_deployment`.
+12. In the text box next to **Express these queries as:** enter `a - b`. Now the graph above looks pretty interesting. 
+13. Let's set the **Alert Conditions**. Set **Alert threshold** to 2, **Warning threshold** to 1, and the recovery thresholds to 1 and 0. 
+14. Then set it to trigger when the metric is above the threshold on average for the last **1 minute**.
 
 Perhaps this is a contrived example, but it is quite possible to have a deployment that requires a certain amount of memory and multiple replicas and that amount is only available on a few nodes. 
 
