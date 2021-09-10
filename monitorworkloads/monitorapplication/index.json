@@ -6,16 +6,20 @@
   "details": {
     "steps": [
       {
-        "text": "step1.md"
+        "text": "step1.md",
+        "title": "Reviewing the Configuration"
       },
       {
-        "text": "step2.md"
+        "text": "step2.md",
+        "title": "Starting to Assess the Application"
       },
       {
-        "text": "step3.md"
+        "text": "step3.md",
+        "title": "Working with the Scheduler"
       },
       {
-        "text": "step4.md"
+        "text": "step4.md",
+        "title": "Using Synthetic Tests"
       }
     ],
     "intro": {
