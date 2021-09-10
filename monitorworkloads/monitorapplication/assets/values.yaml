@@ -453,7 +453,7 @@ datadog:
   # datadog.containerExclude -- Exclude containers from the Agent
   # Autodiscovery, as a space-sepatered list
   ## ref: https://docs.datadoghq.com/agent/guide/autodiscovery-management/?tab=containerizedagent#exclude-containers
-  containerExclude: # "image:datadog/agent"
+  containerExclude: "image:gcr.io/google_containers/kube-keepalived-vip"
 
   # datadog.containerInclude -- Include containers in the Agent Autodiscovery,
   # as a space-separated list.  If a container matches an include rule, it’s
@@ -463,7 +463,7 @@ datadog:
 
   # datadog.containerExcludeLogs -- Exclude logs from the Agent Autodiscovery,
   # as a space-separated list
-  containerExcludeLogs: image:gcr.io/google_containers/kube-keepalived-vip
+  containerExcludeLogs: "image:gcr.io/google_containers/kube-keepalived-vip"
 
   # datadog.containerIncludeLogs -- Include logs in the Agent Autodiscovery, as
   # a space-separated list
