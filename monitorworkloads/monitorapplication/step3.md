@@ -8,17 +8,17 @@ With older clustering technologies, there was a hard requirement that all nodes 
 
 1.  From the Dashboards menu, open the **Kubernetes Scheduler - Overview** dashboard. 
 1.  Scheduled Attempts at the top of the dashboard is a great one to watch. Let's update our frontend deployment to be partially unschedulable. In the editor, open **deploy/generic-k8s/ecommerce-app/frontend.yaml**.
-2.  Line 41 defines the ports that the frontend should respond to. Update that block to:
+2.  Line 67 defines the ports that the frontend should respond to. Update that block to:
     
         ports:
         - containerPort: 3000
           protocol: TCP
           hostPort: 12345
 3.  Rather than just using a port on the container that is abstracted, you are telling the pod that it always needs to use port 12345 on the host.
-4.  Apply frontend.yaml and you will see that everything works as expected. This is because there is only one copy of the pod being scheduled. 
-5.  On line 9 of frontend.yaml is where the number of replicas is defined. Change the number 1 to a 3. Apply the yaml file. 
+4.  Apply frontend.yaml (`k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}}) and you will see that everything works as expected. This is because there is only one copy of the pod being scheduled. 
+5.  On line 12 of frontend.yaml is where the number of replicas is defined. Change the number 1 to a 3. Apply the yaml file. 
 6.  Open the **Kubernetes Scheduler - Overview** dashboard and watch what happens. 
-7.  We have two available nodes and thus two targets available for the scheduler to schedule a pod that needs port 12345 on the host. Those two pods will be scheduled and the third will be unschedulable. 
+7.  We have one available node and thus one target available for the scheduler to schedule a pod that needs port 12345 on the host. That one pod will be scheduled and the second and third will be unschedulable. If it looks like nothing is different, notice the legend for the graph and that when you hover over the new bar, it shows **unschedulable**.
 
 Perhaps this is a contrived example, but it is quite possible to have a deployment that requires a certain amount of memory and multiple replicas and that amount is only available on a few nodes. 
 

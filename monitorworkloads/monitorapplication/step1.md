@@ -2,7 +2,7 @@ We have updated the configuration of all the components of our app to be in line
 
 1.  Now lets take a look at what is in the config files. In the IDE tab, navigate to **deploy/datadog** and open **helm-values.yaml**. This is the values file for the Datadog Helm chart.
 2.  You can see around line 204, logs are enabled and we have **containerCollectAll** set to **true**. These means that all the logs that Kubernetes knows about are going to be collected. Below, you will see how we can also collect file-based logs. 
-3.  The Kubernetes cluster we have is not meant for production use. For one thing, there are no SSL certs in place. So we have had to override the autodiscovery configuration for etcd on the controlplane node. You can see that at line 269.
+3.  The Kubernetes cluster we have is not meant for production use. For one thing, there are no SSL certs in place. So we have had to override the autodiscovery configuration for etcd on the controlplane node. You can see that at line 265.
 4.  We want this one Helm chart to install the Agent to both the worker nodes as well as the controlplane, but if you run `k describe node controlplane`{{execute}}, you will see near the top that there is a taint. So at line 1060 we specify a toleration to ensure that the Agent will be scheduled on the controlplane. There are no taints on the nodes, so we only need the single toleration.
 5.  Now navigate to **deploy/generic-k8s/ecommerce-app**. You should see 4 YAML files there for **advertisements**, **db**, **discounts**, and **frontend**.
 6.  Open the **advertisements.yaml** file in the editor.
