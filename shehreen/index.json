@@ -42,8 +42,7 @@
   "environment": {
     "uilayout": "terminal-iframe",
     "showide": true,
-    "uieditorpath": "/ecommworkshop",
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "uieditorpath": "/root",
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
