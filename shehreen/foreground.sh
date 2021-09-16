@@ -25,6 +25,6 @@ cd /ecommworkshop/deploy/docker-compose
 
 #envready
 
-#statusupdate complete
+statusupdate complete
 
 prepenvironment
