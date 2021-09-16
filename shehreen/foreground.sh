@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export POSTGRES_USER=postgres
-export POSTGRES_PASSWORD=postgres
+# export POSTGRES_USER=postgres
+# export POSTGRES_PASSWORD=postgres
 
-statuscheck files
+# statuscheck files
 
 #cd /ecommworkshop
 #rm -r ./store-frontend-instrumented-fixed
