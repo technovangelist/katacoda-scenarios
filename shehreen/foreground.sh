@@ -20,11 +20,11 @@ statuscheck files
 #cp /root/frontend-docker-entrypoint.sh ./store-frontend-instrumented-fixed/docker-entrypoint.sh
 #cp /root/frontend-docker-entrypoint.sh ./store-frontend-broken-instrumented/docker-entrypoint.sh
 
-cd /ecommworkshop/deploy/docker-compose
+# cd /ecommworkshop/deploy/docker-compose
 #docker-compose -f docker-compose.yml up
 
 #envready
 
-statusupdate complete
+# statusupdate complete
 
-prepenvironment
+# prepenvironment
