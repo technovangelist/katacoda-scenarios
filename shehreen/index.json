@@ -4,27 +4,22 @@
   "difficulty": "Intermediate",
   "time": "20 minutes",
   "details": {
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
     "steps": [
       {
         "title": "Step 1",
         "text": "step1.md"
       }
     ],
-    "intro": {
-      "text": "intro.md",
-      "code": "foreground.sh",
-      "courseData": "background.sh"
-    },
     "finish": {
       "text": "finish.md"
     },
     "assets": {
       "host01": [
-        {
-          "file": "envready",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
         {
           "file": "docker-compose-fixed.yml",
           "target": "/root"
@@ -48,7 +43,6 @@
     "uilayout": "terminal-iframe",
     "showide": true,
     "uieditorpath": "/ecommworkshop",
-    "hideHiddenFiles": true,
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
