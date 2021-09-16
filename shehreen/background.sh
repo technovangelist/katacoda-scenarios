@@ -8,3 +8,4 @@
 # statusupdate files
 
 # /ecommworkshop/gor --input-file-loop --input-file "/ecommworkshop/requests_0.gor|300%" --output-http "http://localhost:3000" >> /dev/null 2>&1
+echo background

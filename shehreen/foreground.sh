@@ -28,3 +28,4 @@ statuscheck files
 # statusupdate complete
 
 # prepenvironment
+echo foreground
