@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+dkapp=$(docker kill appfiles_advertisements_1)

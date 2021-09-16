@@ -1,0 +1,59 @@
+{
+  "title": "Automating Storedog App",
+  "description": "Automating Instrumentation of Storedog App",
+  "difficulty": "Intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "envready",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "docker-compose-fixed.yml",
+          "target": "/root"
+        },
+        {
+          "file": "docker-compose-broken.yml",
+          "target": "/root"
+        },
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "frontend-docker-entrypoint.sh",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-iframe",
+    "showide": true,
+    "uieditorpath": "/ecommworkshop",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3"
+  }
+}
