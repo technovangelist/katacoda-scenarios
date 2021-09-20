@@ -17,6 +17,6 @@ mv /root/docker-compose.yml /root/lab
 statusupdate "workspace"
 statuscheck "environment-variables"
 
-cd /root/lab && docker-compose up -d
+# cd /root/lab && docker-compose up -d
 
 statusupdate "storedog"
