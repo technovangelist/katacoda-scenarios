@@ -4,7 +4,7 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "course_id": "1-configuredatadogagent",
+      "course_id": "configuredatadogagent",
       "title": "Configuring the agent",
       "description": "asht"
     },
