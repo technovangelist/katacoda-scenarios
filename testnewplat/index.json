@@ -1,0 +1,54 @@
+{
+  "title": "xxx another test the Datadog Agent using the Manifests",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "advertisements.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "frontend.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "discounts.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "db.yaml",
+          "target": "/root/k8s-yaml-files"
+        },
+        {
+          "file": "datadog-agent.yaml",
+          "target": "/root/k8s-yaml-files"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "ide": "ssh host01 '/opt/start-vscode.sh /root/k8s-yaml-files' ",
+    "idePort": 23000
+  },
+  "backend": {
+    "imageid": "datadog-kubernetes-cluster-running:1.16",
+    "reuseConnection": "false"
+  }
+}

@@ -1,0 +1,1 @@
+Now that you remember how to install the agent with the manifests, click the **Next** button and then watch the video where I explain what you did in a bit more detail. 

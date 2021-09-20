@@ -1,0 +1,3 @@
+Welcome to your first hands-on lab in the Monitoring the Kubernetes Platform course. In this lab we will review how to install the Datadog Agent to a Kubernetes cluster using the manifests that create a Daemonset. The alternative, which we will use in the next lab is to use the Helm chart to create the Daemonset. When sticking with the defaults, neither is more difficult than the other. But as things get more complicated sometimes the manifests are easier and other times the Helm chart is easier. It's important to try both to see which fits your devops workflow better. 
+
+The **Previous** and **Next** buttons at the bottom of the page will navigate you away from the lab. 
