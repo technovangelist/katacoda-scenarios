@@ -38,7 +38,14 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "idePort": 23000
+    "idePort": 23000, 
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "storedog",
+        "port": 3000
+      }
+    ]
   },
   "backend": {
     "imageid": "datadog-base-v3"
