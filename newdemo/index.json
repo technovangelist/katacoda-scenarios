@@ -1,53 +1,53 @@
 {
-  "title":"Basic Katacoda Template",
-  "description":"A starting point for new, simple Katacoda scenarios.",
-  "difficulty":"Beginner",
-  "time":"45",
-  "details":{
-     "intro":{
-        "text":"intro.md",
-        "foreground":"foreground.sh",
-        "background":"background.sh"
-     },
-     "steps":[
+  "title": "Basic Katacoda Template",
+  "difficulty": "Beginner",
+  "description": "A starting point for new, simple Katacoda scenarios.",
+  "time": "45 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh",
+      "background": "background.sh"
+    },
+    "steps": [
+      {
+        "title": "Step 1",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
         {
-           "title":"Step 1",
-           "text":"step1.md"
-        },
-        {
-           "title":"Step 2",
-           "text":"step2.md"
-        },
-        {
-           "title":"Step 3",
-           "text":"step3.md"
+          "file": "docker-compose.yml",
+          "target": "/root"
         }
-     ],
-     "finish":{
-        "text":"finish.md"
-     },
-     "assets":{
-        "host01":[
-           {
-              "file":"docker-compose.yml",
-              "target":"/root"
-           }
-        ]
-     }
+      ]
+    }
   },
-  "environment":{
-     "uilayout":  "terminal-iframe",
-     "showide":true,
-     "uieditorpath":"/root/lab",
-     "showdashboard":true,
-     "dashboards":[
-        {
-           "name":"storedog",
-           "port":3000
-        }
-     ]
+  "environment": {
+    "uilayout": "terminal-iframe",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "storedog",
+        "port": 3000
+      }
+    ]
   },
-  "backend":{
-     "imageid":"datadog-base-v3"
+  "backend": {
+    "imageid": "datadog-base-v3"
   }
 }
