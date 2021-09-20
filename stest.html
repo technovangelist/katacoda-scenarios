@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://www.datadoghq-browser-agent.com/datadog-logs.js"
+    ></script>
+    <script type="text/javascript">
+      window.DD_LOGS &&
+        window.DD_LOGS.init({
+          clientToken: "pub3bf424098850090c34b88e04d0a84542",
+          site: "datadoghq.com",
+          service: "DDLearn - StagingSite",
+          forwardErrorsToLogs: true,
+          sampleRate: 100,
+        });
+
+      console.log("logs loaded");
+    </script>
+    <script src="//www.katacoda.com/embed.js"></script>
+    <script type="text/javascript">
+      var eventMethod = window.addEventListener
+        ? "addEventListener"
+        : "attachEvent";
+      var windowEvent = window[eventMethod];
+      var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+      windowEvent(
+        messageEvent,
+        function (e) {
+          var d = e.data;
+          if (e && e.origin && e.origin.indexOf("katacoda.com") >= 0) {
+            var t = {
+              event: "katacoda-scenario",
+              eventName: "katacoda-" + d.scenario,
+              eventAction: d.action,
+              eventLabel: d.label,
+            };
+            window.DD_LOGS && window.DD_LOGS.logger.info({ data: d, event: t });
+            console.info("Katacoda Event", d, t);
+          }
+        },
+        false
+      );
+      console.info("test info log");
+    </script>
+  </head>
+  <body>
+    <div
+      id="katacoda-scenario-1"
+      data-katacoda-id="sdheda/courses/automate/automatestoredogfg"
+      data-katacoda-color="004d7f"
+      style="height: calc(99vh - 60px); padding-top: 0px"
+      data-katacoda-externalcss="https://www.katacoda.com/datadog/assets/mainfullintro.css?1631827334079"
+      data-katacoda-command="echo export EXPIRES=1633023945|tee -a .kcrc;echo export DD_APP_KEY=c31e9610c2f40b137a3081071689d36d33b02121|tee -a .kcrc;echo export DD_API_KEY=c9a57d4b73e56dccbd864a96deb7698f|tee -a .kcrc;echo export CHECKFORM=eyJvYXV0aF90aW1lc3RhbXAiOiIxNjMxODI3MzI4Iiwibm90bG1zIjp0cnVlLCJ1c2VyaWQiOiJtYXR0LndpbGxpYW1zQGRhdGFkb2docS5jb20iLCJtb2R1bGUiOiJoYW5kc29uIiwidXNlYmV0YSI6ImZhbHNlIiwibGlzX3BlcnNvbl9uYW1lX2dpdmVuIjoibWF0dCIsImxpc19wZXJzb25fbmFtZV9mYW1pbHkiOiJ3aWxsaWFtcyIsImthdGFjb2RhaWQiOiJzZGhlZGEvY291cnNlcy9hdXRvbWF0ZS9hdXRvbWF0ZXN0b3JlZG9nZmciLCJ0cmFpbmluZ2Vudmlyb25tZW50Ijoia2Nsb2NhbCIsImN1c3RvbV9tb2R1bGUiOiJoYW5kc29uZ3JhZGluZyJ9|tee -a .kcrc;echo export LABUSER=5sxcmgrl3g@dev.datadogtraining.com|tee -a .kcrc;echo export NEWPASSWORD=1_7d69a412|tee -a .kcrc;echo export TRAININGENVIRONMENT=kclocal|tee -a .kcrc;echo export LTIURL=https://pa7jpj4dll.execute-api.us-west-1.amazonaws.com/dev/launch |tee -a .kcrc;source .kcrc;echo source .kcrc|tee -a .bashrc"
+      data-katacoda-hideintro="false"
+      data-user="5sxcmgrl3g@dev.datadogtraining.com-c9a57d4b73e56dccbd864a96deb7698f"
+      data-katacoda-ctaurl="//noshow"
+      data-katacoda-ctatext="Next"
+    >
+      <iframe
+        id="katacoda-container"
+        src="http://www.katacoda.com/embed/sdheda/courses/automate/automatestoredogfg/?v=2&amp;embed=true&amp;ui=inline&amp;host=localhost:8080&amp;url=http%3A%2F%2Flocalhost%3A8080%2F&amp;target=katacoda-scenario-1&amp;nonce=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWJlZCI6dHJ1ZSwiZG9tYWluIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwLyIsImlwIjoiNzYuMTIxLjE4MS4xMDEiLCJpYXQiOjE2MzE4MjczNjQsImV4cCI6MTYzMTgyNzM5NH0.JqL6MiGWGPzfT3Qml9zUfigrXCJIl1WlBDLqLOLCR_w&amp;command=echo%20export%20EXPIRES%3D1633023945%7Ctee%20-a%20.kcrc%3Becho%20export%20DD_APP_KEY%3Dc31e9610c2f40b137a3081071689d36d33b02121%7Ctee%20-a%20.kcrc%3Becho%20export%20DD_API_KEY%3Dc9a57d4b73e56dccbd864a96deb7698f%7Ctee%20-a%20.kcrc%3Becho%20export%20OAUTHNONCE%3Dundefined%7Ctee%20-a%20.kcrc%3Becho%20export%20CHECKFORM%3DeyJvYXV0aF90aW1lc3RhbXAiOiIxNjMxODI3MzI4Iiwibm90bG1zIjp0cnVlLCJ1c2VyaWQiOiJtYXR0LndpbGxpYW1zQGRhdGFkb2docS5jb20iLCJtb2R1bGUiOiJoYW5kc29uIiwidXNlYmV0YSI6ImZhbHNlIiwibGlzX3BlcnNvbl9uYW1lX2dpdmVuIjoibWF0dCIsImxpc19wZXJzb25fbmFtZV9mYW1pbHkiOiJ3aWxsaWFtcyIsImthdGFjb2RhaWQiOiJzZGhlZGEvY291cnNlcy9hdXRvbWF0ZS9hdXRvbWF0ZXN0b3JlZG9nZmciLCJ0cmFpbmluZ2Vudmlyb25tZW50Ijoia2Nsb2NhbCIsImN1c3RvbV9tb2R1bGUiOiJoYW5kc29uZ3JhZGluZyJ9%7Ctee%20-a%20.kcrc%3Becho%20export%20LABUSER%3D5sxcmgrl3g%40dev.datadogtraining.com%7Ctee%20-a%20.kcrc%3Becho%20export%20NEWPASSWORD%3D1_7d69a412%7Ctee%20-a%20.kcrc%3Becho%20export%20TRAININGENVIRONMENT%3Dkclocal%7Ctee%20-a%20.kcrc%3Becho%20export%20LTIURL%3Dhttps%3A%2F%2Fpa7jpj4dll.execute-api.us-west-1.amazonaws.com%2Fdev%2Flaunch%7Ctee%20-a%20.kcrc%3Bsource%20.kcrc%3Becho%20source%20.kcrc%7Ctee%20-a%20.bashrc%3Bclear&amp;color=004d7f&amp;hideintro=false&amp;ctaurl=%2F%2Fnoshow&amp;ctatext=Next&amp;externalcss=https%3A%2F%2Fwww.katacoda.com%2Fdatadog%2Fassets%2Fmainfullintro.css%3F1631827334079"
+        frameborder="0"
+        allowtransparency="true"
+        allowfullscreen="true"
+        style="
+          min-height: calc(99vh - 60px);
+          height: 100%;
+          width: 100%;
+          border: 0px;
+          background-color: transparent;
+        "
+      ></iframe>
+    </div>
+    Showing KatacodaID: sdheda/courses/automate/automatestoredogfg for sdheda -
+    usebeta: false
+  </body>
+</html>
