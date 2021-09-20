@@ -36,16 +36,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-iframe",
+    "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/lab",
-    "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "storedog",
-        "port": 3000
-      }
-    ]
+    "idePort": 23000
   },
   "backend": {
     "imageid": "datadog-base-v3"
