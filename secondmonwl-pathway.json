@@ -5,8 +5,8 @@
   "courses": [
     {
       "pathway_id": "secondmonitorworkloads",
-      "course_id": "configuredatadogagent",
-      "id": "configuredatadogagent",
+      "course_id": "configddagent",
+      "id": "configddagent",
       "title": "Configuring the agent",
       "description": "Configuring the agent"
     },
