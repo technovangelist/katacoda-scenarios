@@ -1,7 +1,6 @@
 {
   "title": "Introduction to Monitoring Workloads on Kubernetes",
   "description": "Intro to Monitoring Workloads",
-  "icon": "fa-katacoda",
   "courses": [
     {
       "course_id": "configuredatadogagent",
