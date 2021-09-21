@@ -1,0 +1,1 @@
+In this final section of the course, you got to see what is different about a workload on Kubernetes, and how to monitor it in Datadog. It all comes down to the scheduler and making sure the scheduler has the available resources in order to run your workloads. 

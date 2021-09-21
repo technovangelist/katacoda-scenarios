@@ -1,0 +1,1 @@
+In the previous scenario, you configured the Datadog Agent so that it could monitor the application we are working with. In this scenario we will start to understand what is different with monitoring an application on Kubernetes vs doing the same with an application on a virtual machine. 
