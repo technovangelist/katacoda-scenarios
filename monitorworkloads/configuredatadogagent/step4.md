@@ -1,7 +1,7 @@
 Let's take one more step and enable Real User Monitoring for our application. 
 
 1.  Navigate to UX Monitoring and create a New Application. 
-2.  Choose JS and enter Storedog for the name of the application
+2.  Choose JS and enter Storedog for the name of the application. If you don't use the name **Storedog** then you will need to repeat this process at the beginning of the second lab.
 3.  Click the **Create New RUM Application** button.
 4.  Take note of your Application ID and Client Token in the instructions. 
 5.  Enter the values into the corresponding values in the environment variables section of frontend.yaml. 

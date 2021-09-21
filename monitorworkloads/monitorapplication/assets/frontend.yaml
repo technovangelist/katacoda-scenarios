@@ -55,10 +55,10 @@ spec:
               value: "true"
             - name: DD_ANALYTICS_ENABLED
               value: "true"
-            # - name: DD_CLIENT_TOKEN
-            #   value: <your_client_token>
-            # - name: DD_APPLICATION_ID
-            #   value: <your_application_id>
+            - name: DD_CLIENT_TOKEN
+              value: replacetheclienttoken
+            - name: DD_APPLICATION_ID
+              value: replacetheapplicationid
             - name: DD_PROFILING_ENABLED
               value: "true"
           image: ddtraining/storefront:latest

@@ -7,10 +7,10 @@ mkdir -p /root/workshop
 mkdir /root/completedfiles
 launch.sh
 
-git clone https://github.com/kiritbasu/Fake-Apache-Log-Generator /apachelogs
-cd /apachelogs
-pip install -r requirements.txt
-python apache-fake-log-gen.py -n 100 -o LOG 
+# git clone https://github.com/kiritbasu/Fake-Apache-Log-Generator /apachelogs
+# cd /apachelogs
+# pip install -r requirements.txt
+# python apache-fake-log-gen.py -n 100 -o LOG 
 helm repo add datadog https://helm.datadoghq.com
 helm repo add stable https://charts.helm.sh/stable
 helm repo update

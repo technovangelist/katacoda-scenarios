@@ -38,7 +38,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "idePort": 23000, 
+    "uieditorpath": "/root/lab",
     "showdashboard": true,
     "dashboards": [
       {
