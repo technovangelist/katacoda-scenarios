@@ -58,6 +58,6 @@
   },
   "backend": {
     "imageid": "datadog-k8s-v118-cluster-running",
-    "reuseConnection": "false"
+    "reuseConnection": "true"
   }
 }
