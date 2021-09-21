@@ -1,0 +1,93 @@
+targetSystem: "linux"
+registry: docker.io/datadog
+datadog:
+  apiKey: <DATADOG_API_KEY>
+  appKey: # <DATADOG_APP_KEY>
+  hostVolumeMountPropagation: None
+  clusterName: k8sworkloads
+  logLevel: INFO
+  kubeStateMetricsEnabled: false
+  clusterChecks:
+    enabled: false
+  kubelet:
+    host:
+      valueFrom:
+        fieldRef:
+          fieldPath: status.hostIP
+    tlsVerify: false
+  collectEvents: true
+  leaderElection: true
+  leaderLeaseDuration: # 60
+  logs:
+    enabled: true
+    containerCollectAll: true
+    containerCollectUsingFiles: true
+  apm:
+    enabled: true
+    port: 8126
+    useSocketVolume: false
+    socketPath: /var/run/datadog/apm.socket
+    hostSocketPath: /var/run/datadog/
+  processAgent:
+    enabled: true
+    processCollection: true
+  systemProbe:
+    debugPort: 0
+    enableConntrack: true
+    seccomp: localhost/system-probe
+    seccompRoot: /var/lib/kubelet/seccomp
+    bpfDebug: false
+    apparmor: unconfined
+    enableTCPQueueLength: false
+    enableOOMKill: false
+    collectDNSStats: true
+    maxTrackedConnections: 131072
+    conntrackMaxStateSize: 131072
+  orchestratorExplorer:
+    enabled: true
+    container_scrubbing:
+      enabled: true
+
+  networkMonitoring:
+    enabled: true
+clusterAgent:
+  enabled: false
+  image:
+    name: cluster-agent
+    tag: 1.12.0
+  containers:
+  command: []
+  token: ""
+  tokenExistingSecret: ""
+  securityContext: {}
+  # env:
+  #   - name: "DD_ORCHESTRATOR_EXPLORER_EXTRA_TAGS"
+  #     value: "tag1:value1 tag2:value2"
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
+existingClusterAgent:
+  join: false
+  tokenSecretName: datadogagent-controlplane-cluster-agent
+  serviceName: datadogagent-controlplane-cluster-agent
+  clusterchecksEnabled: false
+
+agents:
+  enabled: true
+  image:
+    name: agent
+    tag: 7.28.1
+  containers:
+    agent:
+      env: []
+      logLevel: # INFO
+    processAgent:
+      env:
+        - name: "DD_ORCHESTRATOR_EXPLORER_EXTRA_TAGS"
+          value: "orchestrator:on"
+
+clusterChecksRunner:
+  enabled: false

@@ -1,0 +1,1 @@
+Welcome to the first lab in the Monitoring Workloads course on the Learning Center. In this section we are going to take a look at configuring the Datadog Agent for our workloads. The workloads you are trying to monitor are most probably going to look very different, but this should give you an idea on how to approach monitoring on Kubernetes.

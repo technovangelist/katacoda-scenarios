@@ -1,0 +1,1 @@
+In this section you learned all about configuring the Datadog Agent to monitor a simple application that has been deployed onto Kubernetes. You worked with Pod Annotations and Labels, configuring the database to allow access, 
