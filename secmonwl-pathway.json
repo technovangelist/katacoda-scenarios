@@ -4,14 +4,14 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "pathway_id": "secondmonitorworkloads",
+      "pathway_id": "secmonwl",
       "course_id": "configddagent",
       "id": "configddagent",
       "title": "Configuring the agent",
       "description": "Configuring the agent"
     },
     {
-      "pathway_id": "secondmonitorworkloads",
+      "pathway_id": "secmonwl",
       "course_id": "monitorapplication",
       "id": "monitorapplication",
       "title": "Monitoring the Application on top of Kubernetes",
