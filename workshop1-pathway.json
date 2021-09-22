@@ -1,0 +1,13 @@
+{
+  "title": "tesc3",
+  "description": "test course",
+  "courses": [
+    {
+      "pathway_id": "technovangelist@dd",
+      "course_id": "mycourseid",
+      "id": "myid",
+      "title": "asht",
+      "description": "ashtashtasht"
+    }
+  ]
+}
