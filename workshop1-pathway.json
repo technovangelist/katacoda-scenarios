@@ -3,8 +3,8 @@
   "description": "test course",
   "courses": [
     {
-      "pathway_id": "/technovangelist@dd",
-      "course_id": "/workshops/k8s/k8scourse2platform-1",
+      "pathway_id": "/technovangelist@dd/workshops",
+      "course_id": "k8s/k8scourse2platform-1",
       "id": "k8scourse2platform-1",
       "title": "asht",
       "description": "ashtashtasht"
