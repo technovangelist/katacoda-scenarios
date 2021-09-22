@@ -4,7 +4,7 @@
   "courses": [
     {
       "pathway_id": "technovangelist@dd",
-      "course_id": "workshops/k8scourse2platform-1",
+      "course_id": "workshops/k8s/k8scourse2platform-1",
       "id": "k8scourse2platform-1",
       "title": "asht",
       "description": "ashtashtasht"
