@@ -23,6 +23,9 @@ cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
 cp /root/frontend.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 mkdir -p /root/workshop/deploy/generic-k8s/ecommerce-app/dbinit
 cp /root/inituserdb.sh /root/workshop/deploy/generic-k8s/ecommerce-app/dbinit/inituserdb.sh
+sed -i 's/development/production/g' /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
+sed -i 's/development/production/g' /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
+sed -i 's/development/production/g' /root/workshop/deploy/generic-k8s/ecommerce-app/discounts.yaml
 statusupdate k8s
 # launch.sh
 statusupdate complete
