@@ -1,11 +1,18 @@
 #!/bin/bash
-curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statusupdate labtools
 
 mkdir -p /root/workshop
 
 mkdir /root/completedfiles
 launch.sh
+
+# choosing the last asset in index.json and wait for it
+while ! [ -f /root/inituserdb.sh ]
+do 
+    # sleeping, waiting for asset to be loaded
+    sleep .5
+done
 
 helm repo add datadog https://helm.datadoghq.com
 helm repo add stable https://charts.helm.sh/stable

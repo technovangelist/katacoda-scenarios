@@ -1,6 +1,11 @@
 #!/bin/bash
-curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statusupdate labtools
+while ! [ -f /root/advertisements.yaml ]
+do 
+    # sleeping, waiting for asset to be loaded
+    sleep .5
+done
 
 mkdir -p /root/workshop
 
