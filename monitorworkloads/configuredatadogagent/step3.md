@@ -1,6 +1,6 @@
 Now that we have configured the database to collect metrics, lets look at adding traces for our frontend application.
 
-1.  In the IDE, open the file called `frontend.yaml` located under `deploy/generic-k8s/ecommerce-app`. You can see that this manifest defines a **deployment** and a **service**. 
+1.  In the IDE, open the file called `frontend.yaml` located under `deploy/generic-k8s/ecommerce-app`{{open}}. You can see that this manifest defines a **deployment** and a **service**. 
 2.  Under `spec.template.spec.containers.env` at line 33 you will see a few environment variables defined to tell the application how to connect to the database. We are going to add a few more environment variables here to configure the connection to Datadog. First we need to start to setup Unified Service Tagging, which will allow for seamless navigation across traces, metrics, and logs. 
 3.  The first environment variable to add is for the service to label everything with in Datadog. Add the following at the same level as the DB_PASSWORD environment variable (note: the text below is formatted to paste properly in the editor):
     <pre class="file" data-target="clipboard">
