@@ -4,14 +4,14 @@ Now that we have configured the database to collect metrics, lets look at adding
 2.  Under `spec.template.spec.containers.env` at line 33 you will see a few environment variables defined to tell the application how to connect to the database. We are going to add a few more environment variables here to configure the connection to Datadog. First we need to start to setup Unified Service Tagging, which will allow for seamless navigation across traces, metrics, and logs. 
 3.  The first environment variable to add is for the service to label everything with in Datadog. Add the following at the same level as the DB_PASSWORD environment variable (note: the text below is formatted to paste properly in the editor):
     <pre class="file" data-target="clipboard">
-    - name: DATADOG_SERVICE_NAME
+    - name: DD_SERVICE
                   value: "store-frontend"</pre>
 4.  Below that, add the corresponding environment variables for version number and environment:
     <pre class="file" data-target="clipboard">- name: DD_ENV
                   value: "production"
                 - name: DD_VERSION
                   value: "1.0"</pre>
-5.  Let's continue by adding the other environment variables needed for collecting traces:
+5.  Let's continue by adding the other environment variables needed for collecting traces (You can find the documentation for these here: https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging?tab=kubernetes):
     <pre class="file" data-target="clipboard">- name: DD_AGENT_HOST
                   valueFrom:
                     fieldRef:

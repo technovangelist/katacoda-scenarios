@@ -41,7 +41,7 @@ spec:
                 secretKeyRef:
                   key: pw
                   name: db-password
-            - name: DATADOG_SERVICE_NAME
+            - name: DD_SERVICE
               value: "store-frontend"
             - name: DD_ENV
               value: "production"

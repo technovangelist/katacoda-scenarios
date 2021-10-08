@@ -44,7 +44,7 @@ spec:
               value: "user"
             - name: POSTGRES_HOST
               value: "db"
-            - name: DATADOG_SERVICE_NAME
+            - name: DD_SERVICE
               value: "discounts-service"
             - name: DD_AGENT_HOST
               valueFrom:
