@@ -1,11 +1,11 @@
 Now try looking at Synthetic Tests. RUM waits for real users to experience the product, but Synthetic Tests visit the site from different locations  around the world at regular intervals to simulate what a real user might experience.  You can define a flow around the app and even test the APIs that you use in the app. 
 
-To try this section, you must be using Google Chrome. Other browsers are not supported when recording a test.
+To try this section, you must be using Google Chrome and install a special extension written by Datadog. Other browsers are not supported when recording a test.
 
 1.  Navigate to the Synthetic Tests page on Datadog: https://app.datadoghq.com/synthetics/tests
 2.  Click the **Get Started** button.
-3.  Choose **New BrowseQr Test**.
-4.  Paste in the URL of our website. Ensure you set the protocol at the beginning of the URL to http since our site isn't configured to use https.
+3.  Choose **New Browser Test**.
+4.  Paste in the URL of our website. 
 5.  Name the test **Frontend Synthetics**.
 6.  Choose a few locations to test from and set the test frequency. 6 or 12 hours is a good choice. 
 7.  Click **Save Details and Record Test** at the bottom.
