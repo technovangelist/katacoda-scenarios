@@ -48,7 +48,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-iframe",
     "uieditorpath": "/root/workshop",
     "showide": "true",
     "hideHiddenFiles": true,

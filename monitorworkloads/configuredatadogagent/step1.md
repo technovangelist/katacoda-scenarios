@@ -16,3 +16,4 @@ When you are working with virtual machines and cloud instances, you typically co
     grant pg_monitor to datadog;
     grant SELECT ON pg_stat_database to datadog;</pre>
 9.  Exit out of the psql environment and exit out of the db pod shell. Now run the agent status command again to see if there is a different result. You should see that the postgres metrics are being collected. It can take a few seconds for the agent to see the changes, so if you see the same error try again.
+10. In the next few steps we are going to start using Datadog to monitor the application, So let's generate some traffic in our application. On the right side of the window above the terminal you will see a tab labeled **storedog**. Click it and it should open a new
