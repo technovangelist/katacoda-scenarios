@@ -1,6 +1,7 @@
 #!/bin/bash
 curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statusupdate labtools
+kubectl delete -f /opt/katacoda-cloud-provider.yaml
 
 mkdir -p /root/workshop
 
