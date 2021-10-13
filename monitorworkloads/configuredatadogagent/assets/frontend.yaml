@@ -50,6 +50,8 @@ spec:
               cpu: 100m
               memory: 100Mi
             limits: {}
+        - image: ddtraining/traffic-replay:latest
+          name: traffic-replay
 ---
 apiVersion: v1
 kind: Service
@@ -68,37 +70,3 @@ spec:
     service: frontend
     app: ecommerce
   type: LoadBalancer
----
-apiVersion: v1
-kind: Deployment
-metadata:
-  labels:
-    service: traffic
-    app: ecommerce
-  name: traffic
-spec:
-replicas: 1
-selector:
-  matchLabels:
-    service: traffic
-    app: ecommerce
-strategy:
-  rollingUpdate:
-    maxSurge: 25%
-    maxUnavailable: 25%
-  type: RollingUpdate
-template:
-  metadata:
-    labels:
-      service: traffic
-      app: ecommerce
-  spec:
-    containers:
-        image: ddtraining/traffic-replay:latest
-        imagePullPolicy: Always
-        name: traffic-replay
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-          limits: {}
