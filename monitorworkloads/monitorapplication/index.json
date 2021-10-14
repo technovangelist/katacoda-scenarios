@@ -6,23 +6,23 @@
   "details": {
     "steps": [
       {
-        "text": "step-configreview.md",
+        "text": "step1-configreview.md",
         "title": "Reviewing the Configuration"
       },
       {
-        "text": "step-synthetics.md",
+        "text": "step2-synthetics.md",
         "title": "Using Synthetic Tests"
       },
       {
-        "text": "step-reviewdatadog.md",
+        "text": "step3-reviewdatadog.md",
         "title": "Starting to Assess the Application"
       },
       {
-        "text": "step-scheduler.md",
+        "text": "step4-scheduler.md",
         "title": "Working with the Scheduler"
       },
       {
-        "text": "step-limits.md",
+        "text": "step5-limits.md",
         "title": "Debugging Limits"
       }
     ],

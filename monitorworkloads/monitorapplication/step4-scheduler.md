@@ -30,7 +30,7 @@ With older clustering technologies, there was a hard requirement that all nodes 
 16. Click on the Save button at the bottom, then click on **Manage Monitors** to see the list of all configured monitors.
 17. Now you have to wait a little bit. First you have to wait for data to populate, then you need to wait another minute because the monitor will only trigger after the threshold has been hit for 1 minute. 
 18. Soon you should see our new monitor change to a red Alert. Click on the Monitor. You should now see the status of the frontend pod vs the other pods. 
-19. Update the number of replicas back to 1 and apply it with kubectl. 
+19. Update the number of **replicas** back to 1 and remove the line for the **hostPort**. Then apply it with kubectl. 
 
 Perhaps this is a contrived example, but it is quite possible to have a deployment that requires a certain amount of memory and multiple replicas and that amount is only available on a few nodes. 
 

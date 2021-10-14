@@ -61,7 +61,7 @@ spec:
               value: replacetheapplicationid
             - name: DD_PROFILING_ENABLED
               value: "true"
-          image: ddtraining/storefront:latest
+          image: ddtraining/storefront-fixed:latest
           imagePullPolicy: Always
           name: ecommerce-spree-observability
           ports:
