@@ -1,7 +1,7 @@
 Now that we have configured the database to collect metrics, lets look at adding traces for our frontend application.
 
 1.  In the IDE, open the file called `frontend.yaml` located at `deploy/generic-k8s/ecommerce-app/frontend.yaml`{{open}}. You can see that this manifest defines a **deployment** and a **service**. 
-2.  Under `spec.template.spec.containers.env` at line 33 you will see a few environment variables defined to tell the application how to connect to the database. We are going to add a few more environment variables here to configure the connection to Datadog. First we need to start to setup Unified Service Tagging, which will allow for seamless navigation across traces, metrics, and logs. 
+2.  Under `spec.template.spec.containers.env` at line 31 you will see a few environment variables defined to tell the application how to connect to the database. We are going to add a few more environment variables here to configure the connection to Datadog. First we need to start to setup Unified Service Tagging, which will allow for seamless navigation across traces, metrics, and logs. 
 3.  The first environment variable to add is for the service to label everything with in Datadog. Add the following at the same level as the DB_PASSWORD environment variable (note: the text below is formatted to paste properly in the editor):
     <pre class="file" data-target="clipboard">
     - name: DD_SERVICE
@@ -31,4 +31,5 @@ Now that we have configured the database to collect metrics, lets look at adding
             tags.datadoghq.com/service: "store-frontend"
             tags.datadoghq.com/version: "1.0"</pre>
 7.  Apply the changes by running the command `k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}}
-8.  Now if you open the Logs Search and Filter by the Service store-frontend, you can click on any log and see the related Metrics, Processes, and if there are any, Traces. Similarly you can start at the Container view then choose Pods at the top left and choose the Frontend pod, then find all the related information. Unified Service Tagging is the key to getting all of this data to show up correctly as related to each other.
+8.  Navigate around the StoreDog website to generate some traffic.
+9.  Now if you open the Logs Search and Filter by the Service store-frontend, you can click on any log and see the related Metrics, Processes, and if there are any, Traces. Similarly you can start at the Container view then choose Pods at the top left and choose the Frontend pod, then find all the related information. Unified Service Tagging is the key to getting all of this data to show up correctly as related to each other.
