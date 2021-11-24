@@ -11,7 +11,7 @@ When you are working with virtual machines and cloud instances, you typically co
             ad.datadoghq.com/postgres.logs: '[{"source":"postgres","service":"db"}]'</pre>
 4.  Then under `.spec.template.metadata.labels` add:
     <pre class="file" data-target="clipboard">
-            tags.datadoghq.com/env: "production"
+      tags.datadoghq.com/env: "production"
             tags.datadoghq.com/service: "db"
             tags.datadoghq.com/version: "1.0"
     </pre>
