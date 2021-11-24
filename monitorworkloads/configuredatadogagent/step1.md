@@ -4,7 +4,7 @@ When you are working with virtual machines and cloud instances, you typically co
 2.  What we don't have here is any way to collect Postgres metrics with the Datadog Agent. To do that we need to add annotations. You can learn more about Auto Discovery Annotations at https://docs.datadoghq.com/agent/kubernetes/integrations/?tab=kubernetes
 3.  The documentation says "If you define pods indirectly with replication controllers, replica sets, or deployments, add pod annotations under `.spec.template.metadata.`", so add the following to that section around line 61:
     <pre class="file" data-target="clipboard">
-          annotations:
+    annotations:
             ad.datadoghq.com/postgres.check_names: '["postgres"]'
             ad.datadoghq.com/postgres.init_configs: '[{}]'
             ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
