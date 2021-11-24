@@ -39,4 +39,4 @@ k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
 k apply -f /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 
 cd /root/workshop
-prepenvironment
+# prepenvironment

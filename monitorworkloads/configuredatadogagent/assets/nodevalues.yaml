@@ -23,7 +23,7 @@ datadog:
     containerCollectAll: true
     containerCollectUsingFiles: true
   apm:
-    enabled: true
+    portEnabled: true
     port: 8126
     useSocketVolume: false
     socketPath: /var/run/datadog/apm.socket
@@ -51,7 +51,7 @@ datadog:
   networkMonitoring:
     enabled: true
 clusterAgent:
-  enabled: false
+  enabled: true
   image:
     name: cluster-agent
     tag: 1.12.0
