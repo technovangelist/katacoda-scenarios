@@ -14,6 +14,7 @@ When you are working with virtual machines and cloud instances, you typically co
       tags.datadoghq.com/env: "production"
             tags.datadoghq.com/service: "db"
             tags.datadoghq.com/version: "1.0" </pre>
+    
     The result of these two copy/paste actions should look something like this: ![metadata and labels indenting](configuredatadogagent/assets/metadatalabelsafter.png)
 5.  Before applying db.yaml, make sure that all of your pods are up and running. You can do this by checking the output of `k get pods`{{execute}}. Once everything is running, apply the manifest by running `k apply -f deploy/generic-k8s/ecommerce-app/db.yaml`{{execute}}.
 6.  You can verify that this works by first running `k get pods`{{execute}} to get the name of our Datadog Agent pod, and then use that in `k exec <agentpodname> agent status`. You will see there are two Agent pods. We want the Agent that is running on the worker node which starts with datadogagent followed by 5 characters. The other Agent pod starts with datadogagent-controlplane followed by 5 characters. You will notice that both of these pods have a app label set, with the controlplane pod app label set to datadogagent-controlplane and the other one having an app label of just datadogagent. So we could also just run `k exec $(k get pod -l app=datadogagent -o name) agent status`{{execute}} 
