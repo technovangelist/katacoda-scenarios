@@ -99,11 +99,6 @@ spec:
   strategy: {}
   template:
     metadata:
-      annotations:
-        ad.datadoghq.com/postgres.check_names: '["postgres"]'
-        ad.datadoghq.com/postgres.init_configs: "[{}]"
-        ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
-        ad.datadoghq.com/postgres.logs: '[{"source":"postgres","service":"db"}]'
       labels:
         tags.datadoghq.com/env: "production"
         tags.datadoghq.com/service: "db"
@@ -119,15 +114,15 @@ spec:
           ports:
             - containerPort: 5432
           env:
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: pw
-                  name: db-password
-            - name: POSTGRES_USER
-              value: "user"
-            - name: PGDATA
-              value: "/var/lib/postgresql/data/mydata"
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: pw
+                name: db-password
+          - name: POSTGRES_USER
+            value: "user"
+          - name: PGDATA
+            value: "/var/lib/postgresql/data/mydata"
           resources: {}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
