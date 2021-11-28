@@ -50,13 +50,6 @@ spec:
               cpu: 100m
               memory: 100Mi
             limits: {}
-        - image: ddtraining/traffic-replay:latest
-          name: traffic-replay
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-            limits: {}
 ---
 apiVersion: v1
 kind: Service
