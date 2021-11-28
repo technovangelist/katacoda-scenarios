@@ -60,7 +60,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-iframe",
     "uieditorpath": "/root/workshop",
     "showide": "true",
     "hideHiddenFiles": true,
@@ -69,7 +69,6 @@
     "dashboards": [{ "name": "StoreDog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-k8s-v118-cluster-running",
-    "port": 3000
+    "imageid": "datadog-k8s-v118-cluster-running"
   }
 }
