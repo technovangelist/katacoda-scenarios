@@ -66,7 +66,7 @@
     "hideHiddenFiles": true,
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
-    "dashboards": [{ "name": "storedog", "port": 3000 }]
+    "dashboards": [{ "name": "StoreDog", "port": 3000 }]
   },
   "backend": {
     "imageid": "datadog-k8s-v118-cluster-running",
