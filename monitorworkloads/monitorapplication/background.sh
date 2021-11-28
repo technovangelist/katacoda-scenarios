@@ -21,7 +21,7 @@ helm repo add datadog https://helm.datadoghq.com
 helm repo add stable https://charts.helm.sh/stable
 
 helm repo update
-kubectl delete -f /opt/katacoda-cloud-provider.yaml
+# kubectl delete -f /opt/katacoda-cloud-provider.yaml
 cp -r /ecommworkshop/* /root/workshop
 cp /root/values.yaml /root/workshop/deploy/datadog/helm-values.yaml
 cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
