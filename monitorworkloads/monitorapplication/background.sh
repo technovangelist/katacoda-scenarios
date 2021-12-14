@@ -25,6 +25,8 @@ helm repo update
 cp -r /ecommworkshop/* /root/workshop
 cp /root/values.yaml /root/workshop/deploy/datadog/helm-values.yaml
 cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
+cp /root/twoagentsnodevalues.yaml /root/workshop/deploy/datadog/twoagentsnodevalues.yaml
+cp /root/twoagentscontrolplanevalues.yaml /root/workshop/deploy/datadog/twoagentscontrolplanevalues.yaml
 cp /root/frontend.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 cp /root/db.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
 cp /root/advertisements.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
