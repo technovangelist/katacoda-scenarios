@@ -446,7 +446,8 @@ datadog:
 
   # datadog.ignoreAutoConfig -- List of integration to ignore auto_conf.yaml.
   ## ref: https://docs.datadoghq.com/agent/faq/auto_conf/
-  ignoreAutoConfig: []
+  ignoreAutoConfig: 
+    - kube-scheduler
   #  - redisdb
   #  - kubernetes_state
 
@@ -489,7 +490,8 @@ datadog:
 clusterAgent:
   # clusterAgent.enabled -- Set this to false to disable Datadog Cluster Agent
   enabled: true
-
+  ignoreAutoConfig: 
+    - kube-scheduler
   ## Define the Datadog Cluster-Agent image to work with
   image:
     # clusterAgent.image.name -- Cluster Agent image name to use (relative to `registry`)
@@ -594,7 +596,7 @@ clusterAgent:
   # clusterAgent.confd -- Provide additional cluster check configurations
   ## Each key will become a file in /conf.d
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
-  confd:
+  confd: 
     etcd.yaml: |-
       ad_identifiers:
         - etcd
@@ -605,6 +607,21 @@ clusterAgent:
           ssl_ca_cert: /keys/ca.crt
           ssl_cert: /keys/peer.crt
           ssl_private_key: /keys/peer.key
+    kube_scheduler.yaml: |-
+      ad_identifiers:
+        - kube-scheduler
+      instances:
+        - prometheus_url: https://%%host%%:10259/metrics
+          ssl_verify: false
+          bearer_token_auth: true
+    kube_controller_manager.yaml: |-
+      ad_identifiers:
+        - kube-controller-manager
+      instances:
+        - prometheus_url: https://%%host%%:10257/metrics
+          ssl_verify: false
+          bearer_token_auth: true
+
   #   mysql.yaml: |-
   #     cluster_check: true
   #     instances:
@@ -705,7 +722,7 @@ clusterAgent:
   #    value: "1"
 
   # clusterAgent.volumes -- Specify additional volumes to mount in the cluster-agent container
-  volumes:
+  volumes: 
     - hostPath:
         path: /etc/kubernetes/pki/etcd
       name: etcd-keys
@@ -716,7 +733,7 @@ clusterAgent:
   #     name: <VOLUME_NAME>
 
   # clusterAgent.volumeMounts -- Specify additional volumes to mount in the cluster-agent container
-  volumeMounts:
+  volumeMounts: 
     - name: etcd-auto-conf
       mountPath: /etc/datadog-agent/conf.d/etcd.d/
       readOnly: true
