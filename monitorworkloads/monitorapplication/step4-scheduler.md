@@ -8,7 +8,7 @@ With older clustering technologies, there was a hard requirement that all nodes 
 
 1.  From the Dashboards menu, open the **Kubernetes Scheduler - Overview** dashboard. 
 1.  Scheduled Attempts at the top of the dashboard is a great one to watch. Let's update our frontend deployment to be partially unschedulable. In the editor, open **deploy/generic-k8s/ecommerce-app/frontend.yaml**.
-2.  Line 67 defines the ports that the frontend should respond to. Update that block to:
+2.  Line 69 defines the ports that the frontend should respond to. Update that block to:
     
         ports:
         - containerPort: 3000

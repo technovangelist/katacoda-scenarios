@@ -1,4 +1,4 @@
-We have updated the configuration of all the components of our app to be in line with what we did in the previous lab. So let's just do a quick review of that. And then we will update the Real User Monitoring ID's to ensure that data is showing up in our account correctly. 
+We have updated the configuration of all the components of our app to be in line with what we did in the previous lab. So let's just do a quick review of that, then we will update the Real User Monitoring ID's to ensure that data is showing up in our account correctly. 
 
 1.  Now lets take a look at what is in the config files. In the IDE tab, navigate to **deploy/datadog** and open **helm-values.yaml**. This is the values file for the Datadog Helm chart. If the IDE is already open you can click this link to open the file: `deploy/datadog/helm-values.yaml`{{open}}
 2.  You can see around line 204, **logs** are **enabled** and we have **containerCollectAll** set to **true**. These means that all the logs that Kubernetes knows about are going to be collected. Below, you will see how we can also collect file-based logs. 
