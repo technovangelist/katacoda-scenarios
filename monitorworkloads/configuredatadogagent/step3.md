@@ -26,10 +26,10 @@ Now that we have configured the database to collect metrics, lets look at adding
     <pre class="file" data-target="clipboard">tags.datadoghq.com/env: "production"
         tags.datadoghq.com/service: "store-frontend"
         tags.datadoghq.com/version: "1.0"</pre>
-    1.  Next we need to add these same labels to the `spec.template.metadata.labels` section:
+7.  Next we need to add these same labels to the `spec.template.metadata.labels` section:
     <pre class="file" data-target="clipboard">tags.datadoghq.com/env: "production"
             tags.datadoghq.com/service: "store-frontend"
             tags.datadoghq.com/version: "1.0"</pre>
-7.  Apply the changes by running the command `k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}}
-8.  Navigate around the **storedog** website to generate some traffic.
-9.  Now if you open the **Logs Search** and Filter by the Service **store-frontend**, you can click on any log and see the related Metrics, Processes, and if there are any, Traces. Similarly you can start at the Container view then choose Pods at the top left and choose the Frontend pod, then find all the related information. Unified Service Tagging is the key to getting all of this data to show up correctly as related to each other.
+8.  Apply the changes by running the command `k apply -f deploy/generic-k8s/ecommerce-app/frontend.yaml`{{execute}}. You should see that the deployment is configured and the service is unchanged.
+9.  Navigate around the **storedog** website to generate some more traffic.
+10.  Now if you open the **Logs Search** and Filter by the Service **store-frontend**, you can click on any log and see the related Metrics, Processes, and if there are any, Traces. Similarly you can start at the Container view then choose Pods at the top left and choose the Frontend pod, then find all the related information. Unified Service Tagging is the key to getting all of this data to show up correctly as related to each other.
