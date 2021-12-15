@@ -162,7 +162,7 @@ datadog:
           fieldPath: status.hostIP
     # datadog.kubelet.tlsVerify -- Toggle kubelet TLS verification
     # @default -- true
-    tlsVerify: # false
+    tlsVerify: false
     # datadog.kubelet.hostCAPath -- Path (on host) where the Kubelet CA certificate is stored
     # @default -- None (no mount from host)
     hostCAPath:
@@ -296,7 +296,18 @@ datadog:
   ## Each key becomes a file in /conf.d
   ## ref: https://github.com/DataDog/datadog-agent/tree/main/Dockerfiles/agent#optional-volumes
   ## ref: https://docs.datadoghq.com/agent/autodiscovery/
-  confd: {}
+  confd:
+    etcd.yaml: |-
+      ad_identifiers:
+        - etcd
+      instances:
+        - prometheus_url: https://%%host%%:2379/metrics
+          ssl_verify: false
+          use_preview: true
+          ssl_ca_cert: /keys/ca.crt
+          ssl_cert: /keys/peer.crt
+          ssl_private_key: /keys/peer.key
+
   #   redisdb.yaml: |-
   #     init_config:
   #     instances:
@@ -1007,7 +1018,7 @@ agents:
         timeoutSeconds: 5
 
       # agents.containers.traceAgent.securityContext -- Allows you to overwrite the default container SecurityContext for the trace-agent container.
-      securityContext: {}
+      # securityContext: {}
 
       # agents.containers.traceAgent.ports -- Allows to specify extra ports (hostPorts for instance) for this container
       ports: []
@@ -1092,13 +1103,24 @@ agents:
       #    memory: 200Mi
 
   # agents.volumes -- Specify additional volumes to mount in the dd-agent container
-  volumes: []
+  volumes:
+    - hostPath:
+        path: /etc/kubernetes/pki/etcd
+      name: etcd-keys
+    - emptyDir: {}
+      name: etcd-auto-conf
   #   - hostPath:
   #       path: <HOST_PATH>
   #     name: <VOLUME_NAME>
 
   # agents.volumeMounts -- Specify additional volumes to mount in all containers of the agent pod
-  volumeMounts: []
+  volumeMounts:
+    - name: etcd-auto-conf
+      mountPath: /etc/datadog-agent/conf.d/etcd.d/
+      readOnly: true
+    - mountPath: /keys
+      name: etcd-keys
+      readOnly: true
   #   - name: <VOLUME_NAME>
   #     mountPath: <CONTAINER_PATH>
   #     readOnly: true
@@ -1128,7 +1150,9 @@ agents:
   #   <POD_ANNOTATION>: '[{"key": "<KEY>", "value": "<VALUE>"}]'
 
   # agents.tolerations -- Allow the DaemonSet to schedule on tainted nodes (requires Kubernetes >= 1.6)
-  tolerations: []
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
 
   # agents.nodeSelector -- Allow the DaemonSet to schedule on selected nodes
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
