@@ -20,6 +20,7 @@ helm repo add stable https://charts.helm.sh/stable
 helm repo update
 cp -r /ecommworkshop/* /root/workshop
 cp /root/values.yaml /root/workshop/deploy/datadog/helm-values.yaml
+cp /root/newvalues.yaml /root/workshop/deploy/datadog/newvalues.yaml
 cp /root/nodevalues.yaml /root/workshop/deploy/datadog/helm-node-values.yaml
 cp /root/frontend.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 mkdir -p /root/workshop/deploy/generic-k8s/ecommerce-app/dbinit

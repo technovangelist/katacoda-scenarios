@@ -33,6 +33,10 @@
           "target": "/root"
         },
         {
+          "file": "newvalues.yaml",
+          "target": "/root"
+        },
+        {
           "file": "frontend.yaml",
           "target": "/root"
         },
