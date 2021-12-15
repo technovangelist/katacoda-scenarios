@@ -25,7 +25,7 @@ With older clustering technologies, there was a hard requirement that all nodes 
 11. Set the second Metric to be `kubernetes_state.deployment.replicas_available` and `sum by` `kube_deployment`.
 12. In the text box next to **Express these queries as:** enter `a - b`. Now the graph above looks pretty interesting. 
 13. Let's set the **Alert Conditions**. Set **Alert threshold** to 2, **Warning threshold** to 1, and the recovery thresholds to 1 and 0. 
-14. Then set it to trigger when the metric is above the threshold on average for the last **1 minute**.
+14. Then set it to trigger when the metric is above the threshold on average for the last **5 minutes**.
 15. Add a message to the **What's Happening** section. You might want the subject to be `Replicas for {{kube_deployment.name}} not being scheduled` and the message to be `Replicas for {{kube_deployment.name}} are being requested but not scheduled. {{value}} replicas could not be scheduled.`.
 16. Click on the Save button at the bottom, then click on **Manage Monitors** to see the list of all configured monitors.
 17. Now you have to wait a little bit. First you have to wait for data to populate, then you need to wait another minute because the monitor will only trigger after the threshold has been hit for 1 minute. 
