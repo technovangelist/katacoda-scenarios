@@ -37,7 +37,7 @@
     "assets": {
       "host01": [
         {
-          "file": "newvalues.yaml",
+          "file": "values.yaml",
           "target": "/root"
         },
         {
