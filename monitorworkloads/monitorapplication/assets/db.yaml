@@ -83,6 +83,11 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    ad.datadoghq.com/postgres.check_names: '["postgres"]'
+    ad.datadoghq.com/postgres.init_configs: '[{}]'
+    ad.datadoghq.com/postgres.instances: '[{"host": "%%host%%", "port": "%%port%%","username": "datadog","password": "datadog" }]'
+    ad.datadoghq.com/postgres.logs: '[{"source":"postgres","service":"db"}]'
   labels:
     service: db
     app: ecommerce
