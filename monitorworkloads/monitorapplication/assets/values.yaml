@@ -1,4 +1,4 @@
-;## Default values for Datadog Agent
+## Default values for Datadog Agent
 ## See Datadog helm documentation to learn more:
 ## https://docs.datadoghq.com/agent/kubernetes/helm/
 
@@ -236,11 +236,11 @@ datadog:
   logs:
     # datadog.logs.enabled -- Enables this to activate Datadog Agent log collection
     ## ref: https://docs.datadoghq.com/agent/basic_agent_usage/kubernetes/#log-collection-setup
-    enabled: false
+    enabled: true
 
     # datadog.logs.containerCollectAll -- Enable this to allow log collection for all containers
     ## ref: https://docs.datadoghq.com/agent/basic_agent_usage/kubernetes/#log-collection-setup
-    containerCollectAll: false
+    containerCollectAll: true
 
     # datadog.logs.containerCollectUsingFiles -- Collect logs from files in /var/log/pods instead of using container runtime API
     ## It's usually the most efficient way of collecting logs.
@@ -341,7 +341,7 @@ datadog:
 
     # datadog.processAgent.processCollection -- Set this to true to enable process collection in process monitoring agent
     ## Requires processAgent.enabled to be set to true to have any effect
-    processCollection: false
+    processCollection: true
 
     # datadog.processAgent.stripProcessArguments -- Set this to scrub all arguments from collected processes
     ## Requires processAgent.enabled and processAgent.processCollection to be set to true to have any effect
@@ -349,7 +349,7 @@ datadog:
     stripProcessArguments: false
 
     # datadog.processAgent.processDiscovery -- Enables or disables autodiscovery of integrations
-    processDiscovery: false
+    processDiscovery: true
 
   ## Enable systemProbe agent and provide custom configs
   systemProbe:
@@ -406,19 +406,19 @@ datadog:
 
   networkMonitoring:
     # datadog.networkMonitoring.enabled -- Enable network performance monitoring
-    enabled: false
+    enabled: true
 
   ## Universal Service Monitoring is currently in private beta.
   ## See https://www.datadoghq.com/blog/universal-service-monitoring-datadog/ for more details and private beta signup.
   serviceMonitoring:
     # datadog.serviceMonitoring.enabled -- Enable Universal Service Monitoring
-    enabled: false
+    enabled: true
 
   ## Enable security agent and provide custom configs
   securityAgent:
     compliance:
       # datadog.securityAgent.compliance.enabled -- Set to true to enable Cloud Security Posture Management (CSPM)
-      enabled: false
+      enabled: true
 
       # datadog.securityAgent.compliance.configMap -- Contains CSPM compliance benchmarks that will be used
       configMap:
@@ -428,7 +428,7 @@ datadog:
 
     runtime:
       # datadog.securityAgent.runtime.enabled -- Set to true to enable Cloud Workload Security (CWS)
-      enabled: false
+      enabled: true
 
       policies:
         # datadog.securityAgent.runtime.policies.configMap -- Contains CWS policies that will be used
