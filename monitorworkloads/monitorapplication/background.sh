@@ -1,7 +1,7 @@
 #!/bin/bash
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statusupdate labtools
-kubectl delete -f /opt/katacoda-cloud-provider.yaml
+# kubectl delete -f /opt/katacoda-cloud-provider.yaml
 while ! [ -f /root/advertisements.yaml ]
 do 
     # sleeping, waiting for asset to be loaded
@@ -17,7 +17,7 @@ helm repo add datadog https://helm.datadoghq.com
 helm repo add stable https://charts.helm.sh/stable
 
 helm repo update
-kubectl delete -f /opt/katacoda-cloud-provider.yaml
+# kubectl delete -f /opt/katacoda-cloud-provider.yaml
 cp -r /ecommworkshop/* /root/workshop
 cp /root/values.yaml /root/workshop/deploy/datadog/values.yaml
 cp /root/frontend.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
