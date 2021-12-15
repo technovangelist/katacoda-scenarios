@@ -29,23 +29,11 @@
     "assets": {
       "host01": [
         {
-          "file": "values.yaml",
-          "target": "/root"
-        },
-        {
           "file": "newvalues.yaml",
           "target": "/root"
         },
         {
           "file": "frontend.yaml",
-          "target": "/root"
-        },
-        {
-          "file": "nodevalues.yaml",
-          "target": "/root"
-        },
-        {
-          "file": "inituserdb.sh",
           "target": "/root"
         }
       ]

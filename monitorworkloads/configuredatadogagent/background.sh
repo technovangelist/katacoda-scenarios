@@ -9,7 +9,7 @@ mkdir /root/completedfiles
 launch.sh
 
 # choosing the last asset in index.json and wait for it
-while ! [ -f /root/inituserdb.sh ]
+while ! [ -f /root/frontend.yaml ]
 do 
     # sleeping, waiting for asset to be loaded
     sleep .5
