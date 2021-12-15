@@ -25,5 +25,5 @@ cp /root/db.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/db.yaml
 cp /root/advertisements.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/advertisements.yaml
 cp /root/discounts.yaml /root/workshop/deploy/generic-k8s/ecommerce-app/discounts.yaml
 statusupdate k8s
-
+echo xx
 statusupdate complete
