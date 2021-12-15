@@ -5,8 +5,8 @@ done
 statuscheck labtools
 # clear
 statuscheck k8s
-helm install datadogagent-controlplane datadog/datadog --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f /root/workshop/deploy/datadog/twoagentscontrolplanevalues.yaml
-helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f /root/workshop/deploy/datadog/twoagentsnodevalues.yaml
+helm install datadogagent datadog/datadog --set datadog.apiKey=$DD_API_KEY --set datadog.appKey=$DD_APP_KEY -f /root/workshop/deploy/datadog/newvalues.yaml
+
 . setrumvars
 sed -i "s/replacetheclienttoken/$DD_CLIENT_TOKEN/g" /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml
 sed -i "s/replacetheapplicationid/$DD_APPLICATION_ID/g" /root/workshop/deploy/generic-k8s/ecommerce-app/frontend.yaml

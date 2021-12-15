@@ -37,15 +37,7 @@
     "assets": {
       "host01": [
         {
-          "file": "twoagentscontrolplanevalues.yaml",
-          "target": "/root"
-        },
-        {
-          "file": "twoagentsnodevalues.yaml",
-          "target": "/root"
-        },
-        {
-          "file": "values.yaml",
+          "file": "newvalues.yaml",
           "target": "/root"
         },
         {
