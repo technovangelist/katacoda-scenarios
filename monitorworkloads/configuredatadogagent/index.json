@@ -1,7 +1,7 @@
 {
   "title": "Configuring the Datadog Agent",
   "description": "How to configure the Datadog Agent for use with a workload on Kubernetes",
-  "difficulty": "Beginner",
+  "difficulty": "Intermediate",
   "time": "40 minutes",
   "details": {
     "steps": [
